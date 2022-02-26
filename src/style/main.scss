@@ -1,6 +1,5 @@
-$bijour : red;
+@import "./reset";
+@import "./components/_header";
+@import "./pages/host";
 
-h1{
-    color: $bijour;
-    font-size: 2.5em;
-}
+

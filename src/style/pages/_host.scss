@@ -1,0 +1,16 @@
+.host{
+    height:600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    // border:1px solid red;
+    &__bgImgCont{
+        width:35%;
+        outline: none;
+        border: none;
+        object-fit: contain;
+        // border:1px solid yellow;
+        cursor: pointer;
+    }
+}
