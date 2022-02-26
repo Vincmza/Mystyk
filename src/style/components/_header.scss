@@ -11,7 +11,13 @@ nav{
         font-family: "Bad Script", Arial, Helvetica, sans-serif;
         font-size: 1.8em;
         color:wheat;
+        text-shadow: red 1px 0 10px;
         // border: 1px solid red;
         cursor: pointer;
+        transform:scale(1);
+        transition: 500ms;
+        &:hover{
+            transform:scale(1.2);
+        }
     }
 }
