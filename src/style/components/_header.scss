@@ -1,17 +1,27 @@
+@keyframes navDisplay {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity:1;
+    }
+}
 nav{
     width:100%;
     padding: 15px;
     // border: 1px solid black;
     background-color: black;
+    animation: 1.8s ease-in-out navDisplay;
 }
 .nav {
     display: flex;
     justify-content: space-around;
+    // border:1px solid purple;
     &__title{
         font-family: "Bad Script", Arial, Helvetica, sans-serif;
         font-size: 1.8em;
         color:wheat;
-        text-shadow: red 1px 0 10px;
+        text-shadow: red 1px 0 10px;  
         // border: 1px solid red;
         cursor: pointer;
         transform:scale(1);
@@ -19,5 +29,31 @@ nav{
         &:hover{
             transform:scale(1.2);
         }
+        @media screen and (max-width:500px) {
+            font-size: 1.4em;
+        }
+    }
+    @media screen and (max-width:400px) {
+        flex-direction: column;
+        text-align: center;
     }
 }
+.nav-icon{
+    color:wheat;
+    // border:1px solid yellowgreen;
+    padding:30px;
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    &__reactIcon{
+        cursor: pointer;
+        transform:scale(1);
+        transition: 500ms;
+        // border:1px solid blue;
+        &:hover{
+            transform: scale(1.3);
+        }
+    }
+}
+
+

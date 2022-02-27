@@ -2,6 +2,7 @@ import * as React from "react";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 //pages
 import News from "./pages/News"
+import Shows from "./pages/Shows";
 import Host from "./pages/Host"
 import Bands from "./pages/Bands"
 import Band from "./pages/Band"
@@ -18,6 +19,7 @@ function App() {
         <Header/>
           <Routes>
             <Route path="/" element={<Host/>}/>
+            <Route path="/shows" element={<Shows/>}/>
             <Route path="/news" element={<News/>}/>
             <Route path="/bands" element={<Bands/>}/>
             <Route path="/band/:bandId" element={<Band/>}/>
