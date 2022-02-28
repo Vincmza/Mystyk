@@ -1,8 +1,5 @@
-@keyframes navDisplay {
-    from{
-        opacity: 0;
-    }
-    to {
+@keyframes titleDisplay {
+    to{
         opacity:1;
     }
 }
@@ -11,7 +8,7 @@ nav{
     padding: 15px;
     // border: 1px solid black;
     background-color: black;
-    animation: 1.8s ease-in-out navDisplay;
+    // animation: 300ms linear navDisplay forwards;
 }
 .nav {
     display: flex;
@@ -21,10 +18,11 @@ nav{
         font-family: "Bad Script", Arial, Helvetica, sans-serif;
         font-size: 1.8em;
         color:wheat;
-        text-shadow: red 1px 0 10px;  
+        text-shadow: red 1px 0 10px;
+        animation: 700ms ease-in-out titleDisplay forwards;
         // border: 1px solid red;
         cursor: pointer;
-        transform:scale(1);
+        opacity:0;
         transition: 500ms;
         &:hover{
             transform:scale(1.2);

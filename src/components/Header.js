@@ -4,10 +4,11 @@ import {AiOutlineMenu} from "react-icons/ai"
 
 
 const Header = () => {
+    //All pages
+    const allPages = ["news","shows","bands","shop","contact"]
     //Navigation
     let navigate = useNavigate()
     const redirect = (page)=>{
-        const allPages = ["news","shows","bands","shop","contact"]
         const thePageToGo = allPages.find((elem)=>elem === page)
         navigate(`/${thePageToGo}`)
     }
@@ -38,21 +39,10 @@ const Header = () => {
 
                 <nav>
                     <ul className='nav'>
-                        <li className='nav__title'>
-                            <h1 onClick={()=>redirect("news")}>News</h1>
-                        </li>
-                        <li className='nav__title'>
-                            <h1 onClick={()=>redirect("shows")}>Shows</h1>
-                        </li>
-                        <li className='nav__title'>
-                            <h1 onClick={()=>redirect("bands")}>Bands</h1>
-                        </li>
-                        <li className='nav__title'>
-                            <h1 onClick={()=>redirect("shop")}>Shop</h1>
-                        </li>
-                        <li className='nav__title'>
-                            <h1 onClick={()=>redirect("contact")}>Contact</h1>
-                        </li>
+                        {allPages.map((elem,index)=>(
+                            <li style={{animationDelay :`${index*200}ms`}} key={elem} className='nav__title' onClick={()=>redirect(elem)}>
+                                {elem}
+                            </li>))}
                     </ul>
                 </nav>
             
