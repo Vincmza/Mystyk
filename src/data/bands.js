@@ -47,5 +47,54 @@ export const bands = [
             }
 
         ]
+    },
+    //IN HELL
+    {
+        id: 2,
+        name : "In Hell",
+        style : "black/death metal",
+        biography: "blablabla",
+        bandPicture: "path",
+        releases : [
+            //1 ALBUM FROM THE BAND
+            {
+                year : 2022,
+                title : "noctis, avem et gloria",
+                style : "black / death",
+                frontCover : "path",
+                purchase : "path",
+                members : [
+                    {
+                        name : "Nekros",
+                        instrument : [
+                            "songwriting",
+                            "guitars",
+                            "bass"
+                        ]
+                    },
+                    {
+                        name : "Quantum",
+                        instrument : [
+                        
+                            "voices",
+                            "lyrics"
+                        ]
+                    }
+                ]
+            }
+        ],
+        itemsToSell : [
+
+            {
+                bandId : 2,
+                band : "Kosmos",
+                type : "music" || "merch",
+                format : "cd",
+                style : "black metal",
+                itemPicture : "path",
+                available : true
+            }
+
+        ]
     }
 ]

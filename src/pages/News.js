@@ -19,6 +19,9 @@ const News = () => {
                                 {item.date}
                             </div>
                         </div>
+                        <div className='newsTitle'>
+                            {item.title}
+                        </div>
                         <div className='newsArticle'>
                             {item.content}
                         </div>
