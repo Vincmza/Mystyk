@@ -4,17 +4,17 @@ import {AiOutlineMenu} from "react-icons/ai"
 
 
 const Header = () => {
-    //All pages
+    //ALL PAGES
     const allPages = ["news","shows","bands","shop","contact"]
-    //Navigation
+    //NAVIGATION
     let navigate = useNavigate()
     const redirect = (page)=>{
         const thePageToGo = allPages.find((elem)=>elem === page)
         navigate(`/${thePageToGo}`)
     }
-    //States
+    //BOOLEAN STATE TO DISPLAY NAV MENU
     const [isIconClicked, setIsIconClicked] = useState(false)
-    //Set either true or false to thereupon state
+    //SET EITHER TRUE OR FALSE TO STATE THEREUPON
     const handleNavLogo = ()=>{
         setIsIconClicked((pv)=>!pv)
     }
