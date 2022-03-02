@@ -2,9 +2,10 @@ import React from 'react';
 import hostBgImg from "../assets/background/bg-logo-2.png"
 import { useNavigate } from "react-router-dom";
 
-const Host = () => {
+const Host = (props) => {
     let navigate = useNavigate()
     const redirect = ()=>{
+        props.setIsPageClicked(["news"])
         navigate("/news")
     }
 

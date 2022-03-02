@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 //pages
 import News from "./pages/News"
@@ -13,12 +14,14 @@ import Error from "./pages/Error";
 import Header from "./components/Header";
 
 function App() {
+  //PAGE CLICKED STATE
+  const [isPageClicked, setIsPageClicked]=useState([])
   return (
     <div className="App">
       <BrowserRouter>
-        <Header/>
+        <Header isPageClicked={isPageClicked} setIsPageClicked={setIsPageClicked} />
           <Routes>
-            <Route path="/" element={<Host/>}/>
+            <Route path="/" element={<Host isPageClicked={isPageClicked} setIsPageClicked={setIsPageClicked} />}/>
             <Route path="/shows" element={<Shows/>}/>
             <Route path="/news" element={<News/>}/>
             <Route path="/bands" element={<Bands/>}/>

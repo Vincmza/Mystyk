@@ -1,10 +1,10 @@
 //ALL BANDS
 import { bands } from "./bands"
 //FRONT COVER
-import kosmosArt from "../assets/news/kosmos/kosmos_noctis_cd.jpg"
-import inHellArt from "../assets/news/in_hell/in_hell_lex_cd.jpg"
+import kosmosNoctisArt from "../assets/news/kosmos/kosmos_noctis_cd.jpg"
+import inHellLexArt from "../assets/news/in_hell/in_hell_lex_cd.jpg"
 //MERCH
-import kosmosMerch from "../assets/news/kosmos/kosmos_t-shirt.jpg"
+import kosmosTshirt from "../assets/news/kosmos/kosmos_t-shirt.jpg"
 
 //COMPARE BANDID AND ID KEY IN BANDS ARRAY TO RETURN RIGHT BAND'S NAME
 export const returnName = (bandId)=>{
@@ -21,7 +21,7 @@ export const news = [
         bandName : function(){
             return returnName(this.bandId)
         },
-        image : kosmosArt,
+        image : kosmosNoctisArt,
     },
     {
         id : 2,
@@ -32,7 +32,7 @@ export const news = [
         bandName : function(){
             return returnName(this.bandId)
         },
-        image : kosmosMerch,
+        image : kosmosTshirt,
     },
     {
         id : 3,
@@ -43,6 +43,6 @@ export const news = [
         bandName : function(){
             return returnName(this.bandId)
         },
-        image : inHellArt,
+        image : inHellLexArt,
     }
 ]

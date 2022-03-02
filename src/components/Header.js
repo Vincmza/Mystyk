@@ -3,18 +3,20 @@ import { useNavigate } from "react-router-dom";
 import {AiOutlineMenu} from "react-icons/ai"
 
 
-const Header = () => {
+const Header = (props) => {
     //ALL PAGES
     const allPages = ["news","shows","bands","shop","contact"]
     //NAVIGATION
     let navigate = useNavigate()
-    const redirect = (page)=>{
-        const thePageToGo = allPages.find((elem)=>elem === page)
+    const redirect = (pageName)=>{
+        const thePageToGo = allPages.find((elem)=>elem === pageName)
+        props.isPageClicked.shift()
+        props.setIsPageClicked([pageName])
         navigate(`/${thePageToGo}`)
     }
     //BOOLEAN STATE TO DISPLAY NAV MENU
     const [isIconClicked, setIsIconClicked] = useState(false)
-    //SET EITHER TRUE OR FALSE TO STATE THEREUPON
+    //CHANGE STATE VALUE
     const handleNavLogo = ()=>{
         setIsIconClicked((pv)=>!pv)
     }
@@ -41,7 +43,7 @@ const Header = () => {
                     <ul className='nav'>
                         {allPages.map((elem,index)=>(
                             <li style={{animationDelay :`${index*200}ms`}} key={elem} className='nav__title' onClick={()=>redirect(elem)}>
-                                {elem}
+                                <div style={{color : props.isPageClicked[0] === elem && "red"}}>{elem}</div>
                             </li>))}
                     </ul>
                 </nav>
