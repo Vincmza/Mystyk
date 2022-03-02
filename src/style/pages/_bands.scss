@@ -1,0 +1,76 @@
+@keyframes bandsDisplay{
+    to{
+        opacity:1;
+    }
+}
+.bands{
+    // border:1px solid blue;
+    width: 75%;
+    margin: auto;
+    color:wheat;
+    @media screen and (max-width:650px) {
+        width:95%;
+    }
+    &__wrapper{
+        // border:1px solid yellow;
+        width:100%;
+        padding-bottom: 20px;
+        &__oneBand{
+            opacity:0;
+            animation: bandsDisplay 1.2s linear forwards;
+            border:1px solid wheat;
+            box-shadow: 1px 1px 5px red;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            width:100%;
+            padding:20px;
+            margin-top: 20px;
+        }
+    }
+}
+.bandsHeader{
+    display: flex;
+    flex-direction: column;
+    // border:1px solid rgb(31, 206, 162);
+}
+.bandsName{
+    text-align: center;
+    font-size: 1.6em;
+    text-shadow: red 1px 0 10px;
+    transform: scale(1);
+    transition:300ms;
+    &:hover{
+        cursor: pointer;
+        transform:scale(1.1);
+    }
+}
+.bandsContent{
+    display: flex;
+    justify-content: space-between;
+    // border:1px solid red;
+    font-size: 1.2em;
+}
+.bandsImgPosition{
+    display: flex;
+    justify-content: center;
+}
+.bandsImgContainer{
+    width:400px;
+    height:250px;
+    transform: scale(1);
+    transition:300ms;
+    &:hover{
+        cursor: pointer;
+        transform:scale(1.1);
+    }
+    @media screen and (max-width:500px) {
+        width:300px;
+        height:150px;
+    }
+}
+.bandsImg{
+    width:100%;
+    height:100%;
+    object-fit: contain;
+}
