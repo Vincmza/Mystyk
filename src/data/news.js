@@ -1,9 +1,9 @@
-//ALL BANDS
+//ARRAY CONTAINING ALL BANDS
 import { bands } from "./bands"
-//FRONT COVER
+//FRONT COVER // Nom du groupe + premier mot de l'album + Art pour Artwork
 import kosmosNoctisArt from "../assets/news/kosmos/kosmos_noctis_cd.jpg"
 import inHellLexArt from "../assets/news/in_hell/in_hell_lex_cd.jpg"
-//MERCH
+//MERCH // Nom du groupe + nature du merch à définir avec le temps
 import kosmosTshirt from "../assets/news/kosmos/kosmos_t-shirt.jpg"
 
 //COMPARE BANDID AND ID KEY IN BANDS ARRAY TO RETURN RIGHT BAND'S NAME
