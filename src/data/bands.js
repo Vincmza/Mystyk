@@ -1,8 +1,19 @@
+//LOGO // Nom du groupe + logo
+//KOSMOS
+import kosmosLogo from "../assets/bands/kosmos/logo/kosmos_logo.png"
+//IN HELL
+import inHellLogo from "../assets/bands/in_hell/logo/in_hell_logo.jpg"
 //FRONT COVER // Nom du groupe + premier mot de l'album + Art pour Artwork
-import kosmosNoctisArt from "../assets/news/kosmos/kosmos_noctis_cd.jpg"
-import inHellLexArt from "../assets/news/in_hell/in_hell_lex_cd.jpg"
+//KOSMOS
+import kosmosNoctisArt from "../assets/bands/kosmos/music/kosmos_noctis_cd.jpg"
+//IN HELL
+import inHellLexArt from "../assets/bands/in_hell/music/in_hell_lex_cd.jpg"
 //MERCH // Nom du groupe + nature du merch à définir avec le temps
-import kosmosTshirt from "../assets/news/kosmos/kosmos_t-shirt.jpg"
+//KOSMOS
+import kosmosTshirt from "../assets/bands/kosmos/merch/kosmos_t-shirt.jpg"
+//IN HELL
+import inHellTshirt from "../assets/bands/in_hell/merch/in_hell_t-shirt.jpg"
+
 //FUNCTION TO GET BAND'S NAME 
 import { returnName } from "./news"
 
@@ -13,35 +24,36 @@ export const bands = [
         name : "Kosmos",
         style : "black metal",
         biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt consectetur enim, eget venenatis justo laoreet et. Mauris aliquet egestas leo quis faucibus. Nulla fringilla lacus eget luctus fringilla. Etiam neque magna, dapibus non elit vitae, lobortis consequat est. Donec mollis cursus massa eget rutrum. Quisque sed tellus dictum, lacinia neque id, viverra arcu. Duis massa elit, euismod eget varius sit amet, porta at massa. Duis eget arcu eget lorem efficitur consequat ornare vitae ante. Duis placerat dui in tortor euismod pellentesque. Nam tincidunt ligula at felis aliquam accumsan. Nullam vitae ultrices lectus. Pellentesque tempus sollicitudin lacinia. Phasellus accumsan fringilla arcu, ut commodo ex vehicula nec. Nulla ultricies ante quis lacus bibendum maximus. Pellentesque quis elit volutpat, congue arcu eu, viverra libero.",
-        bandPicture: "path",
+        bandPicture: kosmosLogo,
         releases : [
             //1 ALBUM FROM THE BAND
             {
                 year : 2022,
+                bandId : 1,
                 title : "Noctis, Avem et Gloria",
                 subStyle : "atmospheric black/death",
-                frontCover : "path",
-                purchase : "path",
+                frontCover : kosmosNoctisArt,
+                purchase : "path to shop",
+                format : "cd digipack",
+                available : true,
                 members : [
                     {
                         name : "Nekros",
-                        instrument : [
-                            "songwriting",
-                            "guitars",
-                            "bass"
-                        ]
+                        instrument : ["songwriting","guitars","bass"] 
+                        
                     },
                     {
                         name : "Quantum",
-                        instrument : [
-                            "voices",
-                            "lyrics"
-                        ]
+                        instrument : ["voices","lyrics"]
+                    },
+                    {
+                        name : "Naja Atra",
+                        instruments : ["drums", "sound engineering"]
                     }
                 ]
             }
         ],
-        itemsToSell : [
+        merch : [
 
             {
                 id : 1,
@@ -49,25 +61,10 @@ export const bands = [
                 bandName : function(){
                     return returnName(this.bandId) 
                 },
-                type : "music",
-                format : "cd digipack",
-                style : "black metal",
-                itemPicture : kosmosNoctisArt,
-                available : true
-            },
-            {
-                id : 2,
-                bandId : 1,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                type : "merch",
                 format : "t-shirt",
-                style : "black metal",
                 itemPicture : kosmosTshirt,
                 available : true
             }
-
         ]
     },
     //IN HELL
@@ -76,47 +73,54 @@ export const bands = [
         name : "In Hell",
         style : "death metal",
         biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt consectetur enim, eget venenatis justo laoreet et. Mauris aliquet egestas leo quis faucibus. Nulla fringilla lacus eget luctus fringilla. Etiam neque magna, dapibus non elit vitae, lobortis consequat est. Donec mollis cursus massa eget rutrum. Quisque sed tellus dictum, lacinia neque id, viverra arcu. Duis massa elit, euismod eget varius sit amet, porta at massa. Duis eget arcu eget lorem efficitur consequat ornare vitae ante. Duis placerat dui in tortor euismod pellentesque. Nam tincidunt ligula at felis aliquam accumsan. Nullam vitae ultrices lectus. Pellentesque tempus sollicitudin lacinia. Phasellus accumsan fringilla arcu, ut commodo ex vehicula nec. Nulla ultricies ante quis lacus bibendum maximus. Pellentesque quis elit volutpat, congue arcu eu, viverra libero.",
-        bandPicture: "path",
+        bandPicture: inHellLogo,
         releases : [
             //1 ALBUM FROM THE BAND
             {
                 year : 2022,
+                bandId : 2,
                 title : "Lex Divina Terrores",
                 subStyle : "blackened death",
-                frontCover : "path",
-                purchase : "path",
+                frontCover : inHellLexArt,
+                purchase : "path to shop",
+                format : "cd",
+                available : true,
                 members : [
                     {
-                        name : "Nekros",
-                        instrument : [
-                            "songwriting",
-                            "guitars",
-                            "bass"
-                        ]
+                        name : "Darkhell",
+                        instrument : ["songwriting","guitars",]
                     },
                     {
-                        name : "Quantum",
-                        instrument : [
-                        
-                            "voices",
-                            "lyrics"
-                        ]
+                        name : "Olivier",
+                        instrument : "guitars" 
+                    },
+                    {
+                        name : "Cédric",
+                        instrument : ["bass", "backing vocals"]
+                    },
+                    {
+                        name : "James Spar",
+                        instrument : ["vocals", "lyrics"]
+                    },
+                    {
+                        name : "Gus",
+                        instrument : "drums"
                     }
                 ]
             }
         ],
-        itemsToSell : [
+        merch : [
 
             {
+                id : 1,
                 bandId : 2,
-                band : "Kosmos",
-                type : "music" || "merch",
-                format : "cd",
-                style : "black metal",
-                itemPicture : "path",
+                bandName : function(){
+                    return returnName(this.bandId) 
+                },
+                format : "t-shirt",
+                itemPicture : inHellTshirt,
                 available : true
             }
-
         ]
     }
 ]
