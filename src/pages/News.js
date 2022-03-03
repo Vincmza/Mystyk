@@ -1,7 +1,16 @@
 import React from 'react';
 import {news} from '../data/news';
+import { useNavigate } from 'react-router-dom';
 
-const News = () => {
+const News = (props) => {
+    let navigate = useNavigate()
+    const goToBandPage = (bandId, pageName)=>{
+        props.isPageClicked.length > 0 && props.isPageClicked.shift()
+        localStorage.clear()
+        localStorage.setItem("menu", pageName)
+        props.setIsPageClicked([pageName])
+        navigate(`/band/${bandId}`)
+    }
     return (
         <div className='news'>
             <ul className='news__wrapper'>
@@ -12,8 +21,8 @@ const News = () => {
                     </div>
                     <div className='newsContent'>
                         <div className='newsHeader'>
-                            <div className='bandName'>
-                                {item.bandName()}
+                            <div className='bandName' onClick={()=>goToBandPage(item.bandId, "band")}>
+                               {item.bandName()}
                             </div>
                             <div className='date'>
                                 {item.date}

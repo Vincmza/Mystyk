@@ -11,7 +11,7 @@ const Bands = () => {
                 {bands.map((item, index)=>(
                     <li key={item.id} className='bands__wrapper__oneBand' style={{animationDelay: `${index*400}ms`}}>
                         <div className='bandsHeader'>
-                            <div className='bandsName'>{item.name}</div>
+                            <NavLink to={`/band/${item.id}`}><div className='bandsName'>{item.name}</div></NavLink>
                             <div className='bandsContent'>
                                 <span className='bandsCountry'>{item.country}</span>
                                 <span className='bandsStyle'>{item.style}</span>

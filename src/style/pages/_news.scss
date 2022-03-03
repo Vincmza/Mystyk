@@ -3,10 +3,14 @@
         opacity:1;
     }
 }
+a{
+    text-decoration-line: unset;
+    color: unset;
+}
 .news{
     color:wheat;
     // border: 1px solid yellow;
-    width:70%;
+    width:75%;
     padding-bottom:20px;
     margin: auto;
     @media screen and (max-width:1370px) {

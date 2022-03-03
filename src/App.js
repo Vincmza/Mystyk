@@ -31,7 +31,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Host isPageClicked={isPageClicked} setIsPageClicked={setIsPageClicked} />}/>
             <Route path="/shows" element={<Shows/>}/>
-            <Route path="/news" element={<News/>}/>
+            <Route path="/news" element={<News isPageClicked={isPageClicked} setIsPageClicked={setIsPageClicked}/>}/>
             <Route path="/bands" element={<Bands/>}/>
             <Route path="/band/:bandId" element={<Band/>}/>
             <Route path="/shop" element={<Shop/>}/>

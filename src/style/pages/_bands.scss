@@ -51,6 +51,10 @@
         transform:scale(1.1);
     }
 }
+a{
+    text-decoration-line: unset;
+    color: unset;
+}
 .bandsContent{
     display: flex;
     justify-content: space-between;

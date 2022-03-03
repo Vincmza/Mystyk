@@ -15,11 +15,11 @@ const Band = () => {
             <div className='band__wrapper'>
                 <h1 className='band__name'>{bandFiltered.name}</h1>
                 <div className='band__style'>
-                    <span className='band__style band__style--main'>Style général : {bandFiltered.style}</span>
-                    <span className='band__style band__style--sub'>Sous-genre : {bandFiltered.subStyle}</span>
+                    <span className='band__style band__style--main'>Style général : {bandFiltered.style}.</span>
+                    <span className='band__style band__style--sub'>Sous-genre : {bandFiltered.subStyle}.</span>
                 </div>
                 <div className='banner'>
-                    <div className='banner__Container'>
+                    <div className='banner__container'>
                         <img className='bannerImg' src={bandFiltered.bandLogo} alt={`logo du groupe ${bandFiltered.name}`}/>
                     </div>
                 </div>
@@ -30,20 +30,27 @@ const Band = () => {
                             {bandFiltered.biography}
                         </div>
                     </div>
-                    <div className='bio__lineup'>
-                        <h3 className='bio__lineup bio__lineup--title'>Line up</h3>
-                        <ul className='bio__lineup bio__lineup--list'>
+                    <div className='bio__lineUp'>
+                        <h3 className='bio__lineUp bio__lineUp--title'>Line up</h3>
+                        <ul className='bio__lineUp bio__lineUp--list'>
                             {bandFiltered.lineUp.map(elem=>(
                             <li key={elem.name}>
-                                <div className='member'>
-                                    {elem.name}
+                                <div className='lineUp'>
+                                    <div className='lineUp__member'>
+                                        {elem.name} :
+                                    </div>
+                                    <ul className='lineUp__role'>
+                                        {elem.instrument.map((item,index)=>(
+                                            index !== elem.instrument.length-1 ?
+                                            <li className='role' key={index}>
+                                                {item},
+                                            </li> : 
+                                            <li className='role' key={index}>
+                                                {item}.
+                                            </li>)
+                                        )}
+                                    </ul>
                                 </div>
-                                <ul>
-                                    {elem.instrument.map((item,index)=>(
-                                    <li key={index}>
-                                        {item}
-                                    </li>))}
-                                </ul>
                             </li>))}
                         </ul>
                     </div>

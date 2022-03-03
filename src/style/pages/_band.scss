@@ -1,3 +1,76 @@
+@keyframes bandApparition{
+    to{
+        opacity:1;
+    }
+}
 .band{
     color:wheat;
+    padding-bottom: 20px;
+    &__wrapper{
+        border: 1px solid wheat;
+        border-radius: 5px;
+        width:75%;
+        margin: auto;
+        padding:10px;
+        opacity:0;
+        animation: bandApparition 1.5s linear forwards;
+        // background-image: url("../../assets/bands/kosmos/music/kosmos_noctis_cd.jpg");
+    }
+    &__name{
+        text-align: center;
+        padding: 10px;
+        font-size: 2em;
+        text-shadow: red 1px 0 10px;
+    }
+    &__style{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+}
+.bio{
+    padding:10px;
+    &__content{
+        padding:10px;
+    }
+    &__content--title{
+        font-size: 1.3em;
+    }
+    &__lineUp{
+        padding:10px;
+    }
+    &__lineUp--title{
+        font-size: 1.3em;
+    }
+    &__lineUp--list{
+        padding: 10px;
+        // border:1px solid green;
+    }
+}
+.lineUp{
+    display: flex;
+    // border:1px solid pink;
+    &__member{
+        // border:1px solid blue;
+    }
+    &__role{
+        display: flex;
+    }
+}
+.role{
+    padding-left: 10px;
+}
+.banner{
+    width:100%;
+    // border:1px solid yellow;
+    &__container{
+        width:100%;
+        height:200px;
+        // border:1px solid blue;
+    }
+}
+.bannerImg{
+    width:100%;
+    height:100%;
+    object-fit: contain;
 }
