@@ -28,6 +28,21 @@ export const bands = [
         bandLogo: kosmosLogo,
         memberPicture : "",
         country : "France",
+        lineUp : [
+            {
+                name : "Nekros",
+                instrument : ["songwriting","guitars","bass"] 
+                
+            },
+            {
+                name : "Quantum",
+                instrument : ["voices","lyrics"]
+            },
+            {
+                name : "Naja Atra",
+                instrument : ["drums", "sound engineering"]
+            }
+        ],
         releases : [
             //1 ALBUM FROM THE BAND
             {
@@ -39,21 +54,6 @@ export const bands = [
                 purchase : "path to shop",
                 format : "cd digipack",
                 available : true,
-                members : [
-                    {
-                        name : "Nekros",
-                        instrument : ["songwriting","guitars","bass"] 
-                        
-                    },
-                    {
-                        name : "Quantum",
-                        instrument : ["voices","lyrics"]
-                    },
-                    {
-                        name : "Naja Atra",
-                        instruments : ["drums", "sound engineering"]
-                    }
-                ]
             }
         ],
         merch : [
@@ -80,6 +80,28 @@ export const bands = [
         bandLogo: inHellLogo,
         memberPicture : "",
         country : "France",
+        lineUp : [
+            {
+                name : "Darkhell",
+                instrument : ["songwriting","guitars",]
+            },
+            {
+                name : "Olivier",
+                instrument : ["guitars"] 
+            },
+            {
+                name : "Cédric",
+                instrument : ["bass", "backing vocals"]
+            },
+            {
+                name : "James Spar",
+                instrument : ["vocals", "lyrics"]
+            },
+            {
+                name : "Gus",
+                instrument : ["drums"]
+            }
+        ],
         releases : [
             //1 ALBUM FROM THE BAND
             {
@@ -90,29 +112,7 @@ export const bands = [
                 frontCover : inHellLexArt,
                 purchase : "path to shop",
                 format : "cd",
-                available : true,
-                members : [
-                    {
-                        name : "Darkhell",
-                        instrument : ["songwriting","guitars",]
-                    },
-                    {
-                        name : "Olivier",
-                        instrument : "guitars" 
-                    },
-                    {
-                        name : "Cédric",
-                        instrument : ["bass", "backing vocals"]
-                    },
-                    {
-                        name : "James Spar",
-                        instrument : ["vocals", "lyrics"]
-                    },
-                    {
-                        name : "Gus",
-                        instrument : "drums"
-                    }
-                ]
+                available : true
             }
         ],
         merch : [
