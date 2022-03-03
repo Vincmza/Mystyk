@@ -1,6 +1,6 @@
 import { bands } from '../data/bands';
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 
 
 const Band = () => {
@@ -12,6 +12,11 @@ const Band = () => {
     const bandFiltered = bands.filter(elem=> elem.id === id)[0]
     return (
         <div className='band'>
+            <div className='back'>
+                <NavLink to={"/bands"}>
+                    <input className='back__toBands' type="button" value={"Retour aux groupes"}/>
+                </NavLink>
+            </div>
             <div className='band__wrapper'>
                 <h1 className='band__name'>{bandFiltered.name}</h1>
                 <div className='band__style'>

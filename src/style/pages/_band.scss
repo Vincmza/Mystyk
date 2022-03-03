@@ -3,6 +3,27 @@
         opacity:1;
     }
 }
+.back{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px;
+    opacity:0;
+    animation: bandApparition 1.5s linear forwards;
+    &__toBands{
+        border: none;
+        padding: 10px 20px;
+        background-color: rgb(117, 7, 7);
+        color: wheat;
+        border-radius: 5px;
+        transform: scale(1);
+        transition:500ms;
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
+}
 .band{
     color:wheat;
     padding-bottom: 20px;

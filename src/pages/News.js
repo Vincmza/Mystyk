@@ -21,7 +21,7 @@ const News = (props) => {
                     </div>
                     <div className='newsContent'>
                         <div className='newsHeader'>
-                            <div className='bandName' onClick={()=>goToBandPage(item.bandId, "band")}>
+                            <div className='bandName' onClick={()=>goToBandPage(item.bandId, "bands")}>
                                {item.bandName()}
                             </div>
                             <div className='date'>
