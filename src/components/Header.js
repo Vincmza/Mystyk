@@ -10,10 +10,13 @@ const Header = (props) => {
     let navigate = useNavigate()
     const redirect = (pageName)=>{
         const thePageToGo = allPages.find((elem)=>elem === pageName)
-        props.isPageClicked.shift()
+        props.isPageClicked.length > 0 && props.isPageClicked.shift()
+        localStorage.clear()
+        localStorage.setItem("menu", pageName)
         props.setIsPageClicked([pageName])
         navigate(`/${thePageToGo}`)
     }
+    console.log(props.isPageClicked[0])
     //BOOLEAN STATE TO DISPLAY NAV MENU
     const [isIconClicked, setIsIconClicked] = useState(false)
     //CHANGE STATE VALUE

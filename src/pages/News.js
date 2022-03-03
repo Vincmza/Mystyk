@@ -6,7 +6,7 @@ const News = () => {
         <div className='news'>
             <ul className='news__wrapper'>
                 {news.map((item,index)=>
-                (<li key={item} className="news__wrapper__oneNews" style={{animationDelay: `${index*400}ms`}}>
+                (<li key={item.id} className="news__wrapper__oneNews" style={{animationDelay: `${index*400}ms`}}>
                     <div className='imgContainer'>
                         <img src={item.image} alt={`photo de ${item.bandName()}`}/>
                     </div>

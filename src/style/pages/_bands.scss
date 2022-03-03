@@ -52,11 +52,11 @@
     font-size: 1.2em;
     padding: 10px;
 }
-.bandsImgPosition{
+.bandsLogoPosition{
     display: flex;
     justify-content: center;
 }
-.bandsImgContainer{
+.bandsLogoContainer{
     width:400px;
     height:250px;
     transform: scale(1);
@@ -70,7 +70,7 @@
         height:150px;
     }
 }
-.bandsImg{
+.bandsLogo{
     width:100%;
     height:100%;
     object-fit: contain;

@@ -16,6 +16,14 @@ import Header from "./components/Header";
 function App() {
   //PAGE CLICKED STATE
   const [isPageClicked, setIsPageClicked]=useState([])
+  const checkMenu = ()=>{
+    let menuKey = localStorage.getItem("menu")
+    if(isPageClicked.length === 0){
+      setIsPageClicked([menuKey.toString()])
+    }
+  }
+  checkMenu()
+  console.log("state header", isPageClicked)
   return (
     <div className="App">
       <BrowserRouter>

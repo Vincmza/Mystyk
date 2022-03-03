@@ -6,6 +6,7 @@ const Host = (props) => {
     let navigate = useNavigate()
     const redirect = ()=>{
         props.setIsPageClicked(["news"])
+        localStorage.setItem("menu", "news")
         navigate("/news")
     }
 
