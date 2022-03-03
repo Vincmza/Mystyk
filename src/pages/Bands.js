@@ -6,6 +6,7 @@ const Bands = () => {
 
     return (
         <div className='bands'>
+            <h1 className='bandsIntro'>Mystyk's artists</h1>
             <ul className='bands__wrapper'>
                 {bands.map((item, index)=>(
                     <li key={item.id} className='bands__wrapper__oneBand' style={{animationDelay: `${index*400}ms`}}>

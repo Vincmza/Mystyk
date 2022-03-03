@@ -24,7 +24,7 @@ const Header = (props) => {
         setIsIconClicked((pv)=>!pv)
     }
     return (
-        <div>
+        <div className='headerContainer'>
             {isIconClicked === false ? 
             (<>
                 <div className='nav-icon'>

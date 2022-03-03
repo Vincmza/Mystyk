@@ -9,7 +9,8 @@ const Band = () => {
     const bandFiltered = bands.filter(elem=> elem.id === id)
     console.log("le param", bandFiltered)
     return (
-        <div style={{color: "red"}}>
+        <div className='band'>
+            
             <h1>{bandFiltered[0].name}</h1>
         </div>
     );
