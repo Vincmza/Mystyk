@@ -9,7 +9,7 @@ const Bands = () => {
             <h1 className='bandsIntro'>Mystyk's artists</h1>
             <ul className='bands__wrapper'>
                 {bands.map((item, index)=>(
-                    <li key={item.id} className='bands__wrapper__oneBand' style={{animationDelay: `${index*400}ms`}}>
+                    <li key={item.id} className='bands__wrapper--oneBand' style={{animationDelay: `${index*400}ms`}}>
                         <div className='bandsHeader'>
                             <NavLink to={`/band/${item.id}`}><div className='bandsName'>{item.name}</div></NavLink>
                             <div className='bandsContent'>

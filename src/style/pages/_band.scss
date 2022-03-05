@@ -1,3 +1,9 @@
+@keyframes releaseApparition {
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
 @keyframes bandApparition{
     to{
         opacity:1;
@@ -37,10 +43,16 @@
         padding:10px;
         opacity:0;
         animation: bandApparition 1.5s linear forwards;
+        @media screen and (max-width:700px) {
+            width:90%;
+        }
+        @media screen and (max-width:350px) {
+            width:95%;
+            padding:0px;
+        }
     }
     &__header{
         border: 1px solid wheat;
-        // background-image: url("../../assets/bands/in_hell/music/in_hell_lex_cd.jpg");
         background-repeat: no-repeat;
         height: 350px;
         border-radius: 5px 5px 0px 0px;
@@ -82,13 +94,76 @@
 .lineUp{
     display: flex;
     // border:1px solid pink;
-    &__member{
-        // border:1px solid blue;
-    }
     &__role{
         display: flex;
     }
 }
 .role{
     padding-left: 10px;
+}
+.releases{
+    padding:20px;
+    // border:1px solid red;
+    &__title{
+        padding:10px;
+        font-size: 1.3em;
+        text-decoration: underline;
+    }
+    &__list{
+        display: flex;
+        flex-wrap:wrap ;
+        justify-content: space-between;
+        // border:1px solid rgb(85, 150, 235);
+        width: 100%;
+        padding:0px 10px;
+        @media screen and (max-width:580px) {
+            justify-content: center;
+        }
+        &--card{
+            padding: 10px;
+            border:1px solid rgb(117, 7, 7);
+            border-radius: 5px;
+            box-shadow: 1px 1px 5px wheat;
+            width:30%;
+            margin-top: 20px;
+            opacity:0;
+            transform:translateY(-10vw);
+            animation : releaseApparition 1s linear forwards;
+            @media screen and (max-width:1100px) {
+                width:40%;
+            }
+            @media screen and (max-width:900px) {
+                width:50%;
+            }
+            @media screen and (max-width:580px) {
+                width:100%;
+            }
+        }
+    }
+}
+.releasesImgContainer{
+    width:200px;
+    height:200px;
+    margin: auto;
+    transform: scale(1);
+    transition: 400ms;
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+    @media screen and (max-width:350px) {
+        width: 150px;
+        height: 150px;
+    }
+}
+.releasesImg{
+    width:100%;
+    height:100%;
+}
+.infos{
+    padding:10px 0px;
+    &__title{
+        margin-bottom: 10px;
+        text-align: center;
+    }
 }

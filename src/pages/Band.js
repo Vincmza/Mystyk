@@ -22,8 +22,12 @@ const Band = () => {
                 <div className='band__header' style={{backgroundImage: `url(${bandFiltered.banner})`}}>
                     <h1 className='band__name'>{bandFiltered.name}</h1>
                     <div className='band__style'>
-                        <span className='band__style band__style--main'>Style général : {bandFiltered.style}.</span>
-                        <span className='band__style band__style--sub'>Sous-genre : {bandFiltered.subStyle}.</span>
+                        <span className='band__style'>Style général : 
+                            <span className='band__style--main'>{bandFiltered.style}.</span>
+                        </span>
+                        <span className='band__style'>Sous-genre : 
+                            <span className='band__style--sub'>{bandFiltered.subStyle}.</span>
+                        </span>
                     </div>
                 </div>
                 <div className='bio'>
@@ -57,6 +61,24 @@ const Band = () => {
                             </li>))}
                         </ul>
                     </div>
+                </div>
+                <div className='releases'>
+                    <h3 className='releases__title'>Releases</h3>
+                    <ul className='releases__list'>
+                        {bandFiltered.releases.map((elem, index)=>(
+                            <li className='releases__list--card' key={elem.id} style={{animationDelay : `${index*250}ms`}}>
+                                <div className='releasesImgContainer'>
+                                    <img className='releasesImg' src={elem.frontCover} alt={`Pochette de l'album ${elem.title}`}/>
+                                </div>
+                                <div className='infos'>
+                                    <div className='infos__title'>{elem.title}</div>
+                                    <div className='infos__date'>Release date : {elem.releaseDate}</div>
+                                    <div className='infos__format'>Format : {elem.format}</div>
+                                    <div className='infos__duration'>Duration : {elem.duration}</div>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </div>

@@ -49,9 +49,11 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                year : 2022,
                 bandId : 1,
+                year : 2022,
+                releaseDate :"24/01/2022",
                 title : "Noctis, Avem et Gloria",
+                duration: "58 min",
                 subStyle : "atmospheric black/death",
                 frontCover : kosmosNoctisArt,
                 purchase : "path to shop",
@@ -68,6 +70,7 @@ export const bands = [
                     return returnName(this.bandId) 
                 },
                 format : "t-shirt",
+                description : "high quality coton, available in S,M,L,XL sizes",
                 itemPicture : kosmosTshirt,
                 available : true
             }
@@ -108,13 +111,55 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                year : 2022,
+                id : 1,
                 bandId : 2,
+                year : 2022,
+                releaseDate : "22/01/2022",
                 title : "Lex Divina Terrores",
+                duration:"47 min",
                 subStyle : "blackened death",
                 frontCover : inHellLexArt,
                 purchase : "path to shop",
-                format : "cd",
+                format : "cd digipack",
+                available : true
+            },
+            {
+                id : 2,
+                bandId : 2,
+                year : 2019,
+                releaseDate : "17/04/2019",
+                title : "Mes kouilles en ski",
+                duration:"42 min",
+                subStyle : "blackened death",
+                frontCover : inHellLexArt,
+                purchase : "path to shop",
+                format : "cd jewel case",
+                available : true
+            },
+            {
+                id : 3,
+                bandId : 2,
+                year : 2018,
+                releaseDate : "06/08/2018",
+                title : "En levrette sur l'établi démoniaque",
+                duration:"25 min",
+                subStyle : "blackened death",
+                frontCover : inHellLexArt,
+                purchase : "path to shop",
+                format : "cd jewel case",
+                available : true
+            },
+            {
+                id : 4,
+                bandId : 2,
+                year : 2016,
+                releaseDate : "05/11/2016",
+                title : "A poil dans la salle de bain sans brosse à dents",
+                duration:"49 min",
+                subStyle : "blackened death",
+                frontCover : inHellLexArt,
+                purchase : "path to shop",
+                format : "cd jewel case",
                 available : true
             }
         ],
@@ -127,6 +172,7 @@ export const bands = [
                     return returnName(this.bandId) 
                 },
                 format : "t-shirt",
+                description : "high quality coton, available in S,M,L,XL sizes",
                 itemPicture : inHellTshirt,
                 available : true
             }
