@@ -10,22 +10,20 @@ const Band = () => {
     let id = Number(bandId)
     //GOT ALL BAND'S DATA
     const bandFiltered = bands.filter(elem=> elem.id === id)[0]
+    console.log(bandFiltered)
     return (
         <div className='band'>
             <div className='back'>
                 <NavLink to={"/bands"}>
-                    <input className='back__toBands' type="button" value={"Retour aux groupes"}/>
+                    <input className='back__toBands' type="button" value={"Back to bands"}/>
                 </NavLink>
             </div>
             <div className='band__wrapper'>
-                <h1 className='band__name'>{bandFiltered.name}</h1>
-                <div className='band__style'>
-                    <span className='band__style band__style--main'>Style général : {bandFiltered.style}.</span>
-                    <span className='band__style band__style--sub'>Sous-genre : {bandFiltered.subStyle}.</span>
-                </div>
-                <div className='banner'>
-                    <div className='banner__container'>
-                        <img className='bannerImg' src={bandFiltered.bandLogo} alt={`logo du groupe ${bandFiltered.name}`}/>
+                <div className='band__header' style={{backgroundImage: `url(${bandFiltered.banner})`}}>
+                    <h1 className='band__name'>{bandFiltered.name}</h1>
+                    <div className='band__style'>
+                        <span className='band__style band__style--main'>Style général : {bandFiltered.style}.</span>
+                        <span className='band__style band__style--sub'>Sous-genre : {bandFiltered.subStyle}.</span>
                     </div>
                 </div>
                 <div className='bio'>

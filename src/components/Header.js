@@ -16,7 +16,6 @@ const Header = (props) => {
         props.setIsPageClicked([pageName])
         navigate(`/${thePageToGo}`)
     }
-    console.log(props.isPageClicked[0])
     //BOOLEAN STATE TO DISPLAY NAV MENU
     const [isIconClicked, setIsIconClicked] = useState(false)
     //CHANGE STATE VALUE

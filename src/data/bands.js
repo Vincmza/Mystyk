@@ -1,8 +1,11 @@
-//LOGO // Nom du groupe + logo
+//LOGO // Nom du groupe + Logo
 //KOSMOS
 import kosmosLogo from "../assets/bands/kosmos/logo/kosmos_logo.jpg"
 //IN HELL
 import inHellLogo from "../assets/bands/in_hell/logo/in_hell_logo.jpg"
+//BANNER // Nom du groupe + Banner
+import inHellBanner from "../assets/bands/in_hell/banner/in_hell_lex_cd.jpg"
+import kosmosBanner from "../assets/bands/kosmos/banner/kosmos_noctis_cd.jpg"
 //FRONT COVER // Nom du groupe + premier mot de l'album + Art pour Artwork
 //KOSMOS
 import kosmosNoctisArt from "../assets/bands/kosmos/music/kosmos_noctis_cd.jpg"
@@ -26,7 +29,7 @@ export const bands = [
         subStyle : "atmospheric black/death",
         biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt consectetur enim, eget venenatis justo laoreet et. Mauris aliquet egestas leo quis faucibus. Nulla fringilla lacus eget luctus fringilla. Etiam neque magna, dapibus non elit vitae, lobortis consequat est. Donec mollis cursus massa eget rutrum. Quisque sed tellus dictum, lacinia neque id, viverra arcu. Duis massa elit, euismod eget varius sit amet, porta at massa. Duis eget arcu eget lorem efficitur consequat ornare vitae ante. Duis placerat dui in tortor euismod pellentesque. Nam tincidunt ligula at felis aliquam accumsan. Nullam vitae ultrices lectus. Pellentesque tempus sollicitudin lacinia. Phasellus accumsan fringilla arcu, ut commodo ex vehicula nec. Nulla ultricies ante quis lacus bibendum maximus. Pellentesque quis elit volutpat, congue arcu eu, viverra libero.",
         bandLogo: kosmosLogo,
-        memberPicture : kosmosNoctisArt,
+        banner : kosmosBanner,
         country : "France",
         lineUp : [
             {
@@ -78,7 +81,7 @@ export const bands = [
         subStyle : "blackened death",
         biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt consectetur enim, eget venenatis justo laoreet et. Mauris aliquet egestas leo quis faucibus. Nulla fringilla lacus eget luctus fringilla. Etiam neque magna, dapibus non elit vitae, lobortis consequat est. Donec mollis cursus massa eget rutrum. Quisque sed tellus dictum, lacinia neque id, viverra arcu. Duis massa elit, euismod eget varius sit amet, porta at massa. Duis eget arcu eget lorem efficitur consequat ornare vitae ante. Duis placerat dui in tortor euismod pellentesque. Nam tincidunt ligula at felis aliquam accumsan. Nullam vitae ultrices lectus. Pellentesque tempus sollicitudin lacinia. Phasellus accumsan fringilla arcu, ut commodo ex vehicula nec. Nulla ultricies ante quis lacus bibendum maximus. Pellentesque quis elit volutpat, congue arcu eu, viverra libero.",
         bandLogo: inHellLogo,
-        memberPicture : "",
+        banner: inHellBanner,
         country : "France",
         lineUp : [
             {

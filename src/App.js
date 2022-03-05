@@ -18,7 +18,7 @@ function App() {
   const [isPageClicked, setIsPageClicked]=useState([])
   const checkMenu = ()=>{
     let menuKey = localStorage.getItem("menu")
-    if(isPageClicked.length === 0){
+    if(isPageClicked.length === 0 && menuKey !== null){
       setIsPageClicked([menuKey.toString()])
     }
   }
