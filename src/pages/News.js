@@ -5,6 +5,7 @@ import {FaYoutube} from "react-icons/fa"
 
 const News = (props) => {
     let navigate = useNavigate()
+    //GO TO BAND PAGE WHEN BAND NAME IS CLICKED
     const goToBandPage = (bandId, pageName)=>{
         props.isPageClicked.length > 0 && props.isPageClicked.shift()
         localStorage.clear()
@@ -17,31 +18,31 @@ const News = (props) => {
             <ul className='news__wrapper'>
                 <h1 className='newsIntro'>Latest news</h1>
                 {news.map((item,index)=>
-                (<li key={item.id} className="news__wrapper__oneNews" style={{animationDelay: `${index*400}ms`}}>
-                    <div className='imgContainer'>
+                (<li key={item.id} className="newsCard" style={{animationDelay: `${index*400}ms`}}>
+                    <div className='newsCard__imgContainer'>
                         <img src={item.image} alt={`photo de ${item.bandName()}`}/>
                     </div>
-                    <div className='newsContent'>
-                        <div className='newsHeader'>
-                            <div className='bandName' onClick={()=>goToBandPage(item.bandId, "bands")}>
+                    <div className='newsCard__newsContent'>
+                        <div className='newsCard__newsContent__newsHeader'>
+                            <div className='newsCard__newsContent__newsHeader--bandName' onClick={()=>goToBandPage(item.bandId, "bands")}>
                                {item.bandName()}
                             </div>
-                            <div className='date'>
+                            <div className='newsCard__newsContent__newsHeader'>
                                 {item.date}
                             </div>
                         </div>
-                        <div className='newsTitle'>
+                        <div className='newsCard__newsContent__newsTitle'>
                             {item.title}
                         </div>
-                        <div className='newsArticle'>
+                        <div className='newsCard__newsContent__newsArticle'>
                             {item.content}
                         </div>
-                        <div className='newsListen'>
+                        <div className='newsCard__newsContent__newsListen'>
                             {item.listen().length > 0 ?
                                 (
-                                <div className='newsListen__container'>
-                                    <p className='newsListen__container--title'>Cliquez pour écouter : </p>
-                                    <a className='newsListen__container--link' href={item.listen()[0].linkToListen}>
+                                <div className='newsCard__newsContent__newsListen__container'>
+                                    <p className='newsCard__newsContent__newsListen__container--title'>Cliquez pour écouter : </p>
+                                    <a className='newsCard__newsContent__newsListen__container--link' href={item.listen()[0].linkToListen}>
                                         <FaYoutube/>
                                     </a>
                                 </div>

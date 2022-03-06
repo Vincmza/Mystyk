@@ -1,12 +1,15 @@
+//ANIMATION WHILE BEING DISPLAYED
 @keyframes newsDisplay{
     to{
         opacity:1;
     }
 }
+//REMOVE NATURAL STYLE FROM A TAG
 a{
     text-decoration-line: unset;
     color: unset;
 }
+//STYLE TO MAIN CONTAINER TAGS
 .news{
     color:wheat;
     // border: 1px solid yellow;
@@ -21,102 +24,95 @@ a{
     }
     &__wrapper{
         width:auto;
-        &__oneNews {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height:280px;
-            border: 1px solid wheat;
-            box-shadow: 1px 1px 5px red;
-            border-radius: 5px;
-            margin-top:20px;
-            opacity:0;
-            animation: newsDisplay 1.2s linear forwards;
-            @media screen and (max-width:900px) {
-                height:auto;
-                flex-direction: column; 
-                align-items: center;
-            }
-        }
-    }
-}
-.newsIntro{
-    padding: 10px;
-    text-align: center;
-    font-size: 2em;
-    text-shadow: red 1px 0 10px;
-    border-bottom: 1px solid red;
-    margin-bottom: 50px;
-    height: 70px;
-}
-.imgContainer {
-    padding: 10px;
-    width:250px;
-    height:250px;
-}
+    };
+};
+//STYLE BY DEFAULT TO IMAGES
 img {
     width:100%;
     height:100%;
     object-fit: cover;
 }
-.newsContent {
-    width:80%;
-    display: flex;
-    flex-direction: column;
-    // border:1px solid green;
-    @media screen and (max-width:900px) {
-        width:100%;
-    }
-}
-.newsHeader {
+.newsCard{
     display: flex;
     justify-content: space-between;
-    padding: 10px;
-}
-.newsArticle {
-    padding: 10px;
-    overflow-wrap: break-word;
-    @media screen and (max-width:1070px) {
-        font-size: 0.8em;
-    }
-}
-.newsTitle {
-    padding: 10px;
-    // border:1px solid red;
-}
-.bandName {
-    font-size: 1.5em;
-    text-shadow: red 1px 0 10px;
-    transform: scale(1);
-    transition:500ms;
-    &:hover{
-        transform: scale(1.1);
-        cursor: pointer;
-    }
-}
-.newsListen{
-    // border:1px solid green;
-    display: flex;
     align-items: center;
-    &__container{
-        padding:0px 10px;
-        display: flex;
+    height:280px;
+    border: 1px solid wheat;
+    box-shadow: 1px 1px 5px red;
+    border-radius: 5px;
+    margin-top:20px;
+    opacity:0;
+    animation: newsDisplay 1.2s linear forwards;
+    @media screen and (max-width:900px) {
+        height:auto;
+        flex-direction: column; 
         align-items: center;
-        &--title{
-            font-size: 0.8em;
+    }
+    &__imgContainer{
+        padding: 10px;
+        width:250px;
+        height:250px;
+    }
+    &__newsContent{
+        width:80%;
+        display: flex;
+        flex-direction: column;
+        // border:1px solid green;
+        @media screen and (max-width:900px) {
+            width:100%;
         }
-        &--link{
-            color:red;
+        &__newsHeader{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            &--bandName{
+                font-size: 1.5em;
+                text-shadow: red 1px 0 10px;
+                transform: scale(1);
+                transition:500ms;
+                &:hover{
+                    transform: scale(1.1);
+                    cursor: pointer;
+                }
+            }
+        }
+        &__newsTitle{
+            padding: 10px;
+            // border:1px solid red;
+        }
+        &__newsArticle{
+            padding: 10px;
+            overflow-wrap: break-word;
+            @media screen and (max-width:1070px) {
+                font-size: 0.8em;
+            }
+        }
+        &__newsListen{
+            // border:1px solid green;
             display: flex;
             align-items: center;
-            font-size: 1.4em;
-            padding-left: 10px;
-            transform:scale(1);
-            transition:400ms;
-            &:hover{
-                transform:scale(1.2);
+            &__container{
+                padding:0px 10px;
+                display: flex;
+                align-items: center;
+                &--title{
+                    font-size: 0.8em;
+                }
+                &--link{
+                    color:red;
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.4em;
+                    padding-left: 10px;
+                    transform:scale(1);
+                    transition:400ms;
+                    &:hover{
+                        transform:scale(1.2);
+                    }
+                }
             }
         }
     }
 }
+
 
