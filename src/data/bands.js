@@ -58,6 +58,7 @@ export const bands = [
                 frontCover : kosmosNoctisArt,
                 purchase : "path to shop",
                 format : "cd digipack",
+                listen : [{youTube : ""}],
                 available : true,
             }
         ],
@@ -86,6 +87,7 @@ export const bands = [
         bandLogo: inHellLogo,
         banner: inHellBanner,
         country : "France",
+        followLinks : [{faceBook: ""},{bandCamp : ""}],
         lineUp : [
             {
                 name : "Darkhell",
@@ -121,6 +123,7 @@ export const bands = [
                 frontCover : inHellLexArt,
                 purchase : "path to shop",
                 format : "cd digipack",
+                listen : [{youTube : ""}],
                 available : true
             },
             {
@@ -134,6 +137,7 @@ export const bands = [
                 frontCover : inHellLexArt,
                 purchase : "path to shop",
                 format : "cd jewel case",
+                listen : [{youTube : ""}],
                 available : true
             },
             {
@@ -147,6 +151,7 @@ export const bands = [
                 frontCover : inHellLexArt,
                 purchase : "path to shop",
                 format : "cd jewel case",
+                listen : [{youTube : ""}],
                 available : true
             },
             {
@@ -160,6 +165,7 @@ export const bands = [
                 frontCover : inHellLexArt,
                 purchase : "path to shop",
                 format : "cd jewel case",
+                listen : [{youTube : ""}],
                 available : true
             }
         ],

@@ -1,6 +1,7 @@
 import React from 'react';
 import {news} from '../data/news';
 import { useNavigate } from 'react-router-dom';
+import {FaYoutube} from "react-icons/fa"
 
 const News = (props) => {
     let navigate = useNavigate()
@@ -14,6 +15,7 @@ const News = (props) => {
     return (
         <div className='news'>
             <ul className='news__wrapper'>
+                <h1 className='newsIntro'>Latest news</h1>
                 {news.map((item,index)=>
                 (<li key={item.id} className="news__wrapper__oneNews" style={{animationDelay: `${index*400}ms`}}>
                     <div className='imgContainer'>
@@ -33,6 +35,20 @@ const News = (props) => {
                         </div>
                         <div className='newsArticle'>
                             {item.content}
+                        </div>
+                        <div className='newsListen'>
+                            {item.listen().length > 0 ?
+                                (
+                                <div className='newsListen__container'>
+                                    <p className='newsListen__container--title'>Cliquez pour écouter : </p>
+                                    <a className='newsListen__container--link' href={item.listen()[0].linkToListen}>
+                                        <FaYoutube/>
+                                    </a>
+                                </div>
+                                )
+                                :
+                                (<></>)
+                            }
                         </div>
                     </div>
                 </li>))}

@@ -23,7 +23,6 @@ function App() {
     }
   }
   checkMenu()
-  console.log("state header", isPageClicked)
   return (
     <div className="App">
       <BrowserRouter>
