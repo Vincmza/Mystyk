@@ -9,7 +9,6 @@ import kosmosTshirt from "../assets/bands/kosmos/merch/kosmos_t-shirt.jpg"
 //COMPARE BANDID AND ID KEY IN BANDS ARRAY TO RETURN RIGHT BAND'S NAME
 export const returnName = (bandId)=>{
     return bands.filter((elem)=>elem.id === bandId)[0].name
-    
 }
 export const news = [
     {
@@ -17,7 +16,7 @@ export const news = [
         isMusicAvailable : true,
         listen : function(){
             if(this.isMusicAvailable === true){
-                return [{linkToListen : "https://www.youtube.com/watch?v=lJRzTr8xVec"}]
+                return [{linkToListen : "https://www.youtube.com/watch?v=gJeVulBg1pY"}]
             } else if(this.isMusicAvailable === false) {
                 return []
             }
