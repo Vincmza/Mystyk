@@ -10,7 +10,7 @@ const Band = () => {
     let id = Number(bandId)
     //GOT ALL BAND'S DATA
     const bandFiltered = bands.filter(elem=> elem.id === id)[0]
-    console.log(bandFiltered)
+    //CONDITIONNALE STYLE
     return (
         <div className='band'>
             <div className='back'>
@@ -64,9 +64,9 @@ const Band = () => {
                 </div>
                 <div className='releases'>
                     <h3 className='releases__title'>Releases</h3>
-                    <ul className='releases__list'>
+                    <ul className='releases__list' style={{justifyContent : bandFiltered.releases.length > 2 ? "space-between" : "unset"}}>
                         {bandFiltered.releases.map((elem, index)=>(
-                            <li className='releases__list__card' key={elem.id} style={{animationDelay : `${index*250}ms`}}>
+                            <li className='releases__list__card' key={elem.id} style={{animationDelay : `${index*250}ms`, marginRight : bandFiltered.releases.length <= 2 ? "60px" : "0px"}}>
                                 <div className='releases__list__card__imgContainer'>
                                     <img className='releases__list__card__imgContainer__file' src={elem.frontCover} alt={`Pochette de l'album ${elem.title}`}/>
                                 </div>
@@ -75,6 +75,22 @@ const Band = () => {
                                     <div className='releases__list__card__infos--date'>Release date : {elem.releaseDate}</div>
                                     <div className='releases__list__card__infos--format'>Format : {elem.format}</div>
                                     <div className='releases__list__card__infos--duration'>Duration : {elem.duration}</div>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className='merch'>
+                    <h3 className='merch__title'>Merch</h3>
+                    <ul className='merch__list' style={{justifyContent : bandFiltered.merch.length > 2 ? "space-between" : "unset"}}>
+                        {bandFiltered.merch.map((elem,index)=>(
+                            <li key={elem.id} className="merch__list__card" style={{animationDelay : `${index*250}ms`, marginRight : bandFiltered.merch.length <= 2 ? "60px" : "0px"}}>
+                                <div className='merch__list__card__imgContainer'>
+                                    <img className='merch__list__card__imgContainer__file' src={elem.itemPicture} alt={`image du ${elem.format}`}/>
+                                </div>
+                                <div className='merch__list__card__infos'>
+                                    <div className='merch__list__card__infos--format'>format : {elem.format}</div>
+                                    <div className='merch__list__card__infos--description'>description : {elem.description}</div>
                                 </div>
                             </li>
                         ))}

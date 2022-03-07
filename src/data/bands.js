@@ -11,6 +11,7 @@ import kosmosBanner from "../assets/bands/kosmos/banner/kosmos_noctis_cd.jpg"
 import kosmosNoctisArt from "../assets/bands/kosmos/music/kosmos_noctis_cd.jpg"
 //IN HELL
 import inHellLexArt from "../assets/bands/in_hell/music/in_hell_lex_cd.jpg"
+import inHellSatanicaArt from "../assets/bands/in_hell/music/in_hell_satanica_cd.jpg"
 //MERCH // Nom du groupe + nature du merch à définir avec le temps
 //KOSMOS
 import kosmosTshirt from "../assets/bands/kosmos/merch/kosmos_t-shirt.jpg"
@@ -56,10 +57,15 @@ export const bands = [
                 duration: "58 min",
                 subStyle : "atmospheric black/death",
                 frontCover : kosmosNoctisArt,
-                purchase : "path to shop",
                 format : "cd digipack",
-                available : true,
-                listen : [{youTube : ""}],
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [{youTube : ""}, {bandCamp : ""}, {seasonShop : "https://shop.season-of-mist.com/kosmos-noctis-avem-et-gloria-cd-digipak"}]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
             }
         ],
         merch : [
@@ -73,7 +79,14 @@ export const bands = [
                 format : "t-shirt",
                 description : "high quality coton, available in S,M,L,XL sizes",
                 itemPicture : kosmosTshirt,
-                available : true
+                isItemAvailable : true,
+                purchase : function(){
+                    if(this.isItemAvailable===true){
+                        return [{linkToBuy : ""}]
+                    } else if(this.isItemAvailable===false){
+                        return[]
+                    }
+                },
             }
         ]
     },
@@ -123,22 +136,33 @@ export const bands = [
                 frontCover : inHellLexArt,
                 purchase : "path to shop",
                 format : "cd digipack",
-                available : true,
-                listen : [{youTube : ""}],
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [{youTube : ""}, {bandCamp : ""}, {seasonShop : "https://shop.season-of-mist.com/in-hell-lex-divina-terrores-cd-digipak"}]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
             },
             {
                 id : 2,
                 bandId : 2,
                 year : 2019,
                 releaseDate : "17/04/2019",
-                title : "Mes kouilles en ski",
+                title : "Satanica Mundi",
                 duration:"42 min",
                 subStyle : "blackened death",
-                frontCover : inHellLexArt,
-                purchase : "path to shop",
+                frontCover : inHellSatanicaArt,
                 format : "cd jewel case",
-                available : true,
-                listen : [{youTube : ""}],
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [{youTube : ""}, {bandCamp : ""}, {seasonShop : "https://shop.season-of-mist.com/in-hell-satanica-mundi-cd-digipak"}]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
             },
             {
                 id : 3,
@@ -149,10 +173,15 @@ export const bands = [
                 duration:"25 min",
                 subStyle : "blackened death",
                 frontCover : inHellLexArt,
-                purchase : "path to shop",
                 format : "cd jewel case",
-                available : true,
-                listen : [{youTube : ""}],
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [{youTube : ""}, {bandCamp : ""}, {seasonShop :""}]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
             },
             {
                 id : 4,
@@ -165,35 +194,74 @@ export const bands = [
                 frontCover : inHellLexArt,
                 purchase : "path to shop",
                 format : "cd jewel case",
-                available : true,
-                listen : [{youTube : ""}],
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [{youTube : ""}, {bandCamp : ""}, {seasonShop :""}]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
             }
         ],
         merch : [
 
             {
                 id : 1,
-                bandId : 2,
+                bandId :2,
+                albumId : 1,
                 bandName : function(){
                     return returnName(this.bandId) 
                 },
                 format : "t-shirt",
                 description : "high quality coton, available in S,M,L,XL sizes",
                 itemPicture : inHellTshirt,
-                purchase : "",
-                available : true
+                isItemAvailable : true,
+                purchase : function(){
+                    if(this.isItemAvailable===true){
+                        return [{linkToBuy : ""}]
+                    } else if(this.isItemAvailable===false){
+                        return[]
+                    }
+                },
             },
             {
                 id : 2,
                 bandId : 2,
+                albumId : 1,
                 bandName : function(){
                     return returnName(this.bandId) 
                 },
-                format : "bundle cd + t-shirt",
+                format : "bundle",
                 description : "Digipack cd and t-shirt (available sizes : S,M,L,XL)",
                 itemPicture : inHellTshirt,
-                purchase : "",
-                available : true
+                isItemAvailable : true,
+                purchase : function(){
+                    if(this.isItemAvailable===true){
+                        return [{linkToBuy : ""}]
+                    } else if(this.isItemAvailable===false){
+                        return[]
+                    }
+                },
+            },
+            {
+                id : 2,
+                bandId : 2,
+                albumId : 1,
+                bandName : function(){
+                    return returnName(this.bandId) 
+                },
+                format : "bundle",
+                description : "Digipack cd and t-shirt (available sizes : S,M,L,XL)",
+                itemPicture : inHellTshirt,
+                isItemAvailable : true,
+                purchase : function(){
+                    if(this.isItemAvailable===true){
+                        return [{linkToBuy : ""}]
+                    } else if(this.isItemAvailable===false){
+                        return[]
+                    }
+                },
             }
         ]
     }
