@@ -65,20 +65,34 @@ img {
             display: flex;
             justify-content: space-between;
             padding: 10px;
+            @media screen and (max-width:900px) {
+                flex-direction: column;
+                justify-content: unset;
+                text-align: center;
+            }
             &--bandName{
                 font-size: 1.5em;
                 text-shadow: red 1px 0 10px;
                 transform: scale(1);
                 transition:500ms;
+                display: flex;
+                align-items: center;
                 &:hover{
                     transform: scale(1.1);
                     cursor: pointer;
+                }
+                @media screen and (max-width:900px) {
+                    padding: 10px;
+                    justify-content: center;
                 }
             }
         }
         &__newsTitle{
             padding: 10px;
             // border:1px solid red;
+            @media screen and (max-width:900px) {
+                text-align: center;
+            }
         }
         &__newsArticle{
             padding: 10px;

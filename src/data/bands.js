@@ -58,8 +58,8 @@ export const bands = [
                 frontCover : kosmosNoctisArt,
                 purchase : "path to shop",
                 format : "cd digipack",
-                listen : [{youTube : ""}],
                 available : true,
+                listen : [{youTube : ""}],
             }
         ],
         merch : [
@@ -123,8 +123,8 @@ export const bands = [
                 frontCover : inHellLexArt,
                 purchase : "path to shop",
                 format : "cd digipack",
+                available : true,
                 listen : [{youTube : ""}],
-                available : true
             },
             {
                 id : 2,
@@ -137,8 +137,8 @@ export const bands = [
                 frontCover : inHellLexArt,
                 purchase : "path to shop",
                 format : "cd jewel case",
+                available : true,
                 listen : [{youTube : ""}],
-                available : true
             },
             {
                 id : 3,
@@ -151,8 +151,8 @@ export const bands = [
                 frontCover : inHellLexArt,
                 purchase : "path to shop",
                 format : "cd jewel case",
+                available : true,
                 listen : [{youTube : ""}],
-                available : true
             },
             {
                 id : 4,
@@ -165,8 +165,8 @@ export const bands = [
                 frontCover : inHellLexArt,
                 purchase : "path to shop",
                 format : "cd jewel case",
+                available : true,
                 listen : [{youTube : ""}],
-                available : true
             }
         ],
         merch : [
@@ -180,6 +180,19 @@ export const bands = [
                 format : "t-shirt",
                 description : "high quality coton, available in S,M,L,XL sizes",
                 itemPicture : inHellTshirt,
+                purchase : "",
+                available : true
+            },
+            {
+                id : 2,
+                bandId : 2,
+                bandName : function(){
+                    return returnName(this.bandId) 
+                },
+                format : "bundle cd + t-shirt",
+                description : "Digipack cd and t-shirt (available sizes : S,M,L,XL)",
+                itemPicture : inHellTshirt,
+                purchase : "",
                 available : true
             }
         ]
