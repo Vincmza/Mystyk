@@ -37,44 +37,44 @@ const Band = () => {
                             {bandFiltered.biography}
                         </div>
                     </div>
-                    <div className='bio__lineUp'>
-                        <h3 className='bio__lineUp bio__lineUp--title'>Line up</h3>
-                        <ul className='bio__lineUp bio__lineUp--list'>
-                            {bandFiltered.lineUp.map(elem=>(
-                            <li key={elem.name}>
-                                <div className='lineUp'>
-                                    <div className='lineUp__member'>
-                                        {elem.name} :
-                                    </div>
-                                    <ul className='lineUp__role'>
-                                        {elem.instrument.map((item,index)=>(
-                                            index !== elem.instrument.length-1 ?
-                                            <li className='role' key={index}>
-                                                {item},
-                                            </li> : 
-                                            <li className='role' key={index}>
-                                                {item}.
-                                            </li>)
-                                        )}
-                                    </ul>
+                </div>
+                <div className='lineUp'>
+                    <h3 className='lineUp__title'>Line up</h3>
+                    <ul className='lineUp__list'>
+                        {bandFiltered.lineUp.map(elem=>(
+                        <li key={elem.name}>
+                            <div className='lineUp__list__card'>
+                                <div className='lineUp__list__card--member'>
+                                    {elem.name} :
                                 </div>
-                            </li>))}
-                        </ul>
-                    </div>
+                                <ul className='lineUp__list__card--role'>
+                                    {elem.instrument.map((item,index)=>(
+                                        index !== elem.instrument.length-1 ?
+                                        <li className='role' key={index} style={{paddingLeft:"10px"}}>
+                                            {item},
+                                        </li> : 
+                                        <li className='role' key={index} style={{paddingLeft:"10px"}}>
+                                            {item}.
+                                        </li>)
+                                    )}
+                                </ul>
+                            </div>
+                        </li>))}
+                    </ul>
                 </div>
                 <div className='releases'>
                     <h3 className='releases__title'>Releases</h3>
                     <ul className='releases__list'>
                         {bandFiltered.releases.map((elem, index)=>(
-                            <li className='releases__list--card' key={elem.id} style={{animationDelay : `${index*250}ms`}}>
-                                <div className='releasesImgContainer'>
-                                    <img className='releasesImg' src={elem.frontCover} alt={`Pochette de l'album ${elem.title}`}/>
+                            <li className='releases__list__card' key={elem.id} style={{animationDelay : `${index*250}ms`}}>
+                                <div className='releases__list__card__imgContainer'>
+                                    <img className='releases__list__card__imgContainer__file' src={elem.frontCover} alt={`Pochette de l'album ${elem.title}`}/>
                                 </div>
-                                <div className='infos'>
-                                    <div className='infos__title'>{elem.title}</div>
-                                    <div className='infos__date'>Release date : {elem.releaseDate}</div>
-                                    <div className='infos__format'>Format : {elem.format}</div>
-                                    <div className='infos__duration'>Duration : {elem.duration}</div>
+                                <div className='releases__list__card__infos'>
+                                    <div className='releases__list__card__infos--title'>{elem.title}</div>
+                                    <div className='releases__list__card__infos--date'>Release date : {elem.releaseDate}</div>
+                                    <div className='releases__list__card__infos--format'>Format : {elem.format}</div>
+                                    <div className='releases__list__card__infos--duration'>Duration : {elem.duration}</div>
                                 </div>
                             </li>
                         ))}
