@@ -78,13 +78,13 @@ const Band = () => {
                                 </div>
                                 <div className='releases__list__card__listen'>
                                     {elem.listenAndShop()[0].youTube !== ""&&
-                                        <a className='releases__list__card__listen--youTube' href={elem.listenAndShop()[0].youTube}>{net.youTubeIcon}</a>
+                                        <a title='Ecouter sur Youtube' className='releases__list__card__listen--youTube' href={elem.listenAndShop()[0].youTube}>{net.youTubeIcon}</a>
                                     }
                                     {elem.listenAndShop()[1].bandCamp !== ""&&
-                                        <a className='releases__list__card__listen--bandCamp' href={elem.listenAndShop()[1].bandCamp}>{net.bandCampIcon}</a>
+                                        <a title='Ecouter sur Bandcamp' className='releases__list__card__listen--bandCamp' href={elem.listenAndShop()[1].bandCamp}>{net.bandCampIcon}</a>
                                     }                      
                                     {elem.listenAndShop()[2].seasonShop !== ""&&
-                                        <a className='releases__list__card__listen--seasonShop' href={elem.listenAndShop()[2].seasonShop}>{net.shopIcon}</a>
+                                        <a title='Aller vers le shop de Season of Mist' className='releases__list__card__listen--seasonShop' href={elem.listenAndShop()[2].seasonShop}>{net.shopIcon}</a>
                                     }
                                 </div>
                             </li>

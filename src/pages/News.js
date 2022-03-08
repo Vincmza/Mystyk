@@ -41,7 +41,7 @@ const News = (props) => {
                             {item.listen().length > 0 ?
                                 (
                                 <div className='newsCard__newsContent__newsListen__container'>
-                                    <p className='newsCard__newsContent__newsListen__container--title'>Cliquez pour écouter : </p>
+                                    <p className='newsCard__newsContent__newsListen__container--title'>Ecouter sur Youtube : </p>
                                     <a className='newsCard__newsContent__newsListen__container--link' href={item.listen()[0].linkToListen}>
                                         {net.youTubeIcon}
                                     </a>
