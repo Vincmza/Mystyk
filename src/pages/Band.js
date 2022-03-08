@@ -1,7 +1,7 @@
 import { bands } from '../data/bands';
 import React from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import {FaYoutube,FaBandcamp,FaShoppingCart} from "react-icons/fa";
+import * as net from "../data/icons";
 
 
 const Band = () => {
@@ -78,13 +78,13 @@ const Band = () => {
                                 </div>
                                 <div className='releases__list__card__listen'>
                                     {elem.listenAndShop()[0].youTube !== ""&&
-                                        <a className='releases__list__card__listen--youTube' href={elem.listenAndShop()[0].youTube}><FaYoutube/></a>
+                                        <a className='releases__list__card__listen--youTube' href={elem.listenAndShop()[0].youTube}>{net.youTubeIcon}</a>
                                     }
                                     {elem.listenAndShop()[1].bandCamp !== ""&&
-                                        <a className='releases__list__card__listen--bandCamp' href={elem.listenAndShop()[1].bandCamp}><FaBandcamp/></a>
+                                        <a className='releases__list__card__listen--bandCamp' href={elem.listenAndShop()[1].bandCamp}>{net.bandCampIcon}</a>
                                     }                      
                                     {elem.listenAndShop()[2].seasonShop !== ""&&
-                                        <a className='releases__list__card__listen--season' href={elem.listenAndShop()[2].seasonShop}><FaShoppingCart/></a>
+                                        <a className='releases__list__card__listen--seasonShop' href={elem.listenAndShop()[2].seasonShop}>{net.shopIcon}</a>
                                     }
                                 </div>
                             </li>

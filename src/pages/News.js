@@ -1,7 +1,7 @@
 import React from 'react';
 import {news} from '../data/news';
 import { useNavigate } from 'react-router-dom';
-import {FaYoutube} from "react-icons/fa"
+import * as net from "../data/icons";
 
 const News = (props) => {
     let navigate = useNavigate()
@@ -43,7 +43,7 @@ const News = (props) => {
                                 <div className='newsCard__newsContent__newsListen__container'>
                                     <p className='newsCard__newsContent__newsListen__container--title'>Cliquez pour écouter : </p>
                                     <a className='newsCard__newsContent__newsListen__container--link' href={item.listen()[0].linkToListen}>
-                                        <FaYoutube/>
+                                        {net.youTubeIcon}
                                     </a>
                                 </div>
                                 )
