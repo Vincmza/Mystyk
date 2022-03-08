@@ -163,6 +163,37 @@
                     text-align: center;
                 }
             }
+            &__listen{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.1em;
+                // border:1px solid green;
+                &--youTube{
+                    color:red;
+                    transform: scale(1);
+                    transition:300ms;
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+                }
+                &--bandCamp{
+                    color:rgb(29,160,195);
+                    transform: scale(1);
+                    transition:300ms;
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+                }
+                &--season{
+                    transform: scale(1);
+                    transition:300ms;
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+                }
+
+            }
         }
     }
 }

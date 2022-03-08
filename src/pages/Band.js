@@ -1,6 +1,7 @@
 import { bands } from '../data/bands';
 import React from 'react';
 import { NavLink, useParams } from 'react-router-dom';
+import {FaYoutube,FaBandcamp,FaShoppingCart} from "react-icons/fa";
 
 
 const Band = () => {
@@ -10,7 +11,6 @@ const Band = () => {
     let id = Number(bandId)
     //GOT ALL BAND'S DATA
     const bandFiltered = bands.filter(elem=> elem.id === id)[0]
-    //CONDITIONNALE STYLE
     return (
         <div className='band'>
             <div className='back'>
@@ -75,6 +75,17 @@ const Band = () => {
                                     <div className='releases__list__card__infos--date'>Release date : {elem.releaseDate}</div>
                                     <div className='releases__list__card__infos--format'>Format : {elem.format}</div>
                                     <div className='releases__list__card__infos--duration'>Duration : {elem.duration}</div>
+                                </div>
+                                <div className='releases__list__card__listen'>
+                                    {elem.listenAndShop()[0].youTube !== ""&&
+                                        <a className='releases__list__card__listen--youTube' href={elem.listenAndShop()[0].youTube}><FaYoutube/></a>
+                                    }
+                                    {elem.listenAndShop()[1].bandCamp !== ""&&
+                                        <a className='releases__list__card__listen--bandCamp' href={elem.listenAndShop()[1].bandCamp}><FaBandcamp/></a>
+                                    }                      
+                                    {elem.listenAndShop()[2].seasonShop !== ""&&
+                                        <a className='releases__list__card__listen--season' href={elem.listenAndShop()[2].seasonShop}><FaShoppingCart/></a>
+                                    }
                                 </div>
                             </li>
                         ))}
