@@ -11,6 +11,24 @@ const Band = () => {
     let id = Number(bandId)
     //GOT ALL BAND'S DATA
     const bandFiltered = bands.filter(elem=> elem.id === id)[0]
+    //RELEASES AND MERCH LENGTH TO SET UP INLINE CONDITIONNAL MARGIN RIGHT
+    const releasesLength = bandFiltered.releases.length
+    const merchLength = bandFiltered.merch.length
+    //CONDITIONNAL STYLE IN RELATION TO HOW LONG ARE RELEASES AND MERCH ARRAYS
+    const styleReleasesAndMerch = (data)=>{
+        const nbr = data === "releases" ? bandFiltered.releases.length : bandFiltered.merch.length
+        if(nbr%2===0){
+            if(nbr <= 2){
+                return {justifyContent : "center"}
+            }
+            return {justifyContent : "space-between"}
+        }else{
+            if(nbr <= 2){
+                return {justifyContent : "center"}
+            }
+            return {justifyContent : "space-around"}
+        }
+    }
     return (
         <div className='band'>
             <div className='back'>
@@ -64,11 +82,21 @@ const Band = () => {
                 </div>
                 <div className='releases'>
                     <h3 className='releases__title'>Releases</h3>
-                    <ul className='releases__list' style={{justifyContent : bandFiltered.releases.length > 2 ? "space-between" : "unset"}}>
+                    <ul className='releases__list' style={styleReleasesAndMerch("releases")}>
                         {bandFiltered.releases.map((elem, index)=>(
-                            <li className='releases__list__card' key={elem.id} style={{animationDelay : `${index*250}ms`, marginRight : bandFiltered.releases.length <= 2 ? "60px" : "0px"}}>
+                            <li className='releases__list__card' key={elem.id} style={{animationDelay : `${index*250}ms`, marginRight : releasesLength <= 2 && "5%"}}>
                                 <div className='releases__list__card__imgContainer'>
-                                    <img className='releases__list__card__imgContainer__file' src={elem.frontCover} alt={`Pochette de l'album ${elem.title}`}/>
+                                    {elem.listenAndShop()[3].seasonShop !== "" ? 
+                                        (<>
+                                            <a href={elem.listenAndShop()[3].seasonShop}>
+                                                <img className='releases__list__card__imgContainer__file' src={elem.frontCover} alt={`Pochette de l'album ${elem.title}`}/>
+                                            </a>
+                                        </>)
+                                        :
+                                        (<>
+                                            <img className='releases__list__card__imgContainer__file' src={elem.frontCover} alt={`Pochette de l'album ${elem.title}`}/>
+                                        </>)
+                                    }
                                 </div>
                                 <div className='releases__list__card__infos'>
                                     <div className='releases__list__card__infos--title'>{elem.title}</div>
@@ -82,8 +110,11 @@ const Band = () => {
                                     }
                                     {elem.listenAndShop()[1].bandCamp !== ""&&
                                         <a title='Ecouter sur Bandcamp' className='releases__list__card__listen--bandCamp' href={elem.listenAndShop()[1].bandCamp}>{net.bandCampIcon}</a>
+                                    }
+                                    {elem.listenAndShop()[2].spotify !==""&&
+                                        <a title='Ecouter sur Spotify' className='releases__list__card__listen--spotify' href={elem.listenAndShop()[2].spotify}>{net.spotifyIcon}</a>
                                     }                      
-                                    {elem.listenAndShop()[2].seasonShop !== ""&&
+                                    {elem.listenAndShop()[3].seasonShop !== ""&&
                                         <a title='Aller vers le shop de Season of Mist' className='releases__list__card__listen--seasonShop' href={elem.listenAndShop()[2].seasonShop}>{net.shopIcon}</a>
                                     }
                                 </div>
@@ -93,15 +124,28 @@ const Band = () => {
                 </div>
                 <div className='merch'>
                     <h3 className='merch__title'>Merch</h3>
-                    <ul className='merch__list' style={{justifyContent : bandFiltered.merch.length > 2 ? "space-between" : "unset"}}>
+                    <ul className='merch__list' style={styleReleasesAndMerch("merch")}>
                         {bandFiltered.merch.map((elem,index)=>(
-                            <li key={elem.id} className="merch__list__card" style={{animationDelay : `${index*250}ms`, marginRight : bandFiltered.merch.length <= 2 ? "60px" : "0px"}}>
+                            <li key={elem.id} className="merch__list__card" style={{animationDelay : `${index*250}ms`, marginRight : merchLength <= 2 && "5%"}}>
                                 <div className='merch__list__card__imgContainer'>
-                                    <img className='merch__list__card__imgContainer__file' src={elem.itemPicture} alt={`image du ${elem.format}`}/>
+                                    {elem.purchase()[0].linkToBuy !== "" ? 
+                                        (<a href={elem.purchase()[0].linkToBuy}>
+                                            <img className='merch__list__card__imgContainer__file' src={elem.itemPicture} alt={`image du ${elem.format}`}/>
+                                        </a>)
+                                        :
+                                        (<>
+                                            <img className='merch__list__card__imgContainer__file' src={elem.itemPicture} alt={`image du ${elem.format}`}/>
+                                        </>)
+                                    }
                                 </div>
                                 <div className='merch__list__card__infos'>
                                     <div className='merch__list__card__infos--format'>format : {elem.format}</div>
                                     <div className='merch__list__card__infos--description'>description : {elem.description}</div>
+                                </div>
+                                <div className='merch__list__card__shop'>
+                                    {elem.purchase()[0].linkToBuy !== "" && 
+                                        <a href={elem.purchase()[0].linkToBuy}>{net.shopIcon}</a>
+                                    }
                                 </div>
                             </li>
                         ))}

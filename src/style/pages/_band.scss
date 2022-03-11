@@ -21,7 +21,7 @@
         padding: 10px 20px;
         background-color: rgb(117, 7, 7);
         color: wheat;
-        border-radius: 5px;
+        border-radius: 2px;
         transform: scale(1);
         transition:500ms;
         &:hover{
@@ -37,7 +37,7 @@
     &__wrapper{
         border: 1px solid wheat;
         box-shadow: 1px 1px 5px red;
-        border-radius: 5px;
+        border-radius: 2px;
         width:75%;
         margin: auto;
         padding:10px;
@@ -55,7 +55,7 @@
         border: 1px solid wheat;
         background-repeat: no-repeat;
         height: 350px;
-        border-radius: 5px 5px 0px 0px;
+        border-radius: 2px 2px 0px 0px;
     }
     &__name{
         text-align: center;
@@ -110,7 +110,6 @@
     &__list{
         display: flex;
         flex-wrap:wrap;
-        // justify-content: space-between;
         // border:1px solid rgb(85, 150, 235);
         width: 100%;
         padding:0px 10px;
@@ -120,7 +119,7 @@
         &__card{
             padding: 10px;
             border:1px solid rgb(117, 7, 7);
-            border-radius: 5px;
+            border-radius: 2px;
             box-shadow: 1px 1px 5px wheat;
             width:30%;
             margin-top: 20px;
@@ -158,6 +157,7 @@
             }
             &__infos{
                 padding:10px 0px;
+                font-size: 0.9em;
                 &--title{
                     margin-bottom: 10px;
                     text-align: center;
@@ -190,6 +190,15 @@
                     transition:300ms;
                     &:hover{
                         transform: scale(1.2);
+                        cursor: pointer;
+                    }
+                }
+                &--spotify{
+                    color: rgb(30, 215, 96);
+                    transform: scale(1);
+                    transition:300ms;
+                    &:hover{
+                        transform: scale(1.2);
                     }
                 }
 
@@ -217,7 +226,7 @@
         &__card{
             padding: 10px;
             border:1px solid rgb(117, 7, 7);
-            border-radius: 5px;
+            border-radius: 2px;
             box-shadow: 1px 1px 5px wheat;
             width:30%;
             margin-top: 20px;
@@ -255,10 +264,15 @@
             }
             &__infos{
                 padding:10px 0px;
+                font-size: 0.9em;
                 &--title{
                     margin-bottom: 10px;
                     text-align: center;
                 }
+            }
+            &__shop{
+                display: flex;
+                justify-content: flex-end;
             }
         }
     }
