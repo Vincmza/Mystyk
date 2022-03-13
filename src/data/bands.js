@@ -65,10 +65,13 @@ export const bands = [
                 listenAndShop : function(){
                     if(this.isAlbumAvailable === true){
                         return [
-                            {youTube : "https://www.youtube.com/watch?v=gJeVulBg1pY"}, 
-                            {bandCamp : "https://kosmosblackmetal.bandcamp.com/"},
-                            {spotify : ""}, 
-                            {seasonShop : "https://shop.season-of-mist.com/kosmos-noctis-avem-et-gloria-cd-digipak"}]
+                            {
+                                youTube : "https://www.youtube.com/watch?v=gJeVulBg1pY",
+                                bandCamp : "https://kosmosblackmetal.bandcamp.com/",
+                                spotify : "",
+                                seasonShop : "https://shop.season-of-mist.com/kosmos-noctis-avem-et-gloria-cd-digipak"
+                            }
+                        ]
                     } else if (this.isAlbumAvailable === false){
                         return []
                     }
@@ -87,10 +90,13 @@ export const bands = [
                 listenAndShop : function(){
                     if(this.isAlbumAvailable === true){
                         return [
-                            {youTube : "https://www.youtube.com/watch?v=yMiQrgq2MqQ"}, 
-                            {bandCamp : "https://kosmosblackmetal.bandcamp.com/album/lenvol"},
-                            {spotify : ""}, 
-                            {seasonShop : ""}]
+                            {
+                                youTube : "https://www.youtube.com/watch?v=yMiQrgq2MqQ",
+                                bandCamp : "https://kosmosblackmetal.bandcamp.com/album/lenvol",
+                                spotify : "",
+                                seasonShop : ""
+                            }
+                        ]
                     } else if (this.isAlbumAvailable === false){
                         return []
                     }
@@ -186,10 +192,13 @@ export const bands = [
                 listenAndShop : function(){
                     if(this.isAlbumAvailable === true){
                         return [
-                            {youTube : "https://www.youtube.com/watch?v=upge4v_0lq0"}, 
-                            {bandCamp : ""},
-                            {spotify : "https://open.spotify.com/artist/5YODH8RhKTFatR2tMwrudz"}, 
-                            {seasonShop : "https://shop.season-of-mist.com/in-hell-lex-divina-terrores-cd-digipak"}]
+                            {
+                                youTube : "https://www.youtube.com/watch?v=upge4v_0lq0",
+                                bandCamp : "",
+                                spotify : "https://open.spotify.com/artist/5YODH8RhKTFatR2tMwrudz",
+                                seasonShop : "https://shop.season-of-mist.com/in-hell-lex-divina-terrores-cd-digipak"
+                            }
+                        ]
                     } else if (this.isAlbumAvailable === false){
                         return []
                     }
@@ -209,10 +218,12 @@ export const bands = [
                 listenAndShop : function(){
                     if(this.isAlbumAvailable === true){
                         return [
-                            {youTube : "https://www.youtube.com/watch?v=-Rrf-GRE_iU&list=OLAK5uy_nqw_4yf0GpbAHwXxT7y1TsJwn4sU4VZYI"}, 
-                            {bandCamp : ""},
-                            {spotify : "https://open.spotify.com/artist/7BQFtX6ud2BcPcoVCDiNwj"}, 
-                            {seasonShop : "https://shop.season-of-mist.com/in-hell-satanica-mundi-cd-digipak"}
+                            {
+                                youTube : "https://www.youtube.com/watch?v=-Rrf-GRE_iU&list=OLAK5uy_nqw_4yf0GpbAHwXxT7y1TsJwn4sU4VZYI",
+                                bandCamp : "",
+                                spotify : "https://open.spotify.com/artist/7BQFtX6ud2BcPcoVCDiNwj",
+                                seasonShop : "https://shop.season-of-mist.com/in-hell-satanica-mundi-cd-digipak"
+                            }
                         ]
                     } else if (this.isAlbumAvailable === false){
                         return []
@@ -232,7 +243,14 @@ export const bands = [
                 isAlbumAvailable : true,
                 listenAndShop : function(){
                     if(this.isAlbumAvailable === true){
-                        return [{youTube : ""}, {bandCamp : ""}, {spotify : ""}, {seasonShop :""}]
+                        return [
+                            {
+                                youTube : "",
+                                bandCamp : "",
+                                spotify : "",
+                                seasonShop :""
+                            }
+                        ]
                     } else if (this.isAlbumAvailable === false){
                         return []
                     }
@@ -252,10 +270,12 @@ export const bands = [
                 listenAndShop : function(){
                     if(this.isAlbumAvailable === true){
                         return [
-                            {youTube : ""}, 
-                            {bandCamp : ""},
-                            {spotify : ""}, 
-                            {seasonShop :""}
+                            {
+                                youTube : "",
+                                bandCamp : "",
+                                spotify : "",
+                                seasonShop :""
+                            }
                         ]
                     } else if (this.isAlbumAvailable === false){
                         return []
@@ -275,7 +295,14 @@ export const bands = [
                 isAlbumAvailable : true,
                 listenAndShop : function(){
                     if(this.isAlbumAvailable === true){
-                        return [{youTube : ""}, {bandCamp : ""}, {spotify : ""}, {seasonShop :""}]
+                        return [
+                            {
+                                youTube : "",
+                                bandCamp : "",
+                                spotify : "",
+                                seasonShop :""
+                            }
+                        ]
                     } else if (this.isAlbumAvailable === false){
                         return []
                     }

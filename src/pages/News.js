@@ -43,7 +43,7 @@ const News = (props) => {
                                 <div className='newsCard__newsContent__newsListen__container'>
                                     <p className='newsCard__newsContent__newsListen__container--title'>Ecouter sur Youtube : </p>
                                     <a className='newsCard__newsContent__newsListen__container--link' href={item.listen()[0].linkToListen}>
-                                        {net.youTubeIcon}
+                                        {net.youTube}
                                     </a>
                                 </div>
                                 )

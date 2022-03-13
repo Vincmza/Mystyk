@@ -1,6 +1,6 @@
 import {FaYoutube,FaBandcamp,FaShoppingCart, FaSpotify} from "react-icons/fa";
 
-export const youTubeIcon = <FaYoutube/> 
-export const bandCampIcon = <FaBandcamp/> 
-export const shopIcon = <FaShoppingCart/>
-export const spotifyIcon = <FaSpotify/>
+export const youTube = <FaYoutube/> 
+export const bandCamp = <FaBandcamp/> 
+export const seasonShop = <FaShoppingCart/>
+export const spotify = <FaSpotify/>

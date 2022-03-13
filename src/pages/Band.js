@@ -29,6 +29,16 @@ const Band = () => {
             return {justifyContent : "space-around"}
         }
     }
+    //CONDITIONNAL DISPLAY OF ICONS WHERE EVERY ALBUM CAN BE LISTENED
+    const displayIcons = (iconsObject, iconName)=>{
+        if(iconsObject){
+            for (let [key, value] of Object.entries(iconsObject)) {
+                if(key === iconName && value !== ""){
+                    return <a className={`releases__list__card__listen--${iconName}`} href={iconsObject[iconName]}>{net[iconName]}</a>
+                }
+            }
+        }
+    }
     return (
         <div className='band'>
             <div className='back'>
@@ -86,9 +96,9 @@ const Band = () => {
                         {bandFiltered.releases.map((elem, index)=>(
                             <li className='releases__list__card' key={elem.id} style={{animationDelay : `${index*250}ms`, marginRight : releasesLength <= 2 && "5%"}}>
                                 <div className='releases__list__card__imgContainer'>
-                                    {elem.listenAndShop()[3].seasonShop !== "" ? 
+                                    {elem.listenAndShop()[0] && elem.listenAndShop()[0].seasonShopIcon !== "" ? 
                                         (<>
-                                            <a href={elem.listenAndShop()[3].seasonShop}>
+                                            <a href={elem.listenAndShop()[0].seasonShop}>
                                                 <img className='releases__list__card__imgContainer__file' src={elem.frontCover} alt={`Pochette de l'album ${elem.title}`}/>
                                             </a>
                                         </>)
@@ -105,18 +115,10 @@ const Band = () => {
                                     <div className='releases__list__card__infos--duration'>Duration : {elem.duration}</div>
                                 </div>
                                 <div className='releases__list__card__listen'>
-                                    {elem.listenAndShop()[0].youTube !== ""&&
-                                        <a title='Ecouter sur Youtube' className='releases__list__card__listen--youTube' href={elem.listenAndShop()[0].youTube}>{net.youTubeIcon}</a>
-                                    }
-                                    {elem.listenAndShop()[1].bandCamp !== ""&&
-                                        <a title='Ecouter sur Bandcamp' className='releases__list__card__listen--bandCamp' href={elem.listenAndShop()[1].bandCamp}>{net.bandCampIcon}</a>
-                                    }
-                                    {elem.listenAndShop()[2].spotify !==""&&
-                                        <a title='Ecouter sur Spotify' className='releases__list__card__listen--spotify' href={elem.listenAndShop()[2].spotify}>{net.spotifyIcon}</a>
-                                    }                      
-                                    {elem.listenAndShop()[3].seasonShop !== ""&&
-                                        <a title='Aller vers le shop de Season of Mist' className='releases__list__card__listen--seasonShop' href={elem.listenAndShop()[2].seasonShop}>{net.shopIcon}</a>
-                                    }
+                                    {displayIcons(elem.listenAndShop()[0], "youTube")}
+                                    {displayIcons(elem.listenAndShop()[0], "bandCamp")}
+                                    {displayIcons(elem.listenAndShop()[0], "spotify")}
+                                    {displayIcons(elem.listenAndShop()[0], "seasonShop")}
                                 </div>
                             </li>
                         ))}
@@ -144,7 +146,7 @@ const Band = () => {
                                 </div>
                                 <div className='merch__list__card__shop'>
                                     {elem.purchase()[0].linkToBuy !== "" && 
-                                        <a href={elem.purchase()[0].linkToBuy}>{net.shopIcon}</a>
+                                        <a href={elem.purchase()[0].linkToBuy}>{net.seasonShop}</a>
                                     }
                                 </div>
                             </li>
