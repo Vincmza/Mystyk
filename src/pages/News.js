@@ -13,6 +13,25 @@ const News = (props) => {
         props.setIsPageClicked([pageName])
         navigate(`/band/${bandId}`)
     }
+    const displayIcons = (link, name)=>{
+        console.log(link)
+        if(link){
+            for (const [key, value] of Object.entries(link)) {
+                if(key === name && value !== ""){
+                    let goToLowerCase = name.toLowerCase()
+                    const upperCase = goToLowerCase.split("")[0].toUpperCase()
+                    return <div className='newsCard__newsContent__newsListen__container'>
+                    <p className='newsCard__newsContent__newsListen__container--title'>Ecouter sur {goToLowerCase.replace(goToLowerCase[0], upperCase[0]).toString()} : </p>
+                    <a className={`newsCard__newsContent__newsListen__container--${name}`} href={link[name]}>
+                        {net[name]}
+                    </a>
+                </div>
+                    
+                }
+            }
+        }
+
+    }
     return (
         <div className='news'>
             <ul className='news__wrapper'>
@@ -38,18 +57,9 @@ const News = (props) => {
                             {item.content}
                         </div>
                         <div className='newsCard__newsContent__newsListen'>
-                            {item.listen().length > 0 ?
-                                (
-                                <div className='newsCard__newsContent__newsListen__container'>
-                                    <p className='newsCard__newsContent__newsListen__container--title'>Ecouter sur Youtube : </p>
-                                    <a className='newsCard__newsContent__newsListen__container--link' href={item.listen()[0].linkToListen}>
-                                        {net.youTube}
-                                    </a>
-                                </div>
-                                )
-                                :
-                                (<></>)
-                            }
+                            {displayIcons(item.listen()[0],"youTube")}
+                            {displayIcons(item.listen()[0],"bandCamp")}
+                            {displayIcons(item.listen()[0],"spotify")}
                         </div>
                     </div>
                 </li>))}

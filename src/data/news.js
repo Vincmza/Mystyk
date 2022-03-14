@@ -17,7 +17,7 @@ export const news = [
         isMusicAvailable : true,
         listen : function(){
             if(this.isMusicAvailable === true){
-                return [{linkToListen : "https://www.youtube.com/watch?v=gJeVulBg1pY"}]
+                return [{bandCamp : "https://kosmosblackmetal.bandcamp.com/"}]
             } else if(this.isMusicAvailable === false) {
                 return []
             }
@@ -36,7 +36,7 @@ export const news = [
         isMusicAvailable : false,
         listen : function(){
             if(this.isMusicAvailable === true){
-                return [{linkToListen : ""}]
+                return [{youTube : ""}]
             } else if(this.isMusicAvailable === false) {
                 return []
             }
@@ -55,7 +55,7 @@ export const news = [
         isMusicAvailable : true,
         listen : function(){
             if(this.isMusicAvailable === true){
-                return [{linkToListen : "https://www.youtube.com/watch?v=upge4v_0lq0"}]
+                return [{youTube : "https://www.youtube.com/watch?v=upge4v_0lq0"}]
             } else if(this.isMusicAvailable === false) {
                 return []
             }

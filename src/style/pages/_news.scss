@@ -112,8 +112,32 @@ img {
                 &--title{
                     font-size: 0.8em;
                 }
-                &--link{
+                &--youTube{
                     color:red;
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.4em;
+                    padding-left: 10px;
+                    transform:scale(1);
+                    transition:400ms;
+                    &:hover{
+                        transform:scale(1.2);
+                    }
+                }
+                &--bandCamp{
+                    color:rgb(29,160,195);
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.4em;
+                    padding-left: 10px;
+                    transform:scale(1);
+                    transition:400ms;
+                    &:hover{
+                        transform:scale(1.2);
+                    }
+                }
+                &--spotify{
+                    color: rgb(30, 215, 96);
                     display: flex;
                     align-items: center;
                     font-size: 1.4em;
