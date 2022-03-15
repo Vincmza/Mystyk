@@ -13,17 +13,18 @@ const News = (props) => {
         props.setIsPageClicked([pageName])
         navigate(`/band/${bandId}`)
     }
-    const displayIcons = (link, name)=>{
+    //DISPLAY ICON OF SOCIAL MEDIA TO LISTEN A TUNE FROM THE CURRENT NEWS
+    const displayIcons = (link)=>{
         console.log(link)
         if(link){
             for (const [key, value] of Object.entries(link)) {
-                if(key === name && value !== ""){
-                    let goToLowerCase = name.toLowerCase()
+                if(value !== ""){
+                    let goToLowerCase = key.toLowerCase()
                     const upperCase = goToLowerCase.split("")[0].toUpperCase()
                     return <div className='newsCard__newsContent__newsListen__container'>
                     <p className='newsCard__newsContent__newsListen__container--title'>Ecouter sur {goToLowerCase.replace(goToLowerCase[0], upperCase[0]).toString()} : </p>
-                    <a className={`newsCard__newsContent__newsListen__container--${name}`} href={link[name]}>
-                        {net[name]}
+                    <a className={`newsCard__newsContent__newsListen__container--${key}`} href={value}>
+                        {net[key]}
                     </a>
                 </div>
                     
@@ -57,9 +58,7 @@ const News = (props) => {
                             {item.content}
                         </div>
                         <div className='newsCard__newsContent__newsListen'>
-                            {displayIcons(item.listen()[0],"youTube")}
-                            {displayIcons(item.listen()[0],"bandCamp")}
-                            {displayIcons(item.listen()[0],"spotify")}
+                            {displayIcons(item.listen()[0])}
                         </div>
                     </div>
                 </li>))}

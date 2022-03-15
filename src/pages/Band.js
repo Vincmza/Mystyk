@@ -30,14 +30,16 @@ const Band = () => {
         }
     }
     //CONDITIONNAL DISPLAY OF ICONS WHERE EVERY ALBUM CAN BE LISTENED
-    const displayIcons = (iconsObject, iconName)=>{
+    const displayIcons = (iconsObject)=>{
         if(iconsObject){
-            for (let [key, value] of Object.entries(iconsObject)) {
-                if(key === iconName && value !== ""){
-                    return <a className={`releases__list__card__listen--${iconName}`} href={iconsObject[iconName]}>{net[iconName]}</a>
-                }
-            }
-        }
+            const data = Object.entries(iconsObject)
+            return data.map(item=>(
+                item[1] !== "" &&
+                <a key={item} className={`releases__list__card__listen--${item[0]}`} href={item[1]}>
+                {net[item[0]]}
+                </a>
+            ))
+        }      
     }
     return (
         <div className='band'>
@@ -115,10 +117,7 @@ const Band = () => {
                                     <div className='releases__list__card__infos--duration'>Duration : {elem.duration}</div>
                                 </div>
                                 <div className='releases__list__card__listen'>
-                                    {displayIcons(elem.listenAndShop()[0], "youTube")}
-                                    {displayIcons(elem.listenAndShop()[0], "bandCamp")}
-                                    {displayIcons(elem.listenAndShop()[0], "spotify")}
-                                    {displayIcons(elem.listenAndShop()[0], "seasonShop")}
+                                    {displayIcons(elem.listenAndShop()[0])}
                                 </div>
                             </li>
                         ))}

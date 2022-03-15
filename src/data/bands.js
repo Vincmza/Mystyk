@@ -35,6 +35,12 @@ export const bands = [
         bandLogo: kosmosLogo,
         banner : kosmosBanner,
         country : "France",
+        followLinks : [
+            {
+                faceBook: "",
+                bandCamp : ""
+            }
+        ],
         lineUp : [
             {
                 name : "Nekros",
@@ -153,7 +159,12 @@ export const bands = [
         bandLogo: inHellLogo,
         banner: inHellBanner,
         country : "France",
-        followLinks : [{faceBook: ""},{bandCamp : ""}],
+        followLinks : [
+            {
+                faceBook: "",
+                bandCamp : ""
+            }
+        ],
         lineUp : [
             {
                 name : "Darkhell",
