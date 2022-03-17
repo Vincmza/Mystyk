@@ -335,7 +335,7 @@ export const bands = [
                 isItemAvailable : true,
                 purchase : function(){
                     if(this.isItemAvailable===true){
-                        return [{linkToBuy : ""}]
+                        return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
                     } else if(this.isItemAvailable===false){
                         return[]
                     }

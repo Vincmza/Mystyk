@@ -273,6 +273,15 @@
             &__shop{
                 display: flex;
                 justify-content: flex-end;
+                &--linkToBuy{
+                    font-size:1.1em;
+                    transform: scale(1);
+                    transition:300ms;
+                    &:hover{
+                        transform: scale(1.2);
+                        cursor: pointer;
+                    }
+                }
             }
         }
     }

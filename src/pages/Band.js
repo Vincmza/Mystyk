@@ -129,7 +129,7 @@ const Band = () => {
                         {bandFiltered.merch.map((elem,index)=>(
                             <li key={elem.id} className="merch__list__card" style={{animationDelay : `${index*250}ms`, marginRight : merchLength <= 2 && "5%"}}>
                                 <div className='merch__list__card__imgContainer'>
-                                    {elem.purchase()[0].linkToBuy !== "" ? 
+                                    {elem.purchase()[0] && elem.purchase()[0].linkToBuy !== "" ? 
                                         (<a href={elem.purchase()[0].linkToBuy}>
                                             <img className='merch__list__card__imgContainer__file' src={elem.itemPicture} alt={`image du ${elem.format}`}/>
                                         </a>)
@@ -144,8 +144,10 @@ const Band = () => {
                                     <div className='merch__list__card__infos--description'>description : {elem.description}</div>
                                 </div>
                                 <div className='merch__list__card__shop'>
-                                    {elem.purchase()[0].linkToBuy !== "" && 
-                                        <a href={elem.purchase()[0].linkToBuy}>{net.seasonShop}</a>
+                                    {elem.purchase()[0] && elem.purchase()[0].linkToBuy !== "" ?
+                                        (<a className='merch__list__card__shop--linkToBuy' href={elem.purchase()[0].linkToBuy}>{net.seasonShop}</a>)
+                                        :
+                                        (<></>)
                                     }
                                 </div>
                             </li>
