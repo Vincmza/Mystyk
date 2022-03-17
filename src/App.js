@@ -29,7 +29,7 @@ function App() {
         <Header isPageClicked={isPageClicked} setIsPageClicked={setIsPageClicked} />
           <Routes>
             <Route path="/" element={<Host isPageClicked={isPageClicked} setIsPageClicked={setIsPageClicked} />}/>
-            <Route path="/shows" element={<Shows/>}/>
+            <Route path="/shows" element={<Shows isPageClicked={isPageClicked} setIsPageClicked={setIsPageClicked}/>}/>
             <Route path="/news" element={<News isPageClicked={isPageClicked} setIsPageClicked={setIsPageClicked}/>}/>
             <Route path="/bands" element={<Bands/>}/>
             <Route path="/band/:bandId" element={<Band/>}/>
