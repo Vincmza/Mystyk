@@ -39,8 +39,8 @@ const Shop = () => {
                     <input type="button" value="Filtres" className='shop__wrapper__options__filters' onClick={displayFilters}/>
                     {showFilters === true ? 
                         (<>
-                            {options.map(elem=>(
-                                <div className={`shop__wrapper__options--${elem}`} key={elem}>
+                            {options.map((elem,index)=>(
+                                <div className={`shop__wrapper__options--${elem}`} key={elem} style={{animationDelay : `${index*300}ms`}}>
                                     <input 
                                     type="checkbox" 
                                     id={elem} 
@@ -61,9 +61,9 @@ const Shop = () => {
                 <div className='shop__wrapper__music'>
                     {shopOption[0] === "music" && 
                         bands.map((elem)=>(
-                            <div className='music'>                           
+                            <div className='music' key={elem.id}>                           
                                 {elem.releases.map((item,index)=>(
-                                    <div className='music__card' style={{animationDelay : `${index*400}ms`}}>
+                                    <div className='music__card' key={item.id} style={{animationDelay : `${index*400}ms`}}>
                                         <div className='music__card__imgContainer'>
                                             <img className='music__card__imgContainer__file' src={item.frontCover} alt={`couverture de l'album ${item.title} de ${elem.name}`}/>
                                         </div>

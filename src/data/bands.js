@@ -59,6 +59,7 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
+                id:1,
                 bandId : 1,
                 year : 2022,
                 releaseDate :"24/01/2022",
@@ -84,6 +85,7 @@ export const bands = [
                 } 
             },
             {
+                id:2,
                 bandId : 1,
                 year : 2019,
                 releaseDate :"20/09/2019",

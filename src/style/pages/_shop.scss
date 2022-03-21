@@ -1,8 +1,17 @@
+@keyframes filtersApparition{
+    to{
+        transform: translateY(0);
+        opacity:1;
+    }
+}
 .shop{
     color:wheat;
     // border:1px solid green;
     width:75%;
     margin:auto;
+    @media screen and (max-width: 510px) {
+        width:85%;
+    }
     &__wrapper{
         display: flex;
         flex-direction: column;
@@ -15,6 +24,9 @@
             align-items: center;
             width:100%;
             &--music, &--merch{
+                opacity:0;
+                transform: translateY(-20%);
+                animation: filtersApparition 600ms linear forwards;
                 font-size: 1.2em;
                 display: flex;
                 align-items: center;
@@ -41,7 +53,9 @@
                     cursor: pointer;
                     transform: scale(1.1);
                 }
-                
+                @media screen and (max-width: 650px) {
+                    width:20%;
+                }
             }
         }
     }
@@ -57,6 +71,9 @@
     flex-wrap: wrap;
     // justify-content: space-evenly;
     width:100%;
+    @media screen and (max-width: 1000px) {
+        justify-content: center;
+    }
     &__card{
         opacity:0;
         transform: translateY(-20%);
@@ -69,6 +86,18 @@
         margin-top: 20px;
         margin-right: 20px;
         animation: musicCardApparition 1.5s linear forwards;
+        @media screen and (max-width: 1000px) {
+            width:40%;
+        }
+        @media screen and (max-width: 760px) {
+            width:60%;
+        }
+        @media screen and (max-width: 510px) {
+            width:80%;
+        }
+        @media screen and (max-width: 400px) {
+            width:95%;
+        }
         &__imgContainer{
             width:200px;
             height:200px;
