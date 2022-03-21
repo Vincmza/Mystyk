@@ -23,7 +23,7 @@ export const shows = [
           }
         },
         event : "Ladlo Fest",
-        where : "14 rue lamartine",
+        where : "14 rue lamartine 26500 Bourg-lès-Valence",
         country : "France",
         moreDetails : "https://www.facebook.com/events/550061755984143/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22search_results%22%2C%22surface%22%3A%22search%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
       },
@@ -48,7 +48,7 @@ export const shows = [
           }
         },
         event : "Mes Kouilles Fest IV",
-        where : "Avenue des fils de pute de la commanderie",
+        where : "Avenue des fils de pute de la commanderie 75001 Paris",
         country : "France",
         moreDetails : ""
       }

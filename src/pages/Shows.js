@@ -18,7 +18,7 @@ const Shows = (props) => {
             <h1 className='showsIntro'>Upcoming Shows</h1>
             <ul className='showsList'>
                 {shows.map((item,index)=>(
-                    <li className='allShows' key={item[index].id}>
+                    <li className='allShows' key={item[index].id} style={{animationDelay : `${index*400}ms`}}>
                             <div className='allShows__bandName-container'>
                                 <h2 className='allShows__bandName-container--name' onClick={()=>goToBandPage(item[index].bandId, "bands")}>
                                     {item[index].bandName()}

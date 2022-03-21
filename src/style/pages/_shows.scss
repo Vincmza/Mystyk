@@ -11,11 +11,9 @@
         width:95%;
     }
 }
-.showsList{
+.allShows{
     opacity:0;
     animation: showsApparition 1.5s linear forwards;
-}
-.allShows{
     // border:1px solid green;
     margin-top:20px;
     &__bandName-container{
