@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { bands } from '../data/bands';
 import * as net from "../data/icons";
 const Shop = () => {
-    const mesKouilles = bands[0].releases
-    console.log(mesKouilles)
     //OPTIONS TO EITHER DISPLAY MUSIC OR MERCH
     const options = ["music", "merch"]
     //STATE TO STORE EITHER MUSCI OR MERCH OPTION
@@ -13,6 +11,28 @@ const Shop = () => {
     const displayFilters = ()=>{
         setShowFilters((e)=>(!e))
     }
+    //DISPLAY ITEM DETAILS
+    const [description, setDescription]=useState([])
+    //FUNCTION TO EITHER SHOW OR HIDE ITEM INFOS
+    const showOrHideDescription = (bandId, id)=>{
+        
+        const objectToRemove = description.findIndex(item=>item.band === bandId && item.item === id)
+        if(objectToRemove !== -1){
+            const object = [
+                ...description.filter(objects=>objects!==description[objectToRemove])
+            ]
+            console.log("si l'utilisateur reclique ",object)
+            setDescription(object)
+        }else{
+            const object = [
+                ...description,
+                {band : bandId, item : id}
+            ]
+            console.log("si l'utilisateur clique ",object)
+            setDescription(object)
+        }
+    }
+    // console.log(description)
     //STORE DATA FROM CHECKBOX
     const storeShopOption = (e)=>{
         if(e.target.checked === true){
@@ -72,10 +92,44 @@ const Shop = () => {
                                             <h3 className='music__card__identity--title'>{item.title}</h3>
                                         </div>
                                         <div className='music__card__generalInfos'>
-                                            <div>Style : {item.subStyle}</div>
-                                            <div>Format : {item.format}</div>
-                                            <div>Length : {item.duration}</div>
-                                            <div>Release date : {item.releaseDate}</div>
+                                            {description.findIndex(object=>object.band === item.bandId && object.item === item.id)!== -1 ?
+                                                
+                                                (<>
+                                                    <div 
+                                                    className='music__card__generalInfos__iconContainer'
+                                                    onClick={()=>showOrHideDescription(item.bandId, item.id)}
+                                                    >
+                                                        <div className='music__card__generalInfos__iconContainer--icon'>
+                                                            {net.hideDescription}
+                                                        </div>
+                                                    </div>
+                                                </>)
+                                                :
+                                                (<>
+                                                    <div 
+                                                    className='music__card__generalInfos__iconContainer'
+                                                    onClick={()=>showOrHideDescription(item.bandId, item.id)}
+                                                    >
+                                                        <div className='music__card__generalInfos__iconContainer--icon'>
+                                                            {net.showDescription}
+                                                        </div>
+                                                    </div>
+                                                </>)
+                                            }
+                                            {description.findIndex(object=>object.band === item.bandId && object.item === item.id)!== -1 ?
+                                                (<>
+                                                    <div className='music__card__generalInfos__description'>
+                                                        <div>Style : {item.subStyle}</div>
+                                                        <div>Format : {item.format}</div>
+                                                        <div>Length : {item.duration}</div>
+                                                        <div>Release date : {item.releaseDate}</div>
+                                                    </div>
+                                                </>)
+                                                :
+                                                (<>
+                                                </>)
+                                            }
+                                            
                                         </div>
                                         <div className='music__card__listenIcons'>
                                             {displayIcons(item.listenAndShop()[0])}

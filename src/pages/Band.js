@@ -114,7 +114,7 @@ const Band = () => {
                                     <div className='releases__list__card__infos--title'>{elem.title}</div>
                                     <div className='releases__list__card__infos--date'>Release date : {elem.releaseDate}</div>
                                     <div className='releases__list__card__infos--format'>Format : {elem.format}</div>
-                                    <div className='releases__list__card__infos--duration'>Duration : {elem.duration}</div>
+                                    <div className='releases__list__card__infos--duration'>Length : {elem.duration}</div>
                                 </div>
                                 <div className='releases__list__card__listen'>
                                     {displayIcons(elem.listenAndShop()[0])}

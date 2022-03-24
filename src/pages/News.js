@@ -15,7 +15,7 @@ const News = (props) => {
     }
     //DISPLAY ICON OF SOCIAL MEDIA TO LISTEN A TUNE FROM THE CURRENT NEWS
     const displayIcons = (link)=>{
-        console.log(link)
+        
         if(link){
             for (const [key, value] of Object.entries(link)) {
                 if(value !== ""){
