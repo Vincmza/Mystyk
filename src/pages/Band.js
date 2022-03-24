@@ -35,7 +35,7 @@ const Band = () => {
             const data = Object.entries(iconsObject)
             return data.map(item=>(
                 item[1] !== "" &&
-                <a key={item} className={`releases__list__card__listen--${item[0]}`} href={item[1]}>
+                <a target="_blank" key={item} className={`releases__list__card__listen--${item[0]}`} href={item[1]}>
                 {net[item[0]]}
                 </a>
             ))
@@ -100,7 +100,7 @@ const Band = () => {
                                 <div className='releases__list__card__imgContainer'>
                                     {elem.listenAndShop()[0] && elem.listenAndShop()[0].seasonShopIcon !== "" ? 
                                         (<>
-                                            <a href={elem.listenAndShop()[0].seasonShop}>
+                                            <a target="_blank" href={elem.listenAndShop()[0].seasonShop}>
                                                 <img className='releases__list__card__imgContainer__file' src={elem.frontCover} alt={`Pochette de l'album ${elem.title}`}/>
                                             </a>
                                         </>)
@@ -130,7 +130,7 @@ const Band = () => {
                             <li key={elem.id} className="merch__list__card" style={{animationDelay : `${index*250}ms`, marginRight : merchLength <= 2 && "5%"}}>
                                 <div className='merch__list__card__imgContainer'>
                                     {elem.purchase()[0] && elem.purchase()[0].linkToBuy !== "" ? 
-                                        (<a href={elem.purchase()[0].linkToBuy}>
+                                        (<a target="_blank" href={elem.purchase()[0].linkToBuy}>
                                             <img className='merch__list__card__imgContainer__file' src={elem.itemPicture} alt={`image du ${elem.format}`}/>
                                         </a>)
                                         :
@@ -145,7 +145,7 @@ const Band = () => {
                                 </div>
                                 <div className='merch__list__card__shop'>
                                     {elem.purchase()[0] && elem.purchase()[0].linkToBuy !== "" ?
-                                        (<a className='merch__list__card__shop--linkToBuy' href={elem.purchase()[0].linkToBuy}>{net.seasonShop}</a>)
+                                        (<a target="_blank" className='merch__list__card__shop--linkToBuy' href={elem.purchase()[0].linkToBuy}>{net.seasonShop}</a>)
                                         :
                                         (<></>)
                                     }
