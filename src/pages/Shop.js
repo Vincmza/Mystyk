@@ -21,14 +21,12 @@ const Shop = () => {
             const object = [
                 ...description.filter(objects=>objects!==description[objectToRemove])
             ]
-            console.log("si l'utilisateur reclique ",object)
             setDescription(object)
         }else{
             const object = [
                 ...description,
                 {band : bandId, item : id}
             ]
-            console.log("si l'utilisateur clique ",object)
             setDescription(object)
         }
     }
