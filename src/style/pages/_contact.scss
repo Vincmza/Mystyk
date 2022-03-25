@@ -1,3 +1,8 @@
+@keyframes contactApparition {
+    to{
+        opacity : 1;
+    }
+}
 .contact{
     color:wheat;
     width:75%;
@@ -9,6 +14,8 @@
         width:90%;
     }
     &__wrapper{
+        opacity:0;
+        animation: contactApparition 800ms linear forwards;
         width:100%;
         display: flex;
         flex-direction: column;

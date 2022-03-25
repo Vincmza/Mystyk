@@ -13,7 +13,7 @@
 }
 .allShows{
     opacity:0;
-    animation: showsApparition 1.5s linear forwards;
+    animation: showsApparition 800ms linear forwards;
     // border:1px solid green;
     margin-top:20px;
     &__bandName-container{
