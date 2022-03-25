@@ -35,7 +35,7 @@ const Band = () => {
             const data = Object.entries(iconsObject)
             return data.map(item=>(
                 item[1] !== "" &&
-                <a target="_blank" key={item} className={`releases__list__card__listen--${item[0]}`} href={item[1]}>
+                <a title={item[0] === "seasonShop" && "Acheter sur Season of Mist"} target="_blank" key={item} className={`releases__list__card__listen--${item[0]}`} href={item[1]}>
                 {net[item[0]]}
                 </a>
             ))

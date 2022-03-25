@@ -19,8 +19,10 @@ import inHellSatanicaBundle from "../assets/bands/in_hell/music/in_hell_satanica
 import kosmosTshirt from "../assets/bands/kosmos/merch/kosmos_t-shirt.jpg"
 import kosmosGlass from "../assets/bands/kosmos/merch/kosmos_glass.jpg"
 //IN HELL
+import inHellBeerOcre from "../assets/bands/in_hell/merch/in_hell_beer_ocre.jpg"
+import inHellSweatDark from "../assets/bands/in_hell/merch/in_hell_sweat_dark.jpg"
+import inHellBonnet from "../assets/bands/in_hell/merch/in_hell_bonnet.jpg"
 import inHellTshirt from "../assets/bands/in_hell/merch/in_hell_t-shirt.jpg"
-
 //FUNCTION TO GET BAND'S NAME 
 import { returnName } from "./news"
 
@@ -327,7 +329,6 @@ export const bands = [
             {
                 id : 1,
                 bandId :2,
-                albumId : 1,
                 bandName : function(){
                     return returnName(this.bandId) 
                 },
@@ -346,13 +347,12 @@ export const bands = [
             {
                 id : 2,
                 bandId : 2,
-                albumId : 1,
                 bandName : function(){
                     return returnName(this.bandId) 
                 },
-                format : "bundle",
-                description : "Digipack cd and t-shirt (available sizes : S,M,L,XL)",
-                itemPicture : inHellTshirt,
+                format : "beer",
+                description : "Bière houblonnée à crue avec des notes citronées, 7,5°",
+                itemPicture : inHellBeerOcre,
                 isItemAvailable : true,
                 purchase : function(){
                     if(this.isItemAvailable===true){
@@ -365,13 +365,12 @@ export const bands = [
             {
                 id : 3,
                 bandId : 2,
-                albumId : 2,
                 bandName : function(){
                     return returnName(this.bandId) 
                 },
-                format : "bundle",
-                description : "Digipack cd and t-shirt (available sizes : S,M,L,XL)",
-                itemPicture : inHellTshirt,
+                format : "sweat",
+                description : "sweat épais en coton (available sizes : S,M,L,XL)",
+                itemPicture : inHellSweatDark,
                 isItemAvailable : true,
                 purchase : function(){
                     if(this.isItemAvailable===true){
@@ -384,13 +383,12 @@ export const bands = [
             {
                 id : 4,
                 bandId : 2,
-                albumId : 2,
                 bandName : function(){
                     return returnName(this.bandId) 
                 },
-                format : "bundle",
-                description : "Digipack cd and t-shirt (available sizes : S,M,L,XL)",
-                itemPicture : inHellTshirt,
+                format : "bonnet",
+                description : "bonnet renforcé en coton (taille unique)",
+                itemPicture : inHellBonnet,
                 isItemAvailable : true,
                 purchase : function(){
                     if(this.isItemAvailable===true){

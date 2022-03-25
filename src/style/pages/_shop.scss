@@ -38,7 +38,20 @@
                 display: flex;
                 align-items: center;
                 cursor: pointer;
-            }  
+            }
+            &--music > label, &--merch > label {
+                display: flex;
+                @media screen and (max-width:1000px) {
+                    padding-left: 10px;
+                }
+            }
+            &--music span, &--merch span {
+                // border:1px solid blueviolet;
+                display: flex;
+                align-items: center;
+                padding-left: 10px;
+                font-size: 0.7em;
+            } 
             &__filters{
                 width:12%;
                 padding:10px;
@@ -85,7 +98,7 @@
         padding: 10px;
         margin-top: 20px;
         margin-right: 20px;
-        animation: musicCardApparition 1s linear forwards;
+        animation: musicCardApparition 800ms linear forwards;
         @media screen and (max-width: 1000px) {
             width:40%;
         }
@@ -125,6 +138,12 @@
             &__description{
                 animation: musicCardApparition 1000ms linear forwards ;
                 opacity:0;
+                &--title {
+                    margin-bottom: 10px;
+                }
+                &--musicFeature{
+                    margin-bottom: 5px;
+                }
             }
             &__iconContainer{
                 display: flex;
@@ -140,6 +159,21 @@
                         cursor: pointer;
                         transform:scale(1.2);
                     }
+                }
+            }
+        }
+        &__merchBuyIcon{
+            margin-top: 10px;
+            width:100%;
+            display: flex;
+            justify-content: flex-end;
+            &--icon{
+                font-size: 1.1em;
+                transform: scale(1);
+                transition:300ms;
+                &:hover{
+                    transform: scale(1.2);
+                    cursor: pointer;
                 }
             }
         }
