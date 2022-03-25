@@ -1,0 +1,76 @@
+.contact{
+    color:wheat;
+    width:75%;
+    margin: auto;
+    @media screen and (max-width:650px) {
+        width:85%;
+    }
+    @media screen and (max-width:550px) {
+        width:90%;
+    }
+    &__wrapper{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // border:1px solid blueviolet;
+        padding-bottom:30px;
+        &__form{
+            width:50%;
+            display: flex;
+            flex-direction: column;
+            // border:1px solid red;
+            padding: 10px;
+            @media screen and (max-width:1000px) {
+                width:65%;
+            }
+            @media screen and (max-width:800px) {
+                width:75%;
+            }
+            @media screen and (max-width:650px) {
+                width:90%;
+            }
+            @media screen and (max-width:550px) {
+                width:100%;
+            }
+            &--message{
+                height: 300px;
+                padding: 10px;
+            }
+            &--name, &--email{
+                padding:5px;
+            }
+            &--submit{
+                margin-top: 20px;
+                width:20%;
+                transform: scale(1);
+                transition:300ms;
+                background-color: rgb(117, 7, 7);
+                color: wheat;
+                border: none;
+                padding: 5px 10px;
+                border-radius : 2px;
+                &:hover{
+                    cursor: pointer;
+                    transform:scale(1.1)
+                }
+                @media screen and (max-width:400px) {
+                    width:30%;
+                }
+            }
+            &--count{
+                display: flex;
+                justify-content: flex-end;
+                font-size: 0.9em;
+                // border:1px solid blue;
+            }
+        }
+        &__form > label {
+            padding: 10px 0px;
+        }
+        &__form > input:focus, &__form > textarea:focus {
+            outline: none;
+            border:2px solid red;
+        }
+    }
+}
