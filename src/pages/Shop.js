@@ -13,10 +13,6 @@ const Shop = () => {
     }
     //DISPLAY ITEM DETAILS
     const [description, setDescription]=useState([])
-    //SET NO DATA TO DESCRIPTION WHEN USER CHOOSE THE OTHER OPTION
-    const noDataToDescription = ()=>{
-        setDescription([])
-    }
     //FUNCTION TO EITHER SHOW OR HIDE ITEM INFOS
     const showOrHideDescription = (bandId, id)=>{ 
         const objectToRemove = description.findIndex(item=>item.band === bandId && item.item === id)
