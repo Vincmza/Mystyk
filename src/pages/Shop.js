@@ -13,9 +13,12 @@ const Shop = () => {
     }
     //DISPLAY ITEM DETAILS
     const [description, setDescription]=useState([])
+    //SET NO DATA TO DESCRIPTION WHEN USER CHOOSE THE OTHER OPTION
+    const noDataToDescription = ()=>{
+        setDescription([])
+    }
     //FUNCTION TO EITHER SHOW OR HIDE ITEM INFOS
-    const showOrHideDescription = (bandId, id)=>{
-        
+    const showOrHideDescription = (bandId, id)=>{ 
         const objectToRemove = description.findIndex(item=>item.band === bandId && item.item === id)
         if(objectToRemove !== -1){
             const object = [
@@ -34,6 +37,7 @@ const Shop = () => {
     const storeShopOption = (e)=>{
         if(e.target.checked === true){
             setShopOption([e.target.value])
+            setDescription([])
         }
     }
     //DISPLAY ICONS
@@ -58,7 +62,7 @@ const Shop = () => {
                     {showFilters === true ? 
                         (<>
                             {options.map((elem,index)=>(
-                                <div className={`shop__wrapper__options--${elem}`} key={elem} style={{animationDelay : `${index*300}ms`}}>
+                                <div className={`shop__wrapper__options--${elem}`} key={elem} style={{animationDelay : `${index*250}ms`}}>
                                     <input 
                                     type="checkbox" 
                                     id={elem} 
@@ -79,7 +83,7 @@ const Shop = () => {
                 <div className='shop__wrapper__music'>
                     {shopOption[0] === "music" && 
                         bands.map((elem)=>(
-                            <div className='music' key={elem.id}>                           
+                            <div className='music' key={elem.id}>                        
                                 {elem.releases.map((item,index)=>(
                                     <div className='music__card' key={item.id} style={{animationDelay : `${index*300}ms`}}>
                                         <div className='music__card__imgContainer'>
@@ -170,9 +174,9 @@ const Shop = () => {
                     }
                     {shopOption[0] === "merch" && 
                         bands.map((elem)=>(
-                            <div className='music' key={elem.id}>                           
+                            <div className='music' key={elem.id}>                       
                                 {elem.merch.map((item,index)=>(
-                                    <div className='music__card' key={item.id} style={{animationDelay : `${index*300}ms`}}>
+                                    <div className='music__card' key={item.id} style={{animationDelay : `${index*250}ms`}}>
                                         <div className='music__card__imgContainer'>
                                             {item.purchase()[0] && item.purchase()[0].linkToBuy !== "" ? 
                                                 (<>
