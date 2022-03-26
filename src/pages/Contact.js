@@ -2,10 +2,17 @@ import React, { useState } from 'react';
 import emailjs from "emailjs-com";
 
 const Contact = () => {
+    //STATE TO KNOW IF FORM HAS BEEN SUBMITTED PROPERLY
+    const [isEmailOk, setIsEmailOk]=useState(null)
+    //LOADER
+    const [isLoader, setIsLoader]=useState(false)
+    //STATE TO STORE MESSAGE LENGTH
     const [howManyLetters, setHowManyLetters]=useState([])
+    //FUNCTION TO CATCH VALUE OF TEXTAREA
     const count = (e)=>{    
         setHowManyLetters([e.target.value.length])
     }
+    //FUNCTION TO SEND DATA FROM FORM BY EMAIL
     const sendEmail = (e)=>{
         e.preventDefault()
         emailjs.sendForm(
@@ -15,7 +22,29 @@ const Contact = () => {
             "CzcYWSydasLZ1fDH1"
         ).then(res=>{
             console.log("réponse : ", res)
-        }).catch(err=>console.log("l'erreur : ", err))
+            setIsEmailOk(true)
+        })
+        .catch(err=>{
+            console.log("l'erreur : ", err)
+            setIsEmailOk(false)
+        })
+    }
+    const displayIsEmailOk = ()=>{
+        if(isEmailOk === true){
+            return (<><p style={{color:"green"}}>Message envoyé !</p></>)
+        } else if(isEmailOk === false){
+            return (<><p style={{color:"red"}}>Echec lors de l'envoi</p></>)
+        } else if (isEmailOk === null){
+            return(<></>)
+        }
+    }
+    const loading = (state)=>{
+        if(isEmailOk === null){
+            setIsLoader(true)
+        }
+        else if(state === false) {
+            setIsLoader(false)
+        }
     }
     return (
         <div className='contact'>
@@ -50,13 +79,28 @@ const Contact = () => {
                     className='contact__wrapper__form--message'
                     id='message'
                     name='message'
-                    maxLength="250"
+                    maxLength="300"
                     onChange={(e)=>count(e)}
+                    style={{resize : "none"}}
                     required
                     />
-                    <div className='contact__wrapper__form--count'>{howManyLetters.length === 0 ? (<>0</>) : (<>{howManyLetters}</>)}/250</div>
-
-                    <input className='contact__wrapper__form--submit' type="submit" value="Send"/>
+                    <div className='contact__wrapper__form--count'>{howManyLetters.length === 0 ? (<>0</>) : (<>{howManyLetters}</>)}/300</div>
+                    <div className='contact__wrapper__form__isSent'>
+                        {isLoader === true && isEmailOk === null ? 
+                            (<>
+                                <div className='contact__wrapper__form__isSent--loader'>
+                                    
+                                </div>
+                            </>)
+                            :
+                            (<>
+                                {()=>loading(false)}
+                            </>)
+                        }
+                        {displayIsEmailOk()}
+                        
+                    </div>
+                    <input className='contact__wrapper__form--submit' type="submit" value="Send" onClick={loading}/>
                 </form>
             </div>
         </div>
