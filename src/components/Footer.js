@@ -36,6 +36,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+            <div className='footWrapper__nekros'>website powered by Nerkos, more infos at : vincent.mzapro@outlook.fr</div>
         </div>
     );
 };
