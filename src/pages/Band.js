@@ -31,6 +31,7 @@ const Band = () => {
     }
     //CONDITIONNAL DISPLAY OF ICONS WHERE EVERY ALBUM CAN BE LISTENED
     const displayIcons = (iconsObject)=>{
+        // console.log(iconsObject)
         if(iconsObject){
             const data = Object.entries(iconsObject)
             return data.map(item=>(
@@ -40,6 +41,22 @@ const Band = () => {
                 </a>
             ))
         }      
+    }
+    //SOCIAL NETWORK ICONS DISPLAY
+    const socialLinks = ()=>{
+        const links = bandFiltered.followLinks[0]
+        const linksData = Object.entries(links)
+        return linksData.map(socialMediaIcon=>
+            socialMediaIcon[1] !== "" &&
+            (<li key={socialMediaIcon} className="follow__container__oneIcon">
+                <a 
+                href={socialMediaIcon[1]} 
+                target="_blank" 
+                rel="noreferrer" 
+                className={`follow__container__oneIcon--${socialMediaIcon[0]}`}>
+                    {net[socialMediaIcon[0]]}
+                </a>
+            </li>))
     }
     return (
         <div className='band'>
@@ -67,6 +84,14 @@ const Band = () => {
                             {bandFiltered.biography}
                         </div>
                     </div>
+                </div>
+                <div className='follow'>
+                    <ul className='follow__links'>
+                        <h2 className='follow__title'>Follow</h2>
+                        <div className='follow__container'>
+                            {socialLinks()}
+                        </div>
+                    </ul>
                 </div>
                 <div className='lineUp'>
                     <h3 className='lineUp__title'>Line up</h3>

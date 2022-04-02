@@ -13,7 +13,6 @@ import kosmosEnvolArt from "../assets/bands/kosmos/music/kosmos_envol_cd.jpg"
 //IN HELL
 import inHellLexArt from "../assets/bands/in_hell/music/in_hell_lex_cd.jpg"
 import inHellSatanicaArt from "../assets/bands/in_hell/music/in_hell_satanica_cd.jpg"
-import inHellSatanicaBundle from "../assets/bands/in_hell/music/in_hell_satanica_bundle.jpg"
 //MERCH // Nom du groupe + nature du merch à définir avec le temps
 //KOSMOS
 import kosmosTshirt from "../assets/bands/kosmos/merch/kosmos_t-shirt.jpg"
@@ -39,8 +38,10 @@ export const bands = [
         country : "France",
         followLinks : [
             {
-                faceBook: "",
-                bandCamp : ""
+                facebook: "https://www.facebook.com/KOSMOS.BLACK.METAL",
+                instagram:"",
+                twitter:"",
+                tiktok:""
             }
         ],
         lineUp : [
@@ -78,6 +79,7 @@ export const bands = [
                                 youTube : "https://www.youtube.com/watch?v=gJeVulBg1pY",
                                 bandCamp : "https://kosmosblackmetal.bandcamp.com/",
                                 spotify : "",
+                                deezer : "",
                                 seasonShop : "https://shop.season-of-mist.com/kosmos-noctis-avem-et-gloria-cd-digipak"
                             }
                         ]
@@ -104,6 +106,7 @@ export const bands = [
                                 youTube : "https://www.youtube.com/watch?v=yMiQrgq2MqQ",
                                 bandCamp : "https://kosmosblackmetal.bandcamp.com/album/lenvol",
                                 spotify : "",
+                                deezer : "",
                                 seasonShop : ""
                             }
                         ]
@@ -165,8 +168,10 @@ export const bands = [
         country : "France",
         followLinks : [
             {
-                faceBook: "",
-                bandCamp : ""
+                facebook: "https://www.facebook.com/inhellofficialband",
+                instagram:"https://www.instagram.com/in_hell_band/?hl=fr",
+                twitter:"https://twitter.com/inhellofficial",
+                tiktok:""
             }
         ],
         lineUp : [
@@ -209,8 +214,9 @@ export const bands = [
                         return [
                             {
                                 youTube : "https://www.youtube.com/watch?v=upge4v_0lq0",
-                                bandCamp : "",
+                                bandCamp : "https://inhellblackdeath.bandcamp.com/album/lex-divina-terrores?from=hp",
                                 spotify : "https://open.spotify.com/artist/5YODH8RhKTFatR2tMwrudz",
+                                deezer : "https://www.deezer.com/fr/album/289677762",
                                 seasonShop : "https://shop.season-of-mist.com/in-hell-lex-divina-terrores-cd-digipak"
                             }
                         ]
@@ -235,87 +241,10 @@ export const bands = [
                         return [
                             {
                                 youTube : "https://www.youtube.com/watch?v=-Rrf-GRE_iU&list=OLAK5uy_nqw_4yf0GpbAHwXxT7y1TsJwn4sU4VZYI",
-                                bandCamp : "",
+                                bandCamp : "https://inhellblackdeath.bandcamp.com/album/satanica-mundi",
                                 spotify : "https://open.spotify.com/artist/7BQFtX6ud2BcPcoVCDiNwj",
+                                deezer : "https://www.deezer.com/fr/album/85418002",
                                 seasonShop : "https://shop.season-of-mist.com/in-hell-satanica-mundi-cd-digipak"
-                            }
-                        ]
-                    } else if (this.isAlbumAvailable === false){
-                        return []
-                    }
-                } 
-            },
-            {
-                id : 3,
-                bandId : 2,
-                year : 2016,
-                releaseDate : "17/04/2019",
-                title : "Satanica Mundi",
-                duration:"42 min",
-                subStyle : "blackened death",
-                frontCover : inHellSatanicaBundle,
-                format : "bundle cd digipack + t-shirt (avaialable sizes : S,M,L,XL)",
-                isAlbumAvailable : true,
-                listenAndShop : function(){
-                    if(this.isAlbumAvailable === true){
-                        return [
-                            {
-                                youTube : "",
-                                bandCamp : "",
-                                spotify : "",
-                                seasonShop :""
-                            }
-                        ]
-                    } else if (this.isAlbumAvailable === false){
-                        return []
-                    }
-                } 
-            },
-            {
-                id : 4,
-                bandId : 2,
-                year : 2018,
-                releaseDate : "06/08/2018",
-                title : "En levrette sur l'établi démoniaque",
-                duration:"25 min",
-                subStyle : "blackened death",
-                frontCover : inHellLexArt,
-                format : "cd jewel case",
-                isAlbumAvailable : true,
-                listenAndShop : function(){
-                    if(this.isAlbumAvailable === true){
-                        return [
-                            {
-                                youTube : "",
-                                bandCamp : "",
-                                spotify : "",
-                                seasonShop :""
-                            }
-                        ]
-                    } else if (this.isAlbumAvailable === false){
-                        return []
-                    }
-                } 
-            },
-            {
-                id : 5,
-                bandId : 2,
-                year : 2016,
-                releaseDate : "05/11/2016",
-                title : "A poil dans la salle de bain sans brosse à dents",
-                duration:"49 min",
-                subStyle : "blackened death",
-                frontCover : inHellLexArt,
-                format : "cd jewel case",
-                isAlbumAvailable : true,
-                listenAndShop : function(){
-                    if(this.isAlbumAvailable === true){
-                        return [
-                            {
-                                youTube : "",
-                                bandCamp : "",
-                                spotify : "",
-                                seasonShop :""
                             }
                         ]
                     } else if (this.isAlbumAvailable === false){

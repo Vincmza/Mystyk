@@ -8,7 +8,7 @@ const Footer = () => {
         instagram : "https://www.instagram.com/mystyk_prod/"
     }
     const takeLinksToArray = Object.entries(socialNeworkLinks)
-    console.log(Object.entries(socialNeworkLinks))
+    // console.log(Object.entries(socialNeworkLinks))
     return (
         <div className='footer'>
             <div className='footWrapper'>
