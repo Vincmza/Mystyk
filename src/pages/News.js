@@ -23,7 +23,7 @@ const News = (props) => {
                     const upperCase = goToLowerCase.split("")[0].toUpperCase()
                     return <div className='newsCard__newsContent__newsListen__container'>
                     <p className='newsCard__newsContent__newsListen__container--title'>Ecouter sur {goToLowerCase.replace(goToLowerCase[0], upperCase[0]).toString()} : </p>
-                    <a target="_blank" className={`newsCard__newsContent__newsListen__container--${key}`} href={value}>
+                    <a target="_blank" rel="noreferrer" className={`newsCard__newsContent__newsListen__container--${key}`} href={value}>
                         {net[key]}
                     </a>
                 </div>
@@ -48,11 +48,16 @@ const News = (props) => {
                                {item.bandName()}
                             </div>
                             <div className='newsCard__newsContent__newsHeader'>
-                                {item.date}
+                                 {item.date}
                             </div>
                         </div>
                         <div className='newsCard__newsContent__newsTitle'>
-                            {item.title}
+                            <span className='newsCard__newsContent__newsTitle--icon'>
+                                {net.evil}
+                            </span>
+                            <span>
+                                {item.title}
+                            </span>
                         </div>
                         <div className='newsCard__newsContent__newsArticle'>
                             {item.content}

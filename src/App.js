@@ -12,6 +12,7 @@ import Contact from "./pages/Contact"
 import Error from "./pages/Error";
 //components
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   //PAGE CLICKED STATE
@@ -37,6 +38,7 @@ function App() {
             <Route path="/contact" element={<Contact/>}/>
             <Route path="*" element={<Error/>}/>
           </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );
