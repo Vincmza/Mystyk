@@ -47,16 +47,19 @@ export const bands = [
         lineUp : [
             {
                 name : "Nekros",
-                instrument : ["songwriting","guitars","bass"] 
+                instrument : ["songwriting","guitars","bass"],
+                pastMember : {isTrue : false, fromTo : ""}
                 
             },
             {
                 name : "Quantum",
-                instrument : ["voices","lyrics"]
+                instrument : ["voices","lyrics"],
+                pastMember : {isTrue : false, fromTo : ""}
             },
             {
                 name : "Naja Atra",
-                instrument : ["drums", "sound engineering"]
+                instrument : ["drums", "sound engineering"],
+                pastMember : {isTrue : false, fromTo : ""}
             }
         ],
         releases : [
@@ -177,23 +180,28 @@ export const bands = [
         lineUp : [
             {
                 name : "Darkhell",
-                instrument : ["songwriting","guitars",]
+                instrument : ["songwriting","guitars",],
+                pastMember : {isTrue : false, fromTo : ""}
             },
             {
                 name : "Olivier",
-                instrument : ["guitars"] 
+                instrument : ["guitars"],
+                pastMember : {isTrue : false, fromTo : ""}
             },
             {
                 name : "Cédric",
-                instrument : ["bass", "backing vocals"]
+                instrument : ["bass", "backing vocals"],
+                pastMember : {isTrue : false, fromTo : ""}
             },
             {
                 name : "James Spar",
-                instrument : ["vocals", "lyrics"]
+                instrument : ["vocals", "lyrics"],
+                pastMember : {isTrue : true, fromTo : "2014 to 2021"}
             },
             {
                 name : "Gus",
-                instrument : ["drums"]
+                instrument : ["drums"],
+                pastMember : {isTrue : true, fromTo : "2014 to 2021"}
             }
         ],
         releases : [

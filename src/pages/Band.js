@@ -1,5 +1,5 @@
 import { bands } from '../data/bands';
-import React from 'react';
+import React, {useState} from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import * as net from "../data/icons";
 
@@ -58,6 +58,21 @@ const Band = () => {
                 </a>
             </li>))
     }
+    //OLD MEMBERS FILTERED IN AN ARRAY
+    const oldMembers = bandFiltered.lineUp.filter(elem=>elem.pastMember.isTrue === true)
+    //DISPLAY PAST MEMBERS FUNCTION
+    const displayPastMembers = ()=>{  
+        console.log(oldMembers)   
+        if(oldMembers.length > 0){
+            return (oldMembers.map(elem=>(
+                <li className='pastMembers__list__oldMember'>
+                    <span>{elem.name} : </span>
+                    <span>{elem.instrument.length > 1 ? (elem.instrument.join(", ")):(elem.instrument)} - </span>
+                    <span>{elem.pastMember.fromTo}.</span>
+                </li>
+            )))
+        }
+    }
     return (
         <div className='band'>
             <div className='back'>
@@ -94,27 +109,41 @@ const Band = () => {
                     </ul>
                 </div>
                 <div className='lineUp'>
-                    <h3 className='lineUp__title'>Line up</h3>
+                    <h3 className='lineUp__title'>Current line up</h3>
                     <ul className='lineUp__list'>
                         {bandFiltered.lineUp.map(elem=>(
-                        <li key={elem.name}>
-                            <div className='lineUp__list__card'>
-                                <div className='lineUp__list__card--member'>
-                                    {elem.name} :
+                            <li key={elem.name}>
+                               {elem.pastMember.isTrue === false ?                               
+                               (<>
+                                <div className='lineUp__list__card'>
+                                    <div className='lineUp__list__card--member'>
+                                        {elem.name} :
+                                    </div>
+                                    <ul className='lineUp__list__card--role'>
+                                        {elem.instrument.map((item,index)=>(
+                                            index !== elem.instrument.length-1 ?
+                                            <li className='role' key={index} style={{paddingLeft:"10px"}}>
+                                                {item},
+                                            </li> : 
+                                            <li className='role' key={index} style={{paddingLeft:"10px"}}>
+                                                {item}.
+                                            </li>)
+                                        )}
+                                    </ul>
                                 </div>
-                                <ul className='lineUp__list__card--role'>
-                                    {elem.instrument.map((item,index)=>(
-                                        index !== elem.instrument.length-1 ?
-                                        <li className='role' key={index} style={{paddingLeft:"10px"}}>
-                                            {item},
-                                        </li> : 
-                                        <li className='role' key={index} style={{paddingLeft:"10px"}}>
-                                            {item}.
-                                        </li>)
-                                    )}
-                                </ul>
-                            </div>
+                               </>) 
+                               : 
+                               (<>
+                               </>)}
                         </li>))}
+                    </ul>
+                </div>
+                <div className='pastMembers'>
+                        {oldMembers.length > 0 &&
+                            <h3 className='pastMembers__title'>Past members</h3>
+                        }
+                    <ul className='pastMembers__list'>
+                        {displayPastMembers()}
                     </ul>
                 </div>
                 <div className='releases'>

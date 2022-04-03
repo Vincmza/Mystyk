@@ -81,7 +81,7 @@
     }
 }
 .follow{
-    padding:10px;
+    padding:10px 10px 0px 10px;
     &__links{
         padding: 0px 10px;
         display: flex;
@@ -126,6 +126,17 @@
                 display: flex;
             }
         }
+    }
+}
+.pastMembers{
+    padding:0px 10px;
+    &__title{
+        font-size: 1.3em;
+        text-decoration: underline;
+        padding:20px;
+    }
+    &__list{
+        padding:0px 20px;
     }
 }
 .releases{
