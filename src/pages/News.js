@@ -21,13 +21,21 @@ const News = (props) => {
                 if(value !== ""){
                     let goToLowerCase = key.toLowerCase()
                     const upperCase = goToLowerCase.split("")[0].toUpperCase()
-                    return <div className='newsCard__newsContent__newsListen__container'>
-                    <p className='newsCard__newsContent__newsListen__container--title'>Ecouter sur {goToLowerCase.replace(goToLowerCase[0], upperCase[0]).toString()} : </p>
-                    <a target="_blank" rel="noreferrer" className={`newsCard__newsContent__newsListen__container--${key}`} href={value}>
+                    return <div className='newsCard__container__listen__container'>
+                    <p 
+                    className='newsCard__container__listen__container--title'
+                    >
+                        Ecouter sur {goToLowerCase.replace(goToLowerCase[0], upperCase[0]).toString()} : 
+                    </p>
+                    <a 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className={`newsCard__container__listen__container--${key}`} 
+                    href={value}
+                    >
                         {net[key]}
                     </a>
-                </div>
-                    
+                </div>  
                 }
             }
         }
@@ -38,34 +46,39 @@ const News = (props) => {
             <ul className='news__wrapper'>
                 <h1 className='newsIntro'>Latest news</h1>
                 {news.map((item,index)=>
-                (<li key={item.id} className="newsCard" style={{animationDelay: `${index*400}ms`}}>
+                (
+                <li 
+                key={item.id} 
+                className="newsCard" 
+                style={{animationDelay: `${index*400}ms`}}
+                >
                     <div className='newsCard__imgContainer'>
                         <img src={item.image} alt={`photo de ${item.bandName()}`}/>
                     </div>
-                    <div className='newsCard__newsContent'>
-                        <div className='newsCard__newsContent__newsHeader'>
-                            <div className='newsCard__newsContent__newsHeader--bandName' onClick={()=>goToBandPage(item.bandId, "bands")}>
-                               {item.bandName()}
+                    <div className='newsCard__container'>
+                        <div className='newsCard__container__header'>
+                            <div className='newsCard__container__header--bandName' onClick={()=>goToBandPage(item.bandId, "bands")}>
+                                {item.bandName()}
                             </div>
-                            <div className='newsCard__newsContent__newsHeader'>
-                                 {item.date}
+                            <div className='newsCard__container__header--date'>
+                                    {item.date}
                             </div>
                         </div>
-                        <div className='newsCard__newsContent__newsTitle'>
-                            <span className='newsCard__newsContent__newsTitle--icon'>
+                        <div className='newsCard__container__title'>
+                            <span className='newsCard__container__title--icon'>
                                 {net.evil}
                             </span>
                             <span>
                                 {item.title}
                             </span>
                         </div>
-                        <div className='newsCard__newsContent__newsArticle'>
+                        <div className='newsCard__container__article'>
                             {item.content}
                         </div>
-                        <div className='newsCard__newsContent__newsListen'>
+                        <div className='newsCard__container__listen'>
                             {displayIcons(item.listen()[0])}
                         </div>
-                    </div>
+                    </div>                   
                 </li>))}
             </ul>
            
