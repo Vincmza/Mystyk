@@ -19,7 +19,14 @@ const Bands = () => {
                         </div>
                         <div className='bandsLogo'>
                             <div className='bandsLogo__container'>
-                                <NavLink to={`/band/${item.id}`}><img className=' bandsLogo__container--file' src={item.bandLogo} alt={`logo du groupe ${item.name}`}/></NavLink>
+                                <NavLink 
+                                to={`/band/${item.id}`}>
+                                    <img 
+                                    className=' bandsLogo__container--file' 
+                                    src={item.bandLogo} 
+                                    alt={`logo du groupe ${item.name}`}
+                                    />
+                                </NavLink>
                             </div>
                         </div>
                     </li>

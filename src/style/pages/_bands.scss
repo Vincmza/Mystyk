@@ -19,6 +19,12 @@ a{
         // border:1px solid yellow;
         width:100%;
         padding-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @media screen and (max-width:800px) {
+            justify-content: center;
+        }
     }
 }
 .bandsCard{
@@ -29,11 +35,31 @@ a{
     border-radius: 2px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    width:100%;
+    justify-content: space-between;
+    width:25%;
     padding:20px;
     margin-top: 20px;
-    height: 400px;
+    margin-right: 10px;
+    height: 300px;
+    @media screen and (max-width:1200px) {
+        width:30%;
+    }
+    @media screen and (max-width:1000px) {
+        width:40%;
+    }
+    @media screen and (max-width:800px) {
+        width:50%;
+    }
+    @media screen and (max-width:650px) {
+        width:60%;
+    }
+    @media screen and (max-width:500px) {
+        width:70%;
+    }
+    @media screen and (max-width:350px) {
+        width:75%;
+    }
+
     &__header{
         display: flex;
         flex-direction: column;
@@ -47,15 +73,15 @@ a{
             transition:300ms;
             &:hover{
                 cursor: pointer;
-                transform:scale(1.1);
+                transform:scale(0.9);
             }
         }
         &__bandsContent{
             display: flex;
             justify-content: space-between;
             // border:1px solid red;
-            font-size: 1.2em;
-            padding: 10px;
+            font-size: 1em;
+            padding: 10px 0px 10px 0px;
         }
     }
 }
@@ -64,13 +90,13 @@ a{
     justify-content: center;
     // border:1px solid green;
     &__container{
-        width:400px;
-        height:200px;
+        width:180px;
+        height:180px;
         transform: scale(1);
         transition:300ms;
         &:hover{
             cursor: pointer;
-            transform:scale(1.1);
+            transform:scale(0.9);
         }
         @media screen and (max-width:500px) {
             width:300px;
@@ -79,7 +105,7 @@ a{
         &--file{
             width:100%;
             height:100%;
-            object-fit: contain;
+            object-fit: cover;
         }
     }
 }

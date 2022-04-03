@@ -328,5 +328,5 @@ export const bands = [
                 },
             }
         ]
-    }
+    },
 ]

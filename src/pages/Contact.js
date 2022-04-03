@@ -50,6 +50,9 @@ const Contact = () => {
         <div className='contact'>
             <h1 className='contactIntro'>Contact us</h1>
             <div className='contact__wrapper'>
+                <div className='contact__wrapper__words'>
+                    <p>Weither you are a band or someone who wants informations or share suggestions, feel free to use the form below</p>
+                </div>
                 <form className='contact__wrapper__form' onSubmit={(e)=>sendEmail(e)}>
                     <label htmlFor='name'>Name or Band</label>
                     <input
