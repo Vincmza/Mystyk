@@ -49,7 +49,14 @@ const Shows = (props) => {
                                     </td>
                                     <td className='allShows__table__infos--moreDetails'>
                                         {elem.moreDetails !== "" &&
-                                            <a className='moreDetailsIcon' href={elem.moreDetails}>{net.moreDetails}</a>
+                                            <a 
+                                            target="_blank" 
+                                            rel="noreferrer" 
+                                            className='moreDetailsIcon' 
+                                            href={elem.moreDetails}
+                                            >
+                                                {net.moreDetails}
+                                            </a>
                                         }
                                     </td>
                                 </tr>

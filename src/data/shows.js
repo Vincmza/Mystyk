@@ -47,8 +47,8 @@ export const shows = [
             return false
           }
         },
-        event : "Mes Kouilles Fest IV",
-        where : "Avenue des fils de pute de la commanderie 75001 Paris",
+        event : "Destroy Life Fest IV",
+        where : "Avenue des déportés 75001 Paris",
         country : "France",
         moreDetails : ""
       }
@@ -99,8 +99,8 @@ export const shows = [
               return false
             }
           },
-          event : "Mes Kouilles Fest IV",
-          where : "Avenue des fils de pute de la commanderie",
+          event : "Destroy Life Fest IV",
+          where : "Avenue des déporté 75001 Paris",
           country : "France",
           moreDetails : ""
         }
