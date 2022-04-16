@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import emailjs from "emailjs-com";
 
 const Contact = () => {
+    const [data, setData]=useState({name : "", email : "", message : "" })
     //STATE TO KNOW IF FORM HAS BEEN SUBMITTED PROPERLY
     const [isEmailOk, setIsEmailOk]=useState(null)
     //LOADER
@@ -11,6 +12,7 @@ const Contact = () => {
     //FUNCTION TO CATCH VALUE OF TEXTAREA
     const count = (e)=>{    
         setHowManyLetters([e.target.value.length])
+        getData(e, "message")
     }
     //FUNCTION TO SEND DATA FROM FORM BY EMAIL
     const sendEmail = (e)=>{
@@ -23,6 +25,7 @@ const Contact = () => {
         ).then(res=>{
             console.log("réponse : ", res)
             setIsEmailOk(true)
+            setData({name : "", email : "", message : "" })
         })
         .catch(err=>{
             console.log("l'erreur : ", err)
@@ -46,6 +49,11 @@ const Contact = () => {
             setIsLoader(false)
         }
     }
+    const getData = (e,name)=>{
+        const array = {...data}
+        array[name] = e.target.value
+        setData({array})
+    }
     return (
         <div className='contact'>
             <h1 className='contactIntro'>Contact us</h1>
@@ -60,6 +68,8 @@ const Contact = () => {
                     id="name" 
                     type="text" 
                     name='name'
+                    value={data.name}
+                    onChange={(e)=>getData(e,"name")}
                     placeholder='Write your name here'
                     maxLength="50"
                     minLength="1"
@@ -72,6 +82,8 @@ const Contact = () => {
                     id="user_email" 
                     type="email" 
                     name='user_email'
+                    value={data.email}
+                    onChange={(e)=>getData(e,"email")}
                     placeholder='your_email@exemple.com'
                     maxLength="80"
                     minLength="10"
@@ -82,6 +94,7 @@ const Contact = () => {
                     className='contact__wrapper__form--message'
                     id='message'
                     name='message'
+                    value={data.message}
                     maxLength="300"
                     onChange={(e)=>count(e)}
                     style={{resize : "none"}}

@@ -38,10 +38,9 @@ const Band = () => {
     const oldMembers = bandFiltered.lineUp.filter(elem=>elem.pastMember.isTrue === true)
     //DISPLAY PAST MEMBERS FUNCTION
     const displayPastMembers = ()=>{  
-        console.log(oldMembers)   
         if(oldMembers.length > 0){
             return (oldMembers.map(elem=>(
-                <li className='pastMembers__list__oldMember'>
+                <li key={elem} className='pastMembers__list__oldMember'>
                     <span>{elem.name} : </span>
                     <span>{elem.instrument.length > 1 ? (elem.instrument.join(", ")):(elem.instrument)} - </span>
                     <span>{elem.pastMember.fromTo}.</span>
@@ -98,10 +97,10 @@ const Band = () => {
                                     <ul className='lineUp__list__card--role'>
                                         {elem.instrument.map((item,index)=>(
                                             index !== elem.instrument.length-1 ?
-                                            <li className='role' key={index} style={{paddingLeft:"10px"}}>
+                                            <li className='role' key={item} style={{paddingLeft:"10px"}}>
                                                 {item},
                                             </li> : 
-                                            <li className='role' key={index} style={{paddingLeft:"10px"}}>
+                                            <li className='role' key={item} style={{paddingLeft:"10px"}}>
                                                 {item}.
                                             </li>)
                                         )}
