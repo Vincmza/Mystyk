@@ -114,37 +114,45 @@
             &--youTube{
                 font-size: 1.1em;
                 color:red;
-                transform: scale(1);
+                transform: scale(1.1);
                 transition:300ms;
                 &:hover{
-                    transform: scale(1.2);
+                    transform: scale(0.9);
                 }
             }
             &--bandCamp{
                 font-size: 1.1em;
                 color:rgb(29,160,195);
-                transform: scale(1);
+                transform: scale(1.1);
                 transition:300ms;
                 &:hover{
-                    transform: scale(1.2);
+                    transform: scale(0.9);
                 }
             }
             &--spotify{
                 font-size: 1.1em;
                 color: rgb(30, 215, 96);
-                transform: scale(1);
+                transform: scale(1.1);
                 transition:300ms;
                 &:hover{
-                    transform: scale(1.2);
+                    transform: scale(0.9);
                 }
             }
             &--seasonShop{
                 font-size: 1.1em;
-                transform: scale(1);
+                transform: scale(1.1);
                 transition:300ms;
                 &:hover{
-                    transform: scale(1.2);
+                    transform: scale(0.9);
                     cursor: pointer;
+                }
+            }
+            &--deezer{
+                font-size: 1.1em;
+                transform: scale(1.1);
+                transition:300ms;
+                &:hover{
+                    transform: scale(0.9);
                 }
             }
         }

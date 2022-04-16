@@ -12,6 +12,7 @@
 
 .contact{
     color:wheat;
+    font-family: "Alegreya", Arial, Helvetica, sans-serif;
     width:75%;
     margin: auto;
     @media screen and (max-width:650px) {
@@ -62,9 +63,13 @@
             &--message{
                 height: 300px;
                 padding: 10px;
+                font-family: "Alegreya", Arial, Helvetica, sans-serif;
+                font-size: 1.1em;
             }
             &--name, &--email{
                 padding:5px;
+                font-family: "Alegreya", Arial, Helvetica, sans-serif;
+                font-size: 1.1em;
             }
             &--submit{
                 margin-top: 20px;

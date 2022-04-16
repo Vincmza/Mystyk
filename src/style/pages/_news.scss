@@ -73,10 +73,10 @@ img {
                 text-align: center;
             }
             &--bandName{
-                font-size: 1.5em;
+                font-size: 1.4em;
                 text-shadow: red 1px 0 10px;
                 transform: scale(1);
-                transition:500ms;
+                transition:300ms;
                 display: flex;
                 align-items: center;
                 &:hover{
@@ -134,9 +134,9 @@ img {
                     font-size: 1.1em;
                     padding-left: 10px;
                     transform:scale(1);
-                    transition:400ms;
+                    transition:300ms;
                     &:hover{
-                        transform:scale(1.2);
+                        transform:scale(0.9);
                     }
                 }
                 &--bandCamp{
@@ -145,10 +145,10 @@ img {
                     align-items: center;
                     font-size: 1.1em;
                     padding-left: 10px;
-                    transform:scale(1);
-                    transition:400ms;
+                    transform:scale(1.1);
+                    transition:300ms;
                     &:hover{
-                        transform:scale(1.2);
+                        transform:scale(0.9);
                     }
                 }
                 &--spotify{
@@ -157,10 +157,10 @@ img {
                     align-items: center;
                     font-size: 1.1em;
                     padding-left: 10px;
-                    transform:scale(1);
-                    transition:400ms;
+                    transform:scale(1.1);
+                    transition:300ms;
                     &:hover{
-                        transform:scale(1.2);
+                        transform:scale(0.9);
                     }
                 }
             }

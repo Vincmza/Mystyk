@@ -7,12 +7,11 @@ const Contact = () => {
     const [isEmailOk, setIsEmailOk]=useState(null)
     //LOADER
     const [isLoader, setIsLoader]=useState(false)
-    //STATE TO STORE MESSAGE LENGTH
-    const [howManyLetters, setHowManyLetters]=useState([])
+    const [countValue, setCountValue]=useState(0)
     //FUNCTION TO CATCH VALUE OF TEXTAREA
-    const count = (e)=>{    
-        setHowManyLetters([e.target.value.length])
-        getData(e, "message")
+    const count = (e)=>{
+        getData(e, "message")   
+        setCountValue(e.target.value.length)
     }
     //FUNCTION TO SEND DATA FROM FORM BY EMAIL
     const sendEmail = (e)=>{
@@ -26,6 +25,7 @@ const Contact = () => {
             console.log("réponse : ", res)
             setIsEmailOk(true)
             setData({name : "", email : "", message : "" })
+            setCountValue(0)
         })
         .catch(err=>{
             console.log("l'erreur : ", err)
@@ -53,6 +53,7 @@ const Contact = () => {
         const array = {...data}
         array[name] = e.target.value
         setData({array})
+        
     }
     return (
         <div className='contact'>
@@ -100,7 +101,7 @@ const Contact = () => {
                     style={{resize : "none"}}
                     required
                     />
-                    <div className='contact__wrapper__form--count'>{howManyLetters.length === 0 ? (<>0</>) : (<>{howManyLetters}</>)}/300</div>
+                    <div className='contact__wrapper__form--count'>{countValue}/300</div>
                     <div className='contact__wrapper__form__isSent'>
                         {isLoader === true && isEmailOk === null ? 
                             (<>
