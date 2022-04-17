@@ -1,27 +1,7 @@
-//LOGO // Nom du groupe + Logo
-//KOSMOS
-import kosmosLogo from "../assets/bands/kosmos/logo/kosmos_logo.jpg"
-//IN HELL
-import inHellLogo from "../assets/bands/in_hell/logo/in_hell_logo.jpg"
-//BANNER // Nom du groupe + Banner
-import inHellBanner from "../assets/bands/in_hell/banner/in_hell_lex_cd.jpg"
-import kosmosBanner from "../assets/bands/kosmos/banner/kosmos_noctis_cd.jpg"
-//FRONT COVER // Nom du groupe + premier mot de l'album + Art pour Artwork
-//KOSMOS
-import kosmosNoctisArt from "../assets/bands/kosmos/music/kosmos_noctis_cd.jpg"
-import kosmosEnvolArt from "../assets/bands/kosmos/music/kosmos_envol_cd.jpg"
-//IN HELL
-import inHellLexArt from "../assets/bands/in_hell/music/in_hell_lex_cd.jpg"
-import inHellSatanicaArt from "../assets/bands/in_hell/music/in_hell_satanica_cd.jpg"
-//MERCH // Nom du groupe + nature du merch à définir avec le temps
-//KOSMOS
-import kosmosTshirt from "../assets/bands/kosmos/merch/kosmos_t-shirt.jpg"
-import kosmosGlass from "../assets/bands/kosmos/merch/kosmos_glass.jpg"
-//IN HELL
-import inHellBeerOcre from "../assets/bands/in_hell/merch/in_hell_beer_ocre.jpg"
-import inHellSweatDark from "../assets/bands/in_hell/merch/in_hell_sweat_dark.jpg"
-import inHellBonnet from "../assets/bands/in_hell/merch/in_hell_bonnet.jpg"
-import inHellTshirt from "../assets/bands/in_hell/merch/in_hell_t-shirt.jpg"
+import * as inHell from "./bands_files/in_hell_files"
+import * as kosmos from "./bands_files/kosmos_files"
+
+
 //FUNCTION TO GET BAND'S NAME 
 import { returnName } from "./news"
 
@@ -33,8 +13,8 @@ export const bands = [
         style : "black metal",
         subStyle : "atmospheric black/death",
         biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt consectetur enim, eget venenatis justo laoreet et. Mauris aliquet egestas leo quis faucibus. Nulla fringilla lacus eget luctus fringilla. Etiam neque magna, dapibus non elit vitae, lobortis consequat est. Donec mollis cursus massa eget rutrum. Quisque sed tellus dictum, lacinia neque id, viverra arcu. Duis massa elit, euismod eget varius sit amet, porta at massa. Duis eget arcu eget lorem efficitur consequat ornare vitae ante. Duis placerat dui in tortor euismod pellentesque. Nam tincidunt ligula at felis aliquam accumsan. Nullam vitae ultrices lectus. Pellentesque tempus sollicitudin lacinia. Phasellus accumsan fringilla arcu, ut commodo ex vehicula nec. Nulla ultricies ante quis lacus bibendum maximus. Pellentesque quis elit volutpat, congue arcu eu, viverra libero.",
-        bandLogo: kosmosLogo,
-        banner : kosmosBanner,
+        bandLogo: kosmos.logo,
+        banner : kosmos.banner,
         country : "France",
         followLinks : [
             {
@@ -72,7 +52,7 @@ export const bands = [
                 title : "Noctis, Avem et Gloria",
                 duration: "58 min",
                 subStyle : "atmospheric black/death",
-                frontCover : kosmosNoctisArt,
+                frontCover : kosmos.noctisAvemEtGloria,
                 format : "cd digipack",
                 isAlbumAvailable : true,
                 listenAndShop : function(){
@@ -99,7 +79,7 @@ export const bands = [
                 title : "L'Envol",
                 duration: "52 min",
                 subStyle : "post black metal",
-                frontCover : kosmosEnvolArt,
+                frontCover : kosmos.envol,
                 format : "cd digipack",
                 isAlbumAvailable : true,
                 listenAndShop : function(){
@@ -129,7 +109,7 @@ export const bands = [
                 },
                 format : "T-shirt",
                 description : "high quality coton, available in S,M,L,XL sizes",
-                itemPicture : kosmosTshirt,
+                itemPicture : kosmos.tShirt,
                 isItemAvailable : true,
                 purchase : function(){
                     if(this.isItemAvailable===true){
@@ -147,7 +127,7 @@ export const bands = [
                 },
                 format : "Gobelet",
                 description : "Kosmos logo in black on white transparent plastic glass",
-                itemPicture : kosmosGlass,
+                itemPicture : kosmos.glass,
                 isItemAvailable : true,
                 purchase : function(){
                     if(this.isItemAvailable===true){
@@ -166,8 +146,8 @@ export const bands = [
         style : "death metal",
         subStyle : "blackened death",
         biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt consectetur enim, eget venenatis justo laoreet et. Mauris aliquet egestas leo quis faucibus. Nulla fringilla lacus eget luctus fringilla. Etiam neque magna, dapibus non elit vitae, lobortis consequat est. Donec mollis cursus massa eget rutrum. Quisque sed tellus dictum, lacinia neque id, viverra arcu. Duis massa elit, euismod eget varius sit amet, porta at massa. Duis eget arcu eget lorem efficitur consequat ornare vitae ante. Duis placerat dui in tortor euismod pellentesque. Nam tincidunt ligula at felis aliquam accumsan. Nullam vitae ultrices lectus. Pellentesque tempus sollicitudin lacinia. Phasellus accumsan fringilla arcu, ut commodo ex vehicula nec. Nulla ultricies ante quis lacus bibendum maximus. Pellentesque quis elit volutpat, congue arcu eu, viverra libero.",
-        bandLogo: inHellLogo,
-        banner: inHellBanner,
+        bandLogo: inHell.logo,
+        banner: inHell.banner,
         country : "France",
         followLinks : [
             {
@@ -214,7 +194,7 @@ export const bands = [
                 title : "Lex Divina Terrores",
                 duration:"47 min",
                 subStyle : "blackened death",
-                frontCover : inHellLexArt,
+                frontCover : inHell.lexDivinaTerrores,
                 format : "cd digipack",
                 isAlbumAvailable : true,
                 listenAndShop : function(){
@@ -241,7 +221,7 @@ export const bands = [
                 title : "Satanica Mundi",
                 duration:"42 min",
                 subStyle : "blackened death",
-                frontCover : inHellSatanicaArt,
+                frontCover : inHell.satanicaMundi,
                 format : "cd jewel case",
                 isAlbumAvailable : true,
                 listenAndShop : function(){
@@ -271,7 +251,7 @@ export const bands = [
                 },
                 format : "t-shirt",
                 description : "high quality coton, available in S,M,L,XL sizes",
-                itemPicture : inHellTshirt,
+                itemPicture : inHell.tShirt,
                 isItemAvailable : true,
                 purchase : function(){
                     if(this.isItemAvailable===true){
@@ -289,7 +269,7 @@ export const bands = [
                 },
                 format : "beer",
                 description : "Bière houblonnée à crue avec des notes citronées, 7,5°",
-                itemPicture : inHellBeerOcre,
+                itemPicture : inHell.beer,
                 isItemAvailable : true,
                 purchase : function(){
                     if(this.isItemAvailable===true){
@@ -307,7 +287,7 @@ export const bands = [
                 },
                 format : "sweat",
                 description : "sweat épais en coton (available sizes : S,M,L,XL)",
-                itemPicture : inHellSweatDark,
+                itemPicture : inHell.sweat,
                 isItemAvailable : true,
                 purchase : function(){
                     if(this.isItemAvailable===true){
@@ -325,7 +305,7 @@ export const bands = [
                 },
                 format : "bonnet",
                 description : "bonnet renforcé en coton (taille unique)",
-                itemPicture : inHellBonnet,
+                itemPicture : inHell.bonnet,
                 isItemAvailable : true,
                 purchase : function(){
                     if(this.isItemAvailable===true){
