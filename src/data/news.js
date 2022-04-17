@@ -1,10 +1,7 @@
 //ARRAY CONTAINING ALL BANDS
 import { bands } from "./bands"
-//FRONT COVER // Nom du groupe + premier mot de l'album + Art pour Artwork
-import kosmosNoctisArt from "../assets/bands/kosmos/music/kosmos_noctis_cd.jpg"
-import inHellLexArt from "../assets/bands/in_hell/music/in_hell_lex_cd.jpg"
-//MERCH // Nom du groupe + nature du merch à définir avec le temps
-import kosmosTshirt from "../assets/bands/kosmos/merch/kosmos_t-shirt.jpg"
+import * as inHell from "./bands_files/in_hell_files.js"
+import * as kosmos from "./bands_files/kosmos_files.js"
 
 //COMPARE BANDID AND ID KEY IN BANDS ARRAY TO RETURN RIGHT BAND'S NAME
 export const returnName = (bandId)=>{
@@ -28,7 +25,7 @@ export const news = [
         bandName : function(){
             return returnName(this.bandId)
         },
-        image : kosmosNoctisArt,
+        image : kosmos.noctisAvemEtGloria(),
     },
     {
         id : 2,
@@ -47,7 +44,7 @@ export const news = [
         bandName : function(){
             return returnName(this.bandId)
         },
-        image : kosmosTshirt,
+        image : kosmos.tShirt(),
     },
     {
         id : 3,
@@ -66,6 +63,6 @@ export const news = [
         bandName : function(){
             return returnName(this.bandId)
         },
-        image : inHellLexArt,
+        image : inHell.lexDivinaTerrores(),
     }
 ]

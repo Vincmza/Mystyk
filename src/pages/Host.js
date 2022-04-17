@@ -1,5 +1,4 @@
 import React from 'react';
-import hostBgImg from "../assets/background/bg-logo-2.png"
 import { useNavigate } from "react-router-dom";
 
 const Host = (props) => {
@@ -19,7 +18,7 @@ const Host = (props) => {
     return (
         <div className="host">
             <div className="host__bgImgCont">
-                <img onClick={()=>redirect()} className="host-bg-img" src={hostBgImg} alt="logo du label"/>
+                <img onClick={()=>redirect()} className="host-bg-img" src="/assets/background/bg-logo-2.png" alt="logo du label"/>
             </div>
         </div>
     );

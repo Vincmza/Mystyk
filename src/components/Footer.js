@@ -1,6 +1,6 @@
 import React from 'react';
 import * as net from "../data/icons"
-import seasonLogo from "../assets/season_of_mist/season-of-mist_logo.png"
+
 
 const Footer = () => {
     const socialNeworkLinks={
@@ -31,7 +31,7 @@ const Footer = () => {
                     </h2>
                     <div className='footWrapper__season__logoContainer'>
                         <a title='go to season of mist website' href='https://www.season-of-mist.com/' target="_blank" rel="noreferrer">
-                            <img src={seasonLogo} alt="logo du distributeur season of mist"/>
+                            <img src="/assets/season_of_mist/season-of-mist_logo.png" alt="logo du distributeur season of mist"/>
                         </a>
                     </div>
                 </div>
