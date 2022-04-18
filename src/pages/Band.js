@@ -7,6 +7,7 @@ import * as net from "../data/icons";
 //COMPONENTS
 import Album from '../components/Album';
 import Merch from '../components/Merch';
+import * as kosmos from "../data/bands_files/kosmos_files"
 
 
 const Band = () => {
@@ -52,11 +53,26 @@ const Band = () => {
         <div className='band'>
             <div className='back'>
                 <NavLink to={"/bands"}>
-                    <input className='back__toBands' type="button" value={"Back to bands"}/>
+                    <input 
+                    className='back__toBands' 
+                    type="button" 
+                    value={"Back to bands"}
+                    />
                 </NavLink>
             </div>
             <div className='band__wrapper'>
-                <div className='band__header' style={{backgroundImage: `url(${bandFiltered.banner})`}}>
+                <div 
+                className='band__header' 
+                >
+                    <picture>
+                        <source media="(max-width: 800px)" srcset={bandFiltered.banner.bannerMedium}/>
+                        <source media="(max-width: 500px)" srcset={bandFiltered.banner.bannerLow}/>                               
+                            <img 
+                            className='band__header__banner' 
+                            src={bandFiltered.banner.bannerHigh} 
+                            alt={`logo du groupe ${bandFiltered.name}`}
+                            />
+                    </picture>
                     <h1 className='band__name'>{bandFiltered.name}</h1>
                     <div className='band__style'>
                         <span className='band__style'>Style général : 

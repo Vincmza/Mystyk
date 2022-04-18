@@ -3,10 +3,13 @@ const getPath = (band,output)=>{
 }
 
 //LOGO
-export const logo = () => `${getPath("kosmos", "logo")}logo_small.png`
+export const logo = () => `${getPath("kosmos", "logo")}logo.png`
 export const logoLow = () => `${getPath("kosmos", "logo")}logo_low.png`
 //BANNER
-export const banner = () => `${getPath("kosmos", "banner")}noctis_cd.jpg`
+export const bannerHigh = () => `${getPath("kosmos", "banner")}banner_high.jpg`
+export const bannerMedium = () => `${getPath("kosmos", "banner")}banner_medium.jpg`
+export const bannerLow = () => `${getPath("kosmos", "banner")}banner_low.jpg`
+
 // //MUSIC
 export const noctisAvemEtGloria = () => `${getPath("kosmos", "music")}noctis_cd.jpg`
 export const envol = () => `${getPath("kosmos", "music")}envol_cd.jpg`

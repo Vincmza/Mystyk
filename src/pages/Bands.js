@@ -28,10 +28,10 @@ const Bands = () => {
                                 to={`/band/${item.id}`}
                                 >
                                     <picture>
-                                        <source media="(max-width: 500px)" srcset={""}/>                               
+                                        <source media="(max-width: 500px)" srcset={item.bandLogo.logoLow}/>                               
                                             <img 
                                             className='bandsLogo__container--file' 
-                                            src={item.bandLogo} 
+                                            src={item.bandLogo.logo} 
                                             alt={`logo du groupe ${item.name}`}
                                             />
                                     </picture>

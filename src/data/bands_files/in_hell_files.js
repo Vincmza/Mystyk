@@ -4,9 +4,11 @@ const getPath = (band,output)=>{
 
 //LOGO
 export const logo = ()=> `${getPath("in_hell","logo")}logo.jpg`
-export const logoSmall = ()=> `${getPath("in_hell","logo")}logo_small.jpg`
+export const logoLow = ()=> `${getPath("in_hell","logo")}logo_low.jpg`
 //BANNER
-export const banner = ()=>`${getPath("in_hell", "banner")}lex_cd.jpg`
+export const bannerHigh = ()=>`${getPath("in_hell", "banner")}banner_high.jpg`
+export const bannerMedium = ()=>`${getPath("in_hell", "banner")}banner_medium.jpg`
+export const bannerLow = ()=>`${getPath("in_hell", "banner")}banner_low.jpg`
 
 //MUSIC
 export const satanicaMundi = () => `${getPath("in_hell", "music")}satanica_cd.jpg`
