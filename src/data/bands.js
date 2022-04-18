@@ -13,8 +13,15 @@ export const bands = [
         style : "black metal",
         subStyle : "atmospheric black/death",
         biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt consectetur enim, eget venenatis justo laoreet et. Mauris aliquet egestas leo quis faucibus. Nulla fringilla lacus eget luctus fringilla. Etiam neque magna, dapibus non elit vitae, lobortis consequat est. Donec mollis cursus massa eget rutrum. Quisque sed tellus dictum, lacinia neque id, viverra arcu. Duis massa elit, euismod eget varius sit amet, porta at massa. Duis eget arcu eget lorem efficitur consequat ornare vitae ante. Duis placerat dui in tortor euismod pellentesque. Nam tincidunt ligula at felis aliquam accumsan. Nullam vitae ultrices lectus. Pellentesque tempus sollicitudin lacinia. Phasellus accumsan fringilla arcu, ut commodo ex vehicula nec. Nulla ultricies ante quis lacus bibendum maximus. Pellentesque quis elit volutpat, congue arcu eu, viverra libero.",
-        bandLogo: {logo : kosmos.logo(), logoLow : kosmos.logoLow()},
-        banner : {bannerHigh : kosmos.bannerHigh(), bannerMedium : kosmos.bannerMedium(), bannerLow : kosmos.bannerLow()},
+        bandLogo: {
+            logo : kosmos.logo(), 
+            logoLow : kosmos.logoLow()
+        },
+        banner : {
+            bannerHigh : kosmos.bannerHigh(), 
+            bannerMedium : kosmos.bannerMedium(), 
+            bannerLow : kosmos.bannerLow()
+        },
         country : "France",
         followLinks : [
             {
@@ -146,8 +153,15 @@ export const bands = [
         style : "death metal",
         subStyle : "blackened death",
         biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt consectetur enim, eget venenatis justo laoreet et. Mauris aliquet egestas leo quis faucibus. Nulla fringilla lacus eget luctus fringilla. Etiam neque magna, dapibus non elit vitae, lobortis consequat est. Donec mollis cursus massa eget rutrum. Quisque sed tellus dictum, lacinia neque id, viverra arcu. Duis massa elit, euismod eget varius sit amet, porta at massa. Duis eget arcu eget lorem efficitur consequat ornare vitae ante. Duis placerat dui in tortor euismod pellentesque. Nam tincidunt ligula at felis aliquam accumsan. Nullam vitae ultrices lectus. Pellentesque tempus sollicitudin lacinia. Phasellus accumsan fringilla arcu, ut commodo ex vehicula nec. Nulla ultricies ante quis lacus bibendum maximus. Pellentesque quis elit volutpat, congue arcu eu, viverra libero.",
-        bandLogo: {logo : inHell.logo(), logoLow : inHell.logoLow()},
-        banner: {bannerHigh : inHell.bannerHigh(), bannerMedium : inHell.bannerMedium(), bannerLow : inHell.bannerLow()},
+        bandLogo: {
+            logo : inHell.logo(), 
+            logoLow : inHell.logoLow()
+        },
+        banner: {
+            bannerHigh : inHell.bannerHigh(), 
+            bannerMedium : inHell.bannerMedium(), 
+            bannerLow : inHell.bannerLow()
+        },
         country : "France",
         followLinks : [
             {

@@ -30,11 +30,20 @@ const Shop = () => {
             <h1 className='shopIntro'>Shop</h1>
             <div className='shop__wrapper'>
                 <div className='shop__wrapper__options'>
-                    <input type="button" value="Filtres" className='shop__wrapper__options__filters' onClick={displayFilters}/>
+                    <input 
+                    type="button" 
+                    value="Filtres" 
+                    className='shop__wrapper__options__filters' 
+                    onClick={displayFilters}
+                    />
                     {showFilters === true ? 
                         (<>
                             {options.map((elem,index)=>(
-                                <div className={`shop__wrapper__options--${elem}`} key={elem} style={{animationDelay : `${index*250}ms`}}>
+                                <div 
+                                className={`shop__wrapper__options--${elem}`} 
+                                key={elem} 
+                                style={{animationDelay : `${index*250}ms`}}
+                                >
                                     <input 
                                     type="checkbox" 
                                     id={elem} 
