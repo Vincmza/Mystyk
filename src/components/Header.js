@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import {AiOutlineMenu} from "react-icons/ai"
 
 
+
 const Header = (props) => {
     //ALL PAGES
     const allPages = ["news","shows","bands","shop","contact"]
@@ -24,20 +25,51 @@ const Header = (props) => {
     }
     return (
         <div className='headerContainer'>
+            
             {isIconClicked === false ? 
             (<>
-                <div className='nav-icon'>
-                    <div className='nav-icon__reactIcon' onClick={handleNavLogo}>
-                        <AiOutlineMenu/>
+                <div className='menu'>
+                    <div className='menu__nav-icon'>
+                        <div className='menu__nav-icon__reactIcon' onClick={handleNavLogo}>
+                            <AiOutlineMenu/>
+                        </div>
+                    </div>
+                    <div className='menu__logo'>
+                        <picture>
+                            <source media="(max-width:500px)" srcset="/assets/background/bg_low.png"/>         
+                            <img 
+                            className='menu__logo__file'
+                            src="/assets/background/bg_medium.png"
+                            alt="logo de mytyk prod"
+                            />
+                        </picture>
                     </div>
                 </div>
+                
             </>)
             :
             (<>
 
-                <div className='nav-icon'>
+                {/* <div className='nav-icon'>
                     <div className='nav-icon__reactIcon' onClick={handleNavLogo}>
                         <AiOutlineMenu/>
+                    </div>
+                </div> */}
+                <div className='menu'>
+                    <div className='menu__nav-icon'>
+                        <div className='menu__nav-icon__reactIcon' onClick={handleNavLogo}>
+                            <AiOutlineMenu/>
+                        </div>
+                    </div>
+                    <div className='menu__logo'>
+                        <picture>
+                            <source media="(max-width:500px)" srcset="/assets/background/bg_low.png"/>         
+                            <img 
+                            className='menu__logo__file'
+                            src="/assets/background/bg_medium.png"
+                            alt="logo de mytyk prod"
+                            />
+                        </picture>
                     </div>
                 </div>
 

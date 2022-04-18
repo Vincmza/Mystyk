@@ -7,7 +7,7 @@ import * as net from "../data/icons";
 //COMPONENTS
 import Album from '../components/Album';
 import Merch from '../components/Merch';
-import * as kosmos from "../data/bands_files/kosmos_files"
+
 
 
 const Band = () => {
