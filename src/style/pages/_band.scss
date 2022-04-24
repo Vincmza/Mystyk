@@ -17,6 +17,8 @@
     opacity:0;
     animation: bandApparition 800ms linear forwards;
     &__toBands{
+        font-family: "Alegreya", Arial, Helvetica, sans-serif;
+        font-size: 1.1em;
         border: none;
         padding: 10px 20px;
         background-color: rgb(117, 7, 7);
