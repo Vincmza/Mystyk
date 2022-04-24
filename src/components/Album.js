@@ -30,6 +30,7 @@ const Album = ({elem, description, setDescription}) => {
                 rel="noreferrer" 
                 key={item} 
                 className={`item__card__listenIcons--${item[0]}`} href={item[1]}
+                style={{display : "flex", alignItems : "center"}}
                 >
                     {net[item[0]]}
                 </a>
@@ -127,6 +128,7 @@ const Album = ({elem, description, setDescription}) => {
                                 </>)
                                 :
                                 (<>
+                                    <div className='item__card__generalInfos__description'></div>
                                 </>)
                             }
                             

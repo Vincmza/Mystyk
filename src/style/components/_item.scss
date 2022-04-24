@@ -63,15 +63,17 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            font-size: 0.9em;
+            
             &__description{
-                animation: itemCardApparition 1000ms linear forwards ;
-                opacity:0;
+                height:95px;
                 &--title {
                     margin-bottom: 10px;
                 }
-                &--musicFeature{
+                &--itemFeature{
                     margin-bottom: 5px;
+                    animation: itemCardApparition 700ms linear forwards;
+                    opacity:0
+                    // padding-left: 20px;
                 }
             }
             &__iconContainer{

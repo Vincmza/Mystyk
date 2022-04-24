@@ -86,12 +86,17 @@ const Merch = ({elem, description, setDescription}) => {
                             {description.findIndex(object=>object.band === item.bandId && object.item === item.id)!== -1 ?
                                 (<>
                                     <div className='item__card__generalInfos__description'>
-                                        <div className='item__card__generalInfos__description--title'>Description : </div>
-                                        <div>{item.description}</div>
+                                        <div className='item__card__generalInfos__description--title'>
+                                            Description : 
+                                        </div>
+                                        <div className='item__card__generalInfos__description--itemFeature'>
+                                            {item.description}
+                                        </div>
                                     </div>
                                 </>)
                                 :
                                 (<>
+                                    <div className='item__card__generalInfos__description'></div>
                                 </>)
                             }
                         </div>
