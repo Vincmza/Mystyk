@@ -68,7 +68,7 @@ export const bands = [
                             {
                                 youTube : "https://www.youtube.com/watch?v=gJeVulBg1pY",
                                 bandCamp : "https://kosmosblackmetal.bandcamp.com/",
-                                spotify : "",
+                                spotify : "https://open.spotify.com/album/16ufgGSb7eTl7EOfmMtO8Q?highlight=spotify:track:1yDaOdVAvkl6Rx760f9dn3",
                                 deezer : "",
                                 seasonShop : "https://shop.season-of-mist.com/kosmos-noctis-avem-et-gloria-cd-digipak"
                             }
