@@ -24,7 +24,7 @@
         margin-top: 20px;
         margin-right: 20px;
         animation: itemCardApparition 800ms linear forwards;
-        @media screen and (max-width: 1000px) {
+        @media screen and (max-width: 1050px) {
             width:40%;
         }
         @media screen and (max-width: 800px) {
@@ -64,7 +64,7 @@
             display: flex;
             flex-direction: column;
             &__description{
-                height:100px;
+                min-height:100px;
                 &--title {
                     margin-bottom: 10px;
                 }

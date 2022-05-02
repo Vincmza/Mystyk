@@ -50,6 +50,11 @@
         @media screen and (max-width:450px) {
             margin-top:0px;
         }
+        &__thanks{
+            @media screen and (max-width:450px) {
+                margin-top:25px;
+            }
+        }
         // border: 1px solid red;
         &__logoContainer{
             width: 200px;

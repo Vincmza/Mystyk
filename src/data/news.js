@@ -14,55 +14,17 @@ export const news = [
         isMusicAvailable : true,
         listen : function(){
             if(this.isMusicAvailable === true){
-                return [{bandCamp : "https://kosmosblackmetal.bandcamp.com/"}]
+                return [{seasonShop : "https://shop.season-of-mist.com/kosmos-noctis-avem-et-gloria-cd-digipak"}]
             } else if(this.isMusicAvailable === false) {
                 return []
             }
         },
-        date : "01/03/2022",
+        date : "02/05/2022",
         title : "Nouvel album Noctis, Avem et Gloria",
-        content : "Faut l'acheter il est trop bien.",
+        content : "Nouvel album désormais disponible en version digipack auprès de notre partenaire Season of Mist ! Artwork réalisé par l'excellent Macchabée Artworks !",
         bandName : function(){
             return returnName(this.bandId)
         },
         image : kosmos.noctisAvemEtGloria(),
     },
-    {
-        id : 2,
-        bandId : 1,
-        isMusicAvailable : false,
-        listen : function(){
-            if(this.isMusicAvailable === true){
-                return [{youTube : ""}]
-            } else if(this.isMusicAvailable === false) {
-                return []
-            }
-        },
-        date : "24/01/2022",
-        title : "T-shirt en stock !",
-        content : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt consectetur enim, eget venenatis justo laoreet et. Mauris aliquet egestas leo quis faucibus. Nulla fringilla lacus eget luctus fringilla. Etiam neque magna, dapibus non elit vitae, lobortis consequat est. Donec mollis cursus massa eget rutrum. Quisque sed tellus dictum, lacinia neque id, viverra arcu. Duis massa elit, euismod eget varius sit amet, porta at massa. Duis eget arcu eget lorem efficitur consequat ornare vitae ante. Duis placerat dui in tortor euismod pellentesque. Nam tincidunt ligula at felis aliquam accumsan. Nullam vitae ultrices lectus. Pellentesque tempus sollicitudin lacinia. Phasellus accumsan fringilla arcu, ut commodo ex vehicula nec. Nulla ultricies ante quis lacus bibendum maximus. Pellentesque quis elit volutpat, congue arcu eu, viverra libero.",
-        bandName : function(){
-            return returnName(this.bandId)
-        },
-        image : kosmos.tShirt(),
-    },
-    {
-        id : 3,
-        bandId : 2,
-        isMusicAvailable : true,
-        listen : function(){
-            if(this.isMusicAvailable === true){
-                return [{youTube : "https://www.youtube.com/watch?v=upge4v_0lq0"}]
-            } else if(this.isMusicAvailable === false) {
-                return []
-            }
-        },
-        date : "21/02/2022",
-        title : "Nouvel album Lex Divina Terrores",
-        content : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt consectetur enim, eget venenatis justo laoreet et. Mauris aliquet egestas leo quis faucibus. Nulla fringilla lacus eget luctus fringilla. Etiam neque magna, dapibus non elit vitae, lobortis consequat est. Donec mollis cursus massa eget rutrum. Quisque sed tellus dictum, lacinia neque id, viverra arcu. Duis massa elit, euismod eget varius sit amet, porta at massa. Duis eget arcu eget lorem efficitur consequat ornare vitae ante. Duis placerat dui in tortor euismod pellentesque. Nam tincidunt ligula at felis aliquam accumsan. Nullam vitae ultrices lectus. Pellentesque tempus sollicitudin lacinia. Phasellus accumsan fringilla arcu, ut commodo ex vehicula nec. Nulla ultricies ante quis lacus bibendum maximus. Pellentesque quis elit volutpat, congue arcu eu, viverra libero.",
-        bandName : function(){
-            return returnName(this.bandId)
-        },
-        image : inHell.lexDivinaTerrores(),
-    }
 ]

@@ -164,6 +164,18 @@ img {
                         transform:scale(0.9);
                     }
                 }
+                &--seasonShop{
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.1em;
+                    padding-left: 10px;
+                    transform:scale(1.1);
+                    transition:300ms;
+                    &:hover{
+                        transform:scale(0.9);
+                    }
+
+                }
             }
         }
     }

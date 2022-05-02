@@ -65,8 +65,8 @@ const Band = () => {
                 className='band__header' 
                 >
                     <picture>
-                        <source media="(max-width: 800px)" srcset={bandFiltered.banner.bannerMedium}/>
-                        <source media="(max-width: 500px)" srcset={bandFiltered.banner.bannerLow}/>                               
+                        <source media="(max-width: 800px)" srcSet={bandFiltered.banner.bannerMedium}/>
+                        <source media="(max-width: 500px)" srcSet={bandFiltered.banner.bannerLow}/>                               
                             <img 
                             className='band__header__banner' 
                             src={bandFiltered.banner.bannerHigh} 
@@ -142,7 +142,7 @@ const Band = () => {
                     <Album elem={bandFiltered} description={description} setDescription={setDescription}/>
                 </div>
                 <div className='merch'>
-                    <h3 className='merch__title'>Merch</h3>
+                    <h3 className='merch__title'>{bandFiltered.merch.length > 0 && <span>Merch</span>}</h3>
                     <Merch elem={bandFiltered} description={description} setDescription={setDescription}/>
                 </div>
             </div>

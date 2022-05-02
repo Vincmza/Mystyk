@@ -1,9 +1,6 @@
 import * as inHell from "./bands_files/in_hell_files.js"
 import * as kosmos from "./bands_files/kosmos_files.js"
-
-
-//FUNCTION TO GET BAND'S NAME 
-import { returnName } from "./news"
+import * as praim_faya from "./bands_files/praim_faya_files.js"
 
 export const bands = [
     //KOSMOS
@@ -12,7 +9,7 @@ export const bands = [
         name : "Kosmos",
         style : "black metal",
         subStyle : "atmospheric black/death",
-        biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt consectetur enim, eget venenatis justo laoreet et. Mauris aliquet egestas leo quis faucibus. Nulla fringilla lacus eget luctus fringilla. Etiam neque magna, dapibus non elit vitae, lobortis consequat est. Donec mollis cursus massa eget rutrum. Quisque sed tellus dictum, lacinia neque id, viverra arcu. Duis massa elit, euismod eget varius sit amet, porta at massa. Duis eget arcu eget lorem efficitur consequat ornare vitae ante. Duis placerat dui in tortor euismod pellentesque. Nam tincidunt ligula at felis aliquam accumsan. Nullam vitae ultrices lectus. Pellentesque tempus sollicitudin lacinia. Phasellus accumsan fringilla arcu, ut commodo ex vehicula nec. Nulla ultricies ante quis lacus bibendum maximus. Pellentesque quis elit volutpat, congue arcu eu, viverra libero.",
+        biography: "KOSMOS is Nekros' studio project created in 2010 with the release of the demo called 'L'Antithèse'. It is also during the creation of this demo that Nekros begins to collaborate with Naja Atra , drummer of the brutal technical death metal band GOMORY. So far, Nekros used to compose music, write the lyrics and record all guitars, bass and vocals and let Naja Atra record drums in his studio. Naja Atra also does everything about sound egineering. Now KOSMOS has an official singer in the name of Quantum who also writes all lyrics.",
         bandLogo: {
             logo : kosmos.logo(), 
             logoLow : kosmos.logoLow()
@@ -55,9 +52,9 @@ export const bands = [
                 id:1,
                 bandId : 1,
                 year : 2022,
-                releaseDate :"24/01/2022",
+                releaseDate :"22/04/2022",
                 title : "Noctis, Avem et Gloria",
-                duration: "58 min",
+                duration: "51:25 min",
                 subStyle : "atmospheric black/death",
                 frontCover : kosmos.noctisAvemEtGloria(),
                 format : "cd digipack",
@@ -68,36 +65,9 @@ export const bands = [
                             {
                                 youTube : "https://www.youtube.com/watch?v=gJeVulBg1pY",
                                 bandCamp : "https://kosmosblackmetal.bandcamp.com/",
-                                spotify : "https://open.spotify.com/album/16ufgGSb7eTl7EOfmMtO8Q?highlight=spotify:track:1yDaOdVAvkl6Rx760f9dn3",
-                                deezer : "",
+                                spotify : "https://open.spotify.com/album/16ufgGSb7eTl7EOfmMtO8Q",
+                                deezer : "https://www.deezer.com/us/album/312437817",
                                 seasonShop : "https://shop.season-of-mist.com/kosmos-noctis-avem-et-gloria-cd-digipak"
-                            }
-                        ]
-                    } else if (this.isAlbumAvailable === false){
-                        return []
-                    }
-                } 
-            },
-            {
-                id:2,
-                bandId : 1,
-                year : 2019,
-                releaseDate :"20/09/2019",
-                title : "L'Envol",
-                duration: "52 min",
-                subStyle : "post black metal",
-                frontCover : kosmos.envol(),
-                format : "cd digipack",
-                isAlbumAvailable : true,
-                listenAndShop : function(){
-                    if(this.isAlbumAvailable === true){
-                        return [
-                            {
-                                youTube : "https://www.youtube.com/watch?v=yMiQrgq2MqQ",
-                                bandCamp : "https://kosmosblackmetal.bandcamp.com/album/lenvol",
-                                spotify : "",
-                                deezer : "",
-                                seasonShop : ""
                             }
                         ]
                     } else if (this.isAlbumAvailable === false){
@@ -108,42 +78,24 @@ export const bands = [
         ],
         merch : [
 
-            {
-                id : 1,
-                bandId : 1,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "T-shirt",
-                description : "high quality coton, available in S,M,L,XL sizes",
-                itemPicture : kosmos.tShirt(),
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : ""}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            },
-            {
-                id : 2,
-                bandId : 1,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "Gobelet",
-                description : "Kosmos logo in black on white transparent plastic glass",
-                itemPicture : kosmos.glass(),
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : "https://www.pompe-a-biere.com/verre-a-biere/iron-maiden-trooper-verre-a-biere.html"}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            }
+            // {
+            //     id : 1,
+            //     bandId : 1,
+            //     bandName : function(){
+            //         return returnName(this.bandId) 
+            //     },
+            //     format : "T-shirt",
+            //     description : "high quality coton, available in S,M,L,XL sizes",
+            //     itemPicture : "",
+            //     isItemAvailable : true,
+            //     purchase : function(){
+            //         if(this.isItemAvailable===true){
+            //             return [{linkToBuy : ""}]
+            //         } else if(this.isItemAvailable===false){
+            //             return[]
+            //         }
+            //     },
+            // }
         ]
     },
     //IN HELL
@@ -152,7 +104,7 @@ export const bands = [
         name : "In Hell",
         style : "death metal",
         subStyle : "blackened death",
-        biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt consectetur enim, eget venenatis justo laoreet et. Mauris aliquet egestas leo quis faucibus. Nulla fringilla lacus eget luctus fringilla. Etiam neque magna, dapibus non elit vitae, lobortis consequat est. Donec mollis cursus massa eget rutrum. Quisque sed tellus dictum, lacinia neque id, viverra arcu. Duis massa elit, euismod eget varius sit amet, porta at massa. Duis eget arcu eget lorem efficitur consequat ornare vitae ante. Duis placerat dui in tortor euismod pellentesque. Nam tincidunt ligula at felis aliquam accumsan. Nullam vitae ultrices lectus. Pellentesque tempus sollicitudin lacinia. Phasellus accumsan fringilla arcu, ut commodo ex vehicula nec. Nulla ultricies ante quis lacus bibendum maximus. Pellentesque quis elit volutpat, congue arcu eu, viverra libero.",
+        biography: "IN HELL is a black death metal band from north of France created in early 2014 by the guitarist and composer Fab Darkhell. IN HELL mixes both fast and brutal riffing and dark melodies such as great bands like BEHEMOTH, CARCASS. IN HELL is a live performance beast, the band already shared the stage with LELAHELL, CORROSIVE ELEMENTS, SAVAGE ANNIHILATION, EVOLUTION ZERO, MORTUARY, NIRNAETH, LETHAEOS, MINDNETIC !",
         bandLogo: {
             logo : inHell.logo(), 
             logoLow : inHell.logoLow()
@@ -206,7 +158,7 @@ export const bands = [
                 year : 2022,
                 releaseDate : "22/01/2022",
                 title : "Lex Divina Terrores",
-                duration:"47 min",
+                duration:"43:09 min",
                 subStyle : "blackened death",
                 frontCover : inHell.lexDivinaTerrores(),
                 format : "cd digipack",
@@ -231,9 +183,9 @@ export const bands = [
                 id : 2,
                 bandId : 2,
                 year : 2019,
-                releaseDate : "17/04/2019",
+                releaseDate : "25/01/2019",
                 title : "Satanica Mundi",
-                duration:"42 min",
+                duration:"40:37 min",
                 subStyle : "blackened death",
                 frontCover : inHell.satanicaMundi(),
                 format : "cd jewel case",
@@ -257,78 +209,113 @@ export const bands = [
         ],
         merch : [
 
-            {
-                id : 1,
-                bandId :2,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "t-shirt",
-                description : "high quality coton, available in S,M,L,XL sizes",
-                itemPicture : inHell.tShirt(),
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            },
-            {
-                id : 2,
-                bandId : 2,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "beer",
-                description : "Bière houblonnée à crue avec des notes citronées, 7,5°",
-                itemPicture : inHell.beer(),
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : ""}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            },
-            {
-                id : 3,
-                bandId : 2,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "sweat",
-                description : "sweat épais en coton (available sizes : S,M,L,XL)",
-                itemPicture : inHell.sweat(),
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : ""}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            },
-            {
-                id : 4,
-                bandId : 2,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "bonnet",
-                description : "bonnet renforcé en coton (taille unique)",
-                itemPicture : inHell.bonnet(),
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : ""}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            }
+            // {
+            //     id : 1,
+            //     bandId :2,
+            //     bandName : function(){
+            //         return returnName(this.bandId) 
+            //     },
+            //     format : "t-shirt",
+            //     description : "high quality coton, available in S,M,L,XL sizes",
+            //     itemPicture : "",
+            //     isItemAvailable : true,
+            //     purchase : function(){
+            //         if(this.isItemAvailable===true){
+            //             return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
+            //         } else if(this.isItemAvailable===false){
+            //             return[]
+            //         }
+            //     },
+            // }
         ]
     },
+    //PRAIM FAYA
+    {
+        id: 3,
+        name : "Praïm Faya",
+        style : "metal core",
+        subStyle : "melodic groove death metal",
+        biography: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+        bandLogo: {
+            logo : praim_faya.logo(), 
+            logoLow : praim_faya.logo()
+        },
+        banner : {
+            bannerHigh : praim_faya.bannerHigh(), 
+            bannerMedium : praim_faya.bannerMedium(),
+            bannerLow : praim_faya.bannerLow(),
+        },
+        country : "France",
+        followLinks : [
+            {
+                facebook: "https://www.facebook.com/PraimFayaOff/",
+                instagram:"",
+                twitter:"https://twitter.com/PraimFaya_off?s=20",
+                tiktok:""
+            }
+        ],
+        lineUp : [
+            {
+                name : "Paul Lecarpentier",
+                instrument : ["vocals"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+            {
+                name : "Alexandre Maquère",
+                instrument : ["guitars"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+            {
+                name : "Artur Pereira",
+                instrument : ["guitars"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+            {
+                name : "Valentin Lemée",
+                instrument : ["drums"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+            {
+                name : "Antoine Coisy",
+                instrument : ["bass"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+            
+        ],
+        releases : [
+            //1 ALBUM FROM THE BAND
+            {
+                id:1,
+                bandId : 3,
+                year : 2022,
+                releaseDate :"14/01/2022",
+                title : "Native",
+                duration: "24:10 min",
+                subStyle : "melodic groove death metal",
+                frontCover : praim_faya.native(),
+                format : "cd jewel case",
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [
+                            {
+                                youTube : "https://www.youtube.com/watch?v=3z7-74NggUs&t=843s",
+                                bandCamp : "https://praimfaya.bandcamp.com/album/native",
+                                spotify : "https://open.spotify.com/artist/10SEtMRaumZOPpXUA2K1Ma?si=R9bGwJxmR2qeGbBEJnon_Q&nd=1",
+                                deezer : "",
+                                seasonShop : "https://shop.season-of-mist.com/fr/praim-faya-native-cd"
+                            }
+                        ]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
+            }
+        ],
+        merch : [
+
+        ]
+    }
+
 ]

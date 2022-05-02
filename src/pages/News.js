@@ -17,25 +17,48 @@ const News = (props) => {
     const displayIcons = (link)=>{
         
         if(link){
+
             for (const [key, value] of Object.entries(link)) {
                 if(value !== ""){
                     let goToLowerCase = key.toLowerCase()
-                    const upperCase = goToLowerCase.split("")[0].toUpperCase()
-                    return <div className='newsCard__container__listen__container'>
-                    <p 
-                    className='newsCard__container__listen__container--title'
-                    >
-                        Ecouter sur {goToLowerCase.replace(goToLowerCase[0], upperCase[0]).toString()} : 
-                    </p>
-                    <a 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    className={`newsCard__container__listen__container--${key}`} 
-                    href={value}
-                    >
-                        {net[key]}
-                    </a>
-                </div>  
+
+                    if(goToLowerCase === "seasonshop"){
+
+                        return <div className='newsCard__container__listen__container'>
+                        <p 
+                        className='newsCard__container__listen__container--title'
+                        >
+                            Acheter sur Season of Mist : 
+                        </p>
+                        <a 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className={`newsCard__container__listen__container--${key}`} 
+                        href={value}
+                        >
+                            {net[key]}
+                        </a>
+                        </div>  
+                    } else {
+
+                        const upperCase = goToLowerCase.split("")[0].toUpperCase()
+                        return <div className='newsCard__container__listen__container'>
+                        <p 
+                        className='newsCard__container__listen__container--title'
+                        >
+                            Ecouter sur {goToLowerCase.replace(goToLowerCase[0], upperCase[0]).toString()} : 
+                        </p>
+                        <a 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className={`newsCard__container__listen__container--${key}`} 
+                        href={value}
+                        >
+                            {net[key]}
+                        </a>
+                    </div>
+                    }
+                      
                 }
             }
         }
