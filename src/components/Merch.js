@@ -17,10 +17,17 @@ const Merch = ({elem, description, setDescription}) => {
             ]
             setDescription(object)
         }
-    } 
+    }
+    const checkMerch = ()=>{
+        let count = 0
+        count ++
+        console.log("longueur du tableau : ", elem.length, "variable count : ", count )
+        
+    }
     return (
         <div>
-            <div className='item' key={elem.id}>                       
+            <div className='item'>
+                {checkMerch}                       
                 {elem.merch.map((item,index)=>(
                     <div 
                     className='item__card' 

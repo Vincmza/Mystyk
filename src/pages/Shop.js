@@ -13,6 +13,7 @@ const Shop = () => {
     const [shopOption, setShopOption] = useState([])
     //DISPLAY ITEM DETAILS
     const [description, setDescription]=useState([])
+    console.log(description)
     //HIDE OR DISPLAY FILTERS
     const [showFilters, setShowFilters]=useState(false)
     const displayFilters = ()=>{
@@ -24,6 +25,19 @@ const Shop = () => {
             setShopOption([e.target.value])
             setDescription([])
         }
+    }
+    const CheckMerchLength = ()=>{
+        let count = 0
+        bands.forEach(element => {
+            let merch = element.merch.length
+            if(merch === 0){
+                count += 1
+            }
+        });
+        if(count === bands.length){
+            return <h1 style={{textAlign : "center", marginTop : "15px"}}>Aucun article disponible actuellement</h1>
+        }
+        console.log("compteur : ",count, "données : ", bands.length)
     }
     return (
         <div className='shop'>
@@ -62,11 +76,12 @@ const Shop = () => {
                     }
                 </div>
                 {shopOption[0] === "music" && 
-                    bands.map((elem)=>(<><Album elem={elem} description={description} setDescription={setDescription}/></>
+                    bands.map((elem)=>(<><Album key={elem.id} elem={elem} description={description} setDescription={setDescription}/></>
                     ))
-                }                       
+                }
+                {CheckMerchLength()}                       
                 {shopOption[0] === "merch" && 
-                    bands.map((elem)=>( <><Merch elem={elem} description={description} setDescription={setDescription}/></>
+                    bands.map((elem)=>( <><Merch key={elem.id} elem={elem} description={description} setDescription={setDescription}/></>
                     ))
                 }
             </div>

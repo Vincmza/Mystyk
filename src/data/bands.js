@@ -1,6 +1,9 @@
 import * as inHell from "./bands_files/in_hell_files.js"
 import * as kosmos from "./bands_files/kosmos_files.js"
 import * as praim_faya from "./bands_files/praim_faya_files.js"
+import * as dislocate from "./bands_files/dislocate_files"
+
+import { returnName } from "./news.js"
 
 export const bands = [
     //KOSMOS
@@ -49,7 +52,7 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                id:1,
+                id:11,
                 bandId : 1,
                 year : 2022,
                 releaseDate :"22/04/2022",
@@ -79,14 +82,14 @@ export const bands = [
         merch : [
 
             // {
-            //     id : 1,
+            //     id : 11,
             //     bandId : 1,
             //     bandName : function(){
             //         return returnName(this.bandId) 
             //     },
             //     format : "T-shirt",
             //     description : "high quality coton, available in S,M,L,XL sizes",
-            //     itemPicture : "",
+            //     itemPicture : kosmos.noctisAvemEtGloria(),
             //     isItemAvailable : true,
             //     purchase : function(){
             //         if(this.isItemAvailable===true){
@@ -153,7 +156,7 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                id : 1,
+                id : 21,
                 bandId : 2,
                 year : 2022,
                 releaseDate : "22/01/2022",
@@ -180,7 +183,7 @@ export const bands = [
                 } 
             },
             {
-                id : 2,
+                id : 22,
                 bandId : 2,
                 year : 2019,
                 releaseDate : "25/01/2019",
@@ -286,7 +289,7 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                id:1,
+                id:31,
                 bandId : 3,
                 year : 2022,
                 releaseDate :"14/01/2022",
@@ -305,6 +308,88 @@ export const bands = [
                                 spotify : "https://open.spotify.com/artist/10SEtMRaumZOPpXUA2K1Ma?si=R9bGwJxmR2qeGbBEJnon_Q&nd=1",
                                 deezer : "",
                                 seasonShop : "https://shop.season-of-mist.com/fr/praim-faya-native-cd"
+                            }
+                        ]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
+            }
+        ],
+        merch : [
+
+        ]
+    },
+    //DISLOCATE
+    {
+        id: 4,
+        name : "Dislocate",
+        style : "trash metal",
+        subStyle : "groovy trash/death",
+        biography: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+        bandLogo: {
+            logo : dislocate.logo(), 
+            logoLow : dislocate.logoLow()
+        },
+        banner : {
+            bannerHigh : dislocate.bannerHigh(), 
+            bannerMedium : dislocate.bannerHigh(),
+            bannerLow : dislocate.bannerLow(),
+        },
+        country : "France",
+        followLinks : [
+            {
+                facebook: "https://www.facebook.com/Dislocate-107055694846007/",
+                instagram:"",
+                twitter:"",
+                tiktok:""
+            }
+        ],
+        lineUp : [
+            {
+                name : "Manu Becart",
+                instrument : ["vocals"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+            {
+                name : "Thomas Schlawick",
+                instrument : ["guitars"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+            {
+                name : "Matthieu Schlawick",
+                instrument : ["drums"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+            {
+                name : "Thomas Bleyer",
+                instrument : ["bass"],
+                pastMember : {isTrue : false, fromTo : ""}
+            }
+        ],
+        releases : [
+            //1 ALBUM FROM THE BAND
+            {
+                id:41,
+                bandId : 4,
+                year : 2022,
+                releaseDate :"11/02/2022",
+                title : "Behind The Scenes",
+                duration: "39:05 min",
+                subStyle : "groovy trash/death",
+                frontCover : dislocate.behindTheScenes(),
+                format : "cd jewel case",
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [
+                            {
+                                youTube : "https://www.youtube.com/watch?v=iB-aO6fIHTo",
+                                bandCamp : "https://dislocate1.bandcamp.com/album/behind-the-scenes",
+                                spotify : "",
+                                deezer : "",
+                                seasonShop : "https://shop.season-of-mist.com/fr/dislocate-behind-the-scenes-cd"
                             }
                         ]
                     } else if (this.isAlbumAvailable === false){
