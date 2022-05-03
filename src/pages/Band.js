@@ -8,8 +8,6 @@ import * as net from "../data/icons";
 import Album from '../components/Album';
 import Merch from '../components/Merch';
 
-
-
 const Band = () => {
     //GOT ID OF THE BAND IN URL
     let {bandId}=useParams()
@@ -17,6 +15,7 @@ const Band = () => {
     let id = Number(bandId)
     //GOT ALL BAND'S DATA
     const bandFiltered = bands.filter(elem=> elem.id === id)[0]
+    const currentBand = bands.filter(elem=> elem.id === id)
     //DISPLAY ITEM DETAILS
     const [description, setDescription]=useState([])
     //SOCIAL NETWORK ICONS DISPLAY
@@ -139,11 +138,33 @@ const Band = () => {
                 </div>              
                 <div className='releases'>
                     <h3 className='releases__title'>Releases</h3>
-                    <Album elem={bandFiltered} description={description} setDescription={setDescription}/>
+                    {currentBand.map(elem=>(
+                        elem.releases.map((item,index)=>(
+                            <Album 
+                            key={item.id}
+                            elem={elem}
+                            item={item}
+                            index={index}
+                            description={description} 
+                            setDescription={setDescription}
+                            />
+                        ))
+                    ))}
                 </div>
                 <div className='merch'>
                     <h3 className='merch__title'>{bandFiltered.merch.length > 0 && <span>Merch</span>}</h3>
-                    <Merch elem={bandFiltered} description={description} setDescription={setDescription}/>
+                    {currentBand.map(elem=>(
+                        elem.merch.map((item,index)=>{
+                            <Merch
+                            key={item.id}
+                            item={item}
+                            elem={elem}
+                            index={index} 
+                            description={description} 
+                            setDescription={setDescription}
+                            />
+                        })
+                    ))}
                 </div>
             </div>
         </div>

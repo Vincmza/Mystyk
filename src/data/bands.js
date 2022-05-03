@@ -2,6 +2,7 @@ import * as inHell from "./bands_files/in_hell_files.js"
 import * as kosmos from "./bands_files/kosmos_files.js"
 import * as praim_faya from "./bands_files/praim_faya_files.js"
 import * as dislocate from "./bands_files/dislocate_files"
+import * as kozh from "./bands_files/kozh_dall_files"
 
 import { returnName } from "./news.js"
 
@@ -408,6 +409,88 @@ export const bands = [
                                 spotify : "",
                                 deezer : "",
                                 seasonShop : "https://shop.season-of-mist.com/fr/dislocate-behind-the-scenes-cd"
+                            }
+                        ]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
+            }
+        ],
+        merch : [
+
+        ]
+    },
+    //KOZH DALL
+    {
+        id: 5,
+        name : "Kozh Dall",
+        style : "trash metal",
+        subStyle : "trash/death moderne",
+        biography: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+        bandLogo: {
+            logo : kozh.logo(), 
+            logoLow : kozh.logo()
+        },
+        banner : {
+            bannerHigh : kozh.bannerHigh(), 
+            bannerMedium : kozh.bannerHigh(),
+            bannerLow : kozh.bannerHigh(),
+        },
+        country : "France",
+        followLinks : [
+            {
+                facebook: "https://www.facebook.com/profile.php?id=100063721449372",
+                instagram:"",
+                twitter:"",
+                tiktok:""
+            }
+        ],
+        lineUp : [
+            {
+                name : "Laurent Plainchamp",
+                instrument : ["vocals", "guitars"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+            {
+                name : "Jay",
+                instrument : ["bass"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+            {
+                name : "Vince Delca",
+                instrument : ["vocals", "chorus"],
+                pastMember : {isTrue : true, fromTo : "2016-2018"}
+            },
+            {
+                name : "Chris",
+                instrument : ["bass"],
+                pastMember : {isTrue : true, fromTo : "2016-2017"}
+            }
+        ],
+        releases : [
+            //1 ALBUM FROM THE BAND
+            {
+                id:51,
+                bandId :5,
+                year : 2022,
+                releaseDate :"04/02/2022",
+                title : "Deaf Mute",
+                duration: "39:05 min",
+                subStyle : "trash/death moderne",
+                frontCover : kozh.deaf(),
+                format : "cd digipack",
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [
+                            {
+                                youTube : "https://www.youtube.com/watch?v=TnWqHnomjrc",
+                                bandCamp : "",
+                                spotify : "https://open.spotify.com/artist/2w8VTWY5zJQD1r0WyqmvPS",
+                                deezer : "https://www.deezer.com/fr/artist/159729482",
+                                seasonShop : "https://shop.season-of-mist.com/kozh-dall-deaf-mute-cd-digipak"
                             }
                         ]
                     } else if (this.isAlbumAvailable === false){
