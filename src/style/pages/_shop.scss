@@ -74,5 +74,14 @@
                 }
             }
         }
+        &__item{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width:100%;
+            @media screen and (max-width: 865px) {
+                justify-content: center;
+            }
+        }
     }
 }

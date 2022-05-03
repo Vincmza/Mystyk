@@ -1,7 +1,7 @@
 import React from 'react';
 import * as net from "../data/icons";
 
-const Merch = ({elem, description, setDescription}) => {
+const Merch = ({elem, item, index, description, setDescription}) => {
     //FUNCTION TO EITHER SHOW OR HIDE ITEM INFOS
     const showOrHideDescription = (bandId, id)=>{ 
         const objectToRemove = description.findIndex(item=>item.band === bandId && item.item === id)
@@ -18,20 +18,11 @@ const Merch = ({elem, description, setDescription}) => {
             setDescription(object)
         }
     }
-    const checkMerch = ()=>{
-        let count = 0
-        count ++
-        console.log("longueur du tableau : ", elem.length, "variable count : ", count )
-        
-    }
     return (
         <div>
             <div className='item'>
-                {checkMerch}                       
-                {elem.merch.map((item,index)=>(
                     <div 
                     className='item__card' 
-                    key={item.id} 
                     style={{animationDelay : `${index*250}ms`}}
                     >
                         <div className='item__card__imgContainer'>
@@ -122,7 +113,6 @@ const Merch = ({elem, description, setDescription}) => {
                             }
                         </div>
                     </div>
-                ))}
             </div>
         </div>
     );

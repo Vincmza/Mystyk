@@ -34,10 +34,10 @@ const Shop = () => {
                 count += 1
             }
         });
-        if(count === bands.length){
+        if(count === bands.length && shopOption[0] === "merch"){
             return <h1 style={{textAlign : "center", marginTop : "15px"}}>Aucun article disponible actuellement</h1>
         }
-        console.log("compteur : ",count, "données : ", bands.length)
+        // console.log("compteur : ",count, "données : ", bands.length)
     }
     return (
         <div className='shop'>
@@ -75,15 +75,45 @@ const Shop = () => {
                         </>)
                     }
                 </div>
-                {shopOption[0] === "music" && 
-                    bands.map((elem)=>(<><Album key={elem.id} elem={elem} description={description} setDescription={setDescription}/></>
-                    ))
-                }
-                {CheckMerchLength()}                       
-                {shopOption[0] === "merch" && 
-                    bands.map((elem)=>( <><Merch key={elem.id} elem={elem} description={description} setDescription={setDescription}/></>
-                    ))
-                }
+                <div className='shop__wrapper__item'>
+                    {shopOption[0] === "music" && 
+                        bands.map((elem)=>(
+                            elem.releases.map((item,index)=>(
+                                <>
+                                <Album
+                                key={item.id} 
+                                index={index}
+                                item={item}
+                                elem={elem}
+                                description={description} 
+                                setDescription={setDescription}
+                                />
+                                </>
+                            ))
+                        ))
+                    }
+                </div>
+                {CheckMerchLength()}
+                <div className='shop__wrapper__item'>                          
+                    {shopOption[0] === "merch" && 
+                        bands.map((elem)=>(
+                            elem.merch.map((item,index)=>(
+                                <>
+                                <Merch 
+                                key={item.id} 
+                                elem={elem}
+                                item={item}
+                                index={index}
+                                description={description} 
+                                setDescription={setDescription}
+                                />
+                                </>
+                            ))
+                        
+                        ))
+                    }
+                </div>
+                
             </div>
         </div>
     );

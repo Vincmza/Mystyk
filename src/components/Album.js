@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import * as net from "../data/icons";
 
-const Album = ({elem, description, setDescription}) => {
+
+const Album = ({elem, item, index, description, setDescription}) => {
     //FUNCTION TO EITHER SHOW OR HIDE ITEM INFOS
     const showOrHideDescription = (bandId, id)=>{ 
-        const objectToRemove = description.findIndex(item=>item.band === bandId && item.item === id)
+        const objectToRemove = description.findIndex(element=>element.band === bandId && element.item === id)
         if(objectToRemove !== -1){
             const object = [
                 ...description.filter(objects=>objects!==description[objectToRemove])
@@ -23,27 +24,26 @@ const Album = ({elem, description, setDescription}) => {
         if(iconsObject){
             const data = Object.entries(iconsObject)
             console.log()
-            return data.map(item=>(
-                item[1] !== "" &&
-                <a title={item[0] === "seasonShop" && "Acheter sur Season of Mist"} 
+            return data.map(element=>(
+                element[1] !== "" &&
+                <a 
+                title={element[0] === "seasonShop" && "Acheter sur Season of Mist"} 
                 target="_blank" 
                 rel="noreferrer" 
-                key={item} 
-                className={`item__card__listenIcons--${item[0]}`} href={item[1]}
+                key={element} 
+                className={`item__card__listenIcons--${element[0]}`} href={element[1]}
                 style={{display : "flex", alignItems : "center"}}
                 >
-                    {net[item[0]]}
+                    {net[element[0]]}
                 </a>
             ))
         }      
-    } 
+    }
     return (
         <div>
-            <div className='item' key={elem.id}>                        
-                {elem.releases.map((item,index)=>(
+            <div className='item'>                        
                     <div 
-                    className='item__card' 
-                    key={item.id} 
+                    className='item__card'  
                     style={{animationDelay : `${index*300}ms`}}
                     >
                         <div className='item__card__imgContainer'>
@@ -137,7 +137,6 @@ const Album = ({elem, description, setDescription}) => {
                             {displayIcons(item.listenAndShop()[0])}
                         </div>
                     </div>
-                ))}
             </div>
         </div>
     );

@@ -87,13 +87,31 @@ export const bands = [
             //     bandName : function(){
             //         return returnName(this.bandId) 
             //     },
-            //     format : "T-shirt",
+            //     format : "t-shirt",
             //     description : "high quality coton, available in S,M,L,XL sizes",
             //     itemPicture : kosmos.noctisAvemEtGloria(),
             //     isItemAvailable : true,
             //     purchase : function(){
             //         if(this.isItemAvailable===true){
             //             return [{linkToBuy : ""}]
+            //         } else if(this.isItemAvailable===false){
+            //             return[]
+            //         }
+            //     },
+            // },
+            // {
+            //     id : 12,
+            //     bandId :1,
+            //     bandName : function(){
+            //         return returnName(this.bandId) 
+            //     },
+            //     format : "t-shirt",
+            //     description : "high quality coton, available in S,M,L,XL sizes",
+            //     itemPicture : "http://antichristmagazine.com/wp-content/uploads/2017/11/Deathcrush-Cover.jpg",
+            //     isItemAvailable : true,
+            //     purchase : function(){
+            //         if(this.isItemAvailable===true){
+            //             return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
             //         } else if(this.isItemAvailable===false){
             //             return[]
             //         }
@@ -213,14 +231,14 @@ export const bands = [
         merch : [
 
             // {
-            //     id : 1,
+            //     id : 21,
             //     bandId :2,
             //     bandName : function(){
             //         return returnName(this.bandId) 
             //     },
             //     format : "t-shirt",
             //     description : "high quality coton, available in S,M,L,XL sizes",
-            //     itemPicture : "",
+            //     itemPicture : "http://www.deathmetal.org/wp-content/uploads/deteriorate_-_rotting_in_hell.jpg",
             //     isItemAvailable : true,
             //     purchase : function(){
             //         if(this.isItemAvailable===true){
