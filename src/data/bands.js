@@ -434,7 +434,7 @@ export const bands = [
         },
         banner : {
             bannerHigh : kozh.bannerHigh(), 
-            bannerMedium : kozh.bannerHigh(),
+            bannerMedium : kozh.bannerMedium(),
             bannerLow : kozh.bannerHigh(),
         },
         country : "France",

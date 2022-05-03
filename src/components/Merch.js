@@ -4,7 +4,7 @@ import * as net from "../data/icons";
 const Merch = ({elem, item, index, description, setDescription}) => {
     //FUNCTION TO EITHER SHOW OR HIDE ITEM INFOS
     const showOrHideDescription = (bandId, id)=>{ 
-        const objectToRemove = description.findIndex(item=>item.band === bandId && item.item === id)
+        const objectToRemove = description.findIndex(element=>element.band === bandId && element.item === id)
         if(objectToRemove !== -1){
             const object = [
                 ...description.filter(objects=>objects!==description[objectToRemove])
