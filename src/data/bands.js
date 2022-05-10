@@ -3,6 +3,7 @@ import * as kosmos from "./bands_files/kosmos_files.js"
 import * as praim_faya from "./bands_files/praim_faya_files.js"
 import * as dislocate from "./bands_files/dislocate_files"
 import * as kozh from "./bands_files/kozh_dall_files"
+import * as hatred from "./bands_files/hatred_dusk"
 
 import { returnName } from "./news.js"
 
@@ -502,6 +503,94 @@ export const bands = [
         merch : [
 
         ]
-    }
+    },
+    //HATRED DUSK
+    {
+    id: 6,
+    name : "Hatred Dusk",
+    style : "trash metal",
+    subStyle : "trash/death",
+    biography: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+    bandLogo: {
+        logo : hatred.logo(), 
+        logoLow : hatred.logo()
+    },
+    banner : {
+        bannerHigh : hatred.bannerHigh(), 
+        bannerMedium : hatred.bannerMedium(),
+        bannerLow : hatred.bannerMedium(),
+    },
+    country : "France",
+    followLinks : [
+        {
+            facebook: "https://www.facebook.com/HatredDusk/ ",
+            instagram:"https://www.instagram.com/hatreddusk/?hl=fr",
+            twitter:"",
+            tiktok:""
+        }
+    ],
+    lineUp : [
+        {
+            name : "Nicolas Pupilli",
+            instrument : ["guitars"],
+            pastMember : {isTrue : false, fromTo : ""}
+            
+        },
+        {
+            name : "Phil",
+            instrument : ["vocals"],
+            pastMember : {isTrue : false, fromTo : ""}
+        },
+        {
+            name : "Janho",
+            instrument : ["bass"],
+            pastMember : {isTrue : false, fromTo : ""}
+        },
+        {
+            name : "K-Kan",
+            instrument : ["lead guitars"],
+            pastMember : {isTrue : false, fromTo : ""}
+        },
+        {
+            name : "Micky Dutot",
+            instrument : ["drums"],
+            pastMember : {isTrue : false, fromTo : ""}
+        },
+        
+    ],
+    releases : [
+        //1 ALBUM FROM THE BAND
+        {
+            id:61,
+            bandId :6,
+            year : 2022,
+            releaseDate :"22/11/2019",
+            title : "Hatred Dusk",
+            duration: "26:27 min",
+            subStyle : "trash/death",
+            frontCover : hatred.hatredDusk(),
+            format : "cd digipack",
+            isAlbumAvailable : true,
+            listenAndShop : function(){
+                if(this.isAlbumAvailable === true){
+                    return [
+                        {
+                            youTube : "https://www.youtube.com/watch?v=YXNpz3w8a3E",
+                            bandCamp : "https://hatreddusk.bandcamp.com/",
+                            spotify : "https://open.spotify.com/artist/2v76wR3Kyk627JoNhvxvQA",
+                            deezer : "https://www.deezer.com/en/album/120457332",
+                            seasonShop : "https://shop.season-of-mist.com/hatred-dusk-hatred-dusk-cd-digipak"
+                        }
+                    ]
+                } else if (this.isAlbumAvailable === false){
+                    return []
+                }
+            } 
+        }
+    ],
+    merch : [
+
+    ]
+}
 
 ]
