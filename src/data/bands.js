@@ -3,8 +3,8 @@ import * as kosmos from "./bands_files/kosmos_files.js"
 import * as praim_faya from "./bands_files/praim_faya_files.js"
 import * as dislocate from "./bands_files/dislocate_files"
 import * as kozh from "./bands_files/kozh_dall_files"
-import * as hatred from "./bands_files/hatred_dusk"
-
+import * as hatred from "./bands_files/hatred_dusk_files"
+import * as boost from "./bands_files/boost_files"
 import { returnName } from "./news.js"
 
 export const bands = [
@@ -591,6 +591,99 @@ export const bands = [
     merch : [
 
     ]
-}
+    },
+    //BOOST
+    {
+        id: 7,
+        name : "Boost",
+        style : "modern metal",
+        subStyle : "metalcore / indus",
+        biography: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+        bandLogo: {
+            logo : boost.logo(), 
+            logoLow : boost.logo()
+        },
+        banner : {
+            bannerHigh : boost.bannerHigh(), 
+            bannerMedium : boost.bannerMedium(),
+            bannerLow : boost.bannerMedium(),
+        },
+        country : "France",
+        followLinks : [
+            {
+                facebook: "https://www.facebook.com/boostrevenge",
+                instagram:"https://www.instagram.com/_boost_band_official/",
+                twitter:"",
+                tiktok:""
+            }
+        ],
+        lineUp : [
+            {
+                name : "Steph",
+                instrument : ["bass"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+            {
+                name : "Boozy",
+                instrument : ["vocals", "programming"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+            {
+                name : "K-Shoo",
+                instrument : ["vocals"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+            {
+                name : "Thomas",
+                instrument : ["drums"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+            {
+                name : "Crass",
+                instrument : ["vocals"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+            {
+                name : "Olive",
+                instrument : ["guitars"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+            
+        ],
+        releases : [
+            //1 ALBUM FROM THE BAND
+            {
+                id:71,
+                bandId :7,
+                year : 2022,
+                releaseDate :"17/01/2020",
+                title : "Reboot",
+                duration: "47:06 min",
+                subStyle : "modern metalcore",
+                frontCover : boost.reboot(),
+                format : "cd digipack",
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [
+                            {
+                                youTube : "https://www.youtube.com/watch?v=8Y0DVRZ4JNM&list=PLR97F8x5zcFQvaJJt6vaM-9eBadDNMBk3",
+                                bandCamp : "",
+                                spotify : "https://open.spotify.com/artist/6is1uTcM13yVvDN1pEccvR",
+                                deezer : "",
+                                seasonShop : "https://shop.season-of-mist.com/boost-reboot-cd-digipak"
+                            }
+                        ]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
+            }
+        ],
+        merch : [
+    
+        ]
+        }
 
 ]
