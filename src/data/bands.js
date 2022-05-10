@@ -5,6 +5,8 @@ import * as dislocate from "./bands_files/dislocate_files"
 import * as kozh from "./bands_files/kozh_dall_files"
 import * as hatred from "./bands_files/hatred_dusk_files"
 import * as boost from "./bands_files/boost_files"
+import * as akiavel from "./bands_files/akiavel_files"
+import * as freitot from "./bands_files/freitot_files"
 import { returnName } from "./news.js"
 
 export const bands = [
@@ -563,7 +565,7 @@ export const bands = [
         {
             id:61,
             bandId :6,
-            year : 2022,
+            year : 2019,
             releaseDate :"22/11/2019",
             title : "Hatred Dusk",
             duration: "26:27 min",
@@ -656,7 +658,7 @@ export const bands = [
             {
                 id:71,
                 bandId :7,
-                year : 2022,
+                year : 2020,
                 releaseDate :"17/01/2020",
                 title : "Reboot",
                 duration: "47:06 min",
@@ -684,6 +686,170 @@ export const bands = [
         merch : [
     
         ]
-        }
+    },
+    //AKIAVEL
+    {
+        id: 8,
+        name : "Akiavel",
+        style : "death metal",
+        subStyle : "melodic death metal",
+        biography: "Shredding out France, Akiavel are the new melodeath masters! A visceral combination of Groove, Thrash, Black and Old-school Death Metal, with melodic riffs, and a touch of hardcore.",
+        bandLogo: {
+            logo : akiavel.logo(), 
+            logoLow : akiavel.logo()
+        },
+        banner : {
+            bannerHigh : akiavel.bannerHigh(), 
+            bannerMedium : akiavel.bannerMedium(),
+            bannerLow : akiavel.bannerMedium(),
+        },
+        country : "France",
+        followLinks : [
+            {
+                facebook: "https://www.facebook.com/Akiavel/",
+                instagram:"https://www.instagram.com/akiavel/?hl=fr",
+                twitter:"https://twitter.com/AkiaveL?s=09",
+                tiktok:""
+            }
+        ],
+        lineUp : [
+            {
+                name : "Jay",
+                instrument : ["bass"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+            {
+                name : "Butch",
+                instrument : ["drums"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+            {
+                name : "JB",
+                instrument : ["guitars"],
+                pastMember : {isTrue : true, fromTo : "2018 to 2020"}
+            },
+            {
+                name : "Chris",
+                instrument : ["guitars"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+            {
+                name : "Auré",
+                instrument : ["vocals"],
+                pastMember : {isTrue : false, fromTo : ""}
+            }, 
+        ],
+        releases : [
+            //1 ALBUM FROM THE BAND
+            {
+                id:81,
+                bandId :8,
+                year : 2020,
+                releaseDate :"21/02/2020",
+                title : "V",
+                duration: "40:14 min",
+                subStyle : "melodic death metal",
+                frontCover : akiavel.v(),
+                format : "cd digifile",
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [
+                            {
+                                youTube : "https://www.youtube.com/watch?v=MOcXv7Bs5y8&list=OLAK5uy_mDs1qdW_gJc_jil10GF4dyxjfmOR_R71M",
+                                bandCamp : "https://akiavel.bandcamp.com/album/v",
+                                spotify : "https://open.spotify.com/artist/14M2CyExjuwWrJlJGYvg6T/discography/album?pageUri=spotify:album:60PFpfWD1p5XXP4qSVMG88",
+                                deezer : "https://www.deezer.com/fr/album/131646472",
+                                seasonShop : "https://shop.season-of-mist.com/akiavel-v-cd-digifile"
+                            }
+                        ]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
+            }
+        ],
+        merch : [
+    
+        ]
+    },
+    //FREITOT
+    {
+        id: 9,
+        name : "Freitot",
+        style : "death metal",
+        subStyle : "old school death metal",
+        biography: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+        bandLogo: {
+            logo : freitot.logo(), 
+            logoLow : freitot.logo()
+        },
+        banner : {
+            bannerHigh : freitot.bannerHigh(), 
+            bannerMedium : freitot.bannerHigh(),
+            bannerLow : freitot.bannerHigh(),
+        },
+        country : "France",
+        followLinks : [
+            {
+                facebook: "https://www.facebook.com/freitot/?ref=page_internal",
+                instagram:"",
+                twitter:"https://twitter.com/freitot_band",
+                tiktok:""
+            }
+        ],
+        lineUp : [
+            {
+                name : "Fabien 'Fack' Desgardins",
+                instrument : ["lead guitars"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+            {
+                name : "Arno Strobl",
+                instrument : ["vocals"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+            {
+                name : "Etienne Sarthou",
+                instrument : ["rythm guitars", "bass", "drums"],
+                pastMember : {isTrue : false, fromTo : ""}
+            },
+        ],
+        releases : [
+            //1 ALBUM FROM THE BAND
+            {
+                id:91,
+                bandId :9,
+                year : 2018,
+                releaseDate :"11/05/2018",
+                title : "Freitot",
+                duration: "37:24 min",
+                subStyle : "old school death metal",
+                frontCover : freitot.freitot(),
+                format : "cd digipack",
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [
+                            {
+                                youTube : "https://www.youtube.com/watch?v=_vm1YDj1hhc&list=RDEM_bVkDTKhT-Zi8PaAnR_EMA&start_radio=1",
+                                bandCamp : "",
+                                spotify : "https://open.spotify.com/artist/649oVPxpYFLQwrlWsAASiC",
+                                deezer : "https://www.deezer.com/en/album/63075802",
+                                seasonShop : "https://shop.season-of-mist.com/freitot-freitot-cd-digipak"
+                            }
+                        ]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
+            }
+        ],
+        merch : [
+    
+        ]
+    },
 
 ]
