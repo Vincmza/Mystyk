@@ -7,6 +7,9 @@ import * as hatred from "./bands_files/hatred_dusk_files"
 import * as boost from "./bands_files/boost_files"
 import * as akiavel from "./bands_files/akiavel_files"
 import * as freitot from "./bands_files/freitot_files"
+import * as notheist from "./bands_files/notheist_files"
+import * as equinox from "./bands_files/equinox_files"
+import * as dirty from "./bands_files/dirtyprotest_files"
 import { returnName } from "./news.js"
 
 export const bands = [
@@ -839,6 +842,231 @@ export const bands = [
                                 spotify : "https://open.spotify.com/artist/649oVPxpYFLQwrlWsAASiC",
                                 deezer : "https://www.deezer.com/en/album/63075802",
                                 seasonShop : "https://shop.season-of-mist.com/freitot-freitot-cd-digipak"
+                            }
+                        ]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
+            }
+        ],
+        merch : [
+    
+        ]
+    },
+    //NOTHEIST
+    {
+        id: 10,
+        name : "Notheist",
+        style : "death metal",
+        subStyle : "trash/death metal",
+        biography: "Behind Notheist is Gregory Lambert, multi-instrumentalist (guitar, bass, drums, vocals amongst others) & producer. Well known in the French metal scene, Greg’s name is associated with several major acts - MISANTHROPE (progessive/death metal, 2003), ZUUL FX (Industrial Thrash Death Metal 2002-2003, 2014-2017) CRUSHER (since 2017) and it is also associated with Alexandre Astier (who is behind the famous tv show Kaamelott) as the 8 strings guitar player of the show L’EXOCONFERENCE (2014-2016). Without leaving some of his collaborations, Greg Lambert decided in 2016 to write & record a first full solo album. This album will be released in May 2019 through Mystyk Records.",
+        bandLogo: {
+            logo : notheist.logo(), 
+            logoLow : notheist.logo()
+        },
+        banner : {
+            bannerHigh : notheist.bannerHigh(), 
+            bannerMedium : notheist.bannerMedium(),
+            bannerLow : notheist.bannerMedium(),
+        },
+        country : "France",
+        followLinks : [
+            {
+                facebook: "https://www.facebook.com/NotheistBand",
+                instagram:"",
+                twitter:"https://twitter.com/notheist_band",
+                tiktok:""
+            }
+        ],
+        lineUp : [
+            {
+                name : "Grégory Lambert",
+                instrument : ["everything"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+        ],
+        releases : [
+            //1 ALBUM FROM THE BAND
+            {
+                id:101,
+                bandId :10,
+                year : 2019,
+                releaseDate :"24/05/2019",
+                title : "Notheist",
+                duration: "58:11 min",
+                subStyle : "trash / death metal",
+                frontCover : notheist.notheist(),
+                format : "cd digipack",
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [
+                            {
+                                youTube : "https://www.youtube.com/watch?v=j9XuxbJ--ek",
+                                bandCamp : "https://notheist.bandcamp.com/?fbclid=IwAR39P_aI5VcmQxdqE3WDSxIU6J_KL8rj43yDYBeTEicGnkUw4kwbW0KYo_8",
+                                spotify : "https://open.spotify.com/album/3nxouXvXgBiu5Gt2c8Yd5q",
+                                deezer : "https://www.deezer.com/us/album/97591432",
+                                seasonShop : "https://shop.season-of-mist.com/notheist-notheist-cd-digipak"
+                            }
+                        ]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
+            }
+        ],
+        merch : [
+    
+        ]
+    },
+    //EQUINOX
+    {
+        id: 11,
+        name : "Equinox",
+        style : "heavy / power metal",
+        subStyle : "progressive symphonic metal",
+        biography: "Equinox is a musical project created by the official guitarist of Farida Guitars, Inophis. Equinox is composed of 4 four wolrd-renowned musicians. Their music contain influences such as jazz, metal, classical music, folk or pop.",
+        bandLogo: {
+            logo : equinox.logo(), 
+            logoLow : equinox.logo()
+        },
+        banner : {
+            bannerHigh : equinox.bannerHigh(), 
+            bannerMedium : equinox.bannerHigh(),
+            bannerLow : equinox.bannerHigh(),
+        },
+        country : "France",
+        followLinks : [
+            {
+                facebook: "https://www.facebook.com/EquinoxSymphonicProgMetalBandOfficial/",
+                instagram:"https://www.instagram.com/equinox_inophis/",
+                twitter:"https://twitter.com/equinox_inophis",
+                tiktok:""
+            }
+        ],
+        lineUp : [
+            {
+                name : "Pascal Mulot",
+                instrument : ["bass"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+            {
+                name : "Inophis",
+                instrument : ["guitars, orchestrations"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+            {
+                name : "Emmanuel Creis",
+                instrument : ["vocals"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+            {
+                name : "Aurélien Ouzoulias",
+                instrument : ["drums"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+        ],
+        releases : [
+            //1 ALBUM FROM THE BAND
+            {
+                id:111,
+                bandId :11,
+                year : 2018,
+                releaseDate :"04/05/2018",
+                title : "The Cry of Gaïa",
+                duration: "48:31 min",
+                subStyle : "progressive symphonic metal",
+                frontCover : equinox.cry(),
+                format : "cd jewel case",
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [
+                            {
+                                youTube : "https://www.youtube.com/watch?v=cJk6RX0HGj8",
+                                bandCamp : "",
+                                spotify : "https://open.spotify.com/album/3cWQ8j0CKqeuqiKkHNbwWZ",
+                                deezer : "https://www.deezer.com/us/album/59167442",
+                                seasonShop : "https://shop.season-of-mist.com/fr/equinox-the-cry-of-gaia-cd"
+                            }
+                        ]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
+            }
+        ],
+        merch : [
+    
+        ]
+    },
+    //DIRTYPROTEST
+    {
+        id: 12,
+        name : "Dirtyprotest",
+        style : "death metal",
+        subStyle : "Old school / blackened death",
+        biography: "DIRTYPROTEST was created in 2006 by Alan Hurley who have been playing in several bands for a decade and working as a sound engineer recording local bands in Cairo (Egypt). In 2016 he decided to start DIRTYPROTEST and write a full length album. The band's objective was to pay homage to the Swedish Death School with typical intense riffing mixed with some Hardcore and Black Metal influences. After releasing a few tracks a few years ago, Alan Hurley met the French singer DM (Growler of HELIOSS, WRATH FROM ABOVE and GASTROPODE) and they started to collaborate on the debut album in 2016.",
+        bandLogo: {
+            logo : dirty.logo(), 
+            logoLow : dirty.logo()
+        },
+        banner : {
+            bannerHigh : dirty.bannerHigh(), 
+            bannerMedium : dirty.bannerHigh(),
+            bannerLow : dirty.bannerHigh(),
+        },
+        country : "Egypt / France",
+        followLinks : [
+            {
+                facebook: "",
+                instagram:"",
+                twitter:"",
+                tiktok:""
+            }
+        ],
+        lineUp : [
+            {
+                name : "Alan Hurley",
+                instrument : ["all instruments", "songwriting"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+            {
+                name : "DM",
+                instrument : ["vocals"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+        ],
+        releases : [
+            //1 ALBUM FROM THE BAND
+            {
+                id:121,
+                bandId :12,
+                year : 2018,
+                releaseDate :"18/05/2018",
+                title : "Hellstorm",
+                duration: "35:23 min",
+                subStyle : "blackened death metal",
+                frontCover : dirty.hellstorm(),
+                format : "cd digipack",
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [
+                            {
+                                youTube : "https://www.youtube.com/watch?v=Vv1dwolGxm8",
+                                bandCamp : "",
+                                spotify : "https://open.spotify.com/album/6M2aUx51hN4zX5kK126CZS",
+                                deezer : "https://www.deezer.com/us/album/63715462",
+                                seasonShop : "https://shop.season-of-mist.com/fr/dirtyprotest-hellstorm-cd-digipak"
                             }
                         ]
                     } else if (this.isAlbumAvailable === false){

@@ -63,7 +63,7 @@ const Header = (props) => {
                     </div>
                     <div className='menu__logo'>
                         <picture>
-                            <source media="(max-width:500px)" srcset="/assets/background/bg_low.png"/>         
+                            <source media="(max-width:500px)" srcSet="/assets/background/bg_low.png"/>         
                             <img 
                             className='menu__logo__file'
                             src="/assets/background/bg_medium.png"
