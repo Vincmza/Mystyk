@@ -17,7 +17,7 @@
         margin-top: 20px;
         margin-right: 20px;
         width:300px;
-        animation: itemCardApparition 800ms linear forwards;
+        animation: itemCardApparition 500ms linear forwards;
         @media screen and (max-width:980px) {
             width:300px;
         }
@@ -61,7 +61,7 @@
                 }
                 &--itemFeature{
                     margin-bottom: 5px;
-                    animation: itemCardApparition 700ms linear forwards;
+                    animation: itemCardApparition 500ms linear forwards;
                     opacity:0
                     // padding-left: 20px;
                 }
