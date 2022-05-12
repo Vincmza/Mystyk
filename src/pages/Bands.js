@@ -4,12 +4,17 @@ import { NavLink} from "react-router-dom";
 
 
 const Bands = () => {
-    
+    //SORT ALL BANDS WITH THEIR NAME
+    const strSort = (array)=> {
+        return array.sort((x,y) => {
+          return x.name.toString().localeCompare(y.name.toString());
+        });
+    }
     return (
         <div className='bands'>
             <h1 className='bandsIntro'>Mystyk's artists</h1>
             <ul className='bands__wrapper'>
-                {bands.map((item, index)=>(
+                {strSort(bands).map((item, index)=>(
                     <li key={item.id} className='bandsCard' style={{animationDelay: `${index*250}ms`}}>
                         <div className='bandsCard__header'>
                             <NavLink to={`/band/${item.id}`}>

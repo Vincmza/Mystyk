@@ -11,14 +11,15 @@ const Shop = () => {
     const options = ["music", "merch"]
     //STATE TO STORE EITHER MUSCI OR MERCH OPTION
     const [shopOption, setShopOption] = useState([])
-    //DISPLAY ITEM DETAILS
+    //DISPLAY ITEM DETAILS THAT IS STORED, THAT IS TO SAY ITEM IS CLICKED BY USER
     const [description, setDescription]=useState([])
-    console.log(description)
     //HIDE OR DISPLAY FILTERS
     const [showFilters, setShowFilters]=useState(false)
     const displayFilters = ()=>{
         setShowFilters((e)=>(!e))
     }
+    //ALL RELEASES FROM ALL BANDS
+    const allReleases = bands.map(item => item.releases[0])
     //STORE DATA FROM CHECKBOX
     const storeShopOption = (e)=>{
         if(e.target.checked === true){
@@ -26,6 +27,7 @@ const Shop = () => {
             setDescription([])
         }
     }
+    //IF NO ITEM IN MERCH ARRAY RETURN H1 TAG
     const CheckMerchLength = ()=>{
         let count = 0
         bands.forEach(element => {
@@ -37,8 +39,20 @@ const Shop = () => {
         if(count === bands.length && shopOption[0] === "merch"){
             return <h1 style={{textAlign : "center", marginTop : "15px"}}>Aucun article disponible actuellement</h1>
         }
-        // console.log("compteur : ",count, "données : ", bands.length)
     }
+    //SORT ALL BANDS BY NAME
+    const strSort = (array)=> {
+        return array.sort((x,y) => {
+          return x.name.toString().localeCompare(y.name.toString());
+        });
+    }
+    //SORT ALL RELEASES PER YEAR
+    function yearSort(albums){
+        return albums.sort((a,b)=>{
+          return a.year - b.year
+        })
+    }
+    
     return (
         <div className='shop'>
             <h1 className='shopIntro'>Shop</h1>
@@ -76,11 +90,23 @@ const Shop = () => {
                     }
                 </div>
                 <div className='shop__wrapper__item'>
+                    {/* {shopOption[0] === "music" &&
+                        yearSort(allReleases).map((item,index)=>(
+                            <Album
+                            key={item.id}
+                            index={index}
+                            item={item}
+                            elem={bands.filter(elem=>elem.id === item.bandId)}
+                            description={description}
+                            setDescription={setDescription}
+                            />
+                        ))
+                    } */}
                     {shopOption[0] === "music" && 
-                        bands.map((elem)=>(
-                            elem.releases.map((item,index)=>(
-                                <>
+                        strSort(bands).map((elem)=>(
+                            elem.releases.map((item,index)=>(                            
                                 <Album
+                                style={{animationDelay : `${index*250}ms`}}
                                 key={item.id} 
                                 index={index}
                                 item={item}
@@ -88,7 +114,6 @@ const Shop = () => {
                                 description={description} 
                                 setDescription={setDescription}
                                 />
-                                </>
                             ))
                         ))
                     }
@@ -96,7 +121,7 @@ const Shop = () => {
                 {CheckMerchLength()}
                 <div className='shop__wrapper__item'>                          
                     {shopOption[0] === "merch" && 
-                        bands.map((elem)=>(
+                        strSort(bands).map((elem)=>(
                             elem.merch.map((item,index)=>(
                                 <>
                                 <Merch 
