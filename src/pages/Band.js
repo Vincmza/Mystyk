@@ -9,10 +9,8 @@ import Merch from '../components/Merch';
 const Band = ({bands}) => {
     //GOT ID OF THE BAND IN URL
     let {bandId}=useParams()
-    console.log("useParams : ", bandId)
     //TRANSFORMED IN A NUMBER TYPE
     let id = Number(bandId)
-    console.log("Type nombre : ", id)
     //GOT ALL BAND'S DATA
     const bandFiltered = bands.filter(elem=> elem.id === id)[0]
     // SAME AS BANDFILTERED THEREUPON BUT WITHOUT MENTIONNING THE INDEX SO IT IS STILL AN ARRAY

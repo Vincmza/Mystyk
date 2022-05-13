@@ -51,7 +51,6 @@ const Shop = ({bands}) => {
     }
     return (
         <div className='shop'>
-            {console.log("nik ta mère : ", isSorted)}
             <h1 className='shopIntro'>Shop</h1>
             <div className='shop__wrapper'>
                 <div className='shop__wrapper__options'>
@@ -88,6 +87,7 @@ const Shop = ({bands}) => {
                                         value={isSorted[0] === "name" ? "Sort by release date" : "Sort by A-Z"}
                                         onClick={()=>storeSort(isSorted[0] === "name" ? "release_date" : "name")}
                                         className='sort_input'
+                                        style={{animationDelay : `${index*250}ms`}}
                                         />
                                     </>)
                                     :
@@ -107,6 +107,7 @@ const Shop = ({bands}) => {
                             yearSort(allReleases).map((item,index)=>(
                                 <Album
                                 style={{animationDelay : `${index*250}ms`}}
+                                sortedByDate={true}
                                 key={item.id}
                                 item={item}
                                 elem={bands.filter(elem=>elem.id === item.bandId)}
@@ -124,6 +125,7 @@ const Shop = ({bands}) => {
                                 elem.releases.map((item,index)=>(                            
                                     <Album
                                     style={{animationDelay : `${index*250}ms`}}
+                                    sortedByDate={false}
                                     key={item.id} 
                                     item={item}
                                     elem={elem}

@@ -14,18 +14,23 @@
     padding: 5px 10px;
 }
 .sort_input{
+    transform: translateY(-20%);
+    opacity:0;
+    animation: filtersApparition 500ms linear forwards;
     background-color: wheat;
+    font-family: "Alegreya", Arial, Helvetica, sans-serif;
     color:rgb(117, 7, 7);
-    border-radius: 2px;
+    border-radius: 3px;
     margin-top: 5px;
     padding: 5px;
     transform: scale(1);
-    transition: 100ms;
+    transition: 250ms;
     &:hover{
         cursor: pointer;
     }
     &:active{
-        transform: scale(0.9);
+        background-color: rgb(117, 7, 7);
+        color: wheat;
     }
 }
 .shop{
@@ -49,6 +54,7 @@
             align-items: center;
             width:100%;
             &--music, &--merch{
+                // border:1px solid green;
                 opacity:0;
                 transform: translateY(-20%);
                 animation: filtersApparition 500ms linear forwards;
@@ -59,6 +65,18 @@
                 justify-content: center;
                 padding:10px 0px;
                 width: 12%;
+                @media screen and (max-width:1210px) {
+                    width:20%;
+                }
+                @media screen and (max-width:800px) {
+                    width:35%;
+                }
+                @media screen and (max-width:400px) {
+                    width:55%;
+                }
+                @media screen and (max-width:260px) {
+                    width:75%;
+                }
             }
             &--music #music, &--merch #merch{
                 display: flex;
@@ -94,8 +112,17 @@
                     cursor: pointer;
                     transform: scale(1.1);
                 }
-                @media screen and (max-width: 650px) {
+                @media screen and (max-width: 1210px) {
                     width:20%;
+                }
+                @media screen and (max-width:800px) {
+                    width:35%;
+                }
+                @media screen and (max-width:400px) {
+                    width:55%;
+                }
+                @media screen and (max-width:260px) {
+                    width:75%;
                 }
             }
         }

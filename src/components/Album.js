@@ -2,7 +2,7 @@ import React from 'react';
 import * as net from "../data/icons";
 
 
-const Album = ({elem, item, description, setDescription}) => {
+const Album = ({elem, item, sortedByDate ,description, setDescription}) => {
     //OPTIONS TO TRANSFORM RELEASE DATE
     let options = {year: "numeric", month: "long", day: "numeric"};
     //FUNCTION TO EITHER SHOW OR HIDE ITEM INFOS
@@ -74,6 +74,7 @@ const Album = ({elem, item, description, setDescription}) => {
                     <div className='item__card__identity'>
                         <h2 className='item__card__identity--name'>{elem.name}</h2>
                         <h3 className='item__card__identity--title'>{item.title}</h3>
+                        <h4>{sortedByDate === true && new Date(item.releaseDate).toLocaleString("en-GB", options)}</h4>
                     </div>
                     <div className='item__card__generalInfos'>
                         {description.findIndex(object=>object.band === item.bandId && object.item === item.id)!== -1 ?

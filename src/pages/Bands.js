@@ -3,7 +3,6 @@ import { NavLink} from "react-router-dom";
 
 
 const Bands = ({bands}) => {
-    console.log(bands)
     return (
         <div className='bands'>
             <h1 className='bandsIntro'>Mystyk's artists</h1>
