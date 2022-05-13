@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-//DATA
-import { bands } from '../data/bands';
 //ICONS
 import * as net from "../data/icons";
 //COMPONENTS
 import Album from '../components/Album';
 import Merch from '../components/Merch';
 
-const Band = () => {
+const Band = ({bands}) => {
     //GOT ID OF THE BAND IN URL
     let {bandId}=useParams()
     console.log("useParams : ", bandId)

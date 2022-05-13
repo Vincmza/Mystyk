@@ -4,6 +4,30 @@
         opacity:1;
     }
 }
+.choice_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width:100%;
+    border:1px solid rgb(117, 7, 7);
+    border-radius: 2px;
+    padding: 5px 10px;
+}
+.sort_input{
+    background-color: wheat;
+    color:rgb(117, 7, 7);
+    border-radius: 2px;
+    margin-top: 5px;
+    padding: 5px;
+    transform: scale(1);
+    transition: 100ms;
+    &:hover{
+        cursor: pointer;
+    }
+    &:active{
+        transform: scale(0.9);
+    }
+}
 .shop{
     color:wheat;
     font-family: "Alegreya", Arial, Helvetica, sans-serif;
@@ -30,17 +54,18 @@
                 animation: filtersApparition 500ms linear forwards;
                 font-size: 1.2em;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
-                justify-content: space-evenly;
+                justify-content: center;
                 padding:10px 0px;
                 width: 12%;
             }
-            &--music > #music, &--merch > #merch{
+            &--music #music, &--merch #merch{
                 display: flex;
                 align-items: center;
                 cursor: pointer;
             }
-            &--music > label, &--merch > label {
+            &--music label, &--merch label {
                 display: flex;
                 @media screen and (max-width:1000px) {
                     padding-left: 10px;

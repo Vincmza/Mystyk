@@ -1,6 +1,5 @@
 //ARRAY CONTAINING ALL BANDS
 import { bands } from "./bands"
-import * as inHell from "./bands_files/in_hell_files.js"
 import * as kosmos from "./bands_files/kosmos_files.js"
 
 //COMPARE BANDID AND ID KEY IN BANDS ARRAY TO RETURN RIGHT BAND'S NAME

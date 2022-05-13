@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-//DATA
-import { bands } from '../data/bands';
 //ICONS
 import * as net from "../data/icons";
 //COMPONENTS
 import Album from '../components/Album';
 import Merch from '../components/Merch';
-const Shop = () => {
+const Shop = ({bands}) => {
     //OPTIONS TO EITHER DISPLAY MUSIC OR MERCH
     const options = ["music", "merch"]
     //STATE TO STORE EITHER MUSCI OR MERCH OPTION
@@ -18,6 +16,8 @@ const Shop = () => {
     const displayFilters = ()=>{
         setShowFilters((e)=>(!e))
     }
+    //STATE TON HANDLE SORT SHOP FEATURE
+    const [isSorted, setIsSorted] = useState(["name"])
     //ALL RELEASES FROM ALL BANDS
     const allReleases = bands.map(item => item.releases[0])
     //STORE DATA FROM CHECKBOX
@@ -40,21 +40,18 @@ const Shop = () => {
             return <h1 style={{textAlign : "center", marginTop : "15px"}}>Aucun article disponible actuellement</h1>
         }
     }
-    //SORT ALL BANDS BY NAME
-    const strSort = (array)=> {
-        return array.sort((x,y) => {
-          return x.name.toString().localeCompare(y.name.toString());
-        });
-    }
     //SORT ALL RELEASES PER YEAR
     function yearSort(albums){
         return albums.sort((a,b)=>{
-          return a.year - b.year
+          return new Date(a.releaseDate) - new Date(b.releaseDate)
         })
     }
-    
+    const storeSort = (value)=>{
+        setIsSorted(()=>[value])
+    }
     return (
         <div className='shop'>
+            {console.log("nik ta mère : ", isSorted)}
             <h1 className='shopIntro'>Shop</h1>
             <div className='shop__wrapper'>
                 <div className='shop__wrapper__options'>
@@ -72,15 +69,30 @@ const Shop = () => {
                                 key={elem} 
                                 style={{animationDelay : `${index*250}ms`}}
                                 >
-                                    <input 
-                                    type="checkbox" 
-                                    id={elem} 
-                                    name={elem}
-                                    value={elem}
-                                    onChange={(e)=>storeShopOption(e)}
-                                    checked={shopOption.some(item => item === elem)}
-                                    />
-                                    <label htmlFor={elem}>{elem}<span>{net[elem]}</span></label>
+                                    <div className='choice_container'>
+                                        <input 
+                                        type="checkbox" 
+                                        id={elem} 
+                                        name={elem}
+                                        value={elem}
+                                        onChange={(e)=>storeShopOption(e)}
+                                        checked={shopOption.some(item => item === elem)}
+                                        />
+                                        <label htmlFor={elem}>{elem}<span>{net[elem]}</span></label>
+                                    </div>
+                                    
+                                    {shopOption[0] === "music" && elem === "music" ? 
+                                    (<>
+                                        <input 
+                                        type="button"
+                                        value={isSorted[0] === "name" ? "Sort by release date" : "Sort by A-Z"}
+                                        onClick={()=>storeSort(isSorted[0] === "name" ? "release_date" : "name")}
+                                        className='sort_input'
+                                        />
+                                    </>)
+                                    :
+                                    (<></>)
+                                    }
                                 </div>
                             ))}
                         </>) 
@@ -90,38 +102,45 @@ const Shop = () => {
                     }
                 </div>
                 <div className='shop__wrapper__item'>
-                    {/* {shopOption[0] === "music" &&
-                        yearSort(allReleases).map((item,index)=>(
-                            <Album
-                            key={item.id}
-                            index={index}
-                            item={item}
-                            elem={bands.filter(elem=>elem.id === item.bandId)}
-                            description={description}
-                            setDescription={setDescription}
-                            />
-                        ))
-                    } */}
-                    {shopOption[0] === "music" && 
-                        strSort(bands).map((elem)=>(
-                            elem.releases.map((item,index)=>(                            
+                    {shopOption[0] === "music" && isSorted[0] === "release_date" ? 
+                        (
+                            yearSort(allReleases).map((item,index)=>(
                                 <Album
                                 style={{animationDelay : `${index*250}ms`}}
-                                key={item.id} 
-                                index={index}
+                                key={item.id}
                                 item={item}
-                                elem={elem}
-                                description={description} 
+                                elem={bands.filter(elem=>elem.id === item.bandId)}
+                                description={description}
                                 setDescription={setDescription}
                                 />
                             ))
-                        ))
+                        )
+                        :
+                        (<></>)
+                    }
+                    {shopOption[0] === "music" && isSorted[0] === "name" ?
+                        (
+                            bands.map((elem)=>(
+                                elem.releases.map((item,index)=>(                            
+                                    <Album
+                                    style={{animationDelay : `${index*250}ms`}}
+                                    key={item.id} 
+                                    item={item}
+                                    elem={elem}
+                                    description={description} 
+                                    setDescription={setDescription}
+                                    />
+                                ))
+                            ))
+                        )
+                        :
+                        (<></>) 
                     }
                 </div>
                 {CheckMerchLength()}
                 <div className='shop__wrapper__item'>                          
                     {shopOption[0] === "merch" && 
-                        strSort(bands).map((elem)=>(
+                        bands.map((elem)=>(
                             elem.merch.map((item,index)=>(
                                 <>
                                 <Merch 

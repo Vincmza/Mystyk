@@ -1,21 +1,19 @@
 import React from 'react';
-import { bands } from '../data/bands';
 import { NavLink} from "react-router-dom";
 
 
-const Bands = () => {
-    //SORT ALL BANDS WITH THEIR NAME
-    const strSort = (array)=> {
-        return array.sort((x,y) => {
-          return x.name.toString().localeCompare(y.name.toString());
-        });
-    }
+const Bands = ({bands}) => {
+    console.log(bands)
     return (
         <div className='bands'>
             <h1 className='bandsIntro'>Mystyk's artists</h1>
             <ul className='bands__wrapper'>
-                {strSort(bands).map((item, index)=>(
-                    <li key={item.id} className='bandsCard' style={{animationDelay: `${index*250}ms`}}>
+                {bands.map((item, index)=>(
+                    <li 
+                    key={item.id} 
+                    className='bandsCard' 
+                    style={{animationDelay: `${index*250}ms`}}
+                    >
                         <div className='bandsCard__header'>
                             <NavLink to={`/band/${item.id}`}>
                                 <div className='bandsCard__header__bandsName'>

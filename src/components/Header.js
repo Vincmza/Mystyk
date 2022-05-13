@@ -50,11 +50,6 @@ const Header = (props) => {
             :
             (<>
 
-                {/* <div className='nav-icon'>
-                    <div className='nav-icon__reactIcon' onClick={handleNavLogo}>
-                        <AiOutlineMenu/>
-                    </div>
-                </div> */}
                 <div className='menu'>
                     <div className='menu__nav-icon'>
                         <div className='menu__nav-icon__reactIcon' onClick={handleNavLogo}>
