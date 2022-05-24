@@ -75,7 +75,6 @@ const Shop = ({bands}) => {
     const whichStyle = (style)=>{
         setIsStyleChoosen(style)
     }
-    console.log(isStyleChoosen)
     function sortShop(albums){
         if(isSorted === "Release date"){
             return albums.sort((a,b)=>{
