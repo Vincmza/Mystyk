@@ -41,10 +41,15 @@ const Shop = ({bands}) => {
         }
     }
     //SORT ALL RELEASES PER YEAR
-    function yearSort(albums){
-        return albums.sort((a,b)=>{
-          return new Date(a.releaseDate) - new Date(b.releaseDate)
-        })
+    function sortShop(albums, sortValue){
+        if(sortValue === "date"){
+            return albums.sort((a,b)=>{
+                return new Date(a.releaseDate) - new Date(b.releaseDate)
+              })
+        }
+        if(sortValue === "name"){
+            return albums.sort()
+        }
     }
     const storeSort = (value)=>{
         setIsSorted(()=>[value])
@@ -104,10 +109,10 @@ const Shop = ({bands}) => {
                 <div className='shop__wrapper__item'>
                     {shopOption[0] === "music" && isSorted[0] === "release_date" ? 
                         (
-                            yearSort(allReleases).map((item,index)=>(
+                            sortShop(allReleases, "date").map((item,index)=>(
                                 <Album
-                                style={{animationDelay : `${index*250}ms`}}
                                 sortedByDate={true}
+                                index={index}
                                 key={item.id}
                                 item={item}
                                 elem={bands.filter(elem=>elem.id === item.bandId)}
@@ -121,18 +126,16 @@ const Shop = ({bands}) => {
                     }
                     {shopOption[0] === "music" && isSorted[0] === "name" ?
                         (
-                            bands.map((elem)=>(
-                                elem.releases.map((item,index)=>(                            
-                                    <Album
-                                    style={{animationDelay : `${index*250}ms`}}
-                                    sortedByDate={false}
-                                    key={item.id} 
-                                    item={item}
-                                    elem={elem}
-                                    description={description} 
-                                    setDescription={setDescription}
-                                    />
-                                ))
+                            sortShop(allReleases, "name").map((item,index)=>(
+                                <Album
+                                sortedByDate={false}
+                                index={index}
+                                key={item.id}
+                                item={item}
+                                elem={bands.filter(elem=>elem.id === item.bandId)}
+                                description={description}
+                                setDescription={setDescription}
+                                />
                             ))
                         )
                         :

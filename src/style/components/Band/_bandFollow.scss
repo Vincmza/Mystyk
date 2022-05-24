@@ -1,0 +1,29 @@
+.follow{
+    padding:10px 10px 0px 10px;
+    &__links{
+        padding: 0px 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    &__title{
+        padding: 20px 10px;
+        font-size: 1.3em;
+        text-decoration: underline;
+    }
+    &__container{
+        padding: 0px 10px;
+        display: flex;
+        &__oneIcon > a{
+            margin-right: 20px;
+            font-size:1.5em;
+        }
+        &__oneIcon{
+            transform: scale(1);
+            transition:300ms;
+            &:hover{
+                cursor:pointer;
+                transform: scale(0.9);
+            }
+        }
+    }
+}

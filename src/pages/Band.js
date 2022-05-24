@@ -5,16 +5,21 @@ import * as net from "../data/icons";
 //COMPONENTS
 import Album from '../components/Album';
 import Merch from '../components/Merch';
+import BandHeader from '../components/Band/BandHeader';
+import BandBio from '../components/Band/BandBio';
+import BandFollow from '../components/Band/BandFollow';
+import BandLineUp from '../components/Band/BandLineUp';
+import BandPastMembers from '../components/Band/BandPastMembers';
+
 
 const Band = ({bands}) => {
     //GOT ID OF THE BAND IN URL
     let {bandId}=useParams()
     //TRANSFORMED IN A NUMBER TYPE
     let id = Number(bandId)
-    //GOT ALL BAND'S DATA
+    //GOT ALL BAND'S DATA IN A SINGLE OBJECT
     const bandFiltered = bands.filter(elem=> elem.id === id)[0]
-    // SAME AS BANDFILTERED THEREUPON BUT WITHOUT MENTIONNING THE INDEX SO IT IS STILL AN ARRAY
-    //THUS I CAN USE MAP FUNCTION
+    //SAME BUT IN A SINGLE ARRAY WITH ONE OBJECT INSIDE
     const currentBand = bands.filter(elem=> elem.id === id)
     //DISPLAY ITEM DETAILS
     const [description, setDescription]=useState([])
@@ -60,82 +65,12 @@ const Band = ({bands}) => {
                 </NavLink>
             </div>
             <div className='band__wrapper'>
-                <div 
-                className='band__header' 
-                >
-                    <picture>
-                        <source media="(max-width: 800px)" srcSet={bandFiltered.banner.bannerMedium}/>
-                        <source media="(max-width: 500px)" srcSet={bandFiltered.banner.bannerLow}/>                               
-                            <img 
-                            className='band__header__banner' 
-                            src={bandFiltered.banner.bannerHigh} 
-                            alt={`logo du groupe ${bandFiltered.name}`}
-                            />
-                    </picture>
-                    <h1 className='band__name'>{bandFiltered.name}</h1>
-                    <div className='band__style'>
-                        <span className='band__style'>Style général : 
-                            <span className='band__style--main'>{bandFiltered.style}.</span>
-                        </span>
-                        <span className='band__style'>Sous-genre : 
-                            <span className='band__style--sub'>{bandFiltered.subStyle}.</span>
-                        </span>
-                    </div>
-                </div>
-                <div className='bio'>
-                    <div className='bio__content'>
-                        <h2 className='bio__content bio__content--title'>Biography</h2>
-                        <div className='bio__content bio__content--text'>
-                            {bandFiltered.biography}
-                        </div>
-                    </div>
-                </div>
-                <div className='follow'>
-                    <ul className='follow__links'>
-                        <h2 className='follow__title'>Follow</h2>
-                        <div className='follow__container'>
-                            {socialLinks()}
-                        </div>
-                    </ul>
-                </div>
-                <div className='lineUp'>
-                    <h3 className='lineUp__title'>Current line up</h3>
-                    <ul className='lineUp__list'>
-                        {bandFiltered.lineUp.map(elem=>(
-                            <li key={elem.name}>
-                               {elem.pastMember.isTrue === false ?                               
-                               (<>
-                                <div className='lineUp__list__card'>
-                                    <div className='lineUp__list__card--member'>
-                                        {elem.name} :
-                                    </div>
-                                    <ul className='lineUp__list__card--role'>
-                                        {elem.instrument.map((item,index)=>(
-                                            index !== elem.instrument.length-1 ?
-                                            <li className='role' key={item} style={{paddingLeft:"10px"}}>
-                                                {item},
-                                            </li> : 
-                                            <li className='role' key={item} style={{paddingLeft:"10px"}}>
-                                                {item}.
-                                            </li>)
-                                        )}
-                                    </ul>
-                                </div>
-                               </>) 
-                               : 
-                               (<>
-                               </>)}
-                        </li>))}
-                    </ul>
-                </div>
-                <div className='pastMembers'>
-                        {oldMembers.length > 0 &&
-                            <h3 className='pastMembers__title'>Past members</h3>
-                        }
-                    <ul className='pastMembers__list'>
-                        {displayPastMembers()}
-                    </ul>
-                </div>              
+                <BandHeader bandFiltered={bandFiltered}/>
+                <BandBio bandFiltered={bandFiltered}/>
+                <BandFollow socialLinks={socialLinks}/>
+                <BandLineUp bandFiltered={bandFiltered}/>
+                <BandPastMembers oldMembers={oldMembers} displayPastMembers={displayPastMembers}/>
+                
                 <div className='releases'>
                     <h3 className='releases__title'>Releases</h3>
                     <div className='releases__wrapper'>

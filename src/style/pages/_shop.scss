@@ -14,7 +14,7 @@
     padding: 5px 10px;
 }
 .sort_input{
-    transform: translateY(-20%);
+    transform: translateY(-20%), scale(1);
     opacity:0;
     animation: filtersApparition 500ms linear forwards;
     background-color: wheat;
@@ -23,7 +23,6 @@
     border-radius: 3px;
     margin-top: 5px;
     padding: 5px;
-    transform: scale(1);
     transition: 250ms;
     &:hover{
         cursor: pointer;

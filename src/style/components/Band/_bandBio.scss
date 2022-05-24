@@ -1,0 +1,13 @@
+.bio{
+    padding:0px 10px;
+    &__content{
+        padding:10px 10px 0px 10px;
+        @media screen and (max-width:500px) {
+            font-size: 0.9em;
+        }
+    }
+    &__content--title{
+        font-size: 1.3em;
+        text-decoration: underline;
+    }
+}

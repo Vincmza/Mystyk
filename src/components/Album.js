@@ -2,7 +2,7 @@ import React from 'react';
 import * as net from "../data/icons";
 
 
-const Album = ({elem, item, sortedByDate ,description, setDescription}) => {
+const Album = ({elem, item, sortedByDate ,description, setDescription, index}) => {
     //OPTIONS TO TRANSFORM RELEASE DATE
     let options = {year: "numeric", month: "long", day: "numeric"};
     //FUNCTION TO EITHER SHOW OR HIDE ITEM INFOS
@@ -43,7 +43,7 @@ const Album = ({elem, item, sortedByDate ,description, setDescription}) => {
     }
     return (
         <div>
-            <div className='item'>                        
+            <div className='item' style={{animationDelay : `${index*150}ms`}}>                        
                 <div className='item__card'>
                     <div className='item__card__imgContainer'>
                         {item.listenAndShop()[0] && item.listenAndShop()[0].seasonShop !== "" ? 
