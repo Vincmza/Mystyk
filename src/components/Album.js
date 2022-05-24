@@ -43,7 +43,7 @@ const Album = ({elem, item, sortedByDate ,description, setDescription, index}) =
     }
     return (
         <div>
-            <div className='item' style={{animationDelay : `${index*150}ms`}}>                        
+            <div className='item' style={{animationDelay : `${index*200}ms`}}>                        
                 <div className='item__card'>
                     <div className='item__card__imgContainer'>
                         {item.listenAndShop()[0] && item.listenAndShop()[0].seasonShop !== "" ? 

@@ -11,7 +11,7 @@ const Bands = ({bands}) => {
                     <li 
                     key={item.id} 
                     className='bandsCard' 
-                    style={{animationDelay: `${index*250}ms`}}
+                    style={{animationDelay: `${index*200}ms`}}
                     >
                         <div className='bandsCard__header'>
                             <NavLink to={`/band/${item.id}`}>

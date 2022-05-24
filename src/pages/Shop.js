@@ -5,21 +5,19 @@ import * as net from "../data/icons";
 import Album from '../components/Album';
 import Merch from '../components/Merch';
 const Shop = ({bands}) => {
-    //OPTIONS TO EITHER DISPLAY MUSIC OR MERCH
-    const options = ["music", "merch"]
-    //STATE TO STORE EITHER MUSCI OR MERCH OPTION
-    const [shopOption, setShopOption] = useState([])
-    //DISPLAY ITEM DETAILS THAT IS STORED, THAT IS TO SAY ITEM IS CLICKED BY USER
-    const [description, setDescription]=useState([])
+    // --- OPTIONS BETWEEN MUSIC OR MERCH
+
     //HIDE OR DISPLAY FILTERS
     const [showFilters, setShowFilters]=useState(false)
     const displayFilters = ()=>{
         setShowFilters((e)=>(!e))
     }
-    //STATE TON HANDLE SORT SHOP FEATURE
-    const [isSorted, setIsSorted] = useState(["name"])
-    //ALL RELEASES FROM ALL BANDS
-    const allReleases = bands.map(item => item.releases[0])
+    //OPTIONS TO EITHER DISPLAY MUSIC OR MERCH
+    const options = ["music", "merch"]
+    //STATE TO STORE EITHER MUSIC OR MERCH OPTION
+    const [shopOption, setShopOption] = useState([])
+    //STORE ITEM DESCRIPTION WHEN USER CLICKS ON ARROW
+    const [description, setDescription]=useState([])
     //STORE DATA FROM CHECKBOX
     const storeShopOption = (e)=>{
         if(e.target.checked === true){
@@ -40,20 +38,82 @@ const Shop = ({bands}) => {
             return <h1 style={{textAlign : "center", marginTop : "15px"}}>Aucun article disponible actuellement</h1>
         }
     }
-    //SORT ALL RELEASES PER YEAR
-    function sortShop(albums, sortValue){
-        if(sortValue === "date"){
+
+    // --- SORT OPTIONS WHEN MUSIC OPTION IS CHOOSEN
+
+    //ALL RELEASES FROM ALL BANDS
+    const allReleases = bands.map(item => item.releases[0])
+    //ALL STYLES AVAILABLE
+    const allStyles = allReleases.reduce((acc,cv)=>{
+        acc.includes(cv.style) || acc.push(cv.style)
+        return acc
+    },[])
+    //SORT BUTTON STATE
+    const [isSortButtonClicked, setIsSortButtonClicked]=useState(false)
+    //OPTIONS TO SORT SHOP
+    const sortOptions = ["A-Z", "Release date", "Style"]
+    //STATE TO STORE SORT CHOICE
+    const [isSorted, setIsSorted] = useState("A-Z")
+    //STYLE STATE
+    const [isStyleChoosen, setIsStyleChoosen]=useState("")
+    //FUNCTION TO DISPLAY SORT OPTIONS
+    const displaySortOptions = ()=>{
+        setIsSortButtonClicked((cv)=>!cv)
+    }
+    //SORT BY A-Z, RELEASE DATE AND STYLE
+    const storeSort = (value)=>{
+        setIsSorted("")
+        setIsSorted(value)
+        if(value !== "Style"){
+            setIsStyleChoosen("")
+        }
+    }
+    //IF STYLE PREVIOUSLY CLICKED PRECISE STYLE TO SORT SHOP
+    const whichStyle = (style)=>{
+        setIsStyleChoosen(style)
+    }
+    function sortShop(albums){
+        if(isSorted === "Release date"){
             return albums.sort((a,b)=>{
                 return new Date(a.releaseDate) - new Date(b.releaseDate)
-              })
+            }).map((item,index)=>(<Album
+                sortedByDate={true}
+                index={index}
+                key={item.id}
+                item={item}
+                elem={bands.filter(elem=>elem.id === item.bandId)}
+                description={description}
+                setDescription={setDescription}
+                />))
         }
-        if(sortValue === "name"){
-            return albums.sort()
+        if(isSorted === "A-Z"){
+            return albums.map((item,index)=>(
+                <Album
+                sortedByDate={false}
+                index={index}
+                key={item.id}
+                item={item}
+                elem={bands.filter(elem=>elem.id === item.bandId)}
+                description={description}
+                setDescription={setDescription}
+                />
+            ))
         }
-    }
-    const storeSort = (value)=>{
-        setIsSorted(()=>[value])
-    }
+        if(isSorted === "Style" && isStyleChoosen !== ""){
+            const albumsSortedByStyle = albums.filter(album => album.style === isStyleChoosen)
+            return albumsSortedByStyle.map((item,index)=>(
+                <Album
+                sortedByDate={false}
+                index={index}
+                key={item.id}
+                item={item}
+                elem={bands.filter(elem=>elem.id === item.bandId)}
+                description={description}
+                setDescription={setDescription}
+                />
+            ))
+        }
+    }   
     return (
         <div className='shop'>
             <h1 className='shopIntro'>Shop</h1>
@@ -84,63 +144,56 @@ const Shop = ({bands}) => {
                                         />
                                         <label htmlFor={elem}>{elem}<span>{net[elem]}</span></label>
                                     </div>
-                                    
-                                    {shopOption[0] === "music" && elem === "music" ? 
-                                    (<>
-                                        <input 
-                                        type="button"
-                                        value={isSorted[0] === "name" ? "Sort by release date" : "Sort by A-Z"}
-                                        onClick={()=>storeSort(isSorted[0] === "name" ? "release_date" : "name")}
-                                        className='sort_input'
-                                        style={{animationDelay : `${index*250}ms`}}
-                                        />
-                                    </>)
-                                    :
-                                    (<></>)
-                                    }
                                 </div>
                             ))}
                         </>) 
                         : 
+                        (<></>)
+                    }
+                    {shopOption[0] === "music" && 
                         (<>
+                            <div className='sort'>
+                                <input 
+                                type="button"
+                                value="Sort"
+                                className='sort__list'
+                                onClick={displaySortOptions}
+                                />
+                                <div className='sort__list__options'>
+                                    {isSortButtonClicked === true && (<>
+                                        {sortOptions.map((item, index)=>(
+                                        <input 
+                                        type="button" 
+                                        key={item}
+                                        value={item}
+                                        className={`sort__list__options__input`}
+                                        onClick={(e)=>storeSort(e.target.value)}
+                                        style={{animationDelay: `${index*150}ms`}}
+                                        />
+                                        ))}
+                                        <div className='sort__list__options__style'>
+                                            {isSorted === "Style" && (<>
+                                                {allStyles.map((style, index)=>(
+                                                <input 
+                                                type="button"
+                                                key={style}
+                                                value={style}
+                                                className={`sort__list__options__style__input`}
+                                                onClick={(e)=>whichStyle(e.target.value)}
+                                                style={{animationDelay: `${index*150}ms`}}
+                                                />
+                                                ))}
+                                            </>)}
+                                        </div>
+                                    </>)}
+                                </div>
+                            </div>
+            
                         </>)
                     }
                 </div>
                 <div className='shop__wrapper__item'>
-                    {shopOption[0] === "music" && isSorted[0] === "release_date" ? 
-                        (
-                            sortShop(allReleases, "date").map((item,index)=>(
-                                <Album
-                                sortedByDate={true}
-                                index={index}
-                                key={item.id}
-                                item={item}
-                                elem={bands.filter(elem=>elem.id === item.bandId)}
-                                description={description}
-                                setDescription={setDescription}
-                                />
-                            ))
-                        )
-                        :
-                        (<></>)
-                    }
-                    {shopOption[0] === "music" && isSorted[0] === "name" ?
-                        (
-                            sortShop(allReleases, "name").map((item,index)=>(
-                                <Album
-                                sortedByDate={false}
-                                index={index}
-                                key={item.id}
-                                item={item}
-                                elem={bands.filter(elem=>elem.id === item.bandId)}
-                                description={description}
-                                setDescription={setDescription}
-                                />
-                            ))
-                        )
-                        :
-                        (<></>) 
-                    }
+                    {sortShop(allReleases)}
                 </div>
                 {CheckMerchLength()}
                 <div className='shop__wrapper__item'>                          
