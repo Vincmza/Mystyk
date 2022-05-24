@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-//ICONS
-import * as net from "../data/icons";
+
+
 //COMPONENTS
 import Album from '../components/Album';
 import Merch from '../components/Merch';
+import FiltersMusicMerch from '../components/Shop/FiltersMusicMerch';
+import SortShop from '../components/Shop/SortShop';
+
 const Shop = ({bands}) => {
     // --- OPTIONS BETWEEN MUSIC OR MERCH
 
@@ -119,78 +122,23 @@ const Shop = ({bands}) => {
             <h1 className='shopIntro'>Shop</h1>
             <div className='shop__wrapper'>
                 <div className='shop__wrapper__options'>
-                    <input 
-                    type="button" 
-                    value="Filtres" 
-                    className='shop__wrapper__options__filters' 
-                    onClick={displayFilters}
+                    <FiltersMusicMerch 
+                    displayFilters={displayFilters}
+                    showFilters={showFilters}
+                    shopOption={shopOption}
+                    storeShopOption={storeShopOption}
+                    options={options}
                     />
-                    {showFilters === true ? 
-                        (<>
-                            {options.map((elem,index)=>(
-                                <div 
-                                className={`shop__wrapper__options--${elem}`} 
-                                key={elem} 
-                                style={{animationDelay : `${index*250}ms`}}
-                                >
-                                    <div className='choice_container'>
-                                        <input 
-                                        type="checkbox" 
-                                        id={elem} 
-                                        name={elem}
-                                        value={elem}
-                                        onChange={(e)=>storeShopOption(e)}
-                                        checked={shopOption.some(item => item === elem)}
-                                        />
-                                        <label htmlFor={elem}>{elem}<span>{net[elem]}</span></label>
-                                    </div>
-                                </div>
-                            ))}
-                        </>) 
-                        : 
-                        (<></>)
-                    }
-                    {shopOption[0] === "music" && 
-                        (<>
-                            <div className='sort'>
-                                <input 
-                                type="button"
-                                value="Sort"
-                                className='sort__list'
-                                onClick={displaySortOptions}
-                                />
-                                <div className='sort__list__options'>
-                                    {isSortButtonClicked === true && (<>
-                                        {sortOptions.map((item, index)=>(
-                                        <input 
-                                        type="button" 
-                                        key={item}
-                                        value={item}
-                                        className={`sort__list__options__input`}
-                                        onClick={(e)=>storeSort(e.target.value)}
-                                        style={{animationDelay: `${index*150}ms`}}
-                                        />
-                                        ))}
-                                        <div className='sort__list__options__style'>
-                                            {isSorted === "Style" && (<>
-                                                {allStyles.map((style, index)=>(
-                                                <input 
-                                                type="button"
-                                                key={style}
-                                                value={style}
-                                                className={`sort__list__options__style__input`}
-                                                onClick={(e)=>whichStyle(e.target.value)}
-                                                style={{animationDelay: `${index*150}ms`}}
-                                                />
-                                                ))}
-                                            </>)}
-                                        </div>
-                                    </>)}
-                                </div>
-                            </div>
-            
-                        </>)
-                    }
+                    <SortShop
+                    shopOption={shopOption}
+                    displaySortOptions={displaySortOptions}
+                    sortOptions={sortOptions}
+                    isSortButtonClicked={isSortButtonClicked}
+                    storeSort={storeSort}
+                    isSorted={isSorted}
+                    allStyles={allStyles}
+                    whichStyle={whichStyle}
+                    />
                 </div>
                 <div className='shop__wrapper__item'>
                     {sortShop(allReleases)}
