@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 //COMPONENTS
 import Album from '../components/Album';
 import Merch from '../components/Merch';
@@ -22,12 +21,12 @@ const Shop = ({bands}) => {
     //STORE ITEM DESCRIPTION WHEN USER CLICKS ON ARROW
     const [description, setDescription]=useState([])
     //STORE DATA FROM CHECKBOX
-    const storeShopOption = (e)=>{
-        if(e.target.checked === true){
-            setShopOption([e.target.value])
-            setDescription([])
-        }
-    }
+    // const storeShopOption = (e)=>{
+    //     if(e.target.checked === true){
+    //         setShopOption([e.target.value])
+    //         setDescription([])
+    //     }
+    // }
     //IF NO ITEM IN MERCH ARRAY RETURN H1 TAG
     const CheckMerchLength = ()=>{
         let count = 0
@@ -126,7 +125,8 @@ const Shop = ({bands}) => {
                     displayFilters={displayFilters}
                     showFilters={showFilters}
                     shopOption={shopOption}
-                    storeShopOption={storeShopOption}
+                    setShopOption={setShopOption}
+                    setDescription={setDescription}
                     options={options}
                     />
                     <SortShop
@@ -141,9 +141,11 @@ const Shop = ({bands}) => {
                     isStyleChoosen={isStyleChoosen}
                     />
                 </div>
-                <div className='shop__wrapper__item'>
+                {shopOption[0] === "music" && 
+                    <div className='shop__wrapper__item'>
                     {sortShop(allReleases)}
-                </div>
+                    </div>
+                }
                 {CheckMerchLength()}
                 <div className='shop__wrapper__item'>                          
                     {shopOption[0] === "merch" && 

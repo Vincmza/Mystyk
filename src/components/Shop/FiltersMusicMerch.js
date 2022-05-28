@@ -2,7 +2,13 @@ import React from 'react';
 //ICONS
 import * as net from "../../data/icons";
 
-const FiltersMusicMerch = ({displayFilters,showFilters,shopOption,options, storeShopOption}) => {
+const FiltersMusicMerch = ({displayFilters,showFilters,shopOption,options,setShopOption,setDescription}) => {
+    const storeShopOption = (e)=>{
+        if(e.target.checked === true){
+            setShopOption([e.target.value])
+            setDescription([])
+        }
+    }
     return (
         <div className='shop__wrapper__options'>
             <input 

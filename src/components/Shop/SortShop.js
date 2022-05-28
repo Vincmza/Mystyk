@@ -11,9 +11,10 @@ const SortShop = ({
     whichStyle,
     isStyleChoosen
 }) => {
+    console.log("option : ", shopOption[0])
     return (
         <div className='shop__wrapper__options'>
-            {shopOption[0] === "music" && 
+            {shopOption[0] === "music" &&
                 (<>
                     <div className='sort'>
                         <input 
@@ -64,7 +65,6 @@ const SortShop = ({
                             </>)}
                         </div>
                     </div>
-    
                 </>)
             }
         </div>
