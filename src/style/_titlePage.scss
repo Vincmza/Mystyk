@@ -1,10 +1,13 @@
+@import "./generalSettings/colors";
+@import "./generalSettings/font";
+
 .newsIntro, .bandsIntro, .showsIntro, .shopIntro, .contactIntro{
     padding: 10px;
     text-align: center;
     font-size: 2em;
-    font-family: "Alegreya", Arial, Helvetica, sans-serif;
-    text-shadow: red 1px 0 10px;
-    border-bottom: 1px solid red;
+    font-family: $text-and-titles;
+    text-shadow: $text-shadow;
+    border-bottom: $nav-border;
     margin-bottom: 50px;
     height: 70px;
 }

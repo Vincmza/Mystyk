@@ -10,7 +10,6 @@ const SortShop = ({
     allStyles,
     whichStyle,
     isStyleChoosen,
-    allReleases
 }) => {
     console.log("option : ", shopOption[0])
     return (
@@ -48,7 +47,7 @@ const SortShop = ({
                                         <input 
                                         type="button"
                                         key={style}
-                                        value={style + " " + "(" + allReleases.filter(howMany => howMany.style === style).length + ")"}
+                                        value={style}
                                         className={`sort__list__options__style__input`}
                                         onClick={(e)=>whichStyle(e.target.value)}
                                         style={
@@ -58,7 +57,6 @@ const SortShop = ({
                                                 color : `${isStyleChoosen === style ? "wheat" : "rgb(117, 7, 7)" }`
                                             }
                                         }
-                                        
                                         />
                                         ))}
                                     </>)}

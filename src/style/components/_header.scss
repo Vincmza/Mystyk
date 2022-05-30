@@ -1,16 +1,9 @@
-@keyframes titleDisplay {
-    to{
-        opacity:1;
-    }
-}
-@keyframes navApparition {
-    to {
-        transform:translateX(0)
-    }
-}
+@import "../generalSettings/animations";
+@import "../generalSettings/font";
+@import "../generalSettings/colors";
+
 .headerContainer {
     margin-bottom : 60px;
-    
     &__logo{
         width:200px;
         height:150px;
@@ -26,7 +19,7 @@
     justify-content: space-around;
     padding: 0px 30px;
     &__nav-icon{
-        color:wheat;
+        color:$main-font-color;
         // border:1px solid yellowgreen;
         padding:30px;
         display: flex;
@@ -64,8 +57,8 @@ nav{
     padding: 15px;
     // border: 1px solid black;
     background-color: black;
-    border-top : 1px solid red;
-    border-bottom : 1px solid red;
+    border-top : $nav-border;
+    border-bottom : $nav-border;
     transform: translateX(-100vw);
     animation: navApparition 600ms linear forwards;
     @media screen and (max-width:600px) {
@@ -77,11 +70,11 @@ nav{
     justify-content: space-around;
     // border:1px solid purple;
     &__title{
-        font-family: "Bad Script", Arial, Helvetica, sans-serif;
+        font-family: $nav-font;
         font-size: 1.8em;
-        color:wheat;
-        text-shadow: red 1px 0 10px;
-        animation: 1500ms ease-in-out titleDisplay forwards;
+        color:$main-font-color;
+        text-shadow: $text-shadow;
+        animation: 1500ms ease-in-out apparition forwards;
         // border: 1px solid red;
         cursor: pointer;
         opacity:0;

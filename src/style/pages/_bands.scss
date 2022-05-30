@@ -1,8 +1,7 @@
-@keyframes bandsDisplay{
-    to{
-        opacity:1;
-    }
-}
+@import "../generalSettings/animations";
+@import "../generalSettings/font";
+@import "../generalSettings/colors";
+
 a{
     text-decoration-line: unset;
     color: unset;
@@ -11,8 +10,8 @@ a{
     // border:1px solid blue;
     width: 75%;
     margin: auto;
-    color:wheat;
-    font-family: "Alegreya", Arial, Helvetica, sans-serif;
+    color:$main-font-color;
+    font-family: $text-and-titles;
     @media screen and (max-width:650px) {
         width:95%;
     }
@@ -30,9 +29,9 @@ a{
 }
 .bandsCard{
     opacity:0;
-    animation: bandsDisplay 400ms linear forwards;
-    border:1px solid wheat;
-    box-shadow: 1px 1px 5px red;
+    animation: apparition 600ms linear forwards;
+    border:$border;
+    box-shadow:$box-shadow;
     border-radius: 2px;
     display: flex;
     flex-direction: column;
@@ -69,7 +68,7 @@ a{
         &__bandsName{
             text-align: center;
             font-size: 1.6em;
-            text-shadow: red 1px 0 10px;
+            text-shadow: $text-shadow;
             transform: scale(1);
             transition:300ms;
             &:hover{

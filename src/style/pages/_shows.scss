@@ -1,11 +1,9 @@
-@keyframes showsApparition{
-    to{
-        opacity:1;
-    }
-}
+@import "../generalSettings/animations";
+@import "../generalSettings/font";
+@import "../generalSettings/colors";
 .shows{
     color:wheat;
-    font-family: "Alegreya", Arial, Helvetica, sans-serif;
+    font-family: $text-and-titles;
     width:75%;
     margin: auto;
     @media screen and (max-width:900px) {
@@ -14,7 +12,7 @@
 }
 .allShows{
     opacity:0;
-    animation: showsApparition 800ms linear forwards;
+    animation: apparition 600ms linear forwards;
     // border:1px solid green;
     margin-top:20px;
     &__bandName-container{
@@ -22,7 +20,7 @@
         display: flex;
         &--name{
             font-size: 1.4em;
-            text-shadow: red 1px 0 10px;
+            text-shadow: $text-shadow;
             transform: scale(1);
             transition: 300ms;
             // border:1px solid yellow;
@@ -41,9 +39,10 @@
         &__titles{
             &--date,&--event,&--where,&--country,&--moreDetails{
                 padding:10px;
-                border:1px solid white;
+                border:$border;
                 text-align: center;
                 color:red;
+                font-size: 1.1em;
                 @media screen and (max-width:500px) {
                     font-size: 0.8em;
                     padding: 5px;
@@ -53,7 +52,8 @@
         &__infos{
             &--date,&--event,&--where,&--country,&--moreDetails{
                 padding:10px;
-                border:1px solid white;
+                border:$border;
+                font-size: 1.1em;
                 @media screen and (max-width:700px) {
                     font-size: 0.8em;
                 }
@@ -64,7 +64,7 @@
             }
             &--moreDetails{
                 text-align: center;
-                color:rgb(6, 185, 6);
+                color:$more-details;
                 font-size: 1.2em;
                 transform: scale(1);
                 transition: 300ms;

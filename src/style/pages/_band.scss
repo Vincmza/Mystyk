@@ -1,28 +1,21 @@
-@keyframes releaseApparition {
-    to{
-        transform:translateY(0);
-        opacity:1;
-    }
-}
-@keyframes bandApparition{
-    to{
-        opacity:1;
-    }
-}
+@import "../generalSettings/animations";
+@import "../generalSettings/font";
+@import "../generalSettings/colors";
+
 .back{
     width:100%;
     display: flex;
     justify-content: center;
     padding: 30px 0px;
     opacity:0;
-    animation: bandApparition 800ms linear forwards;
+    animation: apparition 600ms linear forwards;
     &__toBands{
-        font-family: "Alegreya", Arial, Helvetica, sans-serif;
+        font-family: $text-and-titles;
         font-size: 1.1em;
         border: none;
         padding: 10px 20px;
-        background-color: rgb(117, 7, 7);
-        color: wheat;
+        background-color: $bg-color;
+        color: $main-font-color;
         border-radius: 2px;
         transform: scale(1);
         transition:500ms;
@@ -33,19 +26,19 @@
     }
 }
 .band{
-    color:wheat;
-    font-family: "Alegreya", Arial, Helvetica, sans-serif;
+    color:$main-font-color;
+    font-family: $text-and-titles;
     padding-bottom: 20px;
     // border:1px solid green;
     &__wrapper{
-        border: 1px solid wheat;
-        box-shadow: 1px 1px 5px red;
+        border:$border;
+        box-shadow: $box-shadow;
         border-radius: 2px;
         width:75%;
         margin: auto;
         padding:10px;
         opacity:0;
-        animation: bandApparition 1.5s linear forwards;
+        animation: apparition 1.5s linear forwards;
         @media screen and (max-width:700px) {
             width:90%;
         }

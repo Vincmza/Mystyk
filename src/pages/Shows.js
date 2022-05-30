@@ -48,7 +48,7 @@ const Shows = (props) => {
 					<li
 						key={band.id}
 						className="allShows"
-						style={{ animationDelay: `${index * 400}ms` }}
+						style={{ animationDelay: `${index * 200}ms` }}
 					>
 						{checkShows(band.id)
 						.findIndex(object=>object.bandId === band.id && object.isAvailable() === true) !== -1 &&(

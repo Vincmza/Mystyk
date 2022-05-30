@@ -1,9 +1,7 @@
-//ANIMATION WHILE BEING DISPLAYED
-@keyframes newsDisplay{
-    to{
-        opacity:1;
-    }
-}
+@import "../generalSettings/animations";
+@import "../generalSettings/font";
+@import "../generalSettings/colors";
+
 //REMOVE NATURAL STYLE FROM A TAG
 a{
     text-decoration-line: unset;
@@ -11,8 +9,8 @@ a{
 }
 //STYLE TO MAIN CONTAINER TAGS
 .news{
-    color:wheat;
-    font-family: "Alegreya", Arial, Helvetica, sans-serif;
+    color:$main-font-color;
+    font-family: $text-and-titles;
     // border: 1px solid yellow;
     width:75%;
     padding-bottom:20px;
@@ -38,12 +36,12 @@ img {
     justify-content: space-between;
     align-items: center;
     // height:280px;
-    border: 1px solid wheat;
-    box-shadow: 1px 1px 5px red;
+    border: $border;
+    box-shadow: $box-shadow;
     border-radius: 2px;
     margin-top:20px;
     opacity:0;
-    animation: newsDisplay 1.2s linear forwards;
+    animation: apparition 600ms linear forwards;
     @media screen and (max-width:900px) {
         height:auto;
         flex-direction: column; 
@@ -58,11 +56,9 @@ img {
         width:80%;
         display: flex;
         flex-direction: column;
-        // justify-content: space-between;
         // border:1px solid green;
         @media screen and (max-width:900px) {
-            width:100%;
-            
+            width:100%; 
         }
         &__header{
             display: flex;
@@ -75,7 +71,7 @@ img {
             }
             &--bandName{
                 font-size: 1.4em;
-                text-shadow: red 1px 0 10px;
+                text-shadow: $text-shadow;
                 transform: scale(1);
                 transition:300ms;
                 display: flex;
@@ -141,7 +137,7 @@ img {
                     }
                 }
                 &--bandCamp{
-                    color:rgb(29,160,195);
+                    color:$bandcamp;
                     display: flex;
                     align-items: center;
                     font-size: 1.1em;
@@ -153,7 +149,7 @@ img {
                     }
                 }
                 &--spotify{
-                    color: rgb(30, 215, 96);
+                    color: $spotify;
                     display: flex;
                     align-items: center;
                     font-size: 1.1em;

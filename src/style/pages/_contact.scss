@@ -1,18 +1,10 @@
-@keyframes contactApparition {
-    to{
-        opacity : 1;
-    }
-}
-@keyframes spinner {
-    to{
-        transform : rotate(360deg);
-        border-radius: 50%;
-    }
-}
+@import "../generalSettings/animations";
+@import "../generalSettings/font";
+@import "../generalSettings/colors";
 
 .contact{
     color:wheat;
-    font-family: "Alegreya", Arial, Helvetica, sans-serif;
+    font-family: $text-and-titles;
     width:75%;
     margin: auto;
     @media screen and (max-width:650px) {
@@ -23,7 +15,7 @@
     }
     &__wrapper{
         opacity:0;
-        animation: contactApparition 800ms linear forwards;
+        animation: apparition 600ms linear forwards;
         width:100%;
         display: flex;
         flex-direction: column;
@@ -63,12 +55,12 @@
             &--message{
                 height: 300px;
                 padding: 10px;
-                font-family: "Alegreya", Arial, Helvetica, sans-serif;
+                font-family: $text-and-titles;
                 font-size: 1.1em;
             }
             &--name, &--email{
                 padding:5px;
-                font-family: "Alegreya", Arial, Helvetica, sans-serif;
+                font-family: $text-and-titles;
                 font-size: 1.1em;
             }
             &--submit{
@@ -76,8 +68,8 @@
                 width:20%;
                 transform: scale(1);
                 transition:300ms;
-                background-color: rgb(117, 7, 7);
-                color: wheat;
+                background-color: $bg-color;
+                color: $main-font-color;
                 border: none;
                 padding: 5px 10px;
                 border-radius : 2px;

@@ -73,7 +73,7 @@ const News = (props) => {
                 <li 
                 key={item.id} 
                 className="newsCard" 
-                style={{animationDelay: `${index*400}ms`}}
+                style={{animationDelay: `${index*200}ms`}}
                 >
                     <div className='newsCard__imgContainer'>
                         <img src={item.image} alt={`photo de ${item.bandName()}`}/>

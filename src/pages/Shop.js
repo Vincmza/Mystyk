@@ -134,7 +134,6 @@ const Shop = ({bands}) => {
                     allStyles={allStyles}
                     whichStyle={whichStyle}
                     isStyleChoosen={isStyleChoosen}
-                    allReleases={allReleases}
                     />
                 </div>
                 {shopOption[0] === "music" && 

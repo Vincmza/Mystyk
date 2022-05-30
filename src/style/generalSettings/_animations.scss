@@ -1,0 +1,30 @@
+@keyframes itemApparition {
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+@keyframes apparition{
+    to{
+        opacity:1;
+    }
+}
+@keyframes navApparition {
+    to {
+        transform:translateX(0)
+    }
+}
+//CONTACT COMPONENT
+@keyframes spinner {
+    to{
+        transform : rotate(360deg);
+        border-radius: 50%;
+    }
+}
+//SHOP
+@keyframes inputApparition{
+    to{
+        transform:translateX(0);
+        opacity:1;
+    }
+}

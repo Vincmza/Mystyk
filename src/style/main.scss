@@ -7,11 +7,8 @@
 @import "./components/item";
 @import "./pages/bands";
 @import "./pages/band";
-@import "./components/Band/bandHeader";
-@import "./components/Band/bandBio";
-@import "./components/Band/bandFollow";
-@import "./components/Band/bandLineUp";
-@import "./components/Band/bandPastMembers";
+@import "../style/components/Band/bandComponents";
 @import "./pages/shows";
 @import "./pages/shop";
+@import "../style/components/Shop/sortMusic";
 @import "./pages/contact";
