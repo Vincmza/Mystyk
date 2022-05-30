@@ -3,6 +3,7 @@ import React from 'react';
 import * as net from "../../data/icons";
 
 const FiltersMusicMerch = ({displayFilters,showFilters,shopOption,options,setShopOption,setDescription}) => {
+    //STORE DATA FROM CHECKBOX
     const storeShopOption = (e)=>{
         if(e.target.checked === true){
             setShopOption([e.target.value])

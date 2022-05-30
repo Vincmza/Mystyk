@@ -20,13 +20,6 @@ const Shop = ({bands}) => {
     const [shopOption, setShopOption] = useState([])
     //STORE ITEM DESCRIPTION WHEN USER CLICKS ON ARROW
     const [description, setDescription]=useState([])
-    //STORE DATA FROM CHECKBOX
-    // const storeShopOption = (e)=>{
-    //     if(e.target.checked === true){
-    //         setShopOption([e.target.value])
-    //         setDescription([])
-    //     }
-    // }
     //IF NO ITEM IN MERCH ARRAY RETURN H1 TAG
     const CheckMerchLength = ()=>{
         let count = 0
@@ -50,20 +43,22 @@ const Shop = ({bands}) => {
         acc.includes(cv.style) || acc.push(cv.style)
         return acc
     },[])
+    console.log(allStyles)
     //SORT BUTTON STATE
     const [isSortButtonClicked, setIsSortButtonClicked]=useState(false)
+    //FUNCTION TO DISPLAY SORT OPTIONS
+    const displaySortOptions = ()=>{
+        setIsSortButtonClicked((cv)=>!cv)
+    }
     //OPTIONS TO SORT SHOP
     const sortOptions = ["A-Z", "Release date", "Style"]
     //STATE TO STORE SORT CHOICE
     const [isSorted, setIsSorted] = useState("A-Z")
     //STYLE STATE
     const [isStyleChoosen, setIsStyleChoosen]=useState("")
-    //FUNCTION TO DISPLAY SORT OPTIONS
-    const displaySortOptions = ()=>{
-        setIsSortButtonClicked((cv)=>!cv)
-    }
+    
     //SORT BY A-Z, RELEASE DATE AND STYLE
-    const storeSort = (value)=>{
+    const sortStore = (value)=>{
         setIsSorted("")
         setIsSorted(value)
         if(value !== "Style"){
@@ -134,11 +129,12 @@ const Shop = ({bands}) => {
                     displaySortOptions={displaySortOptions}
                     sortOptions={sortOptions}
                     isSortButtonClicked={isSortButtonClicked}
-                    storeSort={storeSort}
+                    sortStore={sortStore}
                     isSorted={isSorted}
                     allStyles={allStyles}
                     whichStyle={whichStyle}
                     isStyleChoosen={isStyleChoosen}
+                    allReleases={allReleases}
                     />
                 </div>
                 {shopOption[0] === "music" && 

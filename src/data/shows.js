@@ -126,5 +126,55 @@ export const shows = [
     where : "Place des fauchés 14400 Marseille",
     country : "France",
     moreDetails : "https://www.youtube.com/watch?v=0ym0cc5LeG0"
+  },
+  {
+    id:"sh6",
+    bandId:9,
+    bandName:function(){
+        return returnName(this.bandId)
+    },
+    showDate : "2022 Jul 24",
+    displayShowDate : function(){
+      let date = new Date(this.showDate)
+      let dateToString = date.toLocaleString("fr-FR", options)
+      return dateToString
+    },
+    isAvailable : function (){
+      if(Date.parse(this.showDate) >= Date.now()){
+        return true
+      }
+      else{
+        return false
+      }
+    },
+    event : "Fabrice le fisteur Fest 6eme edition",
+    where : "Mes K sur ton front 75001 Rouen",
+    country : "France",
+    moreDetails : "https://www.youtube.com/watch?v=0ym0cc5LeG0"
+  },
+  {
+    id:"sh7",
+    bandId:9,
+    bandName:function(){
+        return returnName(this.bandId)
+    },
+    showDate : "2022 Feb 17",
+    displayShowDate : function(){
+      let date = new Date(this.showDate)
+      let dateToString = date.toLocaleString("fr-FR", options)
+      return dateToString
+    },
+    isAvailable : function (){
+      if(Date.parse(this.showDate) >= Date.now()){
+        return true
+      }
+      else{
+        return false
+      }
+    },
+    event : "Gore pussy fest 4",
+    where : "Salle des fêtes Clermont-Ferrand",
+    country : "France",
+    moreDetails : "https://www.youtube.com/watch?v=0ym0cc5LeG0"
   }
 ]

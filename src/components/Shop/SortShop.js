@@ -5,11 +5,12 @@ const SortShop = ({
     displaySortOptions, 
     sortOptions, 
     isSortButtonClicked,
-    storeSort,
+    sortStore,
     isSorted,
     allStyles,
     whichStyle,
-    isStyleChoosen
+    isStyleChoosen,
+    allReleases
 }) => {
     console.log("option : ", shopOption[0])
     return (
@@ -31,7 +32,7 @@ const SortShop = ({
                                 key={item}
                                 value={item}
                                 className={`sort__list__options__input`}
-                                onClick={(e)=>storeSort(e.target.value)}
+                                onClick={(e)=>sortStore(e.target.value)}
                                 style={
                                     {
                                         animationDelay: `${index*150}ms`,
@@ -47,7 +48,7 @@ const SortShop = ({
                                         <input 
                                         type="button"
                                         key={style}
-                                        value={style}
+                                        value={style + " " + "(" + allReleases.filter(howMany => howMany.style === style).length + ")"}
                                         className={`sort__list__options__style__input`}
                                         onClick={(e)=>whichStyle(e.target.value)}
                                         style={
