@@ -1,11 +1,11 @@
 @import "../generalSettings/animations";
 @import "../generalSettings/font";
 @import "../generalSettings/colors";
+@import "../generalSettings/mixin";
 
 //REMOVE NATURAL STYLE FROM A TAG
 a{
-    text-decoration-line: unset;
-    color: unset;
+    @include reset-a-tag-settings;
 }
 //STYLE TO MAIN CONTAINER TAGS
 .news{
@@ -125,52 +125,16 @@ img {
                     font-size: 0.8em;
                 }
                 &--youTube{
-                    color:red;
-                    display: flex;
-                    align-items: center;
-                    font-size: 1.1em;
-                    padding-left: 10px;
-                    transform:scale(1);
-                    transition:300ms;
-                    &:hover{
-                        transform:scale(0.9);
-                    }
+                    @include news-music-icon(red);
                 }
                 &--bandCamp{
-                    color:$bandcamp;
-                    display: flex;
-                    align-items: center;
-                    font-size: 1.1em;
-                    padding-left: 10px;
-                    transform:scale(1.1);
-                    transition:300ms;
-                    &:hover{
-                        transform:scale(0.9);
-                    }
+                    @include news-music-icon($bandcamp);
                 }
                 &--spotify{
-                    color: $spotify;
-                    display: flex;
-                    align-items: center;
-                    font-size: 1.1em;
-                    padding-left: 10px;
-                    transform:scale(1.1);
-                    transition:300ms;
-                    &:hover{
-                        transform:scale(0.9);
-                    }
+                    @include news-music-icon($spotify);
                 }
                 &--seasonShop{
-                    display: flex;
-                    align-items: center;
-                    font-size: 1.1em;
-                    padding-left: 10px;
-                    transform:scale(1.1);
-                    transition:300ms;
-                    &:hover{
-                        transform:scale(0.9);
-                    }
-
+                    @include news-music-icon($main-font-color);
                 }
             }
         }

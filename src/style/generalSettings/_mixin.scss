@@ -1,0 +1,63 @@
+@import "./colors";
+@import "./font";
+@import "./animations";
+
+//BACK TO BANDS BUTTON 
+//FILTERS BUTTON AT SHOP
+@mixin buttonSettings {
+    font-family: $text-and-titles;
+    font-size: 1.1em;
+    border: none;
+    background-color: $bg-color;
+    color: $main-font-color;
+    border-radius: 2px;
+    transform: scale(1);
+    transition:500ms;
+}
+//A TAG RESET DEFAULT SETTINGS
+@mixin reset-a-tag-settings {
+    text-decoration-line: unset;
+    color: unset;
+}
+//ICONS TO GO TO LISTEN TO MUSIC
+@mixin listenIcons($iconColor){
+    font-size: 1.1em;
+    color:$iconColor;
+    transform: scale(1.1);
+    transition:300ms;
+    &:hover{
+        transform: scale(0.9);
+    }
+}
+//SORT SHOP INPUTS
+@mixin sort-shop-input{
+    background-color: $main-font-color;
+    font-family: $text-and-titles;
+    font-weight: bold;
+    color:$bg-color;
+    border-radius: 3px;
+    margin-top: 5px;
+    transform:translateX(-20%);
+    opacity:0;
+    animation: inputApparition 300ms linear forwards;
+    &:hover{
+        cursor: pointer;
+    }
+    &:active{
+        background-color:$bg-color;
+        color: $main-font-color;
+    }
+}
+//NEWS PAGE ICONS TO LISTEN TO MUSIC
+@mixin news-music-icon($iconColor){
+    color:$iconColor;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    padding-left: 10px;
+    transform:scale(1);
+    transition:300ms;
+    &:hover{
+        transform:scale(0.9);
+    }
+}

@@ -1,6 +1,7 @@
 @import "../generalSettings/animations";
 @import "../generalSettings/font";
 @import "../generalSettings/colors";
+@import "../generalSettings/mixin";
 
 .choice_container{
     display: flex;
@@ -12,7 +13,7 @@
     padding: 5px 10px;
 }
 .shop{
-    color:wheat;
+    color:$main-font-color;
     font-family: $text-and-titles;
     // border:1px solid green;
     width:75%;
@@ -75,17 +76,10 @@
                 font-size: 0.7em;
             } 
             &__filters{
-                font-family: $text-and-titles;
-                font-size: 1.1em;
                 width:12%;
                 padding:10px;
                 margin-bottom:5px;
-                background-color: $bg-color;
-                color: $main-font-color;
-                border-radius: 2px;
-                transform: scale(1);
-                transition:500ms;
-                border: none;
+                @include buttonSettings;
                 &:hover{
                     cursor: pointer;
                     transform: scale(1.1);

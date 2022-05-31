@@ -2,7 +2,7 @@
 @import "../generalSettings/font";
 @import "../generalSettings/colors";
 .shows{
-    color:wheat;
+    color:$main-font-color;
     font-family: $text-and-titles;
     width:75%;
     margin: auto;

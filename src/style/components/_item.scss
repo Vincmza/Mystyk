@@ -1,6 +1,7 @@
 @import "../generalSettings/animations";
 @import "../generalSettings/colors";
 @import "../generalSettings/font";
+@import "../generalSettings/mixin";
 
 .item{
     // display: flex;
@@ -102,48 +103,19 @@
             display: flex;
             justify-content: space-between;
             &--youTube{
-                font-size: 1.1em;
-                color:red;
-                transform: scale(1.1);
-                transition:300ms;
-                &:hover{
-                    transform: scale(0.9);
-                }
+                @include listenIcons(red);
             }
             &--bandCamp{
-                font-size: 1.1em;
-                color:$bandcamp;
-                transform: scale(1.1);
-                transition:300ms;
-                &:hover{
-                    transform: scale(0.9);
-                }
+                @include listenIcons($bandcamp);
             }
             &--spotify{
-                font-size: 1.1em;
-                color:$spotify;
-                transform: scale(1.1);
-                transition:300ms;
-                &:hover{
-                    transform: scale(0.9);
-                }
+                @include listenIcons($spotify);
             }
             &--seasonShop{
-                font-size: 1.1em;
-                transform: scale(1.1);
-                transition:300ms;
-                &:hover{
-                    transform: scale(0.9);
-                    cursor: pointer;
-                }
+                @include listenIcons($main-font-color);
             }
             &--deezer{
-                font-size: 1.1em;
-                transform: scale(1.1);
-                transition:300ms;
-                &:hover{
-                    transform: scale(0.9);
-                }
+                @include listenIcons($main-font-color);
             }
         }
     }

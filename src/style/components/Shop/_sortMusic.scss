@@ -1,4 +1,7 @@
 @import "../../generalSettings/animations";
+@import "../../generalSettings/colors";
+@import "../../generalSettings/font";
+@import "../../generalSettings/mixin";
 .sort{
     width: 100%;
     display: flex;
@@ -8,10 +11,10 @@
         transform: translateY(-20%), scale(1);
         opacity:0;
         animation: itemApparition 500ms linear forwards;
-        background-color: wheat;
-        font-family: "Alegreya", Arial, Helvetica, sans-serif;
+        background-color: $main-font-color;
+        font-family: $text-and-titles;
         font-weight: bold;
-        color:rgb(117, 7, 7);
+        color:$bg-color;
         border-radius: 3px;
         padding: 5px;
         transition: 250ms;
@@ -20,8 +23,8 @@
             cursor: pointer;
         }
         &:active{
-            background-color: rgb(117, 7, 7);
-            color: wheat;
+            background-color: $bg-color;
+            color: $main-font-color;
         }
         @media screen and (max-width: 560px) {
             width:15%;
@@ -47,22 +50,7 @@
                 width:55%;
             }
             &__input{
-                background-color: wheat;
-                font-family: "Alegreya", Arial, Helvetica, sans-serif;
-                font-weight: bold;
-                color:rgb(117, 7, 7);
-                border-radius: 3px;
-                margin-top: 5px;
-                transform:translateX(-20%);
-                opacity:0;
-                animation: inputApparition 300ms linear forwards;
-                &:hover{
-                    cursor: pointer;
-                }
-                &:active{
-                    background-color: rgb(117, 7, 7);
-                    color: wheat;
-                }
+                @include sort-shop-input;
             }
             &__style{
                 display: flex;
@@ -70,23 +58,8 @@
                 align-items: flex-end;
                 // border:1px solid pink;
                 &__input{
-                    background-color: wheat;
-                    font-family: "Alegreya", Arial, Helvetica, sans-serif;
-                    font-weight: bold;
-                    color:rgb(117, 7, 7);
-                    border-radius: 3px;
-                    margin-top: 5px;
                     width:80%;
-                    transform:translateX(-20%);
-                    opacity:0;
-                    animation: inputApparition 300ms linear forwards;
-                    &:hover{
-                        cursor: pointer;
-                    }
-                    &:active{
-                        background-color: rgb(117, 7, 7);
-                        color: wheat;
-                    }
+                    @include sort-shop-input;
                 }
             }
         }

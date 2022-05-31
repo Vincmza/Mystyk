@@ -1,10 +1,10 @@
 @import "../generalSettings/animations";
 @import "../generalSettings/font";
 @import "../generalSettings/colors";
+@import "../generalSettings/mixin";
 
 a{
-    text-decoration-line: unset;
-    color: unset;
+    @include reset-a-tag-settings;
 }
 .bands{
     // border:1px solid blue;

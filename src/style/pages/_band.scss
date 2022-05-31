@@ -1,6 +1,7 @@
 @import "../generalSettings/animations";
 @import "../generalSettings/font";
 @import "../generalSettings/colors";
+@import "../generalSettings/mixin";
 
 .back{
     width:100%;
@@ -10,15 +11,8 @@
     opacity:0;
     animation: apparition 600ms linear forwards;
     &__toBands{
-        font-family: $text-and-titles;
-        font-size: 1.1em;
-        border: none;
         padding: 10px 20px;
-        background-color: $bg-color;
-        color: $main-font-color;
-        border-radius: 2px;
-        transform: scale(1);
-        transition:500ms;
+        @include buttonSettings;
         &:hover{
             cursor: pointer;
             transform: scale(1.1);
