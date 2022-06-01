@@ -1,4 +1,8 @@
 @keyframes itemApparition {
+    from{
+        transform:translateY(-20%);
+        opacity:0;
+    }
     to{
         transform:translateY(0);
         opacity:1;
@@ -23,6 +27,10 @@
 }
 //SHOP
 @keyframes inputApparition{
+    from{
+        transform:translateX(-20%);
+        opacity:0;
+    }
     to{
         transform:translateX(0);
         opacity:1;

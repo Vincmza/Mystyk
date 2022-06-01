@@ -8,20 +8,8 @@
     flex-direction: column;
     // border:1px solid green;
     &__list{
-        transform: translateY(-20%), scale(1);
-        opacity:0;
-        animation: itemApparition 500ms linear forwards;
-        background-color: $main-font-color;
-        font-family: $text-and-titles;
-        font-weight: bold;
-        color:$bg-color;
-        border-radius: 3px;
-        padding: 5px;
-        transition: 250ms;
         width:10%;
-        &:hover{
-            cursor: pointer;
-        }
+        @include sort-shop-input;
         &:active{
             background-color: $bg-color;
             color: $main-font-color;

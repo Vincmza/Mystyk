@@ -7,6 +7,7 @@ const Album = ({elem, item, sortedByDate ,description, setDescription, index}) =
     let options = {year: "numeric", month: "long", day: "numeric"};
     //FUNCTION TO EITHER SHOW OR HIDE ITEM INFOS
     const showOrHideDescription = (bandId, id)=>{ 
+        console.log(description)
         const objectToRemove = description.findIndex(element=>element.band === bandId && element.item === id)
         if(objectToRemove !== -1){
             const object = [

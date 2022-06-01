@@ -11,7 +11,7 @@ export const shows = [
     showDate : "2022 April 22",
     displayShowDate : function(){
       let date = new Date(this.showDate)
-      let dateToString = date.toLocaleString("fr-FR", options)
+      let dateToString = date.toLocaleString("en-GB", options)
       return dateToString
     },
     isAvailable : function (){
@@ -36,7 +36,7 @@ export const shows = [
     showDate : "2022 June 14",
     displayShowDate : function(){
       let date = new Date(this.showDate)
-      let dateToString = date.toLocaleString("fr-FR", options)
+      let dateToString = date.toLocaleString("en-GB", options)
       return dateToString
     },
     isAvailable : function (){
@@ -61,7 +61,7 @@ export const shows = [
     showDate : "2022 April 22",
     displayShowDate : function(){
       let date = new Date(this.showDate)
-      let dateToString = date.toLocaleString("fr-FR", options)
+      let dateToString = date.toLocaleString("en-GB", options)
       return dateToString
     },
     isAvailable : function (){
@@ -86,7 +86,7 @@ export const shows = [
     showDate : "2022 May 14",
     displayShowDate : function(){
       let date = new Date(this.showDate)
-      let dateToString = date.toLocaleString("fr-FR", options)
+      let dateToString = date.toLocaleString("en-GB", options)
       return dateToString
     },
     isAvailable : function (){
@@ -111,7 +111,7 @@ export const shows = [
     showDate : "2022 Jul 20",
     displayShowDate : function(){
       let date = new Date(this.showDate)
-      let dateToString = date.toLocaleString("fr-FR", options)
+      let dateToString = date.toLocaleString("en-GB", options)
       return dateToString
     },
     isAvailable : function (){
@@ -136,7 +136,7 @@ export const shows = [
     showDate : "2022 Jul 24",
     displayShowDate : function(){
       let date = new Date(this.showDate)
-      let dateToString = date.toLocaleString("fr-FR", options)
+      let dateToString = date.toLocaleString("en-GB", options)
       return dateToString
     },
     isAvailable : function (){
@@ -161,7 +161,7 @@ export const shows = [
     showDate : "2022 Feb 17",
     displayShowDate : function(){
       let date = new Date(this.showDate)
-      let dateToString = date.toLocaleString("fr-FR", options)
+      let dateToString = date.toLocaleString("en-GB", options)
       return dateToString
     },
     isAvailable : function (){

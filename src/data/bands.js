@@ -90,7 +90,7 @@ export const bands = [
         merch : [
 
             {
-                id : 11,
+                id : "merch-11",
                 bandId : 1,
                 bandName : function(){
                     return returnName(this.bandId) 
@@ -108,7 +108,7 @@ export const bands = [
                 },
             },
             {
-                id : 12,
+                id : "merch-12",
                 bandId :1,
                 bandName : function(){
                     return returnName(this.bandId) 
@@ -430,7 +430,7 @@ export const bands = [
         ],
         merch : [
             {
-                id : 41,
+                id : "merch-41",
                 bandId :4,
                 bandName : function(){
                     return returnName(this.bandId) 
@@ -619,7 +619,7 @@ export const bands = [
     ],
     merch : [
         {
-            id : 61,
+            id : "merch-61",
             bandId :6,
             bandName : function(){
                 return returnName(this.bandId) 
@@ -1050,7 +1050,7 @@ export const bands = [
         ],
         merch : [
             {
-                id : 111,
+                id : "merch-111",
                 bandId :11,
                 bandName : function(){
                     return returnName(this.bandId) 
@@ -1141,7 +1141,7 @@ export const bands = [
         ],
         merch : [
             {
-                id : 121,
+                id : "merch-121",
                 bandId :12,
                 bandName : function(){
                     return returnName(this.bandId) 

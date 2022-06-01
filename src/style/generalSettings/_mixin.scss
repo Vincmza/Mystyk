@@ -37,15 +37,15 @@
     color:$bg-color;
     border-radius: 3px;
     margin-top: 5px;
-    transform:translateX(-20%);
-    opacity:0;
-    animation: inputApparition 300ms linear forwards;
+    transform:scale(1);
+    transition:300ms;
+    animation: inputApparition 500ms linear;
     &:hover{
-        cursor: pointer;
+        cursor:pointer;
+        transform:scale(1.1);
     }
     &:active{
-        background-color:$bg-color;
-        color: $main-font-color;
+        transform: scale(0.9);
     }
 }
 //NEWS PAGE ICONS TO LISTEN TO MUSIC
