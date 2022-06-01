@@ -2,10 +2,26 @@ import React from 'react';
 //ICONS
 import * as net from "../../data/icons";
 
-const FiltersMusicMerch = ({displayFilters,showFilters,shopOption,options,setShopOption,setDescription}) => {
+const FiltersMusicMerch = ({
+    displayFilters,
+    showFilters,
+    shopOption,
+    options,
+    setShopOption,
+    setDescription,
+    setIsSorted,
+    sortAlbums
+    
+}) => {
     //STORE DATA FROM CHECKBOX
     const storeShopOption = (e)=>{
         if(e.target.checked === true){
+            if(shopOption[0] === "merch"){
+                setIsSorted(sortAlbums[0])
+            }
+            if(shopOption[0] === "music"){
+                setIsSorted("all")
+            }
             setShopOption([e.target.value])
             setDescription([])
         }

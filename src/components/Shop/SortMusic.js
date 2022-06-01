@@ -1,9 +1,9 @@
 import React from 'react';
 
-const SortShop = ({
+const SortMusic = ({
     shopOption, 
     displaySortOptions, 
-    sortOptions, 
+    sortAlbums, 
     isSortButtonClicked,
     sortStore,
     isSorted,
@@ -11,7 +11,6 @@ const SortShop = ({
     whichStyle,
     isStyleChoosen,
 }) => {
-    console.log("option : ", shopOption[0])
     return (
         <div className='shop__wrapper__options'>
             {shopOption[0] === "music" &&
@@ -25,7 +24,7 @@ const SortShop = ({
                         />
                         <div className='sort__list__options'>
                             {isSortButtonClicked === true && (<>
-                                {sortOptions.map((item, index)=>(
+                                {sortAlbums.map((item, index)=>(
                                 <input 
                                 type="button" 
                                 key={item}
@@ -70,4 +69,4 @@ const SortShop = ({
     );
 };
 
-export default SortShop;
+export default SortMusic;
