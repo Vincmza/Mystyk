@@ -43,7 +43,7 @@ function App() {
             <Route path="/band/:bandId" element={<Band bands={strSort(bands)}/>}/>
             <Route path="/shop" element={<Shop bands={strSort(bands)}/>}/>
             <Route path="/contact" element={<Contact/>}/>
-            <Route path="*" element={<Error/>}/>
+            <Route path="*" element={<Error isPageClicked={isPageClicked} setIsPageClicked={setIsPageClicked}/>}/>
           </Routes>
         <Footer/>
       </BrowserRouter>
