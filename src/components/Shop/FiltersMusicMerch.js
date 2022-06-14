@@ -9,6 +9,7 @@ const FiltersMusicMerch = ({
     options,
     setShopOption,
     setDescription,
+    sortStore,
     setIsSorted,
     sortAlbums
     
@@ -16,14 +17,14 @@ const FiltersMusicMerch = ({
     //STORE DATA FROM CHECKBOX
     const storeShopOption = (e)=>{
         if(e.target.checked === true){
-            if(shopOption[0] === "merch" || shopOption.length === 0){
-                setIsSorted(sortAlbums[0])
-            }
-            if(shopOption[0] === "music" || shopOption.length === 0){
-                setIsSorted("all")
-            }
             setShopOption([e.target.value])
             setDescription([])
+            if(e.target.value === "merch"){
+                setIsSorted("all")
+            }
+            if(e.target.value === "music"){
+                setIsSorted("A-Z")
+            }
         }
     }
     return (

@@ -14,16 +14,12 @@ const News = (props) => {
         navigate(`/band/${bandId}`)
     }
     //DISPLAY ICON OF SOCIAL MEDIA TO LISTEN A TUNE FROM THE CURRENT NEWS
-    const displayIcons = (link)=>{
-        
+    const displayIcons = (link)=>{      
         if(link){
-
             for (const [key, value] of Object.entries(link)) {
                 if(value !== ""){
                     let goToLowerCase = key.toLowerCase()
-
                     if(goToLowerCase === "seasonshop"){
-
                         return <div className='newsCard__container__listen__container'>
                         <p 
                         className='newsCard__container__listen__container--title'
@@ -40,7 +36,6 @@ const News = (props) => {
                         </a>
                         </div>  
                     } else {
-
                         const upperCase = goToLowerCase.split("")[0].toUpperCase()
                         return <div className='newsCard__container__listen__container'>
                         <p 
@@ -71,8 +66,10 @@ const News = (props) => {
                 {news.map((item,index)=>
                 (
                 <li 
-                key={item.id} 
-                className="newsCard" 
+                key={item.id}
+                data-testid={item.id} 
+                className="newsCard"
+                name="newsCard" 
                 style={{animationDelay: `${index*200}ms`}}
                 >
                     <div className='newsCard__imgContainer'>

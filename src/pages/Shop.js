@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Album from '../components/Album';
 import Merch from '../components/Merch';
 import FiltersMusicMerch from '../components/Shop/FiltersMusicMerch';
-import SortShop from '../components/Shop/SortMusic';
+import SortMusic from '../components/Shop/SortMusic';
 import SortMerch from '../components/Shop/SortMerch';
 
 const Shop = ({bands}) => {
@@ -15,15 +15,12 @@ const Shop = ({bands}) => {
 
     //HIDE OR DISPLAY FILTERS
     const [showFilters, setShowFilters]=useState(false)
-    
-    //OPTIONS TO EITHER DISPLAY MUSIC OR MERCH
-    const options = ["music", "merch"]
     //STATE TO STORE EITHER MUSIC OR MERCH OPTION
     const [shopOption, setShopOption] = useState([])
     //STORE ITEM DESCRIPTION WHEN USER CLICKS ON ARROW
     const [description, setDescription]=useState([])  
     //STATE TO STORE BOTH MUSIC AND MERCH SECTION
-    const [isSorted, setIsSorted] = useState("A-Z")
+    const [isSorted, setIsSorted] = useState("")
     //SORT BUTTON STATE
     const [isSortButtonClicked, setIsSortButtonClicked]=useState(false)
 
@@ -38,6 +35,12 @@ const Shop = ({bands}) => {
             setIsStyleChoosen("")
         }
     }
+
+    /// *** COMMON DATA *** \\\
+
+    //OPTIONS TO EITHER DISPLAY MUSIC OR MERCH
+    const options = ["music", "merch"]
+
     //WORKING ON BOOLEAN STATE HIDING OR DISPLAYING BUTTON
     const displayFilters = ()=>{
         setShowFilters((e)=>(!e))
@@ -151,6 +154,7 @@ const Shop = ({bands}) => {
     }  
     //RETURN MERCH ITEMS SORTED ACCORDING USER CHOICE
     const sortMerchItems = (format)=>{
+        console.log(format)
         if(format !== "all"){
             return allMerch.map((item, index)=>(
                 item.format === format &&
@@ -211,9 +215,8 @@ const Shop = ({bands}) => {
                     setIsStyleChoosen={setIsStyleChoosen}
                     options={options}
                     setIsSorted={setIsSorted}
-                    sortAlbums={sortAlbums}
                     />
-                    <SortShop
+                    <SortMusic
                     shopOption={shopOption}
                     displaySortOptions={displaySortOptions}
                     sortAlbums={sortAlbums}
@@ -237,10 +240,11 @@ const Shop = ({bands}) => {
                 displaySortOptions={displaySortOptions}
                 isSortButtonClicked={isSortButtonClicked}
                 />
-                <div className='shop__wrapper__item'>
-                    {sortMerchItems(isSorted)}                         
-                </div>
-                
+                {shopOption[0] === "merch" &&
+                    <div className='shop__wrapper__item'>
+                        {sortMerchItems(isSorted)}                         
+                    </div>
+                }
             </div>
         </div>
     );

@@ -8,7 +8,7 @@ export const returnName = (bandId)=>{
 }
 export const news = [
     {
-        id : 1,
+        id : "news-1",
         bandId : 1,
         isMusicAvailable : true,
         listen : function(){

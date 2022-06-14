@@ -69,8 +69,7 @@ const Band = ({bands}) => {
                 <BandBio bandFiltered={bandFiltered}/>
                 <BandFollow socialLinks={socialLinks}/>
                 <BandLineUp bandFiltered={bandFiltered}/>
-                <BandPastMembers oldMembers={oldMembers} displayPastMembers={displayPastMembers}/>
-                
+                <BandPastMembers oldMembers={oldMembers} displayPastMembers={displayPastMembers}/>               
                 <div className='releases'>
                     <h3 className='releases__title'>Releases</h3>
                     <div className='releases__wrapper'>
