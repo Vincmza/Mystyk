@@ -89,24 +89,24 @@ export const bands = [
         ],
         merch : [
 
-            // {
-            //     id : "merch-11",
-            //     bandId : 1,
-            //     bandName : function(){
-            //         return returnName(this.bandId) 
-            //     },
-            //     format : "t-shirt",
-            //     description : "high quality coton, available in S,M,L,XL sizes",
-            //     itemPicture : "https://img01.ztat.net/article/spp-media-p1/1022f8d53ed23afca3ccaca86d7df963/ffdffc2e7d20427fbe771ffebe2dea17.jpg?imwidth=762&filter=packshot",
-            //     isItemAvailable : true,
-            //     purchase : function(){
-            //         if(this.isItemAvailable===true){
-            //             return [{linkToBuy : "https://kosmosblackmetal.bandcamp.com/merch/t-shirt-3"}]
-            //         } else if(this.isItemAvailable===false){
-            //             return[]
-            //         }
-            //     },
-            // },
+            {
+                id : "merch-11",
+                bandId : 1,
+                bandName : function(){
+                    return returnName(this.bandId) 
+                },
+                format : "t-shirt",
+                description : "high quality coton, available in S,M,L,XL sizes",
+                itemPicture : "https://img01.ztat.net/article/spp-media-p1/1022f8d53ed23afca3ccaca86d7df963/ffdffc2e7d20427fbe771ffebe2dea17.jpg?imwidth=762&filter=packshot",
+                isItemAvailable : true,
+                purchase : function(){
+                    if(this.isItemAvailable===true){
+                        return [{linkToBuy : "https://kosmosblackmetal.bandcamp.com/merch/t-shirt-3"}]
+                    } else if(this.isItemAvailable===false){
+                        return[]
+                    }
+                },
+            },
             // {
             //     id : "merch-12",
             //     bandId :1,
