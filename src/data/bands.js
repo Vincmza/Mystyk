@@ -59,7 +59,7 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                id:11,
+                id:"release-11",
                 bandId : 1,
                 year : 2022,
                 releaseDate :"2022 Apr 22",
@@ -182,7 +182,7 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                id : 21,
+                id : "release-21",
                 bandId : 2,
                 year : 2022,
                 releaseDate : "2022 Jan 22",
@@ -210,7 +210,7 @@ export const bands = [
                 } 
             },
             {
-                id : 22,
+                id : "release-22",
                 bandId : 2,
                 year : 2019,
                 releaseDate : "2019 Jan 25",
@@ -317,7 +317,7 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                id:31,
+                id:"release-31",
                 bandId : 3,
                 year : 2022,
                 releaseDate :"2022 Jan 14",
@@ -400,7 +400,7 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                id:41,
+                id:"release-41",
                 bandId : 4,
                 year : 2022,
                 releaseDate :"2022 Feb 11",
@@ -429,24 +429,24 @@ export const bands = [
             }
         ],
         merch : [
-            {
-                id : "merch-41",
-                bandId :4,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "sweat",
-                description : "high quality coton, available in S,M,L,XL sizes",
-                itemPicture : "https://media.boutiques-sevens.com/33450-large_default/pieces-sweat-femme-capuche-chilli-noir.jpg",
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            }
+            // {
+            //     id : "merch-41",
+            //     bandId :4,
+            //     bandName : function(){
+            //         return returnName(this.bandId) 
+            //     },
+            //     format : "sweat",
+            //     description : "high quality coton, available in S,M,L,XL sizes",
+            //     itemPicture : "https://media.boutiques-sevens.com/33450-large_default/pieces-sweat-femme-capuche-chilli-noir.jpg",
+            //     isItemAvailable : true,
+            //     purchase : function(){
+            //         if(this.isItemAvailable===true){
+            //             return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
+            //         } else if(this.isItemAvailable===false){
+            //             return[]
+            //         }
+            //     },
+            // }
         ]
     },
     //KOZH DALL
@@ -500,7 +500,7 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                id:51,
+                id:"release-51",
                 bandId :5,
                 year : 2022,
                 releaseDate :"2022 Feb 04",
@@ -589,7 +589,7 @@ export const bands = [
     releases : [
         //1 ALBUM FROM THE BAND
         {
-            id:61,
+            id:"release-61",
             bandId :6,
             year : 2019,
             releaseDate :"2019 Nov 22",
@@ -618,24 +618,24 @@ export const bands = [
         }
     ],
     merch : [
-        {
-            id : "merch-61",
-            bandId :6,
-            bandName : function(){
-                return returnName(this.bandId) 
-            },
-            format : "t-shirt",
-            description : "high quality coton, available in S,M,L,XL sizes",
-            itemPicture : "http://antichristmagazine.com/wp-content/uploads/2017/11/Deathcrush-Cover.jpg",
-            isItemAvailable : true,
-            purchase : function(){
-                if(this.isItemAvailable===true){
-                    return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
-                } else if(this.isItemAvailable===false){
-                    return[]
-                }
-            },
-        }
+        // {
+        //     id : "merch-61",
+        //     bandId :6,
+        //     bandName : function(){
+        //         return returnName(this.bandId) 
+        //     },
+        //     format : "t-shirt",
+        //     description : "high quality coton, available in S,M,L,XL sizes",
+        //     itemPicture : "http://antichristmagazine.com/wp-content/uploads/2017/11/Deathcrush-Cover.jpg",
+        //     isItemAvailable : true,
+        //     purchase : function(){
+        //         if(this.isItemAvailable===true){
+        //             return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
+        //         } else if(this.isItemAvailable===false){
+        //             return[]
+        //         }
+        //     },
+        // }
     ]
     },
     //BOOST
@@ -700,7 +700,7 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                id:71,
+                id:"release-71",
                 bandId :7,
                 year : 2020,
                 releaseDate :"2020 Jan 17",
@@ -788,7 +788,7 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                id:81,
+                id:"release-81",
                 bandId :8,
                 year : 2020,
                 releaseDate :"2020 Feb 21",
@@ -866,7 +866,7 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                id:91,
+                id:"release-91",
                 bandId :9,
                 year : 2018,
                 releaseDate :"2018 May 11",
@@ -934,7 +934,7 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                id:101,
+                id:"release-101",
                 bandId :10,
                 year : 2019,
                 releaseDate :"2019 May 24",
@@ -1020,7 +1020,7 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                id:111,
+                id:"release-111",
                 bandId :11,
                 year : 2018,
                 releaseDate :"2018 May 04",
@@ -1049,24 +1049,24 @@ export const bands = [
             }
         ],
         merch : [
-            {
-                id : "merch-111",
-                bandId :11,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "t-shirt",
-                description : "high quality coton, available in S,M,L,XL sizes",
-                itemPicture : "https://img01.ztat.net/article/spp-media-p1/1022f8d53ed23afca3ccaca86d7df963/ffdffc2e7d20427fbe771ffebe2dea17.jpg?imwidth=762&filter=packshot",
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            }
+            // {
+            //     id : "merch-111",
+            //     bandId :11,
+            //     bandName : function(){
+            //         return returnName(this.bandId) 
+            //     },
+            //     format : "t-shirt",
+            //     description : "high quality coton, available in S,M,L,XL sizes",
+            //     itemPicture : "https://img01.ztat.net/article/spp-media-p1/1022f8d53ed23afca3ccaca86d7df963/ffdffc2e7d20427fbe771ffebe2dea17.jpg?imwidth=762&filter=packshot",
+            //     isItemAvailable : true,
+            //     purchase : function(){
+            //         if(this.isItemAvailable===true){
+            //             return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
+            //         } else if(this.isItemAvailable===false){
+            //             return[]
+            //         }
+            //     },
+            // }
         ]
     },
     //DIRTYPROTEST
@@ -1111,7 +1111,7 @@ export const bands = [
         releases : [
             //1 ALBUM FROM THE BAND
             {
-                id:121,
+                id:"release-121",
                 bandId :12,
                 year : 2018,
                 releaseDate :"2018 May 18",
@@ -1140,24 +1140,24 @@ export const bands = [
             }
         ],
         merch : [
-            {
-                id : "merch-121",
-                bandId :12,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "accessories",
-                description : "high quality coton, available in S,M,L,XL sizes",
-                itemPicture : "https://www.rentreediscount.com/publicmedia/original/128/105/96/fr/600x600___gobelet-plastique-reutilisable-personnalisable-20cl_g20061-1.jpg",
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            }
+            // {
+            //     id : "merch-121",
+            //     bandId :12,
+            //     bandName : function(){
+            //         return returnName(this.bandId) 
+            //     },
+            //     format : "accessories",
+            //     description : "high quality coton, available in S,M,L,XL sizes",
+            //     itemPicture : "https://www.rentreediscount.com/publicmedia/original/128/105/96/fr/600x600___gobelet-plastique-reutilisable-personnalisable-20cl_g20061-1.jpg",
+            //     isItemAvailable : true,
+            //     purchase : function(){
+            //         if(this.isItemAvailable===true){
+            //             return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
+            //         } else if(this.isItemAvailable===false){
+            //             return[]
+            //         }
+            //     },
+            // }
         ]
     },
 

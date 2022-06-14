@@ -9,10 +9,7 @@ const FiltersMusicMerch = ({
     options,
     setShopOption,
     setDescription,
-    sortStore,
     setIsSorted,
-    sortAlbums
-    
 }) => {
     //STORE DATA FROM CHECKBOX
     const storeShopOption = (e)=>{

@@ -62,7 +62,14 @@ const Shop = ({bands}) => {
     // --- MUSIC DATA
 
     //ALL RELEASES FROM ALL BANDS
-    const allReleases = bands.map(item => item.releases[0])
+    const albumsAvailable = bands.filter(elem => elem.releases.length > 0)
+    const allReleases = []
+    albumsAvailable.forEach((elem)=>{
+        elem.releases.forEach(item=>{
+            allReleases.push(item)
+        })
+    })
+
     //ALL STYLES AVAILABLE
     const allStyles = allReleases.reduce((acc,cv)=>{
         acc.includes(cv.style) || acc.push(cv.style)
@@ -126,7 +133,13 @@ const Shop = ({bands}) => {
     // --- MERCH DATA
 
     //ALL MERCH ITEMS FROM ALL BANDS
-    const allMerch = bands.map(item => item.merch[0]).filter(elem => elem !== undefined)
+    const merchAvailable = bands.filter(elem => elem.merch.length > 0)
+    const allMerch = []
+    merchAvailable.forEach((elem)=>{
+        elem.merch.forEach(item=>{
+            allMerch.push(item)
+        })
+    })
 
     //MERCH ITEMS FORMAT GATHERED
     let allMerchFormat = allMerch.reduce((acc,cv)=>{
@@ -141,14 +154,19 @@ const Shop = ({bands}) => {
 
     // --- MERCH FUNCTIONS
 
-    //IF NO ITEM IN MERCH ARRAY RETURN MESSAGE TO INFORM USER
-    const CheckMerchLength = ()=>{
+    //MAKE SURE MERCH ITEMS ARE AVAILABLE TO DISPLAY
+    const checkIfMerchItemsAreAvailable = ()=>{
         let count = 0
         bands.forEach(element => {
             let merch = element.merch.length
             if(merch > 0) count +=1
         });
-        if(count === 0 && shopOption[0] === "merch"){
+        return count
+    }
+
+    //IF NO ITEM IN MERCH ARRAY RETURN MESSAGE TO INFORM USER
+    const CheckMerchLength = ()=>{
+        if(checkIfMerchItemsAreAvailable() === 0 && shopOption[0] === "merch"){
             return <h1 style={{textAlign : "center", marginTop : "15px"}}>Aucun article disponible actuellement</h1>
         }
     }  
@@ -182,22 +200,31 @@ const Shop = ({bands}) => {
         }
     }
     //CREATE INPUTS TO SORT MERCH ITEMS BY FORMAT
-    const createInputs = ()=>{
-       return shopOption[0] === "merch" && allFormat.map((item,index)=>(
-       <input 
-       type="button" 
-       key={item} 
-       value={item}
-       className={`sort__list__options__input`}
-       style={
-            {
-            animationDelay: `${index*150}ms`,
-            backgroundColor: `${isSorted === item ? "rgb(117, 7, 7)" : "wheat"}`,
-            color : `${isSorted === item ? "wheat" : "rgb(117, 7, 7)" }`
-            }
+    const createInputsMerchSection = ()=>{
+        //IF ARRAYS OF ALL BANDS 
+        //CONTAINING MERCH ITEMS ARE ALL EMPTY 
+        //CONSOLE LOG IS RETURNED
+        if(checkIfMerchItemsAreAvailable() === 0 && shopOption[0] === "merch"){
+            return console.log("Pas de merch")
         }
-        onClick={(e)=>sortStore(e.target.value)}
-       />))
+        //OTHERWISE INPUTS TO SORT MERCH SECTION ARE RETURNED
+        else{
+            return shopOption[0] === "merch" && allFormat.map((item,index)=>(
+                <input 
+                type="button" 
+                key={item} 
+                value={item}
+                className={`sort__list__options__input`}
+                style={
+                     {
+                     animationDelay: `${index*150}ms`,
+                     backgroundColor: `${isSorted === item ? "rgb(117, 7, 7)" : "wheat"}`,
+                     color : `${isSorted === item ? "wheat" : "rgb(117, 7, 7)" }`
+                     }
+                 }
+                 onClick={(e)=>sortStore(e.target.value)}
+                />))
+        }
     }
     
        
@@ -235,10 +262,11 @@ const Shop = ({bands}) => {
                 }
                 {CheckMerchLength()}
                 <SortMerch
-                createInputs={createInputs}
+                createInputsMerchSection={createInputsMerchSection}
                 shopOption={shopOption}
                 displaySortOptions={displaySortOptions}
                 isSortButtonClicked={isSortButtonClicked}
+                checkIfMerchItemsAreAvailable={checkIfMerchItemsAreAvailable}
                 />
                 {shopOption[0] === "merch" &&
                     <div className='shop__wrapper__item'>

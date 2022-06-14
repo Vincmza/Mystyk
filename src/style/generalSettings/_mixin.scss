@@ -39,7 +39,7 @@
     margin-top: 5px;
     transform:scale(1);
     transition:300ms;
-    animation: inputApparition 500ms linear;
+    animation: inputApparition 300ms linear forwards;
     &:hover{
         cursor:pointer;
         transform:scale(1.1);

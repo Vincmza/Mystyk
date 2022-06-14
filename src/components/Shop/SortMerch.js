@@ -1,9 +1,9 @@
 import React from 'react';
 
-const SortMerch = ({shopOption, displaySortOptions, isSortButtonClicked,createInputs}) => {
+const SortMerch = ({shopOption, displaySortOptions, isSortButtonClicked,createInputsMerchSection,checkIfMerchItemsAreAvailable}) => {
     return (
         <div className='shop__wrapper__options'>
-            {shopOption[0] === "merch" &&
+            {shopOption[0] === "merch" && checkIfMerchItemsAreAvailable() > 0 ?
                 (<>
                     <div className='sort'>
                         <input 
@@ -13,10 +13,10 @@ const SortMerch = ({shopOption, displaySortOptions, isSortButtonClicked,createIn
                         onClick={displaySortOptions}
                         />
                         <div className='sort__list__options'>
-                            {isSortButtonClicked === true && (<>{createInputs()}</>)}
+                            {isSortButtonClicked === true && (<>{createInputsMerchSection()}</>)}
                         </div>
                     </div>
-                </>)
+                </>):(<></>)
             }
         </div>
     );
