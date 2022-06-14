@@ -160,7 +160,7 @@ const Shop = ({bands}) => {
                 item.format === format &&
                 <Merch 
                 key={item.id} 
-                elem={bands.filter(elem => elem.id === item.bandId)}
+                elem={bands.filter(elem => elem.id === item.bandId)[0]}
                 item={item}
                 index={index}
                 description={description} 
@@ -172,7 +172,7 @@ const Shop = ({bands}) => {
             return allMerch.map((item,index)=>(
                 <Merch 
                 key={item.id} 
-                elem={bands.filter(elem => elem.id === item.bandId)}
+                elem={bands.filter(elem => elem.id === item.bandId)[0]}
                 item={item}
                 index={index}
                 description={description} 

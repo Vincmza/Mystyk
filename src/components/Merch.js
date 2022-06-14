@@ -39,7 +39,6 @@ const Merch = ({elem, item, index, description, setDescription}) => {
                                     src={item.itemPicture} 
                                     alt={`photo de ${item.format} du groupe ${elem.name}`}
                                     />
-                                    {console.log(item.itemPicture)}
                                 </a>
                             </>)
                             :
