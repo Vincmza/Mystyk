@@ -19,7 +19,7 @@ export const bands = [
         name : "Kosmos",
         style : "black metal",
         subStyle : "atmospheric black/death",
-        biography: "KOSMOS is Nekros' studio project created in 2010 with the release of the demo called 'L'Antithèse'. It is also during the creation of this demo that Nekros begins to collaborate with Naja Atra , drummer of the brutal technical death metal band GOMORY. So far, Nekros used to compose music, write the lyrics and record all guitars, bass and vocals and let Naja Atra record drums in his studio. Naja Atra also does everything about sound egineering. Now KOSMOS has an official singer in the name of Quantum who also writes all lyrics.",
+        biography: "KOSMOS is Nekros' studio project created in 2010 with the release of the demo called 'L'Antithèse'. It is also during the creation of this demo that Nekros begins to collaborate with Naja Atra , drummer of the brutal technical death metal band GOMORY. So far, Nekros used to compose music, write the lyrics and record all guitars, bass and vocals and let Naja Atra record drums in his studio. Naja Atra also does everything about sound egineering. Now KOSMOS has an official singer in the name of Quantum who is the lyrics writer.",
         bandLogo: {
             logo : kosmos.logo(), 
             logoLow : kosmos.logoLow()
@@ -133,7 +133,7 @@ export const bands = [
         name : "In Hell",
         style : "death metal",
         subStyle : "blackened death",
-        biography: "IN HELL is a black death metal band from north of France created in early 2014 by the guitarist and composer Fab Darkhell. IN HELL mixes both fast and brutal riffing and dark melodies such as great bands like BEHEMOTH, CARCASS. IN HELL is a live performance beast, the band already shared the stage with LELAHELL, CORROSIVE ELEMENTS, SAVAGE ANNIHILATION, EVOLUTION ZERO, MORTUARY, NIRNAETH, LETHAEOS, MINDNETIC !",
+        biography: "IN HELL is a black death metal band from north of France created in early 2014 by the guitarist and songwriter Fab Darkhell. IN HELL mixes both fast and brutal riffing and dark melodies such as great bands like BEHEMOTH, CARCASS. IN HELL is a live performance beast, the band already shared the stage with LELAHELL, CORROSIVE ELEMENTS, SAVAGE ANNIHILATION, EVOLUTION ZERO, MORTUARY, NIRNAETH, LETHAEOS, MINDNETIC !",
         bandLogo: {
             logo : inHell.logo(), 
             logoLow : inHell.logoLow()
@@ -266,7 +266,7 @@ export const bands = [
         name : "Praïm Faya",
         style : "metalcore",
         subStyle : "melodic groove death metal",
-        biography: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+        biography: "PRAÏM FAYA is a french extreme metal band from Rouen formed in 2019. The band smartly mixes various genres such as trash, death and metal core to create its own atmosphere.",
         bandLogo: {
             logo : praim_faya.logo(), 
             logoLow : praim_faya.logo()
@@ -355,7 +355,7 @@ export const bands = [
         name : "Dislocate",
         style : "trash metal",
         subStyle : "groovy trash/death",
-        biography: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+        biography: "DISLOCATE is a thrash/death band from France formed in Mulhouse in 2017.Their first opus tackles rising psychological disorders after traumatic events such as war and shows how deep and dark the descent into hell can be for someone who deals with it.",
         bandLogo: {
             logo : dislocate.logo(), 
             logoLow : dislocate.logoLow()
@@ -455,7 +455,7 @@ export const bands = [
         name : "Kozh Dall",
         style : "trash metal",
         subStyle : "trash/death moderne",
-        biography: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+        biography: "KOZH DALL (formerly Kozh dall division) is a french studio project from Laurent Plainchamp. The band plays an unique trash/death metal mixing various genres while providing its personnal touch.",
         bandLogo: {
             logo : kozh.logo(), 
             logoLow : kozh.logo()
@@ -538,7 +538,7 @@ export const bands = [
     name : "Hatred Dusk",
     style : "trash metal",
     subStyle : "trash/death",
-    biography: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+    biography: "HATRED DUSK is a french trash metal band from Paris formed in 1990. After years of silence and make sure the band gets a solid line up, rehearsals got back in 2016. Then, the band released an EP in 2018 entitled 'Blinded by hate'. After a while performing their EP on stage, HATRED DUSK decided to record a new album. The band had an ink with Mytyk Prod to release their full length album entitled 'Hatred Dusk' and is ready to make it more powerful on stage now.",
     bandLogo: {
         logo : hatred.logo(), 
         logoLow : hatred.logo()
@@ -643,8 +643,8 @@ export const bands = [
         id: 7,
         name : "Boost",
         style : "metalcore",
-        subStyle : "metalcore / indus",
-        biography: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+        subStyle : "metalcore/indus/rock",
+        biography: "BOOST is a french metal band from Starsbourg and Paris formed in 1997. The band can't fit only one genre because they truly mixes many different ones. Overall, you can mention rock, metal, indus in BOOST songwriting.",
         bandLogo: {
             logo : boost.logo(), 
             logoLow : boost.logo()
@@ -738,7 +738,7 @@ export const bands = [
         name : "Akiavel",
         style : "death metal",
         subStyle : "melodic death metal",
-        biography: "Shredding out France, Akiavel are the new melodeath masters! A visceral combination of Groove, Thrash, Black and Old-school Death Metal, with melodic riffs, and a touch of hardcore.",
+        biography: "Shredding out France, AKIAVEL are the new melodeath masters! A visceral combination of Groove, Thrash, Black and Old-school Death Metal, with melodic riffs, and a touch of hardcore.",
         bandLogo: {
             logo : akiavel.logo(), 
             logoLow : akiavel.logo()
@@ -826,7 +826,7 @@ export const bands = [
         name : "Freitot",
         style : "death metal",
         subStyle : "old school death metal",
-        biography: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+        biography: "FREITOT is a death metal band from France formed in 2014. The band plays an old school death metal in the vein of the early Entombed and Edge Of Sanity albums including a Slayer touch as well.",
         bandLogo: {
             logo : freitot.logo(), 
             logoLow : freitot.logo()
@@ -904,7 +904,7 @@ export const bands = [
         name : "Notheist",
         style : "death metal",
         subStyle : "trash/death metal",
-        biography: "Behind Notheist is Gregory Lambert, multi-instrumentalist (guitar, bass, drums, vocals amongst others) & producer. Well known in the French metal scene, Greg’s name is associated with several major acts - MISANTHROPE (progessive/death metal, 2003), ZUUL FX (Industrial Thrash Death Metal 2002-2003, 2014-2017) CRUSHER (since 2017) and it is also associated with Alexandre Astier (who is behind the famous tv show Kaamelott) as the 8 strings guitar player of the show L’EXOCONFERENCE (2014-2016). Without leaving some of his collaborations, Greg Lambert decided in 2016 to write & record a first full solo album. This album will be released in May 2019 through Mystyk Records.",
+        biography: "Behind NOTHEIST is Gregory Lambert, multi-instrumentalist (guitar, bass, drums, vocals amongst others) & producer. Well known in the French metal scene, Greg’s name is associated with several major acts - MISANTHROPE (progessive/death metal, 2003), ZUUL FX (Industrial Thrash Death Metal 2002-2003, 2014-2017) CRUSHER (since 2017) and it is also associated with Alexandre Astier (who is behind the famous tv show Kaamelott) as the 8 strings guitar player of the show L’EXOCONFERENCE (2014-2016). Without leaving some of his collaborations, Greg Lambert decided in 2016 to write & record a first full solo album. This album has been released in May 2019 through Mystyk Prod Records.",
         bandLogo: {
             logo : notheist.logo(), 
             logoLow : notheist.logo()
@@ -972,7 +972,7 @@ export const bands = [
         name : "Equinox",
         style : "heavy metal",
         subStyle : "progressive symphonic metal",
-        biography: "Equinox is a musical project created by the official guitarist of Farida Guitars, Inophis. Equinox is composed of 4 four wolrd-renowned musicians. Their music contain influences such as jazz, metal, classical music, folk or pop.",
+        biography: "EQUINOX is a musical project created by the official guitarist of Farida Guitars, Inophis. Equinox is composed of 4 four wolrd-renowned musicians. Their music contain influences such as jazz, metal, classical music, folk or pop.",
         bandLogo: {
             logo : equinox.logo(), 
             logoLow : equinox.logo()
@@ -1074,7 +1074,7 @@ export const bands = [
         id: 12,
         name : "Dirtyprotest",
         style : "death metal",
-        subStyle : "Old school / blackened death",
+        subStyle : "Old school/blackened death",
         biography: "DIRTYPROTEST was created in 2006 by Alan Hurley who have been playing in several bands for a decade and working as a sound engineer recording local bands in Cairo (Egypt). In 2016 he decided to start DIRTYPROTEST and write a full length album. The band's objective was to pay homage to the Swedish Death School with typical intense riffing mixed with some Hardcore and Black Metal influences. After releasing a few tracks a few years ago, Alan Hurley met the French singer DM (Growler of HELIOSS, WRATH FROM ABOVE and GASTROPODE) and they started to collaborate on the debut album in 2016.",
         bandLogo: {
             logo : dirty.logo(), 
