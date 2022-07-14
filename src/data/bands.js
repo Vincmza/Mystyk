@@ -1224,7 +1224,7 @@ export const bands = [
                 id:"release-131",
                 bandId :13,
                 year : 2021,
-                releaseDate :"2021 Sept 01",
+                releaseDate :"2021 Sept 09",
                 title : "Harbinger of Lucidity",
                 duration: "33:32 min",
                 style : "death metal",

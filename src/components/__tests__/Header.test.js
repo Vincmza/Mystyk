@@ -2,21 +2,20 @@ import {render,screen,cleanup,waitFor, fireEvent}from "@testing-library/react"
 import { BrowserRouter} from "react-router-dom";
 import Header from "../Header";
 
-const CustomRender = (boolean) =>{
-   return (
-    <BrowserRouter>
-        <Header 
-        navDisplayed={boolean}
-        />
-    </BrowserRouter>
-   )
-}
+function customRender(children) {
+    return render(
+      <BrowserRouter>
+        {children}
+      </BrowserRouter>
+    )
+  }
 describe("Header", ()=>{
     describe("icon should either display or hide nav bar", ()=>{
-        it("should render nav bar invisible", ()=>{
-            render(<CustomRender navDisplayed={false}/>)
-            const nav = screen.findByRole("ul", {name : /nav/i})
-            // waitFor(()=>expect(CustomRender().navDisplayed).toBeTruthy)
+        it("should render nav bar visible", ()=>{
+            customRender(<Header/>)
+            const icon = screen.getByTitle("icon-header")
+            fireEvent.click(icon)
+            const nav = screen.getByTitle("nav")
             waitFor(()=>expect(nav).toBeVisible())
         })
     })

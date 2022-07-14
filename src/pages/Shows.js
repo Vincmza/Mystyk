@@ -16,11 +16,14 @@ const Shows = (props) => {
 		props.setIsPageClicked([pageName]);
 		navigate(`/band/${bandId}`);
 	};
-	//GET ID JUST OF BANDS IN SHOWS ARRAY
+	//GET ID OF BANDS IN SHOWS ARRAY
 	const getAllBandId = shows.reduce((acc, cv) => {
-		acc.includes(cv.bandId) || acc.push(cv.bandId);
-		return acc;
+		acc.includes(cv.bandId) || acc.push(cv.bandId);	
+		// acc.includes(cv.bandId) ? acc : acc.push(cv.bandId)
+		let mesk = acc.filter(item => Number.isInteger(item)=== true)
+		return mesk
 	}, []);
+	console.log("getAllBandId : ", getAllBandId)
 	//GET BANDS INFOS WITH THEIR ID
 	const getBands = () => {
 		const bandsShow = [];
@@ -30,16 +33,19 @@ const Shows = (props) => {
 		});
 		return bandsShow;
 	};
+	console.log("fonction getBands : ", getBands())
 	const everyShows = getAllBandId.map(id=> shows.filter(item=> item.bandId === id))
+	console.log("everyShows : ", everyShows)
 	//SORT SHOWS BY BAND 
 	const checkShows = (idNb) => {
 		const data = []
 		for(let i = 0; i<everyShows.length; i++){
 			let k = everyShows[i].filter(item=>item.bandId === idNb)
-			k !== undefined && data.push(...k)
+			k.length !== undefined && data.push(...k)
 		}
 		return data
 	};
+	console.log("checkShows : ", checkShows())
 	return (
 		<div className="shows">
 			<h1 className="showsIntro">Upcoming Shows</h1>

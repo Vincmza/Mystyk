@@ -45,7 +45,7 @@ const Header = (props) => {
             {isIconClicked === true && 
 
                 (<><nav>
-                    <ul className='nav'>
+                    <ul title='nav' className='nav'>
                         {allPages.map((elem,index)=>(
                             <li 
                             style={{animationDelay :`${index*200}ms`}} 
@@ -57,66 +57,7 @@ const Header = (props) => {
                             </li>))}
                     </ul>
                 </nav></>)
-            }
-
-            {/* {isIconClicked === false ? 
-            (<>
-                <div className='menu'>
-                    <div className='menu__nav-icon'>
-                        <div aria-roledescription='icon' className='menu__nav-icon__reactIcon' onClick={handleNavLogo}>
-                            <AiOutlineMenu/>
-                        </div>
-                    </div>
-                    <div className='menu__logo'>
-                        <picture>
-                            <source media="(max-width:500px)" srcSet="/assets/background/bg_low.png"/>         
-                            <img 
-                            className='menu__logo__file'
-                            src="/assets/background/bg_medium.png"
-                            alt="logo de mytyk prod"
-                            />
-                        </picture>
-                    </div>
-                </div>
-                
-            </>)
-            :
-            (<>
-
-                <div className='menu'>
-                    <div className='menu__nav-icon'>
-                        <div aria-roledescription="icon" className='menu__nav-icon__reactIcon' onClick={handleNavLogo}>
-                            <AiOutlineMenu/>
-                        </div>
-                    </div>
-                    <div className='menu__logo'>
-                        <picture>
-                            <source media="(max-width:500px)" srcSet="/assets/background/bg_low.png"/>         
-                            <img 
-                            className='menu__logo__file'
-                            src="/assets/background/bg_medium.png"
-                            alt="logo de mytyk prod"
-                            />
-                        </picture>
-                    </div>
-                </div>
-
-                <nav>
-                    <ul className='nav'>
-                        {allPages.map((elem,index)=>(
-                            <li 
-                            style={{animationDelay :`${index*200}ms`}} 
-                            key={elem} 
-                            className='nav__title' 
-                            onClick={()=>redirect(elem)}
-                            >
-                                <div style={{color : props.isPageClicked[0] === elem && "red"}}>{elem}</div>
-                            </li>))}
-                    </ul>
-                </nav>
-            
-            </>)} */}
-                       
+            }        
         </div>
     );
 };
