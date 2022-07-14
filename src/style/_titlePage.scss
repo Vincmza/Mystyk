@@ -10,4 +10,7 @@
     border-bottom: $nav-border;
     margin-bottom: 50px;
     height: 70px;
+    @media screen and (max-width:300px) {
+        font-size: 1.5em;
+    }
 }
