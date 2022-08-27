@@ -34,9 +34,9 @@ const Contact = () => {
     }
     const displayIsEmailOk = ()=>{
         if(isEmailOk === true){
-            return (<><p style={{color:"green"}}>Message envoyé !</p></>)
+            return (<><p style={{color:"green", textAlign: "center"}}>Your message has been sent successfully !</p></>)
         } else if(isEmailOk === false){
-            return (<><p style={{color:"red"}}>Echec lors de l'envoi</p></>)
+            return (<><p style={{color:"red", textAlign: "center"}}>Your message failed to be sent !</p></>)
         } else if (isEmailOk === null){
             return(<></>)
         }

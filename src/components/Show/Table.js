@@ -25,7 +25,7 @@ const Table = ({band,checkShows,goToBandPage}) => {
                         More details
                     </th>
                 </tr>
-                {checkShows(band.id).map((show, index) => (
+                {checkShows(band.id).map((show) => (
                     <>
                         {show.bandId === band.id &&
                         show.isAvailable() === true ? (

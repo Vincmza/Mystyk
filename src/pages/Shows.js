@@ -57,7 +57,8 @@ const Shows = (props) => {
 						style={{ animationDelay: `${index * 200}ms` }}
 					>
 						{checkShows(band.id)
-						.findIndex(object=>object.bandId === band.id && object.isAvailable() === true) !== -1 ?(
+						.findIndex(object=>object.bandId === band.id && object.isAvailable() === true) !== -1 ?
+						(
 							<>
 								<Table
 								band={band}

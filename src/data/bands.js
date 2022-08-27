@@ -179,6 +179,11 @@ export const bands = [
                 name : "Gus",
                 instrument : ["drums"],
                 pastMember : {isTrue : true, fromTo : "2014 to 2021"}
+            },
+            {
+                name : "Fred Digerlando",
+                instrument : ["drums"],
+                pastMember : {isTrue : false, fromTo : ""}
             }
         ],
         releases : [
