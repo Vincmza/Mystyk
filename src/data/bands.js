@@ -10,7 +10,6 @@ import * as freitot from "./bands_files/freitot_files"
 import * as notheist from "./bands_files/notheist_files"
 import * as equinox from "./bands_files/equinox_files"
 import * as dirty from "./bands_files/dirtyprotest_files"
-import * as blightMass from "./bands_files/blight_mass_files"
 
 // import { returnName } from "./news.js"
 
@@ -1166,98 +1165,5 @@ export const bands = [
             //     },
             // }
         ]
-    },
-    //BLIGHTMASS
-    {
-        id: 13,
-        name : "BlightMass",
-        style : "death metal",
-        subStyle : "brutal death metal",
-        biography: "BLIGHTMASS is a Blackened Death Metal band from Tampa (Florida, U.S.A.) and Lyon (France) drawing its inspiration from the Floridian and Swedish Death Metal scenes, mixed with Black Metal influences.",
-        bandLogo: {
-            logo : blightMass.logo(), 
-            logoLow : blightMass.logo()
-        },
-        banner : {
-            bannerHigh : blightMass.bannerHigh(), 
-            bannerMedium : blightMass.bannerMedium(),
-            bannerLow : blightMass.bannerMedium(),
-        },
-        country : "USA / France",
-        followLinks : [
-            {
-                facebook: "https://www.facebook.com/BlightMass",
-                instagram: "https://www.instagram.com/blightmass/",
-                twitter:"https://twitter.com/MassBlight",
-                tiktok:""
-            }
-        ],
-        lineUp : [
-            {
-                name : "Nattewølf",
-                instrument : ["guitars"],
-                pastMember : {isTrue : false, fromTo : ""}
-                
-            },
-            {
-                name : "Jechael",
-                instrument : ["vocals", "bass from 2020 to 2022"],
-                pastMember : {isTrue : false, fromTo : ""}
-                
-            },
-            {
-                name : "Jackula",
-                instrument : ["guitars"],
-                pastMember : {isTrue : false, fromTo : ""}
-                
-            },
-            {
-                name : "Ronnie Parmer",
-                instrument : ["drums"],
-                pastMember : {isTrue : false, fromTo : ""}
-                
-            },
-            {
-                name : "Daniel Santana",
-                instrument : ["bass"],
-                pastMember : {isTrue : false, fromTo : ""}
-                
-            },
-        ],
-        releases : [
-            //1 ALBUM FROM THE BAND
-            {
-                id:"release-131",
-                bandId :13,
-                year : 2021,
-                releaseDate :"2021 Sept 09",
-                title : "Harbinger of Lucidity",
-                duration: "33:32 min",
-                style : "death metal",
-                subStyle : "brutal death metal",
-                frontCover : blightMass.harbinger(),
-                format : "cd jewel case",
-                isAlbumAvailable : true,
-                listenAndShop : function(){
-                    if(this.isAlbumAvailable === true){
-                        return [
-                            {
-                                youTube : "https://www.youtube.com/watch?v=2WIDOK8pdzY&t=307s",
-                                bandCamp : "https://blightmass.bandcamp.com/album/harbinger-of-lucidity-2",
-                                spotify : "https://open.spotify.com/artist/6m1w8JPe19WHficmM0Up1e?fbclid=IwAR3ReuLmJEpA9WpDwW57qlR29-Y0mKH5L7g2SbgVfNvYHkTf1G6i-nzz6fI",
-                                deezer : "",
-                                seasonShop : ""
-                            }
-                        ]
-                    } else if (this.isAlbumAvailable === false){
-                        return []
-                    }
-                } 
-            }
-        ],
-        merch : [
-            
-        ]
-    },
-
+    }
 ]
