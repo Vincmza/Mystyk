@@ -359,8 +359,8 @@ export const bands = [
     {
         id: 4,
         name : "Dislocate",
-        style : "trash metal",
-        subStyle : "groovy trash/death",
+        style : "thrash metal",
+        subStyle : "groovy thrash/death",
         biography: "DISLOCATE is a thrash/death band from France formed in Mulhouse in 2017.Their first opus tackles rising psychological disorders after traumatic events such as war and shows how deep and dark the descent into hell can be for someone who deals with it.",
         bandLogo: {
             logo : dislocate.logo(), 
@@ -412,8 +412,8 @@ export const bands = [
                 releaseDate :"2022 Feb 11",
                 title : "Behind The Scenes",
                 duration: "39:05 min",
-                style : "trash metal",
-                subStyle : "groovy trash/death",
+                style : "thrash metal",
+                subStyle : "groovy thrash/death",
                 frontCover : dislocate.behindTheScenes(),
                 format : "cd jewel case",
                 isAlbumAvailable : true,
@@ -459,8 +459,8 @@ export const bands = [
     {
         id: 5,
         name : "Kozh Dall",
-        style : "trash metal",
-        subStyle : "trash/death moderne",
+        style : "thrash metal",
+        subStyle : "thrash/death moderne",
         biography: "KOZH DALL (formerly Kozh dall division) is a french studio project from Laurent Plainchamp. The band plays an unique trash/death metal mixing various genres while providing its personnal touch.",
         bandLogo: {
             logo : kozh.logo(), 
@@ -512,7 +512,7 @@ export const bands = [
                 releaseDate :"2022 Feb 04",
                 title : "Deaf Mute",
                 duration: "39:05 min",
-                style : "trash metal",
+                style : "thrash metal",
                 subStyle : "trash/death moderne",
                 frontCover : kozh.deaf(),
                 format : "cd digipack",
@@ -542,8 +542,8 @@ export const bands = [
     {
     id: 6,
     name : "Hatred Dusk",
-    style : "trash metal",
-    subStyle : "trash/death",
+    style : "thrash metal",
+    subStyle : "thrash/death",
     biography: "HATRED DUSK is a french trash metal band from Paris formed in 1990. After years of silence and make sure the band gets a solid line up, rehearsals got back in 2016. Then, the band released an EP in 2018 entitled 'Blinded by hate'. After a while performing their EP on stage, HATRED DUSK decided to record a new album. The band had an ink with Mytyk Prod to release their full length album entitled 'Hatred Dusk' and is ready to make it more powerful on stage now.",
     bandLogo: {
         logo : hatred.logo(), 
@@ -601,8 +601,8 @@ export const bands = [
             releaseDate :"2019 Nov 22",
             title : "Hatred Dusk",
             duration: "26:27 min",
-            style : "trash metal",
-            subStyle : "trash/death",
+            style : "thrash metal",
+            subStyle : "thrash/death",
             frontCover : hatred.hatredDusk(),
             format : "cd digipack",
             isAlbumAvailable : true,
@@ -909,7 +909,7 @@ export const bands = [
         id: 10,
         name : "Notheist",
         style : "death metal",
-        subStyle : "trash/death metal",
+        subStyle : "thrash/death metal",
         biography: "Behind NOTHEIST is Gregory Lambert, multi-instrumentalist (guitar, bass, drums, vocals amongst others) & producer. Well known in the French metal scene, Greg’s name is associated with several major acts - MISANTHROPE (progessive/death metal, 2003), ZUUL FX (Industrial Thrash Death Metal 2002-2003, 2014-2017) CRUSHER (since 2017) and it is also associated with Alexandre Astier (who is behind the famous tv show Kaamelott) as the 8 strings guitar player of the show L’EXOCONFERENCE (2014-2016). Without leaving some of his collaborations, Greg Lambert decided in 2016 to write & record a first full solo album. This album has been released in May 2019 through Mystyk Prod Records.",
         bandLogo: {
             logo : notheist.logo(), 

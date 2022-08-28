@@ -8,6 +8,7 @@ import SortMusic from '../components/Shop/SortMusic';
 import SortMerch from '../components/Shop/SortMerch';
 
 const Shop = ({bands}) => {
+    console.log("Toutes les données", bands)
 
     //// ***** SHOP DIVIDED IN 2 SECTIONS : MUSIC AND MERCH ***** \\\\
 
@@ -63,6 +64,7 @@ const Shop = ({bands}) => {
 
     //ALL RELEASES FROM ALL BANDS
     const albumsAvailable = bands.filter(elem => elem.releases.length > 0)
+    console.log("Tous les albums dispo", albumsAvailable)
     const allReleases = []
     albumsAvailable.forEach((elem)=>{
         elem.releases.forEach(item=>{
@@ -71,8 +73,10 @@ const Shop = ({bands}) => {
     })
 
     //ALL STYLES AVAILABLE
+    console.log("Tous les albums", allReleases)
     const allStyles = allReleases.reduce((acc,cv)=>{
         acc.includes(cv.style) || acc.push(cv.style)
+        console.log("TA MERE : ", acc)
         return acc
     },[])
 

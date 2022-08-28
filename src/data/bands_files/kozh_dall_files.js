@@ -3,7 +3,7 @@ const getPath = (band,output)=>{
 }
 
 //LOGO
-export const logo = ()=> `${getPath("kozh_dall","logo")}logo.png`
+export const logo = ()=> `${getPath("kozh_dall","logo")}logo_high.jpg`
 
 //BANNER
 export const bannerHigh = ()=>`${getPath("kozh_dall", "banner")}banner_high.jpg`
