@@ -161,7 +161,7 @@ export const bands = [
             },
             {
                 name : "Olivier",
-                instrument : ["guitars"],
+                instrument : ["guitars", "vocals"],
                 pastMember : {isTrue : false, fromTo : ""}
             },
             {

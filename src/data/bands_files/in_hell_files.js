@@ -3,8 +3,8 @@ const getPath = (band,output)=>{
 }
 
 //LOGO
-export const logo = ()=> `${getPath("in_hell","logo")}logo.jpg`
-export const logoLow = ()=> `${getPath("in_hell","logo")}logo_low.jpg`
+export const logo = ()=> `${getPath("in_hell","logo")}logo_red.jpg`
+export const logoLow = ()=> `${getPath("in_hell","logo")}logo_red_low.jpg`
 //BANNER
 export const bannerHigh = ()=>`${getPath("in_hell", "banner")}banner_high.jpg`
 export const bannerMedium = ()=>`${getPath("in_hell", "banner")}banner_medium.jpg`
