@@ -47,8 +47,7 @@ const Band = ({bands}) => {
             return (oldMembers.map(elem=>(
                 <li key={elem} className='pastMembers__list__oldMember'>
                     <span>{elem.name} : </span>
-                    <span>{elem.instrument.length > 1 ? (elem.instrument.join(", ")):(elem.instrument)} - </span>
-                    <span>{elem.pastMember.fromTo}.</span>
+                    <span>{elem.instrument.length > 1 ? (elem.instrument.join(", ")):(elem.instrument)}.</span>
                 </li>
             )))
         }

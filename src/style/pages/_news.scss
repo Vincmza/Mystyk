@@ -41,7 +41,7 @@ img {
     border-radius: 2px;
     margin-top:20px;
     opacity:0;
-    animation: apparition 600ms linear forwards;
+    animation: apparition 400ms linear forwards;
     @media screen and (max-width:900px) {
         height:auto;
         flex-direction: column; 

@@ -10,6 +10,7 @@ import * as freitot from "./bands_files/freitot_files"
 import * as notheist from "./bands_files/notheist_files"
 import * as equinox from "./bands_files/equinox_files"
 import * as dirty from "./bands_files/dirtyprotest_files"
+import * as scarlean from "./bands_files/scarlean_files"
 
 // import { returnName } from "./news.js"
 
@@ -1164,6 +1165,143 @@ export const bands = [
             //         }
             //     },
             // }
+        ]
+    },
+    //SCARLEAN
+    {
+        id: 13,
+        name : "Scarlean",
+        style : "Alternative metal",
+        subStyle : "Groovy / heavy metal",
+        biography: "The band have been constantly renewing their musical universe. Ranging from rock, alternative, heavy metal tinted with groovy music, their style is limitless. Often nicknamed the French ''Perfect circle'' SCARLEAN unleashes all of its powerful, emotional and surprising potential on stage.",
+        bandLogo: {
+            logo : scarlean.logo(), 
+            logoLow : scarlean.logo()
+        },
+        banner : {
+            bannerHigh : scarlean.bannerHigh(), 
+            bannerMedium : scarlean.bannerHigh(),
+            bannerLow : scarlean.bannerHigh(),
+        },
+        country : "France",
+        followLinks : [
+            {
+                facebook: "https://www.facebook.com/Scarlean/",
+                instagram:"https://www.instagram.com/scarleanband/?hl=fr",
+                twitter:"https://mobile.twitter.com/scarlean",
+                tiktok:"https://www.tiktok.com/@scarleanofficial"
+            }
+        ],
+        lineUp : [
+            {
+                name : "Jay",
+                instrument : ["bass"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+            {
+                name : "Geo",
+                instrument : ["guitars"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+            {
+                name : "Alex",
+                instrument : ["vocals"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+            {
+                name : "Arnaud",
+                instrument : ["guitars"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+            {
+                name : "Sylvain",
+                instrument : ["drums"],
+                pastMember : {isTrue : false, fromTo : ""}
+                
+            },
+            {
+                name : "Olivier Dufrenoy",
+                instrument : ["drums"],
+                pastMember : {isTrue : true, fromTo : ""}
+                
+            },
+            {
+                name : "Laurent Beaumont",
+                instrument : ["bass"],
+                pastMember : {isTrue : true, fromTo : ""}
+                
+            },
+            {
+                name : "Rémi Gainon",
+                instrument : ["guitars"],
+                pastMember : {isTrue : true, fromTo : ""}
+                
+            },
+        ],
+        releases : [
+            //1 ALBUM FROM THE BAND
+            {
+                id:"release-131",
+                bandId :13,
+                year : 2018,
+                releaseDate :"2018 May 25",
+                title : "Ghost",
+                duration: "01:00:38",
+                style : "Alternative metal",
+                subStyle : "Progressive metal",
+                frontCover : scarlean.ghost(),
+                format : "cd digipack",
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [
+                            {
+                                youTube : "https://www.youtube.com/watch?v=3p9OvZ2Nr3w&list=OLAK5uy_mpwaJJq1qnwSlT35VmhPCkd5s8dWVzqwg",
+                                bandCamp : "https://scarleanofficial.bandcamp.com/album/ghost",
+                                spotify : "https://open.spotify.com/artist/6slKOEcC2ZuFT9Fy7TINV7/discography/all?pageUri=spotify:album:1wdDR3O9FjfMyKasm3rjgz",
+                                deezer : "https://www.deezer.com/fr/album/233711232",
+                                seasonShop : "https://shop.season-of-mist.com/fr/scarlean-ghost-cd-digipak"
+                            }
+                        ]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
+            },
+            {
+                id:"release-132",
+                bandId :13,
+                year : 2019,
+                releaseDate :"2019 November 29",
+                title : "Soulmates",
+                duration: "56:44 min",
+                style : "Alternative metal",
+                subStyle : "Progressive metal",
+                frontCover : scarlean.soulmates(),
+                format : "cd digipack",
+                isAlbumAvailable : true,
+                listenAndShop : function(){
+                    if(this.isAlbumAvailable === true){
+                        return [
+                            {
+                                youTube : "https://www.youtube.com/watch?v=qto8yiysVss&list=OLAK5uy_kswUkBpqjgPug7KJZ9mHLmk45-2i_ebXM",
+                                bandCamp : "https://scarleanofficial.bandcamp.com/album/soulmates",
+                                spotify : "https://open.spotify.com/artist/6slKOEcC2ZuFT9Fy7TINV7/discography/all?pageUri=spotify:album:3oNWpzOVzCFOmWbQXeAdDt",
+                                deezer : "https://www.deezer.com/fr/album/233211122",
+                                seasonShop : "https://shop.season-of-mist.com/fr/scarlean-soulmates-cd-digipak"
+                            }
+                        ]
+                    } else if (this.isAlbumAvailable === false){
+                        return []
+                    }
+                } 
+            }
+        ],
+        merch : [
         ]
     }
 ]
