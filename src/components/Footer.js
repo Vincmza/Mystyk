@@ -1,5 +1,6 @@
 import React from 'react';
 import * as net from "../data/icons"
+import { returnPartnerLogo } from '../data/footer_data';
 
 
 const Footer = () => {
@@ -25,14 +26,12 @@ const Footer = () => {
                             </li>))}
                     </ul>
                 </div>
-                <div className='footWrapper__season'>
-                    <h2 className='footWrapper__season__thanks'>
-                        Thanks to our partner
+                <div className='footWrapper__partners'>
+                    <h2 className='footWrapper__partners__thanks'>
+                        Thanks to our partners
                     </h2>
-                    <div className='footWrapper__season__logoContainer'>
-                        <a title='go to season of mist website' href='https://www.season-of-mist.com/' target="_blank" rel="noreferrer">
-                            <img src="/assets/season_of_mist/season-of-mist_logo.png" alt="logo du distributeur season of mist"/>
-                        </a>
+                    <div className='footWrapper__partners__container'>
+                        {returnPartnerLogo()}
                     </div>
                 </div>
             </div>
