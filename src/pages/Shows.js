@@ -23,7 +23,7 @@ const Shows = (props) => {
 		let mesk = acc.filter(item => Number.isInteger(item)=== true)
 		return mesk
 	}, []);
-	console.log("getAllBandId : ", getAllBandId)
+	// console.log("getAllBandId : ", getAllBandId)
 	//GET BANDS INFOS WITH THEIR ID
 	const getBands = () => {
 		const bandsShow = [];
@@ -35,7 +35,7 @@ const Shows = (props) => {
 	};
 	console.log("fonction getBands : ", getBands())
 	const everyShows = getAllBandId.map(id=> shows.filter(item=> item.bandId === id))
-	console.log("everyShows : ", everyShows)
+	// console.log("everyShows : ", everyShows)
 	//SORT SHOWS BY BAND 
 	const checkShows = (idNb) => {
 		const data = []

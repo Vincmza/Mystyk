@@ -15,7 +15,7 @@ const Error = (props) => {
                 <p>Content not found. Use the navigation menu thereupon to go anywhere</p>
             </div>
             <div className='error__container'>
-                <img className='error-img' src={returnImg()} alt="k"/>
+                <img className='error-img' src={returnImg()} alt="Contenu indisponible"/>
             </div>
         </div>
     );

@@ -18,7 +18,12 @@ const Host = (props) => {
     return (
         <div className="host">
             <div className="host__bgImgCont">
-                <img onClick={()=>redirect()} className="host-bg-img" src="/assets/background/bg_high.png" alt="logo du label"/>
+                <img 
+                onClick={()=>redirect()} 
+                className="host-bg-img" 
+                src="/assets/background/bg_high.png" 
+                alt="logo du label"
+                />
             </div>
         </div>
     );
