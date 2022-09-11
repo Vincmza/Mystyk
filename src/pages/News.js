@@ -13,51 +13,83 @@ const News = (props) => {
         props.setIsPageClicked([pageName])
         navigate(`/band/${bandId}`)
     }
+    const chunkContainingIcons = (network, key, value)=>{
+        const data = {
+            seasonShop:"Buy on Season of Mist",
+            youTube: "Listen on Youtube",
+            facebook: "Facebook event"
+        }
+        
+        return <><div className='newsCard__container__listen__container'>
+        <p 
+        className='newsCard__container__listen__container--title'
+        >
+            {data[network]}: 
+        </p>
+        <a 
+        target="_blank" 
+        rel="noreferrer" 
+        className={`newsCard__container__listen__container--${key}`} 
+        href={value}
+        >
+            {net[key]}
+        </a>
+        </div></>
+    }
     //DISPLAY ICON OF SOCIAL MEDIA TO LISTEN A TUNE FROM THE CURRENT NEWS
     const displayIcons = (link)=>{      
         if(link){
             for (const [key, value] of Object.entries(link)) {
                 if(value !== ""){
                     let goToLowerCase = key.toLowerCase()
-                    if(goToLowerCase === "seasonshop"){
-                        return <div className='newsCard__container__listen__container'>
-                        <p 
-                        className='newsCard__container__listen__container--title'
-                        >
-                            Acheter sur Season of Mist : 
-                        </p>
-                        <a 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className={`newsCard__container__listen__container--${key}`} 
-                        href={value}
-                        >
-                            {net[key]}
-                        </a>
-                        </div>  
-                    } else {
-                        const upperCase = goToLowerCase.split("")[0].toUpperCase()
-                        return <div className='newsCard__container__listen__container'>
-                        <p 
-                        className='newsCard__container__listen__container--title'
-                        >
-                            Ecouter sur {goToLowerCase.replace(goToLowerCase[0], upperCase[0]).toString()} : 
-                        </p>
-                        <a 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className={`newsCard__container__listen__container--${key}`} 
-                        href={value}
-                        >
-                            {net[key]}
-                        </a>
-                    </div>
+                    switch(goToLowerCase){
+                        case "seasonshop":
+                            return chunkContainingIcons("seasonShop", key, value)
+                            
+                        case "youTube":
+                            return chunkContainingIcons("youTube", key, value)
+                               
+                        case "facebook":
+                            return chunkContainingIcons("facebook", key, value)
+                        default:
+                            console.log("No corresponding case")
                     }
-                      
                 }
             }
         }
-
+    }
+    const throwAccessToBandPage = (bandIdKey, item)=>{
+        const eventURL = Object.entries(item.link()[0])[0]
+        return bandIdKey !== "" ? 
+        <>
+            <div className='newsCard__container__header'>
+            <div 
+            className='newsCard__container__header--bandName' 
+            onClick={()=>goToBandPage(item.bandId, "bands")}
+            >
+                {item.bandOrEvent()}
+            </div>
+            <div className='newsCard__container__header--date'>
+                    {item.date}
+            </div>
+            </div>
+        </> : 
+        <>
+            <div className='newsCard__container__header'>
+                <div className='newsCard__container__header--bandName'>
+                    <a 
+                    href={eventURL[1]}
+                    target="_blank" 
+                    rel="noreferrer"
+                    >
+                        {item.bandOrEvent()}
+                    </a>
+                </div>
+                <div className='newsCard__container__header--date'>
+                        {item.date}
+                </div>
+            </div>
+        </>
     }
     return (
         <div className='news'>
@@ -73,17 +105,10 @@ const News = (props) => {
                 style={{animationDelay: `${index*200}ms`}}
                 >
                     <div className='newsCard__imgContainer'>
-                        <img src={item.image} alt={`photo de ${item.bandName()}`}/>
+                        <img src={item.image} alt={`photo de ${item.bandOrEvent()}`}/>
                     </div>
                     <div className='newsCard__container'>
-                        <div className='newsCard__container__header'>
-                            <div className='newsCard__container__header--bandName' onClick={()=>goToBandPage(item.bandId, "bands")}>
-                                {item.bandName()}
-                            </div>
-                            <div className='newsCard__container__header--date'>
-                                    {item.date}
-                            </div>
-                        </div>
+                        {throwAccessToBandPage(item.bandId, item)}
                         <div className='newsCard__container__title'>
                             <span className='newsCard__container__title--icon'>
                                 {net.evil}
@@ -96,7 +121,7 @@ const News = (props) => {
                             {item.content}
                         </div>
                         <div className='newsCard__container__listen'>
-                            {displayIcons(item.listen()[0])}
+                            {displayIcons(item.link()[0])}
                         </div>
                     </div>                   
                 </li>))}

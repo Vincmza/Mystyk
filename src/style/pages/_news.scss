@@ -136,6 +136,9 @@ img {
                 &--seasonShop{
                     @include news-music-icon($main-font-color);
                 }
+                &--facebook{
+                    @include news-music-icon($main-font-color);
+                }
             }
         }
     }
