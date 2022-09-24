@@ -17,9 +17,9 @@ export const news = [
         bandId : "",
         event : "Mystyk Metal Fest 1",
         isLinkAvailable : true,
-        date : "11/09/2022",
-        title : "Premier festival MYSTYK Productions !",
-        content : "Voici le tout premier festival organisé par MYSTYK Productions rassemblant des grands noms tels que -E-FORCE Avec Eric Forrest (ex VOIVOID), DESTINITY, MORTUARY, IN HELL, PROTOGONOS, SOUL-X, PRAïM FAYA. N'attendez plus, réservez vos places dès à présent, cliquez sur l'évévenement juste en dessous et accédez à la billeterie ainsi qu'à toutes les infos !",
+        date : "24/09/2022",
+        title : "Mystyk Metal Fest 1 annulé !",
+        content : "Suite à des difficultés ne permettant pas d'aboutir à une concrétisation dans les règles d'un tel projet, Mystyk Productions se voit contraint d'annuler le festival initialement prévu pour le 15 octobre 2022. Plus d'infos sur le communiqué officiel",
         bandOrEvent : function(){
             return this.bandId !== "" ? returnName(this.bandId) : this.event
         },
@@ -27,14 +27,14 @@ export const news = [
             if(this.isLinkAvailable === true){
                 return [
                     {
-                        facebook : "https://www.facebook.com/events/655400812231781/",
+                        facebook : "https://www.facebook.com/mystykprod/photos/a.143692709636832/1050318072307620/",
                     }
                 ]
             } else if(this.isLinkAvailable === false) {
                 return []
             }
         },
-        image : pathToImage("news-2", "mystyk_metal_fest_1.jpg")
+        image : pathToImage("news-2", "mystyk_metal_fest_1_cancelled.jpg")
     },
     {
         id : "news-1",
