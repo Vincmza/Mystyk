@@ -78,12 +78,13 @@ const Shop = ({bands}) => {
     },[])
 
     // --- MUSIC FUNCTIONS
-
+    
     //IF STYLE INPUT PREVIOUSLY CLICKED
     //USER CAN CHOOSE WHICH STYLE TO SORT SHOP BY
     const whichStyle = (style)=>{
         setIsStyleChoosen(style)
     }
+   
     //RETURN DATA ACCORDING WHAT USER
     //CHOSE TO SORT SHOP BY
     function sortShop(albums){
@@ -94,7 +95,7 @@ const Shop = ({bands}) => {
             <Album
                 sortedByDate={true}
                 index={index}
-                key={Math.random()}
+                key={item.id}
                 item={item}
                 elem={bands.filter(elem=>elem.id === item.bandId)}
                 description={description}
@@ -106,7 +107,7 @@ const Shop = ({bands}) => {
                 <Album
                 sortedByDate={false}
                 index={index}
-                key={Math.random()}
+                key={item.id}
                 item={item}
                 elem={bands.filter(elem=>elem.id === item.bandId)}
                 description={description}
@@ -120,7 +121,7 @@ const Shop = ({bands}) => {
                 <Album
                 sortedByDate={false}
                 index={index}
-                key={Math.random()}
+                key={item.id}
                 item={item}
                 elem={bands.filter(elem=>elem.id === item.bandId)}
                 description={description}

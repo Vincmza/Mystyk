@@ -12,12 +12,14 @@ const Album = ({elem, item, sortedByDate ,description, setDescription, index}) =
             const object = [
                 ...description.filter(objects=>objects!==description[objectToRemove])
             ]
+            // console.log(object)
             setDescription(object)
         }else{
             const object = [
                 ...description,
                 {band : bandId, item : id}
             ]
+            // console.log(object)
             setDescription(object)
         }
     }
