@@ -11,7 +11,6 @@ import BandFollow from '../components/Band/BandFollow';
 import BandLineUp from '../components/Band/BandLineUp';
 import BandPastMembers from '../components/Band/BandPastMembers';
 
-
 const Band = ({bands}) => {
     //GOT ID OF THE BAND IN URL
     let {bandId}=useParams()

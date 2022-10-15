@@ -7,7 +7,6 @@ const Album = ({elem, item, sortedByDate ,description, setDescription, index}) =
     let options = {year: "numeric", month: "long", day: "numeric"};
     //FUNCTION TO EITHER SHOW OR HIDE ITEM INFOS
     const showOrHideDescription = (bandId, id)=>{ 
-        console.log(description)
         const objectToRemove = description.findIndex(element=>element.band === bandId && element.item === id)
         if(objectToRemove !== -1){
             const object = [
@@ -26,7 +25,6 @@ const Album = ({elem, item, sortedByDate ,description, setDescription, index}) =
     const displayIcons = (iconsObject)=>{
         if(iconsObject){
             const data = Object.entries(iconsObject)
-            console.log()
             return data.map(element=>(
                 element[1] !== "" &&
                 <a 
@@ -44,7 +42,7 @@ const Album = ({elem, item, sortedByDate ,description, setDescription, index}) =
     }
     return (
         <div>
-            <div className='item' style={{animationDelay : `${index*200}ms`}}>                        
+            <div className='item slide' style={{animationDelay : `${index*200}ms`}}>                        
                 <div className='item__card'>
                     <div className='item__card__imgContainer'>
                         {item.listenAndShop()[0] && item.listenAndShop()[0].seasonShop !== "" ? 

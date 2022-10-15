@@ -8,7 +8,7 @@ import SortMusic from '../components/Shop/SortMusic';
 import SortMerch from '../components/Shop/SortMerch';
 
 const Shop = ({bands}) => {
-    console.log("Toutes les données", bands)
+    // console.log("Toutes les données", bands)
 
     //// ***** SHOP DIVIDED IN 2 SECTIONS : MUSIC AND MERCH ***** \\\\
 
@@ -37,11 +37,6 @@ const Shop = ({bands}) => {
         }
     }
 
-    /// *** COMMON DATA *** \\\
-
-    //OPTIONS TO EITHER DISPLAY MUSIC OR MERCH
-    const options = ["music", "merch"]
-
     //WORKING ON BOOLEAN STATE HIDING OR DISPLAYING BUTTON
     const displayFilters = ()=>{
         setShowFilters((e)=>(!e))
@@ -50,6 +45,11 @@ const Shop = ({bands}) => {
      const displaySortOptions = ()=>{
         setIsSortButtonClicked((cv)=>!cv)
     }
+
+    /// *** COMMON DATA *** \\\
+
+    //OPTIONS TO EITHER DISPLAY MUSIC OR MERCH
+    const options = ["music", "merch"]
 
     // *** MUSIC SECTION *** \\
 
@@ -64,19 +64,16 @@ const Shop = ({bands}) => {
 
     //ALL RELEASES FROM ALL BANDS
     const albumsAvailable = bands.filter(elem => elem.releases.length > 0)
-    console.log("Tous les albums dispo", albumsAvailable)
     const allReleases = []
     albumsAvailable.forEach((elem)=>{
         elem.releases.forEach(item=>{
             allReleases.push(item)
         })
     })
-
+    
     //ALL STYLES AVAILABLE
-    console.log("Tous les albums", allReleases)
     const allStyles = allReleases.reduce((acc,cv)=>{
         acc.includes(cv.style) || acc.push(cv.style)
-        console.log("TA MERE : ", acc)
         return acc
     },[])
 
@@ -93,22 +90,23 @@ const Shop = ({bands}) => {
         if(isSorted === "Release date"){
             return albums.sort((a,b)=>{
                 return new Date(a.releaseDate) - new Date(b.releaseDate)
-            }).map((item,index)=>(<Album
+            }).map((item,index)=>(
+            <Album
                 sortedByDate={true}
                 index={index}
-                key={item.id}
+                key={Math.random()}
                 item={item}
                 elem={bands.filter(elem=>elem.id === item.bandId)}
                 description={description}
                 setDescription={setDescription}
-                />))
+            />))
         }
         if(isSorted === "A-Z"){
             return albums.map((item,index)=>(
                 <Album
                 sortedByDate={false}
                 index={index}
-                key={item.id}
+                key={Math.random()}
                 item={item}
                 elem={bands.filter(elem=>elem.id === item.bandId)}
                 description={description}
@@ -122,7 +120,7 @@ const Shop = ({bands}) => {
                 <Album
                 sortedByDate={false}
                 index={index}
-                key={item.id}
+                key={Math.random()}
                 item={item}
                 elem={bands.filter(elem=>elem.id === item.bandId)}
                 description={description}
@@ -231,7 +229,6 @@ const Shop = ({bands}) => {
         }
     }
     
-       
     return (
         <div className='shop'>
             <h1 className='shopIntro'>Shop</h1>
