@@ -1,16 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const SortMusic = ({
-    shopOption, 
-    displaySortOptions, 
-    sortAlbums, 
-    isSortButtonClicked,
+    shopOption,  
     sortStore,
-    isSorted,
-    allStyles,
+    dataSortValue,
+    // allStyles,
     whichStyle,
     isStyleChoosen,
+    allRecords
 }) => {
+     //ALL STYLES AVAILABLE
+     const allStyles = allRecords.reduce((acc,cv)=>{
+        acc.includes(cv.style) || acc.push(cv.style)
+        return acc
+    },[])
+    //OPTIONS AVAILABLE IN ORDER TO MAKE INPUTS
+    const sortAlbums = ["A-Z", "Release date", "Style"]
+    //CHECK IF INPUT WITH VALUE SORT IS CLICKED
+    const [isSortButtonClicked, setIsSortButtonClicked]=useState(false)
+    //FUNCTION TO UPDATE STATE THEREUPON
+    const displaySortOptions = ()=>{
+        setIsSortButtonClicked((cv)=>!cv)
+    }
     return (
         <div className='shop__wrapper__options'>
             {shopOption[0] === "music" &&
@@ -34,14 +45,14 @@ const SortMusic = ({
                                 style={
                                     {
                                         animationDelay: `${index*150}ms`,
-                                        backgroundColor: `${isSorted === item ? "rgb(117, 7, 7)" : "wheat"}`,
-                                        color : `${isSorted === item ? "wheat" : "rgb(117, 7, 7)" }`
+                                        backgroundColor: `${dataSortValue === item ? "rgb(117, 7, 7)" : "wheat"}`,
+                                        color : `${dataSortValue === item ? "wheat" : "rgb(117, 7, 7)" }`
                                     }
                                 }
                                 />
                                 ))}
                                 <div className='sort__list__options__style'>
-                                    {isSorted === "Style" && (<>
+                                    {dataSortValue === "Style" && (<>
                                         {allStyles.map((style, index)=>(
                                         <input 
                                         type="button"

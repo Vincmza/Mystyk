@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import * as net from "../data/icons";
 
 
-const Album = ({elem, item, sortedByDate ,description, setDescription, index}) => {
+const Album = ({elem, item, sortedByDate, index}) => {
     //OPTIONS TO TRANSFORM RELEASE DATE
     let options = {year: "numeric", month: "long", day: "numeric"};
+    // console.log("Composant Album", item)
+    
+    //STORE ITEM DESCRIPTION WHEN USER CLICKS ON ARROW
+    const [description, setDescription]=useState([])
+
     //FUNCTION TO EITHER SHOW OR HIDE ITEM INFOS
     const showOrHideDescription = (bandId, id)=>{ 
         const objectToRemove = description.findIndex(element=>element.band === bandId && element.item === id)

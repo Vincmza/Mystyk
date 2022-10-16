@@ -1,26 +1,29 @@
-import React from 'react';
+import React,{useState} from 'react';
 //ICONS
 import * as net from "../../data/icons";
 
+
 const FiltersMusicMerch = ({
-    displayFilters,
-    showFilters,
     shopOption,
-    options,
     setShopOption,
-    setDescription,
-    setIsSorted,
+    setDataSortValue,
 }) => {
+    //TRUE FOR DISPLAYING FILTERS / FALSE FOR HIDING FILTER
+    const [showFilters, setShowFilters]=useState(false)
+    const displayFilters = ()=>{
+        setShowFilters((e)=>(!e))
+    }
+    const options = ["music", "merch"]
     //STORE DATA FROM CHECKBOX
     const storeShopOption = (e)=>{
         if(e.target.checked === true){
             setShopOption([e.target.value])
-            setDescription([])
+            // setDescription([])
             if(e.target.value === "merch"){
-                setIsSorted("all")
+                setDataSortValue("all")
             }
             if(e.target.value === "music"){
-                setIsSorted("A-Z")
+                setDataSortValue("A-Z")
             }
         }
     }

@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import * as net from "../data/icons";
 
-const Merch = ({elem, item, index, description, setDescription}) => {
+const Merch = ({elem, item, index}) => {
+
+    //STORE ITEM DESCRIPTION WHEN USER CLICKS ON ARROW
+    const [description, setDescription]=useState([])
+
     //FUNCTION TO EITHER SHOW OR HIDE ITEM INFOS
     const showOrHideDescription = (bandId, id)=>{ 
         const objectToRemove = description.findIndex(element=>element.band === bandId && element.item === id)
