@@ -91,42 +91,42 @@ export const bands = [
         ],
         merch : [
 
-            {
-                id : "merch-11",
-                bandId : 1,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "t-shirt",
-                description : "high quality coton, available in S,M,L,XL sizes",
-                itemPicture : "https://img01.ztat.net/article/spp-media-p1/1022f8d53ed23afca3ccaca86d7df963/ffdffc2e7d20427fbe771ffebe2dea17.jpg?imwidth=762&filter=packshot",
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : "https://kosmosblackmetal.bandcamp.com/merch/t-shirt-3"}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            },
-            {
-                id : "merch-12",
-                bandId :1,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "t-shirt",
-                description : "high quality coton, available in S,M,L,XL sizes",
-                itemPicture : "https://img01.ztat.net/article/spp-media-p1/1022f8d53ed23afca3ccaca86d7df963/ffdffc2e7d20427fbe771ffebe2dea17.jpg?imwidth=762&filter=packshot",
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            }
+            // {
+            //     id : "merch-11",
+            //     bandId : 1,
+            //     bandName : function(){
+            //         return returnName(this.bandId) 
+            //     },
+            //     format : "t-shirt",
+            //     description : "high quality coton, available in S,M,L,XL sizes",
+            //     itemPicture : "https://img01.ztat.net/article/spp-media-p1/1022f8d53ed23afca3ccaca86d7df963/ffdffc2e7d20427fbe771ffebe2dea17.jpg?imwidth=762&filter=packshot",
+            //     isItemAvailable : true,
+            //     purchase : function(){
+            //         if(this.isItemAvailable===true){
+            //             return [{linkToBuy : "https://kosmosblackmetal.bandcamp.com/merch/t-shirt-3"}]
+            //         } else if(this.isItemAvailable===false){
+            //             return[]
+            //         }
+            //     },
+            // },
+            // {
+            //     id : "merch-12",
+            //     bandId :1,
+            //     bandName : function(){
+            //         return returnName(this.bandId) 
+            //     },
+            //     format : "t-shirt",
+            //     description : "high quality coton, available in S,M,L,XL sizes",
+            //     itemPicture : "https://img01.ztat.net/article/spp-media-p1/1022f8d53ed23afca3ccaca86d7df963/ffdffc2e7d20427fbe771ffebe2dea17.jpg?imwidth=762&filter=packshot",
+            //     isItemAvailable : true,
+            //     purchase : function(){
+            //         if(this.isItemAvailable===true){
+            //             return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
+            //         } else if(this.isItemAvailable===false){
+            //             return[]
+            //         }
+            //     },
+            // }
         ]
     },
     //IN HELL
@@ -247,24 +247,24 @@ export const bands = [
         ],
         merch : [
 
-            {
-                id : 21,
-                bandId :2,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "t-shirt",
-                description : "high quality coton, available in S,M,L,XL sizes",
-                itemPicture : "http://www.deathmetal.org/wp-content/uploads/deteriorate_-_rotting_in_hell.jpg",
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            }
+            // {
+            //     id : 21,
+            //     bandId :2,
+            //     bandName : function(){
+            //         return returnName(this.bandId) 
+            //     },
+            //     format : "t-shirt",
+            //     description : "high quality coton, available in S,M,L,XL sizes",
+            //     itemPicture : "http://www.deathmetal.org/wp-content/uploads/deteriorate_-_rotting_in_hell.jpg",
+            //     isItemAvailable : true,
+            //     purchase : function(){
+            //         if(this.isItemAvailable===true){
+            //             return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
+            //         } else if(this.isItemAvailable===false){
+            //             return[]
+            //         }
+            //     },
+            // }
         ]
     },
     //PRAIM FAYA
@@ -824,24 +824,24 @@ export const bands = [
             }
         ],
         merch : [
-            {
-                id : "merch-81",
-                bandId : 8,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "t-shirt",
-                description : "high quality coton, available in S,M,L,XL sizes",
-                itemPicture : "https://i.ebayimg.com/images/g/wr0AAOSwVvRjDw-N/s-l500.png",
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : "https://kosmosblackmetal.bandcamp.com/merch/t-shirt-3"}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            },
+            // {
+            //     id : "merch-81",
+            //     bandId : 8,
+            //     bandName : function(){
+            //         return returnName(this.bandId) 
+            //     },
+            //     format : "t-shirt",
+            //     description : "high quality coton, available in S,M,L,XL sizes",
+            //     itemPicture : "https://i.ebayimg.com/images/g/wr0AAOSwVvRjDw-N/s-l500.png",
+            //     isItemAvailable : true,
+            //     purchase : function(){
+            //         if(this.isItemAvailable===true){
+            //             return [{linkToBuy : "https://kosmosblackmetal.bandcamp.com/merch/t-shirt-3"}]
+            //         } else if(this.isItemAvailable===false){
+            //             return[]
+            //         }
+            //     },
+            // },
         ]
     },
     //FREITOT
@@ -919,42 +919,42 @@ export const bands = [
             }
         ],
         merch : [
-            {
-                id : "merch-91",
-                bandId : 9,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "mug",
-                description : "Un mug pour ceux qui aiment le sang ou le café",
-                itemPicture : "https://images-eu.ssl-images-amazon.com/images/I/51Q3Tlab0RL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg",
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : "https://kosmosblackmetal.bandcamp.com/merch/t-shirt-3"}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            },
-            {
-                id : "merch-92",
-                bandId : 9,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "underwear",
-                description : "Il est pas mignon ce petit string ?",
-                itemPicture : "https://cdn.season-of-mist.com/media/catalog/product/cache/2/small_image/250x/9df78eab33525d08d6e5fb8d27136e95/B/e/Benighted-Obscene-Thong-97068-1-1592983961.jpg",
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : "https://kosmosblackmetal.bandcamp.com/merch/t-shirt-3"}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            },
+            // {
+            //     id : "merch-91",
+            //     bandId : 9,
+            //     bandName : function(){
+            //         return returnName(this.bandId) 
+            //     },
+            //     format : "mug",
+            //     description : "Un mug pour ceux qui aiment le sang ou le café",
+            //     itemPicture : "https://images-eu.ssl-images-amazon.com/images/I/51Q3Tlab0RL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg",
+            //     isItemAvailable : true,
+            //     purchase : function(){
+            //         if(this.isItemAvailable===true){
+            //             return [{linkToBuy : "https://kosmosblackmetal.bandcamp.com/merch/t-shirt-3"}]
+            //         } else if(this.isItemAvailable===false){
+            //             return[]
+            //         }
+            //     },
+            // },
+            // {
+            //     id : "merch-92",
+            //     bandId : 9,
+            //     bandName : function(){
+            //         return returnName(this.bandId) 
+            //     },
+            //     format : "underwear",
+            //     description : "Il est pas mignon ce petit string ?",
+            //     itemPicture : "https://cdn.season-of-mist.com/media/catalog/product/cache/2/small_image/250x/9df78eab33525d08d6e5fb8d27136e95/B/e/Benighted-Obscene-Thong-97068-1-1592983961.jpg",
+            //     isItemAvailable : true,
+            //     purchase : function(){
+            //         if(this.isItemAvailable===true){
+            //             return [{linkToBuy : "https://kosmosblackmetal.bandcamp.com/merch/t-shirt-3"}]
+            //         } else if(this.isItemAvailable===false){
+            //             return[]
+            //         }
+            //     },
+            // },
             
         ]
     },
@@ -1200,42 +1200,42 @@ export const bands = [
             }
         ],
         merch : [
-            {
-                id : "merch-121",
-                bandId :12,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "accessories",
-                description : "Gobelet pour une bière en sécurité",
-                itemPicture : "https://www.rentreediscount.com/publicmedia/original/128/105/96/fr/600x600___gobelet-plastique-reutilisable-personnalisable-20cl_g20061-1.jpg",
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            },
-            {
-                id : "merch-122",
-                bandId :12,
-                bandName : function(){
-                    return returnName(this.bandId) 
-                },
-                format : "underwear",
-                description : "Caleçon pour hommes en coton, les boules sont au chaud",
-                itemPicture : "https://i0.wp.com/www.korbakstage.com/wp-content/uploads/2022/09/menstuatinsatan_frontcopy_1898x.jpg?resize=800%2C800&ssl=1",
-                isItemAvailable : true,
-                purchase : function(){
-                    if(this.isItemAvailable===true){
-                        return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
-                    } else if(this.isItemAvailable===false){
-                        return[]
-                    }
-                },
-            },
+            // {
+            //     id : "merch-121",
+            //     bandId :12,
+            //     bandName : function(){
+            //         return returnName(this.bandId) 
+            //     },
+            //     format : "accessories",
+            //     description : "Gobelet pour une bière en sécurité",
+            //     itemPicture : "https://www.rentreediscount.com/publicmedia/original/128/105/96/fr/600x600___gobelet-plastique-reutilisable-personnalisable-20cl_g20061-1.jpg",
+            //     isItemAvailable : true,
+            //     purchase : function(){
+            //         if(this.isItemAvailable===true){
+            //             return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
+            //         } else if(this.isItemAvailable===false){
+            //             return[]
+            //         }
+            //     },
+            // },
+            // {
+            //     id : "merch-122",
+            //     bandId :12,
+            //     bandName : function(){
+            //         return returnName(this.bandId) 
+            //     },
+            //     format : "underwear",
+            //     description : "Caleçon pour hommes en coton, les boules sont au chaud",
+            //     itemPicture : "https://i0.wp.com/www.korbakstage.com/wp-content/uploads/2022/09/menstuatinsatan_frontcopy_1898x.jpg?resize=800%2C800&ssl=1",
+            //     isItemAvailable : true,
+            //     purchase : function(){
+            //         if(this.isItemAvailable===true){
+            //             return [{linkToBuy : "https://shop.season-of-mist.com/beastcraft-into-the-burning-pit-of-hell-print-on-demand"}]
+            //         } else if(this.isItemAvailable===false){
+            //             return[]
+            //         }
+            //     },
+            // },
 
         ]
     },

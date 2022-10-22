@@ -44,7 +44,6 @@
 }
 .releases{
     padding:30px;
-    // border:1px solid blue;
     &__title{
         font-size: 1.3em;
         text-decoration: underline;
@@ -53,6 +52,7 @@
         width:100%;
         display: flex;
         flex-wrap: wrap;
+        gap:2%;
         @media screen and (max-width:980px) {
             justify-content: center;
         }

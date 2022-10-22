@@ -2,24 +2,46 @@ import React, {useState} from 'react';
 
 const SortMusic = ({
     shopOption,  
-    sortStore,
-    dataSortValue,
-    whichStyle,
-    isStyleChoosen,
-    allRecords
+    allRecords,
+    sortMusic
 }) => {
      //ALL STYLES AVAILABLE
      const allStyles = allRecords.reduce((acc,cv)=>{
         acc.includes(cv.style) || acc.push(cv.style)
         return acc
     },[])
+     //VALUE TO HELP TO SORT THE RECORDS DISPLAYED IN THE COMPONENT
+     const [dataSortValue, setDataSortValue] = useState("")
     //OPTIONS AVAILABLE IN ORDER TO MAKE INPUTS
     const sortAlbums = ["A-Z", "Release date", "Style"]
     //CHECK IF INPUT WITH VALUE SORT IS CLICKED
     const [isSortButtonClicked, setIsSortButtonClicked]=useState(false)
+    //WHICH MUSIC STYLE USER CHOOSES
+    const [isStyleChoosen, setIsStyleChoosen]=useState("")
     //FUNCTION TO UPDATE STATE THEREUPON
     const displaySortOptions = ()=>{
         setIsSortButtonClicked((cv)=>!cv)
+    }
+    // GET STYLE CHOOSEN AND CALL FUNCTION TO SORT MUSIC ACCORDING TO THAT VALUE
+    const whichStyle = (style)=>{
+        if(dataSortValue === "Style"){
+            setIsStyleChoosen(style)
+            sortMusic("Style", style)
+        }
+        else{
+            console.log("Erreur : ", dataSortValue)
+        }
+    }
+    const sortStore = (value)=>{
+        if(shopOption[0] === "music"){
+            setDataSortValue("")
+            setDataSortValue(value)
+            if(value !== "Style"){
+                setIsStyleChoosen("")
+                sortMusic(value)
+            }
+            setDataSortValue(value)
+        }
     }
     return (
         <div className='shop__wrapper__options'>

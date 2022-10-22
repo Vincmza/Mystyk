@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 
 const SortMerch = ({
     shopOption, 
-    sortStore,
-    merchSortValue,
-    allMerch 
+    allMerch,
+    sortMerchShop 
     }) => {
-        console.log({merchSortValue})
     //CHECK IF INPUT WITH VALUE SORT IS CLICKED
     const [isSortButtonClicked, setIsSortButtonClicked]=useState(false)
+    // SATE TO IMPROVE USER EXP ABOUT DESIGN AFTER CLICKING
+    const [merchSortValue,setMerchSortValue] = useState("")
     const displaySortOptions = ()=>{
         setIsSortButtonClicked((cv)=>!cv)
     }
@@ -17,8 +17,14 @@ const SortMerch = ({
         acc.includes(cv.format) || acc.push(cv.format)
         return acc
     },[])
+    const sortStore = (value)=>{
+        setMerchSortValue(value)
+        sortMerchShop(value)
+    }
     const createInputsMerchSection = ()=>{
-        allMerchFormat.unshift("All")
+        if(allMerchFormat.length > 1){
+            allMerchFormat.unshift("All")
+        }
         return shopOption[0] === "merch" && allMerchFormat.map((item,index)=>(
             <input 
             type="button" 
