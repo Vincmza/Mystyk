@@ -9,7 +9,7 @@ import SortMerch from '../components/Shop/SortMerch';
 
 const Shop = ({bands}) => {
 
-    //STATE TO STORE CHECKBOX CLICK VALUE MUSIC OR MERCH
+    //STATE TO STORE CHECKBOX CLICK VALUE : MUSIC OR MERCH
     const [shopOption, setShopOption] = useState([])
     //VALUE TO HELP TO SORT THE RECORDS DISPLAYED IN THE COMPONENT
     const [dataSortValue, setDataSortValue] = useState("")
@@ -22,7 +22,7 @@ const Shop = ({bands}) => {
         })
     })
     // RECORDS SORTED ACCORDING TO VALUE IN DATASORTVALUE
-    const [dataSorted, setIsDataSorted] = useState(allRecords)
+    const [musicSorted, setMusicSorted] = useState(allRecords)
 
     //FUNCTION UPDATING STATE DATASORTVALUE
     //AND UPDATING STATE WHERE ALL RECORDS ARE STORED
@@ -31,33 +31,33 @@ const Shop = ({bands}) => {
         setDataSortValue(value)
         if(value !== "Style"){
             setIsStyleChoosen("")
-            sortShop(value)
+            sortMusic(value)
         }
-        sortShop(value)
+        sortMusic(value)
     }
     //WHICH MUSIC STYLE USER CHOOSES
     const [isStyleChoosen, setIsStyleChoosen]=useState("")
 
     const whichStyle = (style)=>{
         setIsStyleChoosen(style)
-        sortShop("Style", style)
+        sortMusic("Style", style)
     }
 
-    function sortShop(sortValue, styleValue){
+    function sortMusic(sortValue, styleValue){
         switch (sortValue){
             case "Release date":
                 const data = allRecords.sort((a,b)=>{
                    return new Date(a.releaseDate) - new Date(b.releaseDate)
                 })
-                setIsDataSorted(data)
+                setMusicSorted(data)
                 break
             case "A-Z":
-                setIsDataSorted(allRecords)
+                setMusicSorted(allRecords)
                 break
             case "Style":
                 if(styleValue !== ""){
                     const albumsSortedByStyle = allRecords.filter(album => album.style === styleValue)
-                    setIsDataSorted(albumsSortedByStyle)
+                    setMusicSorted(albumsSortedByStyle)
                 }
                 break  
         }
@@ -181,7 +181,7 @@ const Shop = ({bands}) => {
                 {shopOption[0] === "music" && 
                     <div className='shop__wrapper__item'>
                     {
-                    dataSorted.map((item,index)=>(
+                    musicSorted.map((item,index)=>(
                         <Album
                             sortedByDate={false}
                             index={index}
