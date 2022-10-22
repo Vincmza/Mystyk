@@ -6,6 +6,7 @@ const SortMerch = ({
     merchSortValue,
     allMerch 
     }) => {
+        console.log({merchSortValue})
     //CHECK IF INPUT WITH VALUE SORT IS CLICKED
     const [isSortButtonClicked, setIsSortButtonClicked]=useState(false)
     const displaySortOptions = ()=>{
@@ -24,6 +25,7 @@ const SortMerch = ({
             key={item} 
             value={item}
             className={`sort__list__options__input`}
+            onClick={(e)=>sortStore(e.target.value)}
             style={
                     {
                     animationDelay: `${index*150}ms`,
@@ -31,7 +33,6 @@ const SortMerch = ({
                     color : `${merchSortValue === item ? "wheat" : "rgb(117, 7, 7)" }`
                     }
                 }
-                onClick={(e)=>sortStore(e.target.value)}
             />))
     }
     return (

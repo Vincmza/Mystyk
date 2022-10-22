@@ -45,6 +45,9 @@ const Shop = ({bands}) => {
 
     // MERCH SORTED ACCORDING TO VALUE IN DATASORTVALUE
     const [merchSorted, setMerchSorted] = useState(allMerch)
+    // SATE TO IMPROVE USER EXP ABOUT DESIGN AFTER CLICKING
+    const [merchSortValue,setMerchSortValue] = useState("")
+    console.log({merchSortValue})
     
     // ***** COMMON RESSOURCES : STATE AND FUNCTIONS MUSIC & MERCH ***** //
 
@@ -63,6 +66,7 @@ const Shop = ({bands}) => {
             }
             sortMusic(value)
         }else if(shopOption[0] === "merch"){
+            setMerchSortValue(value)
             sortMerchShop(value)
         }
 
@@ -132,8 +136,8 @@ const Shop = ({bands}) => {
                         (<SortMerch
                             shopOption={shopOption}
                             sortStore={sortStore}
-                            // merchSortValue={merchSortValue}
                             allMerch={allMerch}
+                            merchSortValue={merchSortValue}
                         />)
                     }
                     
@@ -167,7 +171,6 @@ const Shop = ({bands}) => {
                         }
                     </div>
                 }
-                
             </div>
         </div>
     );

@@ -25,10 +25,9 @@ const Merch = ({elem, item, index}) => {
     
     return (
         <div>
-            <div className='item'>
+            <div className='item' style={{animationDelay : `${index*250}ms`}}>
                 <div 
                 className='item__card' 
-                style={{animationDelay : `${index*250}ms`}}
                 >
                     <div className='item__card__imgContainer'>
                         {item.purchase()[0] && item.purchase()[0].linkToBuy !== "" ? 
