@@ -22,6 +22,7 @@ const Merch = ({elem, item, index}) => {
             setDescription(object)
         }
     }
+    
     return (
         <div>
             <div className='item'>

@@ -4,7 +4,6 @@ const SortMusic = ({
     shopOption,  
     sortStore,
     dataSortValue,
-    // allStyles,
     whichStyle,
     isStyleChoosen,
     allRecords
