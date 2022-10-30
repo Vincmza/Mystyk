@@ -1,3 +1,4 @@
+@import "../generalSettings/animations";
 .host{
     height:600px;
     display: flex;
@@ -28,7 +29,9 @@
         }
         &__video{
             // border:1px solid yellow;
+            opacity: 0;
             width:100%;
+            animation: apparition 1.5s linear forwards;
         }
     }
     

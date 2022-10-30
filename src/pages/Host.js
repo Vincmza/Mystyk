@@ -40,7 +40,7 @@ const Host = (props) => {
                 :
                 (<img 
                     onClick={()=>redirect()} 
-                    className="host-bg-img" 
+                    className="host__bgImgCont__video" 
                     src="/assets/background/bg_high.png" 
                     alt="logo du label"
                     />)

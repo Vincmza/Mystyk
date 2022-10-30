@@ -278,6 +278,26 @@ export const bands = [
                 bandName:function(){
                     return returnName(this.bandId)
                 },
+                showDate : "2022 November 04",
+                displayShowDate : function(){
+                  let date = new Date(this.showDate)
+                  let dateToString = date.toLocaleString("en-GB", options)
+                  return dateToString
+                },
+                isAvailable : function (){
+                    return Date.parse(this.showDate) >= Date.now() ? true : false
+                },
+                event : "ASGAARD GENTBRUGGE",
+                where : "Driebeekstraat 2, 9050 Gent",
+                country : "BELGIUM",
+                moreDetails : "https://www.facebook.com/events/s/iconoclasm-nyrak-in-hell/653359809697748/"
+            },
+            {
+                bandId:2,
+                id:`2-sh2`,
+                bandName:function(){
+                    return returnName(this.bandId)
+                },
                 showDate : "2022 November 13",
                 displayShowDate : function(){
                   let date = new Date(this.showDate)
@@ -292,26 +312,6 @@ export const bands = [
                 country : "BELGIUM",
                 moreDetails : "https://www.facebook.com/events/1486775425127047/"
               },
-            // {
-            //     bandId:2,
-            //     id:`2-sh2`,
-            //     bandName:function(){
-            //         return returnName(this.bandId)
-            //     },
-            //     showDate : "2022 December 15",
-            //     displayShowDate : function(){
-            //       let date = new Date(this.showDate)
-            //       let dateToString = date.toLocaleString("en-GB", options)
-            //       return dateToString
-            //     },
-            //     isAvailable : function (){
-            //         return Date.parse(this.showDate) >= Date.now() ? true : false
-            //     },
-            //     event : "FILS DE PUTE FEST",
-            //     where : "Nijverheidslaan, 3290 Diest",
-            //     country : "BELGIUM",
-            //     moreDetails : "https://www.facebook.com/events/1486775425127047/"
-            //   },
         ]
     },
     //PRAIM FAYA

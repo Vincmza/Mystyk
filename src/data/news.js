@@ -13,6 +13,30 @@ const pathToImage = (news,file)=>{
 }
 export const news = [
     {
+        id : "news-3",
+        bandId : 2,
+        event : "",
+        isLinkAvailable : true,
+        date : "30/10/2022",
+        title : "Soutenez IN HELL en Belgique !",
+        content : "La horde démoniaque nommée IN HELL crachera son venin sur scène en Belgique deux fois avant la fin de l'année. Ne les loupez pas. La première execution aura lieu le 04 Novembre. Plus d'infos en cliquant sur l'événement en bas.",
+        bandOrEvent : function(){
+            return this.bandId !== "" ? returnName(this.bandId) : this.event
+        },
+        link : function(){
+            if(this.isLinkAvailable === true){
+                return [
+                    {
+                        facebook : "https://facebook.com/events/s/iconoclasm-nyrak-in-hell/653359809697748/",
+                    }
+                ]
+            } else if(this.isLinkAvailable === false) {
+                return []
+            }
+        },
+        image : pathToImage("news-3", "in_hell_asgaard_04_11_22.jpg")
+    },
+    {
         id : "news-2",
         bandId : "",
         event : "Mystyk Metal Fest 1",
