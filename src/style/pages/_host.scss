@@ -6,19 +6,29 @@
     background-color: black;
     // border:1px solid red;
     &__bgImgCont{
-        width:35%;
+        width:40%;
         outline: none;
         border: none;
         object-fit: contain;
-        // border:1px solid yellow;
+        // border:1px solid green;
         cursor: pointer;
         transform:scale(1);
         transition: 500ms;
         &:hover{
             transform:scale(1.1);
         }
-        @media screen and (max-width:500px) {
+        @media screen and (max-width:700px) {
+            width:50%;
+        }
+        @media screen and (max-width:550px) {
             width:60%;
+        }
+        @media screen and (max-width:400px) {
+            width:75%;
+        }
+        &__video{
+            // border:1px solid yellow;
+            width:100%;
         }
     }
     

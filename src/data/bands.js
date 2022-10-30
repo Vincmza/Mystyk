@@ -131,46 +131,7 @@ export const bands = [
             // }
         ],
         shows : [
-            {
-                bandId:1,
-                id:`1-sh1`,
-                bandName:function(){
-                    return returnName(this.bandId)
-                },
-                showDate : "2023 January 20",
-                displayShowDate : function(){
-                let date = new Date(this.showDate)
-                let dateToString = date.toLocaleString("en-GB", options)
-                return dateToString
-                },
-                isAvailable : function (){
-                    return Date.parse(this.showDate) >= Date.now() ? true : false
-                },
-                event : "FISTING GOD FEST",
-                where : "Nijverheidslaan, 3290 Diest",
-                country : "BELGIUM",
-                moreDetails : "https://www.facebook.com/events/1486775425127047/"
-            },
-            {
-                bandId:1,
-                id:`1-sh2`,
-                bandName:function(){
-                    return returnName(this.bandId)
-                },
-                showDate : "2023 January 25",
-                displayShowDate : function(){
-                let date = new Date(this.showDate)
-                let dateToString = date.toLocaleString("en-GB", options)
-                return dateToString
-                },
-                isAvailable : function (){
-                    return Date.parse(this.showDate) >= Date.now() ? true : false
-                },
-                event : "FDP NIGHT !",
-                where : "Nijverheidslaan, 3290 Diest",
-                country : "BELGIUM",
-                moreDetails : "https://www.facebook.com/events/1486775425127047/"
-            },
+            
         ]
     },
     //IN HELL
@@ -331,26 +292,26 @@ export const bands = [
                 country : "BELGIUM",
                 moreDetails : "https://www.facebook.com/events/1486775425127047/"
               },
-            {
-                bandId:2,
-                id:`2-sh2`,
-                bandName:function(){
-                    return returnName(this.bandId)
-                },
-                showDate : "2022 December 15",
-                displayShowDate : function(){
-                  let date = new Date(this.showDate)
-                  let dateToString = date.toLocaleString("en-GB", options)
-                  return dateToString
-                },
-                isAvailable : function (){
-                    return Date.parse(this.showDate) >= Date.now() ? true : false
-                },
-                event : "FILS DE PUTE FEST",
-                where : "Nijverheidslaan, 3290 Diest",
-                country : "BELGIUM",
-                moreDetails : "https://www.facebook.com/events/1486775425127047/"
-              },
+            // {
+            //     bandId:2,
+            //     id:`2-sh2`,
+            //     bandName:function(){
+            //         return returnName(this.bandId)
+            //     },
+            //     showDate : "2022 December 15",
+            //     displayShowDate : function(){
+            //       let date = new Date(this.showDate)
+            //       let dateToString = date.toLocaleString("en-GB", options)
+            //       return dateToString
+            //     },
+            //     isAvailable : function (){
+            //         return Date.parse(this.showDate) >= Date.now() ? true : false
+            //     },
+            //     event : "FILS DE PUTE FEST",
+            //     where : "Nijverheidslaan, 3290 Diest",
+            //     country : "BELGIUM",
+            //     moreDetails : "https://www.facebook.com/events/1486775425127047/"
+            //   },
         ]
     },
     //PRAIM FAYA
@@ -441,26 +402,28 @@ export const bands = [
         merch : [
 
         ],
-        shows : [{
-            bandId:1,
-            id:`3-sh1`,
-            bandName:function(){
-                return returnName(this.bandId)
-            },
-            showDate : "2022 September 20",
-            displayShowDate : function(){
-            let date = new Date(this.showDate)
-            let dateToString = date.toLocaleString("en-GB", options)
-            return dateToString
-            },
-            isAvailable : function (){
-                return Date.parse(this.showDate) >= Date.now() ? true : false
-            },
-            event : "FDP NIGHT !",
-            where : "Nijverheidslaan, 3290 Diest",
-            country : "BELGIUM",
-            moreDetails : "https://www.facebook.com/events/1486775425127047/"
-        },]
+        shows : [
+            //     {
+            //     bandId:1,
+            //     id:`3-sh1`,
+            //     bandName:function(){
+            //         return returnName(this.bandId)
+            //     },
+            //     showDate : "2022 September 20",
+            //     displayShowDate : function(){
+            //     let date = new Date(this.showDate)
+            //     let dateToString = date.toLocaleString("en-GB", options)
+            //     return dateToString
+            //     },
+            //     isAvailable : function (){
+            //         return Date.parse(this.showDate) >= Date.now() ? true : false
+            //     },
+            //     event : "FDP NIGHT !",
+            //     where : "Nijverheidslaan, 3290 Diest",
+            //     country : "BELGIUM",
+            //     moreDetails : "https://www.facebook.com/events/1486775425127047/"
+            // },
+        ]
     },
     //DISLOCATE
     {
