@@ -1,69 +1,93 @@
 import React from 'react';
 //ICONS
 import * as net from "../../data/icons";
+import { bands } from "../../data/bands";
 
-const Table = ({band,checkShows,goToBandPage}) => {
+const Table = ({goToBandPage}) => {
+    // ARRAY TO STORE SHOWS OF ALL BANDS
+    const storeShows = []
+    bands.forEach(item=>{
+        // IF SHOWS ARE STORED LOOP ON IT
+        if(item.shows.length > 0){
+            let shows = {
+                band : item.name,
+                band_id : item.id,
+                showsOfTheBand : []
+            }
+            // CHECK TO STORE ALL GIGS TO COME
+            item.shows.forEach(elem=>{
+                if(elem.isAvailable() === true ){
+                    shows.showsOfTheBand.push(elem)
+                }
+            })
+            // IF THERE AREN'T GIGS ANYMORE TO STORE REMOVE BAND FROM THE OBJECT
+            if(shows.showsOfTheBand.length > 0){
+                storeShows.push(shows)
+            }
+        }
+    })
     return (
         <div>
-            <div className="allShows__bandName-container">
-                <h2
-                    className="allShows__bandName-container--name"
-                    onClick={() => goToBandPage(band.id, "bands")}
+            {storeShows.map((oneBand, index)=>(
+                <li
+                key={oneBand.band_id}
+                className="allShows"
+				style={{ animationDelay: `${index * 200}ms` }}
                 >
-                    {band.name}
-                </h2>
-            </div>
-            <table className="allShows__table">
-                <tr className="allShows__table__titles">
-                    <th className="allShows__table__titles--date">Date</th>
-                    <th className="allShows__table__titles--event">Event</th>
-                    <th className="allShows__table__titles--where">Where</th>
-                    <th className="allShows__table__titles--country">
-                        Country
-                    </th>
-                    <th className="allShows__table__titles--moreDetails">
-                        More details
-                    </th>
-                </tr>
-                {checkShows(band.id).map((show) => (
-                    <>
-                        {show.bandId === band.id &&
-                        show.isAvailable() === true ? (
+                    <div className="allShows__bandName-container">
+                        <h2
+                            className="allShows__bandName-container--name"
+                            onClick={() => goToBandPage(oneBand.band_id, "bands")}
+                        >
+                            {oneBand.band}
+                        </h2>
+                    </div>
+                    <table className="allShows__table">
+                        <tr className="allShows__table__titles">
+                            <th className="allShows__table__titles--date">Date</th>
+                            <th className="allShows__table__titles--event">Event</th>
+                            <th className="allShows__table__titles--where">Where</th>
+                            <th className="allShows__table__titles--country">
+                                Country
+                            </th>
+                            <th className="allShows__table__titles--moreDetails">
+                                More details
+                            </th>
+                        </tr>
+                        {oneBand.showsOfTheBand.map(oneShow=>(
                             <tr
-                                key={show.id}
-                                className="allShows__table__infos"
+                            key={oneShow.id}
+                            className="allShows__table__infos"
                             >
                                 <td className="allShows__table__infos--date">
-                                    {show.displayShowDate()}
+                                    {oneShow.displayShowDate()}
                                 </td>
                                 <td className="allShows__table__infos--event">
-                                    {show.event}
+                                    {oneShow.event}
                                 </td>
                                 <td className="allShows__table__infos--where">
-                                    {show.where}
+                                    {oneShow.where}
                                 </td>
                                 <td className="allShows__table__infos--country">
-                                    {show.country}
+                                    {oneShow.country}
                                 </td>
                                 <td className="allShows__table__infos--moreDetails">
-                                    {show.moreDetails !== "" && (
+                                    {oneShow.moreDetails !== "" && (
                                         <a
                                             target="_blank"
                                             rel="noreferrer"
                                             className="moreDetailsIcon"
-                                            href={show.moreDetails}
+                                            href={oneShow.moreDetails}
                                         >
                                             {net.moreDetails}
                                         </a>
                                     )}
                                 </td>
                             </tr>
-                        ) : (
-                            <></>
-                        )}
-                    </>
-                ))}
-            </table>
+                        ))}
+                    </table>
+                </li>
+            ))}
             
         </div>
     );

@@ -14,6 +14,8 @@ import * as scarlean from "./bands_files/scarlean_files"
 
 import { returnName } from "./news.js"
 
+let options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};
+
 export const bands = [
     //KOSMOS
     {
@@ -127,6 +129,48 @@ export const bands = [
             //         }
             //     },
             // }
+        ],
+        shows : [
+            {
+                bandId:1,
+                id:`1-sh1`,
+                bandName:function(){
+                    return returnName(this.bandId)
+                },
+                showDate : "2023 January 20",
+                displayShowDate : function(){
+                let date = new Date(this.showDate)
+                let dateToString = date.toLocaleString("en-GB", options)
+                return dateToString
+                },
+                isAvailable : function (){
+                    return Date.parse(this.showDate) >= Date.now() ? true : false
+                },
+                event : "FISTING GOD FEST",
+                where : "Nijverheidslaan, 3290 Diest",
+                country : "BELGIUM",
+                moreDetails : "https://www.facebook.com/events/1486775425127047/"
+            },
+            {
+                bandId:1,
+                id:`1-sh2`,
+                bandName:function(){
+                    return returnName(this.bandId)
+                },
+                showDate : "2023 January 25",
+                displayShowDate : function(){
+                let date = new Date(this.showDate)
+                let dateToString = date.toLocaleString("en-GB", options)
+                return dateToString
+                },
+                isAvailable : function (){
+                    return Date.parse(this.showDate) >= Date.now() ? true : false
+                },
+                event : "FDP NIGHT !",
+                where : "Nijverheidslaan, 3290 Diest",
+                country : "BELGIUM",
+                moreDetails : "https://www.facebook.com/events/1486775425127047/"
+            },
         ]
     },
     //IN HELL
@@ -265,6 +309,48 @@ export const bands = [
             //         }
             //     },
             // }
+        ],
+        shows : [
+            {
+                bandId:2,
+                id:`2-sh1`,
+                bandName:function(){
+                    return returnName(this.bandId)
+                },
+                showDate : "2022 November 13",
+                displayShowDate : function(){
+                  let date = new Date(this.showDate)
+                  let dateToString = date.toLocaleString("en-GB", options)
+                  return dateToString
+                },
+                isAvailable : function (){
+                    return Date.parse(this.showDate) >= Date.now() ? true : false
+                },
+                event : "EXCOMMUNICATION NIGHT",
+                where : "Nijverheidslaan, 3290 Diest",
+                country : "BELGIUM",
+                moreDetails : "https://www.facebook.com/events/1486775425127047/"
+              },
+            {
+                bandId:2,
+                id:`2-sh2`,
+                bandName:function(){
+                    return returnName(this.bandId)
+                },
+                showDate : "2022 December 15",
+                displayShowDate : function(){
+                  let date = new Date(this.showDate)
+                  let dateToString = date.toLocaleString("en-GB", options)
+                  return dateToString
+                },
+                isAvailable : function (){
+                    return Date.parse(this.showDate) >= Date.now() ? true : false
+                },
+                event : "FILS DE PUTE FEST",
+                where : "Nijverheidslaan, 3290 Diest",
+                country : "BELGIUM",
+                moreDetails : "https://www.facebook.com/events/1486775425127047/"
+              },
         ]
     },
     //PRAIM FAYA
@@ -354,7 +440,27 @@ export const bands = [
         ],
         merch : [
 
-        ]
+        ],
+        shows : [{
+            bandId:1,
+            id:`3-sh1`,
+            bandName:function(){
+                return returnName(this.bandId)
+            },
+            showDate : "2022 September 20",
+            displayShowDate : function(){
+            let date = new Date(this.showDate)
+            let dateToString = date.toLocaleString("en-GB", options)
+            return dateToString
+            },
+            isAvailable : function (){
+                return Date.parse(this.showDate) >= Date.now() ? true : false
+            },
+            event : "FDP NIGHT !",
+            where : "Nijverheidslaan, 3290 Diest",
+            country : "BELGIUM",
+            moreDetails : "https://www.facebook.com/events/1486775425127047/"
+        },]
     },
     //DISLOCATE
     {
@@ -454,7 +560,8 @@ export const bands = [
             //         }
             //     },
             // }
-        ]
+        ],
+        shows : []
     },
     //KOZH DALL
     {
@@ -537,7 +644,8 @@ export const bands = [
         ],
         merch : [
 
-        ]
+        ],
+        shows : []
     },
     //HATRED DUSK
     {
@@ -643,7 +751,8 @@ export const bands = [
         //         }
         //     },
         // }
-    ]
+    ],
+    shows : []
     },
     //BOOST
     {
@@ -737,7 +846,8 @@ export const bands = [
         ],
         merch : [
     
-        ]
+        ],
+        shows : []
     },
     //AKIAVEL
     {
@@ -842,7 +952,8 @@ export const bands = [
             //         }
             //     },
             // },
-        ]
+        ],
+        shows : []
     },
     //FREITOT
     {
@@ -956,7 +1067,8 @@ export const bands = [
             //     },
             // },
             
-        ]
+        ],
+        shows : []
     },
     //NOTHEIST
     {
@@ -1024,7 +1136,8 @@ export const bands = [
         ],
         merch : [
     
-        ]
+        ],
+        shows : []
     },
     //EQUINOX
     {
@@ -1127,7 +1240,8 @@ export const bands = [
             //         }
             //     },
             // }
-        ]
+        ],
+        shows : []
     },
     //DIRTYPROTEST
     {
@@ -1237,7 +1351,8 @@ export const bands = [
             //     },
             // },
 
-        ]
+        ],
+        shows : []
     },
     //SCARLEAN
     {
@@ -1374,6 +1489,7 @@ export const bands = [
             }
         ],
         merch : [
-        ]
+        ],
+        shows : []
     }
 ]
