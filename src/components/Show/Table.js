@@ -28,6 +28,7 @@ const Table = ({goToBandPage}) => {
     })
     return (
         <div>
+            {storeShows.length === 0 && <h2 style={{textAlign : "center"}}>Aucun événement pour l'instant</h2>}
             {storeShows.map((oneBand, index)=>(
                 <li
                 key={oneBand.band_id}
