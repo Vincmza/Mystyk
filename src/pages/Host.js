@@ -48,6 +48,7 @@ const Host = (props) => {
                         onEnded={getBackBackgroundImage}
                         onError={getBackBackgroundImage}
                         onReady={checkIfVideoHasStarted}
+                        style={{visibility : `${hasVideoStarted === false ? "hidden" : "visible"}`}}
                         />
                     }
                 </div>
