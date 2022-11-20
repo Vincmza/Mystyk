@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-//ICONS
-import * as net from "../data/icons";
+
 //COMPONENTS
 import Album from '../components/Album';
 import Merch from '../components/Merch';
@@ -20,37 +19,7 @@ const Band = ({bands}) => {
     const bandFiltered = bands.filter(elem=> elem.id === id)[0]
     //SAME BUT IN A SINGLE ARRAY WITH ONE OBJECT INSIDE
     const currentBand = bands.filter(elem=> elem.id === id)
-    //DISPLAY ITEM DETAILS
-    const [description, setDescription]=useState([])
-    //SOCIAL NETWORK ICONS DISPLAY
-    const socialLinks = ()=>{
-        const links = bandFiltered.followLinks[0]
-        const linksData = Object.entries(links)
-        return linksData.map(socialMediaIcon=>
-            socialMediaIcon[1] !== "" &&
-            (<li key={socialMediaIcon} className="follow__container__oneIcon">
-                <a 
-                href={socialMediaIcon[1]} 
-                target="_blank" 
-                rel="noreferrer" 
-                className={`follow__container__oneIcon--${socialMediaIcon[0]}`}>
-                    {net[socialMediaIcon[0]]}
-                </a>
-            </li>))
-    }
-    //OLD MEMBERS FILTERED IN AN ARRAY
-    const oldMembers = bandFiltered.lineUp.filter(elem=>elem.pastMember.isTrue === true)
-    //DISPLAY PAST MEMBERS FUNCTION
-    const displayPastMembers = ()=>{  
-        if(oldMembers.length > 0){
-            return (oldMembers.map(elem=>(
-                <li key={elem} className='pastMembers__list__oldMember'>
-                    <span>{elem.name} : </span>
-                    <span>{elem.instrument.length > 1 ? (elem.instrument.join(", ")):(elem.instrument)}.</span>
-                </li>
-            )))
-        }
-    }
+    
     return (
         <div className='band'>
             <div className='back'>
@@ -65,9 +34,9 @@ const Band = ({bands}) => {
             <div className='band__wrapper'>
                 <BandHeader bandFiltered={bandFiltered}/>
                 <BandBio bandFiltered={bandFiltered}/>
-                <BandFollow socialLinks={socialLinks}/>
+                <BandFollow bandFiltered={bandFiltered}/>
                 <BandLineUp bandFiltered={bandFiltered}/>
-                <BandPastMembers oldMembers={oldMembers} displayPastMembers={displayPastMembers}/>               
+                <BandPastMembers bandFiltered={bandFiltered}/>               
                 <div className='releases'>
                     <h3 className='releases__title'>Releases</h3>
                     <div className='releases__wrapper'>
@@ -78,8 +47,6 @@ const Band = ({bands}) => {
                                 elem={elem}
                                 item={item}
                                 index={index}
-                                description={description} 
-                                setDescription={setDescription}
                                 />
                             ))
                         ))}
@@ -95,8 +62,6 @@ const Band = ({bands}) => {
                                 item={item}
                                 elem={elem}
                                 index={index} 
-                                description={description} 
-                                setDescription={setDescription}
                                 />
                             ))
                         ))}

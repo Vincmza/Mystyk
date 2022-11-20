@@ -36,7 +36,7 @@ const Host = (props) => {
             <div className="host__bgImgCont">
             
                 <div className="host__bgImgCont__video">
-                    {hasVideoStarted === false && <LoadingSpinner/>}
+                    {(hasVideoStarted === false && hasVideoFinished === false) && <LoadingSpinner/>}
                     {hasVideoFinished === false && 
                         <ReactPlayer
                         url={url}

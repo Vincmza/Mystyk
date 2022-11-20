@@ -13,6 +13,30 @@ const pathToImage = (news,file)=>{
 }
 export const news = [
     {
+        id : "news-4",
+        bandId : "",
+        event : "Signature du groupe de thrash WARFAITH !",
+        isLinkAvailable : true,
+        date : "20/11/2022",
+        title : "Signature du groupe de thrash nancéien WARFAITH !",
+        content : "L'équipe de MYSTYK PROD est heureuse de dévoiler la nouvelle signature du label. Un groupe de thrash énervé, second degré sur les bords, mais d'une qualité d'écriture qui n'est plus à démontrer, il s'agit de WARFAITH. Leur nouvel album ATOMIC HANGOVER sera disponible en début d'année 2023 via notre partenaire Season of Mist. Plus d'infos en cliquant sur le lien ci dessous. ",
+        bandOrEvent : function(){
+            return this.bandId !== "" ? returnName(this.bandId) : this.event
+        },
+        link : function(){
+            if(this.isLinkAvailable === true){
+                return [
+                    {
+                        facebook : "https://www.facebook.com/mystykprod/videos/788415598917378",
+                    }
+                ]
+            } else if(this.isLinkAvailable === false) {
+                return []
+            }
+        },
+        image : pathToImage("news-4", "warfaith_news.jpg")
+    },
+    {
         id : "news-3",
         bandId : 2,
         event : "",
