@@ -14,7 +14,10 @@ const Bands = ({bands}) => {
                     style={{animationDelay: `${index*200}ms`}}
                     >
                         <div className='bandsCard__header'>
-                            <NavLink to={`/band/${item.id}`}>
+                            <NavLink 
+                            to={`/band/${item.id}`}
+                            onClick={()=>window.scrollTo({top:0, left:0, behavior: 'smooth'})}
+                            >
                                 <div className='bandsCard__header__bandsName'>
                                     {item.name}
                                 </div>
@@ -28,6 +31,7 @@ const Bands = ({bands}) => {
                             <div className='bandsLogo__container'>
                                 <NavLink 
                                 to={`/band/${item.id}`}
+                                onClick={()=>window.scrollTo({top:0, left:0, behavior: 'smooth'})}
                                 >
                                     <picture>
                                         <source media="(max-width: 500px)" srcSet={item.bandLogo.logoLow}/>                               
