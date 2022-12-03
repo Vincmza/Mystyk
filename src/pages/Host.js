@@ -17,7 +17,9 @@ const Host = (props) => {
     }
 
     let navigate = useNavigate()
-    //IF USER GO TO THAT PAGE FROM URL MENU WILL NOT STAY IN RED TO THE PREVIOUS PAGE
+    //IF USER GO TO HOST PAGE FROM URL 
+    //PREVIOUS MENU WON'T BE IN WRITTEN IN RED COLOR ANYMORE
+    //GETTING TO HOST PAGE ERASE LOCAL STORAGE AND STATE IN APP FILE
     const setMenuToZero = ()=>{
         props.isPageClicked.shift()
         localStorage.clear()

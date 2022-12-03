@@ -45,7 +45,7 @@ const Header = (props) => {
             {isIconClicked === true && 
 
                 (<><nav>
-                    <ul title='nav' className='nav'>
+                    <ul className='nav'>
                         {allPages.map((elem,index)=>(
                             <li 
                             style={{animationDelay :`${index*200}ms`}} 
