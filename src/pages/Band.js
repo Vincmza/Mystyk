@@ -9,7 +9,9 @@ import BandBio from '../components/Band/BandBio';
 import BandFollow from '../components/Band/BandFollow';
 import BandLineUp from '../components/Band/BandLineUp';
 import BandPastMembers from '../components/Band/BandPastMembers';
-
+import ScrollUpButton from '../components/ScrollUpButton';
+//DATA
+import * as net from "../data/icons" 
 const Band = ({bands}) => {
     //GOT ID OF THE BAND IN URL
     let {bandId}=useParams()
@@ -66,6 +68,11 @@ const Band = ({bands}) => {
                             ))
                         ))}
                     </div>
+                </div>
+                <div
+                className="button-container"
+                >
+                    <ScrollUpButton/>
                 </div>
             </div>
         </div>

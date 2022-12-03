@@ -14,7 +14,8 @@ import {
     FaTiktok
 } from "react-icons/fa";
 import {AiOutlineInfoCircle} from "react-icons/ai";
-import {ImEvil} from "react-icons/im"
+import {ImEvil} from "react-icons/im";
+import {MdKeyboardArrowUp} from "react-icons/md";
 
 //ICONS TO LISTEN OR BUY MUSIC AND MERCH
 export const youTube = <FaYoutube/> 
@@ -36,4 +37,6 @@ export const facebook = <FaFacebookSquare/>
 export const instagram = <FaInstagramSquare/>
 export const twitter = <FaTwitter/>
 export const tiktok = <FaTiktok/>
+//ARROW UP
+export const arrowUp = <MdKeyboardArrowUp/>
 
