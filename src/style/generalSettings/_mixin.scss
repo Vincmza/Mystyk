@@ -12,7 +12,7 @@
     color: $main-font-color;
     border-radius: 2px;
     transform: scale(1);
-    transition:500ms;
+    transition:150ms;
 }
 //A TAG RESET DEFAULT SETTINGS
 @mixin reset-a-tag-settings {

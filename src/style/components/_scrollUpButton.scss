@@ -10,7 +10,7 @@
     background-color: $bg-color;
     border-radius: 5px;
     transform: scale(1);
-    transition:300ms;
+    transition:150ms;
     &:hover{
         cursor: pointer;
         transform: scale(0.8);

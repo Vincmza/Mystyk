@@ -6,7 +6,6 @@ import * as net from "../../data/icons";
 const FiltersMusicMerch = ({
     shopOption,
     setShopOption,
-    // setDataSortValue,
 }) => {
     //TRUE FOR DISPLAYING FILTERS / FALSE FOR HIDING FILTER
     const [showFilters, setShowFilters]=useState(false)
@@ -18,13 +17,6 @@ const FiltersMusicMerch = ({
     const storeShopOption = (e)=>{
         if(e.target.checked === true){
             setShopOption([e.target.value])
-            // setDescription([])
-            // if(e.target.value === "merch"){
-            //     setDataSortValue("all")
-            // }
-            // if(e.target.value === "music"){
-            //     setDataSortValue("A-Z")
-            // }
         }
     }
     return (

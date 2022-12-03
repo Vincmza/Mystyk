@@ -1,14 +1,18 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import { NavLink} from "react-router-dom";
+//COMPONENT
+import ScrollUpButton from '../components/ScrollUpButton';
 
 
 const Bands = ({bands}) => {
+    const backFromBand = useRef(null)
     return (
         <div className='bands'>
             <h1 className='bandsIntro'>Mystyk's artists</h1>
             <ul className='bands__wrapper'>
                 {bands.map((item, index)=>(
-                    <li 
+                    <li
+                    useRef={item.id} 
                     key={item.id} 
                     className='bandsCard' 
                     style={{animationDelay: `${index*200}ms`}}
@@ -47,6 +51,11 @@ const Bands = ({bands}) => {
                     </li>
                 ))}
             </ul>
+            <div
+            className="button-container"
+            >
+                <ScrollUpButton/>
+            </div>
         </div>
     );
 };

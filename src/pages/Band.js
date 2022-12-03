@@ -10,8 +10,7 @@ import BandFollow from '../components/Band/BandFollow';
 import BandLineUp from '../components/Band/BandLineUp';
 import BandPastMembers from '../components/Band/BandPastMembers';
 import ScrollUpButton from '../components/ScrollUpButton';
-//DATA
-import * as net from "../data/icons" 
+
 const Band = ({bands}) => {
     //GOT ID OF THE BAND IN URL
     let {bandId}=useParams()
@@ -25,7 +24,7 @@ const Band = ({bands}) => {
     return (
         <div className='band'>
             <div className='back'>
-                <NavLink to={"/bands"}>
+                <NavLink to={"/bands/"}>
                     <input 
                     className='back__toBands' 
                     type="button" 
