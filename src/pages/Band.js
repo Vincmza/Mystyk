@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 //COMPONENTS
 import Album from '../components/Album';
@@ -12,6 +12,7 @@ import BandPastMembers from '../components/Band/BandPastMembers';
 import ScrollUpButton from '../components/ScrollUpButton';
 
 const Band = ({bands}) => {
+    let navigate = useNavigate()
     //GOT ID OF THE BAND IN URL
     let {bandId}=useParams()
     //TRANSFORMED IN A NUMBER TYPE
@@ -23,14 +24,14 @@ const Band = ({bands}) => {
     
     return (
         <div className='band'>
-            <div className='back'>
-                <NavLink to={"/bands/"}>
+            <div 
+            className='back' 
+            onClick={()=>navigate("/bands")}>
                     <input 
                     className='back__toBands' 
                     type="button" 
                     value={"Back to bands"}
                     />
-                </NavLink>
             </div>
             <div className='band__wrapper'>
                 <BandHeader bandFiltered={bandFiltered}/>

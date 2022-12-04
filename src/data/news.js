@@ -13,9 +13,33 @@ const pathToImage = (news,file)=>{
 }
 export const news = [
     {
+        id : "news-5",
+        bandId : "",
+        event : "WARFAITH, nouvelle signature MYSTYK PROD",
+        isLinkAvailable : true,
+        date : "04/12/2022",
+        title : "Découvrez la pochette et la date de sortie de l'album !",
+        content : "Voici la pochette déjantée du premier album de WARFAITH sobrement intitulé 'Atomic Hangover', l'album sortira le 03 mars 2023 en collaboration avec notre partenaire Season of Mist. A noter une release party organisée le 04 mars 2023. Le lien est en dessous.",
+        bandOrEvent : function(){
+            return this.bandId !== "" ? returnName(this.bandId) : this.event
+        },
+        link : function(){
+            if(this.isLinkAvailable === true){
+                return [
+                    {
+                        facebook : "https://www.facebook.com/events/1120013841994413?ref=newsfeed",
+                    }
+                ]
+            } else if(this.isLinkAvailable === false) {
+                return []
+            }
+        },
+        image : pathToImage("news-5", "warfaith_atomic_cd.jpg")
+    },
+    {
         id : "news-4",
         bandId : "",
-        event : "Signature du groupe de thrash WARFAITH !",
+        event : "Nouvelle signature : WARFAITH !",
         isLinkAvailable : true,
         date : "20/11/2022",
         title : "Signature du groupe de thrash nancéien WARFAITH !",

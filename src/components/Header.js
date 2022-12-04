@@ -1,25 +1,24 @@
-import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import React, {useState} from 'react';
+import { useNavigate, useLocation } from "react-router-dom";
 import {AiOutlineMenu} from "react-icons/ai"
 
-
-
-const Header = (props) => {
+const Header = () => {
     //ALL PAGES
     const allPages = ["news","shows","bands","shop","contact"]
-    //NAVIGATION
-    let navigate = useNavigate()
-    const redirect = (pageName)=>{
-        const thePageToGo = allPages.find((elem)=>elem === pageName)
-        props.isPageClicked.length > 0 && props.isPageClicked.shift()
-        localStorage.clear()
-        localStorage.setItem("menu", pageName)
-        props.setIsPageClicked([pageName])
-        navigate(`/${thePageToGo}`)
-    }
     //BOOLEAN STATE TO DISPLAY NAV MENU
     const [isIconClicked, setIsIconClicked] = useState(false)
-    //CHANGE STATE VALUE
+    
+    //WHERE USER CURRENTLY IS
+    const location = useLocation()
+    console.log(location.pathname.includes("bands"))
+    //NAVIGATION
+    let navigate = useNavigate()
+    
+    const redirect = (pageName)=>{
+        const thePageToGo = allPages.find((elem)=>elem === pageName)
+        navigate(`/${thePageToGo}`)
+    }
+    //CHANGE STATE VALUE TO DISPLAY OR HIDE NAVIGATION BAR
     const handleNavLogo = ()=>{
         setIsIconClicked((pv)=>!pv)
     }
@@ -53,7 +52,7 @@ const Header = (props) => {
                             className='nav__title' 
                             onClick={()=>redirect(elem)}
                             >
-                                <div style={{color : props.isPageClicked[0] === elem && "red"}}>{elem}</div>
+                                {<div style={{color : location.pathname.includes(elem) && "red"}}>{elem}</div> }
                             </li>))}
                     </ul>
                 </nav></>)

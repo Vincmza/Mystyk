@@ -4,25 +4,19 @@ import { useNavigate } from "react-router-dom";
 //COMPONENTS
 import Table from "../components/Show/Table";
 
-const Shows = (props) => {
+const Shows = () => {
 	let navigate = useNavigate();
-	const goToBandPage = (bandId, pageName) => {
-		props.isPageClicked.length > 0 && props.isPageClicked.shift();
-		localStorage.clear();
-		localStorage.setItem("menu", pageName);
-		props.setIsPageClicked([pageName]);
-		navigate(`/band/${bandId}`);
+	const goToBandPage = (bandId) => {
+		navigate(`/bands/${bandId}`);
 	};
 	
 	return (
 		<div className="shows">
 			<h1 className="showsIntro">Upcoming Shows</h1>
-			<ul className="showsList">
-				
+			<ul className="showsList">	
 				<Table
 				goToBandPage={goToBandPage}
 				/>
-				
 			</ul>
 		</div>
 	);

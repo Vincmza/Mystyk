@@ -10,8 +10,8 @@ const SortMusic = ({
         acc.includes(cv.style) || acc.push(cv.style)
         return acc
     },[])
-     //VALUE TO HELP TO SORT THE RECORDS DISPLAYED IN THE COMPONENT
-     const [dataSortValue, setDataSortValue] = useState("")
+    //VALUE TO HELP TO SORT THE RECORDS DISPLAYED IN THE COMPONENT
+    const [dataSortValue, setDataSortValue] = useState("")
     //OPTIONS AVAILABLE IN ORDER TO MAKE INPUTS
     const sortAlbums = ["A-Z", "Release date", "Style"]
     //CHECK IF INPUT WITH VALUE SORT IS CLICKED

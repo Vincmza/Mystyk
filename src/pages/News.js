@@ -6,12 +6,8 @@ import * as net from "../data/icons";
 const News = (props) => {
     let navigate = useNavigate()
     //GO TO BAND PAGE WHEN BAND NAME IS CLICKED
-    const goToBandPage = (bandId, pageName)=>{
-        props.isPageClicked.length > 0 && props.isPageClicked.shift()
-        localStorage.clear()
-        localStorage.setItem("menu", pageName)
-        props.setIsPageClicked([pageName])
-        navigate(`/band/${bandId}`)
+    const goToBandPage = (bandId)=>{
+        navigate(`/bands/${bandId}`)
     }
     const chunkContainingIcons = (network, key, value)=>{
         const data = {

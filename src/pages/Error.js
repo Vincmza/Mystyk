@@ -1,11 +1,6 @@
 import React from 'react';
 
-const Error = (props) => {
-    const setMenuToZero = ()=>{
-        props.isPageClicked.shift()
-        localStorage.clear()
-    }
-    setMenuToZero()
+const Error = () => {
     const returnImg = ()=>{
         return "assets/background/not_found.jpg"
     }

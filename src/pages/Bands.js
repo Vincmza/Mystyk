@@ -1,25 +1,23 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import { NavLink} from "react-router-dom";
 //COMPONENT
 import ScrollUpButton from '../components/ScrollUpButton';
 
 
 const Bands = ({bands}) => {
-    const backFromBand = useRef(null)
     return (
         <div className='bands'>
             <h1 className='bandsIntro'>Mystyk's artists</h1>
             <ul className='bands__wrapper'>
                 {bands.map((item, index)=>(
-                    <li
-                    useRef={item.id} 
+                    <li 
                     key={item.id} 
                     className='bandsCard' 
                     style={{animationDelay: `${index*200}ms`}}
                     >
                         <div className='bandsCard__header'>
                             <NavLink 
-                            to={`/band/${item.id}`}
+                            to={`/bands/${item.id}`}
                             onClick={()=>window.scrollTo({top:0, left:0, behavior: 'smooth'})}
                             >
                                 <div className='bandsCard__header__bandsName'>
@@ -34,7 +32,7 @@ const Bands = ({bands}) => {
                         <div className='bandsLogo'>
                             <div className='bandsLogo__container'>
                                 <NavLink 
-                                to={`/band/${item.id}`}
+                                to={`/bands/${item.id}`}
                                 onClick={()=>window.scrollTo({top:0, left:0, behavior: 'smooth'})}
                                 >
                                     <picture>

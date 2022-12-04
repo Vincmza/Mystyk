@@ -6,6 +6,7 @@ import Merch from '../components/Merch';
 import FiltersMusicMerch from '../components/Shop/FiltersMusicMerch';
 import SortMusic from '../components/Shop/SortMusic';
 import SortMerch from '../components/Shop/SortMerch';
+import ScrollUpButton from '../components/ScrollUpButton';
 
 const Shop = ({bands}) => {
 
@@ -13,9 +14,6 @@ const Shop = ({bands}) => {
     const [shopOption, setShopOption] = useState([])
 
     // ***** STATES & RESSOURCES MUSIC ***** //
-
-    //***// MUSIC
-
     //ALL RELEASES FROM ALL BANDS
     const albumsAvailable = bands.filter(elem => elem.releases.length > 0)
     const allRecords = []
@@ -25,13 +23,11 @@ const Shop = ({bands}) => {
         })
     })
 
-    // RECORDS SORTED ACCORDING TO VALUE IN DATASORTVALUE
+    // RECORDS SORTED ACCORDING TO VALUE IN DATASORTVALUE STATE
+    // IN SORTMUSIC COMPONENT
     const [musicSorted, setMusicSorted] = useState(allRecords)
     
     // ***** STATES & RESSOURCES MERCH ***** //
-
-    //***// MERCH
-
     //ALL MERCH ITEMS FROM ALL BANDS
     const merchAvailable = bands.filter(elem => elem.merch.length > 0)
     const allMerch = []
@@ -42,7 +38,8 @@ const Shop = ({bands}) => {
         })
     })
 
-    // MERCH SORTED ACCORDING TO VALUE IN DATASORTVALUE
+    // MERCH SORTED ACCORDING TO VALUE IN DATASORTVALUE STATE
+    // IN SORTMERCH COMPONENT
     const [merchSorted, setMerchSorted] = useState(allMerch)
    
     // MUSIC //
@@ -63,7 +60,9 @@ const Shop = ({bands}) => {
                     const albumsSortedByStyle = allRecords.filter(album => album.style === styleValue)
                     setMusicSorted(albumsSortedByStyle)
                 }
-                break  
+                break
+            default:
+                console.log("Error occured about sorting data in shop")
         }
     }
 
@@ -138,6 +137,11 @@ const Shop = ({bands}) => {
                     </div>
                 }
             </div>
+            <div
+                className="button-container"
+                >
+                    <ScrollUpButton/>
+                </div>
         </div>
     );
 };

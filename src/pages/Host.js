@@ -17,18 +17,9 @@ const Host = (props) => {
     }
 
     let navigate = useNavigate()
-    //IF USER GO TO HOST PAGE FROM URL 
-    //PREVIOUS MENU WON'T BE IN WRITTEN IN RED COLOR ANYMORE
-    //GETTING TO HOST PAGE ERASE LOCAL STORAGE AND STATE IN APP FILE
-    const setMenuToZero = ()=>{
-        props.isPageClicked.shift()
-        localStorage.clear()
-    }
-    setMenuToZero()
     //REDIRECTION TO NEWS PAGE ONCE LOGO IS CLICKED
     const redirect = ()=>{
-        props.setIsPageClicked(["news"])
-        localStorage.setItem("menu", "news")
+        
         navigate("/news")
         getBackBackgroundImage()
     }
